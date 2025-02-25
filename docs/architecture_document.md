@@ -7,11 +7,11 @@
 
 **Julia Gabriela de Resende, email do aluno 3**
 
-**Marcelo D'Almeira, email do aluno 3**
+**Marcelo D'Almeira, email do aluno 4**
 
-**Pedro Toledo, email do aluno 3**
+**Pedro Toledo, email do aluno 5**
 
-**Philippe Roberto Dutra Chaves Vieira, email do aluno 3**
+**Philippe Roberto Dutra Chaves Vieira, email do aluno 6**
 
 ---
 
