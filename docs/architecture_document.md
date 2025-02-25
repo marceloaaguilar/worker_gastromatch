@@ -1,11 +1,17 @@
 # GASTROMATCH
 
 
-**Nome completo do Aluno 1, email do aluno 1**
+**Guilherme Augusto Jardim de Souza, email do aluno 1**
 
-**Nome completo do Aluno 2, email do aluno 2**
+**Isabelle Cristine Lucas Costa, email do aluno 2**
 
-**Nome completo do Aluno 3, email do aluno 3**
+**Julia Gabriela de Resende, email do aluno 3**
+
+**Marcelo D'Almeira, email do aluno 3**
+
+**Pedro Toledo, email do aluno 3**
+
+**Philippe Roberto Dutra Chaves Vieira, email do aluno 3**
 
 ---
 
