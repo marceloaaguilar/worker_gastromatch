@@ -106,10 +106,25 @@ Coloque aqui as definições, siglas e abreviaturas utilizadas no trabalho._
 _Estão seçaõ explora um pouco mais o produto a ser desenvolvido_
 
 ## 2.1 Visão do Produto
-![Exemplo de Visão do Produto](imagens/VisaoProduto.png)
+### Visão do produto
+
+**Para** [cliente final]:  Profissionais e entusiastas da gastronomia
+
+**cujo** [problema que precisa ser resolvido]: Dificuldade do cliente encontrar bons chefs particulares
+
+**O** [nome do produto]: Gastro Match
+
+**é um** [categoria do produto]: catálogo de profissionais da culinária
+
+**que** [benefício-chave, razão para adquiri-lo]:  facilitará de encontrar chefs particulares
+
+**diferentemente do** [alternativa da concorrência]: “A Chef em casa”
+
+**O nosso produto** [diferença-chave]: possui um catálogo de chefs especializados e personalizados de acordo com a necessidade do cliente.
+
 
 ## 2.2 Nosso Produto
-![Exemplo de Nosso Produto](imagens/NossoProduto.png)
+![Exemplo de Visão do Produto](imagens/![Captura de tela 2025-02-25 132754](https://github.com/user-attachments/assets/a7168ca1-93f1-48a6-a537-ec15f643af09))
 
 ## 2.3 Personas
 <h2>Persona 1</h2>
