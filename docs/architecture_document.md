@@ -7,9 +7,9 @@
 
 **Julia Gabriela de Resende, email do aluno 3**
 
-**Marcelo D'Almeira, email do aluno 4**
+**Marcelo Aguilar Araújo D'Almeida, email do aluno 4**
 
-**Pedro Toledo, email do aluno 5**
+**Pedro Talma Toledo, email do aluno 5**
 
 **Philippe Roberto Dutra Chaves Vieira, email do aluno 6**
 
@@ -17,9 +17,11 @@
 
 Professores:
 
-**Prof. Nome do Prof 1**
+**Cleiton Silva Tavares**
 
-**Prof. Nome do Prof 2**
+**Cristiano de Macêdo Neto**
+
+**Hugo Bastos de Paula**
 
 
 ---
