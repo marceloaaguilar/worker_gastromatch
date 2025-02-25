@@ -122,8 +122,6 @@ Coloque aqui as definições, siglas e abreviaturas utilizadas no trabalho._
 <a name="produto"></a>
 # 2. Nosso Produto
 
-_Estão seçaõ explora um pouco mais o produto a ser desenvolvido_
-
 ## 2.1 Visão do Produto
 ### Visão do produto
 
