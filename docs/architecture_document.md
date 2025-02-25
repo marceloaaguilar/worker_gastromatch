@@ -85,16 +85,34 @@ mostrar algum resultado relevante do trabalho (até 10 linhas)._
 <a name="apresentacao"></a>
 # 1. Apresentação
 
-_Faça uma introdução ao projeto, apresentando o contexto onde o projeto se situa. É importante deixar claro para o leitor os aspectos que configuram o problema que será apresentado na sequência. Apresente, se possível, números reais que demonstram a relevância do problema apresentado._
+No mundo gastronômico, a busca por chefs particulares tem crescido exponencialmente, seja para eventos privados ou experiências exclusivas. No entanto, a dificuldade em encontrar profissionais qualificados e alinhados com as necessidades específicas do cliente é um problema recorrente. Segundo dados do setor de alimentação, a demanda por serviços personalizados tem aumentado em torno de 20% ao ano, impulsionada pelo desejo de experiências únicas e pelo crescimento do mercado de gastronomia sob demanda. Apesar disso, a maioria das soluções existentes no mercado não oferecem personalização adequada, nem conectam de forma eficiente clientes a profissionais especializados.
 
 
 ## 1.1. Problema
 
-_Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a hora de comentar sobre a aplicação._
+Atualmente, clientes que desejam contratar um chef particular enfrentam desafios como:
+
+- Falta de plataformas confiáveis e acessíveis para encontrar profissionais qualificados.
+
+- Dificuldade na personalização do serviço, considerando restrições alimentares e preferências individuais.
+
+- Ausência de um catálogo diversificado e organizado de chefs que possam atender diferentes demandas.
+
+- Processo burocrático e moroso para agendar e contratar um serviço de qualidade.
 
 ## 1.2. Objetivos do trabalho
 
-_Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é apresentar a descrição do projeto arquitetural da aplicação escolhida. Apresente também os objetivos específicos do projeto, descrevendo onde você vai concentrar sua atenção na descrição arquitetural, ou seja, os pontos onde você vai aprofundar no seu trabalho._
+O objetivo geral deste trabalho é apresentar a descrição do projeto arquitetural da aplicação Gastro Match, destacando seus componentes e estrutura.
+
+Os objetivos específicos incluem:
+
+- Identificar e descrever os principais módulos e funcionalidades do sistema.
+
+- Definir a arquitetura da aplicação, detalhando a interação entre seus componentes.
+
+- Especificar os requisitos técnicos essenciais para o funcionamento da plataforma.
+
+- Discutir aspectos de integração e experiência do usuário na plataforma.
 
 ## 1.3. Definições e Abreviaturas
 
@@ -124,7 +142,7 @@ _Estão seçaõ explora um pouco mais o produto a ser desenvolvido_
 
 
 ## 2.2 Nosso Produto
-![Exemplo de Visão do Produto](imagens/![Captura de tela 2025-02-25 132754](https://github.com/user-attachments/assets/a7168ca1-93f1-48a6-a537-ec15f643af09))
+![Captura de tela 2025-02-25 132754](https://github.com/user-attachments/assets/a7168ca1-93f1-48a6-a537-ec15f643af09))
 
 ## 2.3 Personas
 <h2>Persona 1</h2>
