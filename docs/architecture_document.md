@@ -41,7 +41,7 @@ mostrar algum resultado relevante do trabalho (até 10 linhas)._
 
 | **Data** | **Autor** | **Descrição** | **Versão** |
 | --- | --- | --- | --- |
-| **[dd/mm/aaaa]** | [Nome do autor] | [Descrever as principais alterações realizadas no documento, evidenciando as seções ou capítulos alterados] | [X] |
+| **[25/02/2025]** | [Julia Gabriela de Resende] | [Criação dos tópicos: resumo, apresentação, problema, objetivos. Adicionei as partes (que ja haviam sido feitas em sala) do "Nosso Produto".] | [X] |
 | | | | |
 | | | | |
 
@@ -102,17 +102,17 @@ Atualmente, clientes que desejam contratar um chef particular enfrentam desafios
 
 ## 1.2. Objetivos do trabalho
 
-O objetivo geral deste trabalho é apresentar a descrição do projeto arquitetural da aplicação Gastro Match, destacando seus componentes e estrutura.
+Este trabalho tem como objetivo apresentar a arquitetura do Gastro Match, um aplicativo que facilita a conexão entre clientes e chefs particulares. Para isso, serão abordados aspectos essenciais da plataforma, destacando sua estrutura e diferenciais.
 
 Os objetivos específicos incluem:
 
-- Identificar e descrever os principais módulos e funcionalidades do sistema.
+- Definir a estrutura do Gastro Match, detalhando suas principais funcionalidades e componentes.
 
-- Definir a arquitetura da aplicação, detalhando a interação entre seus componentes.
+- Apresentar a forma como o sistema permite a busca, filtragem e contratação de chefs especializados.
 
-- Especificar os requisitos técnicos essenciais para o funcionamento da plataforma.
+- Destacar a experiência do usuário na plataforma e os diferenciais em relação às alternativas existentes.
 
-- Discutir aspectos de integração e experiência do usuário na plataforma.
+- Especificar requisitos essenciais para o funcionamento da aplicação, garantindo usabilidade, segurança e escalabilidade.
 
 ## 1.3. Definições e Abreviaturas
 
