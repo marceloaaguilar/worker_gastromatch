@@ -198,12 +198,14 @@ Obs: acrescente mais linhas, se necessário.
 
 ## 3.3. Restrições Arquiteturais
 
-_Enumere as restrições arquiteturais. Lembre-se de que as restrições arquiteturais geralmente não são consideradas requisitos uma vez que limitam a solução candidata. Os requisitos não impõem restrição, mas precisam ser satisfeitos._
+As restrições impostas ao projeto que afetam sua arquitetura são :
 
-As restrições impostas ao projeto que afetam sua arquitetura são (por exemplo):
-
-- O software deverá ser desenvolvido em Python/Django;
-- A comunicação da API deve seguir o padrão RESTful.
+- O sistema deverá adotar uma arquitetura baseada em microsserviços.
+- O tráfego de requisições deverá passar por um API Gateway, centralizando a comunicação com os serviços internos.
+- A comunicação entre os serviços deverá ser feita de forma assíncrona, utilizando RabbitMQ para mensageria.
+- O sistema deverá utilizar Supabase como camada adicional para gerenciamento de dados e autenticação.
+- A integração com serviços de pagamento deverá ser feita através de um gateway de pagamento externo.
+- A arquitetura deverá permitir escalabilidade e modularidade para facilitar manutenção e expansão do sistema.
 
 ## 3.4. Mecanismos Arquiteturais
 
@@ -223,9 +225,10 @@ _Visão geral dos mecanismos que compõem a arquitetura do sosftware baseando-se
 <a name="modelagem"></a>
 # 4. Modelagem e Projeto Arquitetural
 
-_Apresente uma visão geral da solução proposta para o projeto e explique brevemente esse diagrama de visão geral, de forma textual. Esse diagrama não precisa seguir os padrões da UML, e deve ser completo e tão simples quanto possível, apresentando a macroarquitetura da solução._
+O diagrama representa a visão geral de um sistema baseado em microsserviços, onde um **API Gateway** atua como ponto central de entrada, direcionando as requisições para os serviços apropriados. Dentro do sistema, há três serviços principais: um responsável pelo gerenciamento de usuários, outro dedicado ao agendamento de eventos ou serviços, e um terceiro que funciona como gateway de pagamento, processando as transações relacionadas. O serviço de agendamento interage diretamente com o gateway de pagamento para realizar as operações financeiras. Além disso, o sistema conta com uma infraestrutura de mensageria utilizando **RabbitMQ**, permitindo comunicação assíncrona entre os microsserviços, otimizando o processamento de eventos. Na camada de armazenamento de dados, o banco **PostgreSQL** é utilizado para persistência das informações, enquanto o **Supabase** complementa essa estrutura, oferecendo funcionalidades adicionais, como autenticação e acesso em tempo real. A arquitetura proposta garante escalabilidade, eficiência na comunicação entre serviços e um fluxo bem estruturado para processamento de pagamentos e agendamentos.
 
-![Visão Geral da Solução](imagens/visao.png "Visão Geral da Solução")
+![Imagem do WhatsApp de 2025-02-25 à(s) 20 18 21_b7ff2aea](https://github.com/user-attachments/assets/047fb8f7-b61a-4fe9-9465-b11c1ce61f10)
+
 
 **Figura 1 - Visão Geral da Solução (fonte: https://medium.com)**
 
