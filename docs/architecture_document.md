@@ -42,8 +42,8 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 | **Data** | **Autor** | **Descrição** | **Versão** |
 | --- | --- | --- | --- |
-| **[25/02/2025]** | [Julia Gabriela de Resende] | [Criação dos tópicos: resumo, apresentação, problema, objetivos. Adicionei as partes (que ja haviam sido feitas em sala) do "Nosso Produto".] | [X] |
-| | | | |
+| **[25/02/2025]** | [Julia Gabriela de Resende] | [Criação dos tópicos: resumo, apresentação, problema, objetivos. Adicionei as partes (que ja haviam sido feitas em sala) do "Nosso Produto".] | [1] |
+| **[25/02/2025]** | [Julia Gabriela de Resende] | [Adicionei o diagrama de visão geral feito pelo Marcelo, transformei o mesmo em uma versão textual e criei as restrições do sistema ] | [2] |
 | | | | |
 
 ## SUMÁRIO
