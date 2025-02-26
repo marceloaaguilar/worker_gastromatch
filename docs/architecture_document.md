@@ -214,7 +214,7 @@ _Visão geral dos mecanismos que compõem a arquitetura do sosftware baseando-se
 
 | **Análise** | **Design** | **Implementação** |
 | --- | --- | --- |
-| Persistência | ORM para abstração do banco de dados | PostgreSQL |
+| Persistência | ORM para abstração do banco de dados | PostgreSQL e SupaBase |
 | Front end | SPA (Single Page Application) para melhor experiência do usuário | React.js |
 | Back end | Arquitetura de microsserviços  | Node.js |
 | Integração |  Comunicação assíncrona entre serviços | RabbitMQ para mensageria |
