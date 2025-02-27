@@ -45,6 +45,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 | **[25/02/2025]** | Julia Gabriela de Resende | Criação dos tópicos: resumo, apresentação, problema, objetivos. Adicionei as partes (que ja haviam sido feitas em sala) do "Nosso Produto". | [1] |
 | **[25/02/2025]** | Julia Gabriela de Resende | Adicionei o diagrama de visão geral feito pelo Marcelo, transformei o mesmo em uma versão textual e criei as restrições do sistema  | [2] |
 | **[25/02/2025]** | Julia Gabriela de Resende | Adicionei os mecanismos estruturais | [3] |
+| **[27/02/2025]** | Julia Gabriela de Resende | Correção do objetivo e problema| [4] |
 
 ## SUMÁRIO
 
@@ -91,29 +92,11 @@ No mundo gastronômico, a busca por chefs particulares tem crescido exponencialm
 
 ## 1.1. Problema
 
-Atualmente, clientes que desejam contratar um chef particular enfrentam desafios como:
-
-- Falta de plataformas confiáveis e acessíveis para encontrar profissionais qualificados.
-
-- Dificuldade na personalização do serviço, considerando restrições alimentares e preferências individuais.
-
-- Ausência de um catálogo diversificado e organizado de chefs que possam atender diferentes demandas.
-
-- Processo burocrático e moroso para agendar e contratar um serviço de qualidade.
+A dificuldade em encontrar chefs particulares qualificados e alinhados às necessidades específicas dos clientes torna o processo de contratação lento, burocrático e pouco eficiente.
 
 ## 1.2. Objetivos do trabalho
 
-Este trabalho tem como objetivo apresentar a arquitetura do Gastro Match, um aplicativo que facilita a conexão entre clientes e chefs particulares. Para isso, serão abordados aspectos essenciais da plataforma, destacando sua estrutura e diferenciais.
-
-Os objetivos específicos incluem:
-
-- Definir a estrutura do Gastro Match, detalhando suas principais funcionalidades e componentes.
-
-- Apresentar a forma como o sistema permite a busca, filtragem e contratação de chefs especializados.
-
-- Destacar a experiência do usuário na plataforma e os diferenciais em relação às alternativas existentes.
-
-- Especificar requisitos essenciais para o funcionamento da aplicação, garantindo usabilidade, segurança e escalabilidade.
+Desenvolver uma aplicação Full Stack mobile que irá conectar clientes e chefs.
 
 ## 1.3. Definições e Abreviaturas
 
