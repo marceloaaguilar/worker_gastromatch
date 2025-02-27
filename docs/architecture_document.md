@@ -45,7 +45,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 | **[25/02/2025]** | Julia Gabriela de Resende | Criação dos tópicos: resumo, apresentação, problema, objetivos. Adicionei as partes (que ja haviam sido feitas em sala) do "Nosso Produto". | [1] |
 | **[25/02/2025]** | Julia Gabriela de Resende | Adicionei o diagrama de visão geral feito pelo Marcelo, transformei o mesmo em uma versão textual e criei as restrições do sistema  | [2] |
 | **[25/02/2025]** | Julia Gabriela de Resende | Adicionei os mecanismos estruturais | [3] |
-| **[27/02/2025]** | Julia Gabriela de Resende | Correção do objetivo e problema. Criação da personal Gabriel Almeida | [4] |
+| **[27/02/2025]** | Julia Gabriela de Resende | Correção do objetivo e problema. Criação da personal Gabriel Almeida e Mariana Torres | [4] |
 
 ## SUMÁRIO
 
@@ -141,6 +141,24 @@ Coloque aqui as definições, siglas e abreviaturas utilizadas no trabalho._
       <strong>Personalidade:</strong> Perfeccionista, inovador e comunicativo <br>
       <strong>Sonho:</strong> Abrir seu próprio restaurante com um conceito exclusivo de experiências gastronômicas personalizadas <br>
       <strong>Dores:</strong> Dificuldade em encontrar clientes alinhados ao seu estilo culinário e instabilidade financeira devido à falta de uma plataforma confiável para captar novos contratos <br>
+    </td>
+  </tr>
+</table>
+
+<h2>Persona 2</h2>
+<table>
+  <tr>
+    <td style="vertical-align: top; width: 150px;">
+      <img src="imagens/persona.jpg" alt="Imagem da Persona"  style="width: 100px; height: auto; border-radius: 10px;">
+    </td>
+    <td style="vertical-align: top; padding-left: 10px;">
+      <strong>Nome:</strong>  Mariana Torres <br>
+      <strong>Idade:</strong> 35 anos <br>
+      <strong>Hobby:</strong> Organizar jantares temáticos para amigos e familiares <br>
+      <strong>Trabalho:</strong>  Executiva de marketing em uma empresa de tecnologia <br>
+      <strong>Personalidade:</strong>  Exigente, sociável e apreciadora de experiências exclusivas <br>
+      <strong>Sonho:</strong> Viajar pelo mundo experimentando diferentes gastronomias <br>
+      <strong>Dores:</strong> Falta de tempo para cozinhar e dificuldade em encontrar chefs particulares que atendam às suas preferências e restrições alimentares <br>
     </td>
   </tr>
 </table>
