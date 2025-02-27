@@ -5,7 +5,7 @@
 
 **Isabelle Cristine Lucas Costa, email do aluno 2**
 
-**Julia Gabriela de Resende, email do aluno 3**
+**Julia Gabriela de Resende, juliarsende@hotmail.com**
 
 **Marcelo Aguilar Araújo D'Almeida, email do aluno 4**
 
