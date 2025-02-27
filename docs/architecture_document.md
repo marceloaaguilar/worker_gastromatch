@@ -45,7 +45,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 | **[25/02/2025]** | Julia Gabriela de Resende | Criação dos tópicos: resumo, apresentação, problema, objetivos. Adicionei as partes (que ja haviam sido feitas em sala) do "Nosso Produto". | [1] |
 | **[25/02/2025]** | Julia Gabriela de Resende | Adicionei o diagrama de visão geral feito pelo Marcelo, transformei o mesmo em uma versão textual e criei as restrições do sistema  | [2] |
 | **[25/02/2025]** | Julia Gabriela de Resende | Adicionei os mecanismos estruturais | [3] |
-| **[27/02/2025]** | Julia Gabriela de Resende | Correção do objetivo e problema| [4] |
+| **[27/02/2025]** | Julia Gabriela de Resende | Correção do objetivo e problema. Criação da personal Gabriel Almeida | [4] |
 
 ## SUMÁRIO
 
@@ -134,13 +134,13 @@ Coloque aqui as definições, siglas e abreviaturas utilizadas no trabalho._
       <img src="imagens/persona.jpg" alt="Imagem da Persona"  style="width: 100px; height: auto; border-radius: 10px;">
     </td>
     <td style="vertical-align: top; padding-left: 10px;">
-      <strong>Nome:</strong> Ana Souza <br>
-      <strong>Idade:</strong> 32 anos <br>
-      <strong>Hobby:</strong> Ler livros de ficção científica <br>
-      <strong>Trabalho:</strong> Desenvolvedora de software <br>
-      <strong>Personalidade:</strong> Analítica, criativa e determinada <br>
-      <strong>Sonho:</strong> Criar uma startup de tecnologia <br>
-      <strong>Dores:</strong> Falta de tempo para equilibrar trabalho e vida pessoal <br>
+      <strong>Nome:</strong> Gabriel Almeida <br>
+      <strong>Idade:</strong> 40 anos <br>
+      <strong>Hobby:</strong> Experimentar novas técnicas culinárias e viajar para conhecer diferentes gastronomias <br>
+      <strong>Trabalho:</strong> Chef particular especializado em culinária mediterrânea <br>
+      <strong>Personalidade:</strong> Perfeccionista, inovador e comunicativo <br>
+      <strong>Sonho:</strong> Abrir seu próprio restaurante com um conceito exclusivo de experiências gastronômicas personalizadas <br>
+      <strong>Dores:</strong> Dificuldade em encontrar clientes alinhados ao seu estilo culinário e instabilidade financeira devido à falta de uma plataforma confiável para captar novos contratos <br>
     </td>
   </tr>
 </table>
