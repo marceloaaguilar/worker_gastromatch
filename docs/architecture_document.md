@@ -268,11 +268,6 @@ O diagrama representa a visão geral de um sistema baseado em microsserviços, o
 
 ![DiagramaDeArquitetura](https://github.com/user-attachments/assets/0379b592-844d-4420-81a9-2cd8dcb7e615)
 
-
-**Figura 1 - Visão Geral da Solução (fonte: https://medium.com)**
-
-Obs: substitua esta imagem por outra, adequada ao seu projeto (cada arquitetura é única).
-
 ## 4.1. Visão de Negócio (Funcionalidades)
 
 _Apresente uma lista simples com as funcionalidades previstas no projeto (escopo do produto)._
