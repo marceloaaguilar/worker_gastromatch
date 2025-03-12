@@ -50,6 +50,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 | **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Adicionando requisitos funcionais e não funcionais | [6] |
 | **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo visão de produto | [7] |
 | **[11/03/2025]** | Julia Gabriela de Resende | Histórias de usuário | [8] |
+| **[11/03/2025]** | Julia Gabriela de Resende | Visão de negócio | [9] |
 
 ## SUMÁRIO
 
@@ -273,9 +274,19 @@ O diagrama representa a visão geral de um sistema baseado em microsserviços, o
 
 _Apresente uma lista simples com as funcionalidades previstas no projeto (escopo do produto)._
 
-1. O sistema deve...
-2. O sistema deve...
-3. ...
+1. Permitir login e cadastro de clientes e chefs tanto no frontend quanto no backend (web e mobile).
+2. Exibir uma homepage para acesso rápido às principais funcionalidades (web e mobile).
+3. Configurar e realizar o deploy do banco de dados.
+4. Permitir que clientes cadastrem e visualizem avaliações de chefs (web e mobile).
+5. Oferecer uma interface de pagamento integrada à plataforma (web e mobile).
+6. Criar perfis de usuários (clientes e chefs) para exibição de informações relevantes (web e mobile).
+7. Permitir que clientes realizem solicitações de agendamento de serviços (web e mobile).
+8. Exibir uma listagem de chefs disponíveis na plataforma (web e mobile).
+9. Garantir a autenticação de usuários para acesso seguro ao sistema (web e mobile).
+10. Integrar uma API para envio de mensagens e gerenciar filas de mensagens via RabbitMQ (web e mobile).
+11. Implementar um sistema de pesquisa de chefs e pratos para facilitar a busca (web e mobile).
+12. Criar endpoints para busca de chefs e pratos, garantindo comunicação eficiente com o backend (web e mobile).
+13. Integrar pagamentos com o PagBank para transações seguras e confiáveis (web e mobile).
 
 Obs: a quantidade e o escopo das funcionalidades deve ser negociado com os professores/orientadores do trabalho.
 
