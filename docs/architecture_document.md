@@ -274,6 +274,7 @@ O diagrama representa a visão geral de um sistema baseado em microsserviços, o
 
 _Apresente uma lista simples com as funcionalidades previstas no projeto (escopo do produto)._
 
+O sistema deve: 
 1. Permitir login e cadastro de clientes e chefs tanto no frontend quanto no backend (web e mobile).
 2. Exibir uma homepage para acesso rápido às principais funcionalidades (web e mobile).
 3. Configurar e realizar o deploy do banco de dados.
