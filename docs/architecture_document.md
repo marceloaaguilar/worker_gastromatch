@@ -48,6 +48,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 | **[27/02/2025]** | Julia Gabriela de Resende | Correção do objetivo e problema. Criação da personal Gabriel Almeida e Mariana Torres | [4] |
 | **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção do diagrama de arquiteutra | [5] |
 | **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Adicionando requisitos funcionais e não funcionais | [6] |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo visão de produto | [7] |
 
 ## SUMÁRIO
 
@@ -110,19 +111,19 @@ Coloque aqui as definições, siglas e abreviaturas utilizadas no trabalho._
 ## 2.1 Visão do Produto
 ### Visão do produto
 
-**Para** [cliente final]:  Profissionais e entusiastas da gastronomia
+**Para**:  Profissionais e entusiastas da gastronomia
 
-**cujo** [problema que precisa ser resolvido]: Dificuldade do cliente encontrar bons chefs particulares
+**cujo**: Dificuldade do cliente encontrar bons chefs particulares
 
-**O** [nome do produto]: Gastro Match
+**O**: Gastro Match
 
-**é um** [categoria do produto]: catálogo de profissionais da culinária
+**é um**: catálogo de profissionais da culinária
 
-**que** [benefício-chave, razão para adquiri-lo]:  facilitará de encontrar chefs particulares
+**que**:  facilitará de encontrar chefs particulares
 
-**diferentemente do** [alternativa da concorrência]: “A Chef em casa”
+**diferentemente do**: “A Chef em casa”
 
-**O nosso produto** [diferença-chave]: possui um catálogo de chefs especializados e personalizados de acordo com a necessidade do cliente.
+**O nosso produto**: possui um catálogo de chefs especializados e personalizados de acordo com a necessidade do cliente.
 
 
 ## 2.2 Nosso Produto
