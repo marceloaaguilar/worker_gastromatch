@@ -47,6 +47,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 | **[25/02/2025]** | Julia Gabriela de Resende | Adicionei os mecanismos estruturais | [3] |
 | **[27/02/2025]** | Julia Gabriela de Resende | Correção do objetivo e problema. Criação da personal Gabriel Almeida e Mariana Torres | [4] |
 | **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção do diagrama de arquiteutra | [5] |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Adicionando requisitos funcionais e não funcionais | [6] |
 
 ## SUMÁRIO
 
@@ -175,12 +176,43 @@ _Esta seção descreve os requisitos comtemplados nesta descrição arquitetural
 _Enumere os requisitos funcionais previstos para a sua aplicação. Concentre-se nos requisitos funcionais que sejam críticos para a definição arquitetural. Lembre-se de listar todos os requisitos que são necessários para garantir cobertura arquitetural. Esta seção deve conter uma lista de requisitos ainda sem modelagem. Na coluna Prioridade utilize uma escala (do mais prioritário para o menos): Essencial, Desejável, Opcional._
 
 | **ID** | **Descrição** | **Prioridade** | **Plataforma** | **Sprint** | **Status** |
-| --- | --- | --- | --- | --- | --- |
-| RF001 | | | _web_ | Sprint 1 | ✅ |
-| RF002 | | | _mobile_ | Sprint 1 | ❌ |
-| RF003 | | | _web e mobile_ | Sprint 1 |  |
-| | | | | | |
-| | | | | | |
+| ---     | ---                                        | ---            | ---                | ---        | ---        |
+| RF001   | Login/Cadastro (Cliente) (Frontend)        | Alta           | _web_              | Sprint 2   | ❌         |
+| RF002   | Login/Cadastro (Chef) (Frontend)           | Alta           | _web_              | Sprint 2   | ❌         |
+| RF003   | Login/Cadastro (Cliente) (Mobile)          | Alta           | _mobile_           | Sprint 2   | ❌         |
+| RF004   | Login/Cadastro (Chef) (Mobile)             | Alta           | _mobile_           | Sprint 2   | ❌         |
+| RF005   | Login/Cadastro (Chef) (Backend)            | Alta           | _web_              | Sprint 2   | ❌         |
+| RF006   | Login/Cadastro (Cliente) (Backend)         | Alta           | _web_              | Sprint 2   | ❌         |
+| RF007   | Homepage (Mobile)                          | Alta           | _mobile_           | Sprint 2   | ❌         |
+| RF008   | Homepage (Backend)                         | Alta           | _web_              | Sprint 2   | ❌         |
+| RF009   | Homepage (Frontend)                        | Alta           | _web_              | Sprint 2   | ❌         |
+| RF010   | Configuração/Deploy Banco de Dados         | Alta           | _web_              | Sprint 2   | ❌         |
+| RF011   | Cadastro de avaliação                      | Média          | _web_              | Sprint 3   | ❌         |
+| RF012   | Cadastro de avaliação                      | Média          | _mobile_           | Sprint 3   | ❌         |
+| RF013   | Criar interface de chat em tempo real      | Alta           | _web_              | Sprint 3   | ❌         |
+| RF014   | Criar interface de chat em tempo real      | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF015   | Interface de pagamento                     | Alta           | _web_              | Sprint 3   | ❌         |
+| RF016   | Interface de pagamento                     | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF017   | Criar perfil do usuário                    | Alta           | _web_              | Sprint 3   | ❌         |
+| RF018   | Criar perfil do usuário                    | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF019   | Solicitação de agendamento                 | Alta           | _web_              | Sprint 3   | ❌         |
+| RF020   | Solicitação de agendamento                 | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF021   | Listagem de Chefs                          | Alta           | _web_              | Sprint 3   | ❌         |
+| RF022   | Listagem de Chefs                          | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF023   | Autenticação de Usuário                    | Alta           | _web_              | Sprint 3   | ❌         |
+| RF024   | Autenticação de Usuário                    | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF025   | Integração com API para envio de mensagens | Média          | _web_              | Sprint 3   | ❌         |
+| RF026   | Integração com API para envio de mensagens | Média          | _mobile_           | Sprint 3   | ❌         |
+| RF027   | Criar fila para gerenciamento de mensagens | Alta           | _web_              | Sprint 3   | ❌         |
+| RF028   | Criar fila para gerenciamento de mensagens | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF029   | Configurar RabbitMQ                        | Alta           | _web_              | Sprint 3   | ❌         |
+| RF030   | Configurar RabbitMQ                        | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF031   | Pesquisa de chefs                          | Alta           | _web_              | Sprint 4   | ❌         |
+| RF032   | Pesquisa de chefs                          | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF033   | Endpoint para busca de chefs e pratos      | Alta           | _web_              | Sprint 4   | ❌         |
+| RF034   | Endpoint para busca de chefs e pratos      | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF035   | Integrar pagamento com PagBank             | Alta           | _web_              | Sprint 4   | ❌         |
+| RF036   | Integrar pagamento com PagBank             | Alta           | _mobile_           | Sprint 4   | ❌         |
 
 Obs: acrescente mais linhas, se necessário.
 
@@ -190,11 +222,14 @@ _Enumere os requisitos não-funcionais previstos para a sua aplicação. Entre o
 
 | **ID** | **Descrição** |
 | --- | --- |
-| RNF001 | |
-| RNF002 | |
-| | |
-| | |
-| | |
+| RNF001 | O sistema deve ter tempo de resposta de até 3 segundos em qualquer operação realizada. |
+| RNF002 | O sistema deve ser acessível através dos navegadores Chrome, Firefox, Safari e Edge. |
+| RNF003 | O sistema deve ser responsivo, oferecendo boa experiência tanto em dispositivos móveis quanto desktops. |
+| RNF004 | O sistema deve ser capaz de realizar atualizações de forma simples e sem causar impacto nos usuários ativos. |
+| RNF005 | O sistema deve ser compatível com os sistemas operacionais Android e iOS nas versões mais recentes. |
+| RNF006 | O sistema deve implementar autenticação e autorização robustas, garantindo a proteção dos dados dos pacientes. |
+| RNF007 | O código-fonte do sistema deve ser legível, bem estruturado e seguir boas práticas de codificação, facilitando a manutenção e futuras modificações. |
+| RNF008 | O sistema deve estar disponível 99,9% do tempo, com exceção de manutenções programadas. |
 
 Obs: acrescente mais linhas, se necessário.
 
