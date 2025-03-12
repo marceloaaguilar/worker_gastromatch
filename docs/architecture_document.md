@@ -32,7 +32,7 @@ _Instituto de Informática e Ciências Exatas – Pontifícia Universidade de Mi
 
 ---
 
-**Resumo** 
+**Resumo**
 
 O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facilitando a busca e a contratação de profissionais qualificados na área gastronômica. A crescente demanda por experiências culinárias personalizadas evidencia a necessidade de uma plataforma intuitiva e eficiente. Este trabalho apresenta a arquitetura da aplicação, destacando sua estrutura, funcionalidades e diferenciais em relação às soluções existentes. O Gastro Match oferece um catálogo detalhado de chefs especializados, permitindo filtragem por especialidade e agendamento simplificado. Como resultado, a plataforma se propõe a otimizar o processo de contratação, tornando-o mais ágil, acessível e personalizado.
 
@@ -51,6 +51,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 | **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo visão de produto | [7] |
 | **[11/03/2025]** | Julia Gabriela de Resende | Histórias de usuário | [8] |
 | **[11/03/2025]** | Julia Gabriela de Resende | Visão de negócio | [9] |
+| **[12/03/2025]** | Pedro Talma Toledo | Correção: problema, objetivos e visão do produto | [10] |
 
 ## SUMÁRIO
 
@@ -58,7 +59,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 	1.1. Problema <br />
 	1.2. Objetivos do trabalho <br />
 	1.3. Definições e Abreviaturas <br />
- 
+
 2. [Nosso Produto](#produto "Nosso Produto") <br />
 	2.1. Visão do Produto <br />
    	2.2. Nosso Produto <br />
@@ -97,11 +98,11 @@ No mundo gastronômico, a busca por chefs particulares tem crescido exponencialm
 
 ## 1.1. Problema
 
-A dificuldade em encontrar chefs particulares qualificados e alinhados às necessidades específicas dos clientes torna o processo de contratação lento, burocrático e pouco eficiente.
+A dificuldade de encontrar e agendar chefs particulares qualificados para cozinhar em casa ou em eventos de forma prática e confiável.
 
 ## 1.2. Objetivos do trabalho
 
-Desenvolver uma aplicação Full Stack mobile que irá conectar clientes e chefs.
+Facilitar a conexão entre clientes e chefs particulares, permitindo a reserva de serviços gastronômicos de forma rápida e personalizada.
 
 ## 1.3. Definições e Abreviaturas
 
@@ -115,17 +116,17 @@ Coloque aqui as definições, siglas e abreviaturas utilizadas no trabalho._
 
 **Para**:  Profissionais e entusiastas da gastronomia
 
-**cujo**: Dificuldade do cliente encontrar bons chefs particulares
+**Cujo**: Dificuldade do cliente é encontrar bons chefs particulares
 
 **O**: Gastro Match
 
-**é um**: catálogo de profissionais da culinária
+**É um**: Catálogo de profissionais da culinária
 
-**que**:  facilitará de encontrar chefs particulares
+**Que**:  Facilita a busca por chefs particulares para os clientes
 
-**diferentemente do**: “A Chef em casa”
+**Diferentemente do**: “A Chef em casa”
 
-**O nosso produto**: possui um catálogo de chefs especializados e personalizados de acordo com a necessidade do cliente.
+**O nosso produto**:  Oferece um catálogo de chefs especializados, personalizados de acordo com a necessidade do cliente.
 
 
 ## 2.2 Nosso Produto
@@ -274,7 +275,7 @@ O diagrama representa a visão geral de um sistema baseado em microsserviços, o
 
 _Apresente uma lista simples com as funcionalidades previstas no projeto (escopo do produto)._
 
-O sistema deve: 
+O sistema deve:
 1. Permitir login e cadastro de clientes e chefs tanto no frontend quanto no backend (web e mobile).
 2. Exibir uma homepage para acesso rápido às principais funcionalidades (web e mobile).
 3. Configurar e realizar o deploy do banco de dados.
@@ -429,7 +430,7 @@ _Inclua o URL do repositório (Github, Bitbucket, etc) onde você armazenou o c�
 
 | Ambiente  | Plataforma              |Link de Acesso |
 |-----------|-------------------------|---------------|
-|Repositório de código | GitHub | https://github.com/XXXXXXX | 
-|Hospedagem do site | Heroku |  https://XXXXXXX.herokuapp.com | 
+|Repositório de código | GitHub | https://github.com/XXXXXXX |
+|Hospedagem do site | Heroku |  https://XXXXXXX.herokuapp.com |
 |Protótipo Interativo | MavelApp ou Figma | https://figma.com/XXXXXXX |
 |Documentação de teste | Github | https://githun.com/xxxx |
