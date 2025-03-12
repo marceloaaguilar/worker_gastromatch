@@ -49,6 +49,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 | **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção do diagrama de arquiteutra | [5] |
 | **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Adicionando requisitos funcionais e não funcionais | [6] |
 | **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo visão de produto | [7] |
+| **[11/03/2025]** | Julia Gabriela de Resende | Histórias de usuário | [8] |
 
 ## SUMÁRIO
 
@@ -282,18 +283,16 @@ Obs: a quantidade e o escopo das funcionalidades deve ser negociado com os profe
 
 _Nesta seção, você deve descrever estórias de usuários seguindo os métodos ágeis. Lembre-se das características de qualidade das estórias de usuários, ou seja, o que é preciso para descrever boas histórias de usuários._
 
-Exemplos de Histórias de Usuário:
-
-- Como Fulano eu quero poder convidar meus amigos para que a gente possa se reunir...
-
-- Como Cicrano eu quero poder organizar minhas tarefas diárias, para que...
-
-- Como gerente eu quero conseguir entender o progresso do trabalho do meu time, para que eu possa ter relatórios periódicos dos nossos acertos e falhas.
-
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|chef particular  | cadastrar meu perfil, incluindo minhas especialidades e disponibilidade           | que os clientes possam me encontrar e contratar meus serviços.               |
+|chef particular  | acessar relatórios sobre minhas contratações e avaliações           | acompanhar meu desempenho e melhorar meu serviço.               |
+|cliente       | pesquisar chefs por especialidade e localização                 | encontrar um profissional adequado às minhas preferências gastronômicas. |
+|cliente       | agendar um serviço diretamente pela plataforma                 |  garantir que um chef esteja disponível na data desejada. |
+|cliente       | avaliar um chef após a experiência                |  ajudar outros clientes na escolha e garantir a qualidade do serviço. |
+|cliente       | conversar com um chef antes de contratar o serviço                 |  esclarecer dúvidas e alinhar expectativas. |
+|cliente       | realizar pagamentos dentro da plataforma                 |  ter segurança na transação e garantir a confirmação do serviço. |
+|cliente       | agendar um serviço diretamente pela plataforma                 |  garantir que um chef esteja disponível na data desejada. |
 
 ## 4.2. Visão Lógica
 
