@@ -102,7 +102,7 @@ A dificuldade de encontrar e agendar chefs particulares qualificados para cozinh
 
 ## 1.2. Objetivos do trabalho
 
-Facilitar a conexão entre clientes e chefs particulares, permitindo a reserva de serviços gastronômicos de forma rápida e personalizada.
+Desenvolver uma aplicação Full Stack mobile que irá conectar clientes e chefs.
 
 ## 1.3. Definições e Abreviaturas
 
