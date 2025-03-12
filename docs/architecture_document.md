@@ -313,7 +313,7 @@ _Apresente os artefatos que serão utilizados descrevendo em linhas gerais as mo
 
 ### Diagrama de Classes
 
-![Diagrama de classes](imagens/classes.gif "Diagrama de classes")
+![Captura de tela 2025-03-12 112348](https://github.com/user-attachments/assets/ae1927f5-ae23-411a-9d19-09f5e8262911)
 
 
 **Figura 2 – Diagrama de classes (exemplo). Fonte: o próprio autor.**
@@ -344,6 +344,7 @@ _Caso julgue necessário para explicar a arquitetura, apresente o diagrama de cl
 **Figura 4 – Diagrama de Entidade Relacionamento (ER) - exemplo. Fonte: o próprio autor.**
 
 Obs: Acrescente uma breve descrição sobre o diagrama apresentado na Figura 3.
+
 
 <a name="wireframes"></a>
 # 5. Wireframes
