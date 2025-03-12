@@ -46,6 +46,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 | **[25/02/2025]** | Julia Gabriela de Resende | Adicionei o diagrama de visão geral feito pelo Marcelo, transformei o mesmo em uma versão textual e criei as restrições do sistema  | [2] |
 | **[25/02/2025]** | Julia Gabriela de Resende | Adicionei os mecanismos estruturais | [3] |
 | **[27/02/2025]** | Julia Gabriela de Resende | Correção do objetivo e problema. Criação da personal Gabriel Almeida e Mariana Torres | [4] |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção do diagrama de arquiteutra | [5] |
 
 ## SUMÁRIO
 
@@ -228,7 +229,8 @@ _Visão geral dos mecanismos que compõem a arquitetura do sosftware baseando-se
 
 O diagrama representa a visão geral de um sistema baseado em microsserviços, onde um **API Gateway** atua como ponto central de entrada, direcionando as requisições para os serviços apropriados. Dentro do sistema, há três serviços principais: um responsável pelo gerenciamento de usuários, outro dedicado ao agendamento de eventos ou serviços, e um terceiro que funciona como gateway de pagamento, processando as transações relacionadas. O serviço de agendamento interage diretamente com o gateway de pagamento para realizar as operações financeiras. Além disso, o sistema conta com uma infraestrutura de mensageria utilizando **RabbitMQ**, permitindo comunicação assíncrona entre os microsserviços, otimizando o processamento de eventos. Na camada de armazenamento de dados, o banco **PostgreSQL** é utilizado para persistência das informações, enquanto o **Supabase** complementa essa estrutura, oferecendo funcionalidades adicionais, como autenticação e acesso em tempo real. A arquitetura proposta garante escalabilidade, eficiência na comunicação entre serviços e um fluxo bem estruturado para processamento de pagamentos e agendamentos.
 
-![Imagem do WhatsApp de 2025-02-25 à(s) 20 18 21_b7ff2aea](https://github.com/user-attachments/assets/047fb8f7-b61a-4fe9-9465-b11c1ce61f10)
+
+![DiagramaDeArquitetura](https://github.com/user-attachments/assets/0379b592-844d-4420-81a9-2cd8dcb7e615)
 
 
 **Figura 1 - Visão Geral da Solução (fonte: https://medium.com)**
