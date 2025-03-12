@@ -318,7 +318,9 @@ _Apresente os artefatos que serão utilizados descrevendo em linhas gerais as mo
 
 **Figura 2 – Diagrama de classes (exemplo). Fonte: o próprio autor.**
 
-Obs: Acrescente uma breve descrição sobre o diagrama apresentado na Figura 3.
+O diagrama de classes do Gastro Match representa a estrutura do sistema e seus principais componentes, incluindo usuários (clientes e chefs), autenticação, agendamentos, pagamentos, chat, avaliação, perfil e  banco de dados.
+A plataforma permite que clientes encontrem e contratem chefs particulares, facilitando agendamentos, pagamentos e interações via chat. O banco de dados é responsável pela persistência das informações, garantindo a integridade dos dados.
+As relações entre as classes foram estruturadas para proporcionar uma experiência fluida, desde o registro de usuários até a finalização do serviço.
 
 ### Diagrama de componentes
 
