@@ -3,15 +3,15 @@
 
 **Guilherme Augusto Jardim de Souza, email do aluno 1**
 
-**Isabelle Cristine Lucas Costa, email do aluno 2**
+**Isabelle Cristine Lucas Costa, iclcosta@sga.pucminas.br**
 
 **Julia Gabriela de Resende, juliarsende@hotmail.com**
 
-**Marcelo Aguilar Araújo D'Almeida, email do aluno 4**
+**Marcelo Aguilar Araújo D'Almeida, marceloalmeida42@gmail.com**
 
-**Pedro Talma Toledo, email do aluno 5**
+**Pedro Talma Toledo, pedrotoledo1717@gmail.com**
 
-**Philippe Roberto Dutra Chaves Vieira, email do aluno 6**
+**Philippe Roberto Dutra Chaves Vieira, philipperobertod.97@gmail.com**
 
 ---
 
@@ -190,33 +190,31 @@ _Enumere os requisitos funcionais previstos para a sua aplicação. Concentre-se
 | RF007   | Homepage (Mobile)                          | Alta           | _mobile_           | Sprint 2   | ❌         |
 | RF008   | Homepage (Backend)                         | Alta           | _web_              | Sprint 2   | ❌         |
 | RF009   | Homepage (Frontend)                        | Alta           | _web_              | Sprint 2   | ❌         |
-| RF010   | Configuração/Deploy Banco de Dados         | Alta           | _web_              | Sprint 2   | ❌         |
+| RF010   | Banco de Dados (Configuração de Banco de Dados, sem deploy específico)      | Alta           | _web_              | Sprint 2   | ❌         |
 | RF011   | Cadastro de avaliação                      | Média          | _web_              | Sprint 3   | ❌         |
 | RF012   | Cadastro de avaliação                      | Média          | _mobile_           | Sprint 3   | ❌         |
 | RF013   | Criar interface de chat em tempo real      | Alta           | _web_              | Sprint 3   | ❌         |
 | RF014   | Criar interface de chat em tempo real      | Alta           | _mobile_           | Sprint 3   | ❌         |
 | RF015   | Interface de pagamento                     | Alta           | _web_              | Sprint 3   | ❌         |
 | RF016   | Interface de pagamento                     | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF017   | Criar perfil do usuário                    | Alta           | _web_              | Sprint 3   | ❌         |
-| RF018   | Criar perfil do usuário                    | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF019   | Solicitação de agendamento                 | Alta           | _web_              | Sprint 3   | ❌         |
-| RF020   | Solicitação de agendamento                 | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF021   | Listagem de Chefs                          | Alta           | _web_              | Sprint 3   | ❌         |
-| RF022   | Listagem de Chefs                          | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF023   | Autenticação de Usuário                    | Alta           | _web_              | Sprint 3   | ❌         |
-| RF024   | Autenticação de Usuário                    | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF025   | Integração com API para envio de mensagens | Média          | _web_              | Sprint 3   | ❌         |
-| RF026   | Integração com API para envio de mensagens | Média          | _mobile_           | Sprint 3   | ❌         |
-| RF027   | Criar fila para gerenciamento de mensagens | Alta           | _web_              | Sprint 3   | ❌         |
-| RF028   | Criar fila para gerenciamento de mensagens | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF029   | Configurar RabbitMQ                        | Alta           | _web_              | Sprint 3   | ❌         |
-| RF030   | Configurar RabbitMQ                        | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF031   | Pesquisa de chefs                          | Alta           | _web_              | Sprint 4   | ❌         |
-| RF032   | Pesquisa de chefs                          | Alta           | _mobile_           | Sprint 4   | ❌         |
-| RF033   | Endpoint para busca de chefs e pratos      | Alta           | _web_              | Sprint 4   | ❌         |
-| RF034   | Endpoint para busca de chefs e pratos      | Alta           | _mobile_           | Sprint 4   | ❌         |
-| RF035   | Integrar pagamento com PagBank             | Alta           | _web_              | Sprint 4   | ❌         |
-| RF036   | Integrar pagamento com PagBank             | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF017   | Solicitação de agendamento                 | Alta           | _web_              | Sprint 3   | ❌         |
+| RF018   | Solicitação de agendamento                 | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF019   | Listagem de Chefs                          | Alta           | _web_              | Sprint 3   | ❌         |
+| RF020   | Listagem de Chefs                          | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF021   | Autenticação de Usuário                    | Alta           | _web_              | Sprint 3   | ❌         |
+| RF022   | Autenticação de Usuário                    | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF023   | Integração com API para envio de mensagens | Média          | _web_              | Sprint 3   | ❌         |
+| RF024   | Integração com API para envio de mensagens | Média          | _mobile_           | Sprint 3   | ❌         |
+| RF025   | Criar fila para gerenciamento de mensagens | Alta           | _web_              | Sprint 3   | ❌         |
+| RF026   | Criar fila para gerenciamento de mensagens | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF027   | Configurar RabbitMQ                        | Alta           | _web_              | Sprint 3   | ❌         |
+| RF028   | Configurar RabbitMQ                        | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF029   | Pesquisa de chefs                          | Alta           | _web_              | Sprint 4   | ❌         |
+| RF030   | Pesquisa de chefs                          | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF031   | Endpoint para busca de chefs e pratos      | Alta           | _web_              | Sprint 4   | ❌         |
+| RF032   | Endpoint para busca de chefs e pratos      | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF033   | Integrar pagamento com PagBank             | Alta           | _web_              | Sprint 4   | ❌         |
+| RF034   | Integrar pagamento com PagBank             | Alta           | _mobile_           | Sprint 4   | ❌         |
 
 Obs: acrescente mais linhas, se necessário.
 
