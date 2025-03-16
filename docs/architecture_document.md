@@ -229,7 +229,7 @@ _Enumere os requisitos não-funcionais previstos para a sua aplicação. Entre o
 | RNF003 | O sistema deve ser responsivo, oferecendo boa experiência tanto em dispositivos móveis quanto desktops. |
 | RNF004 | O sistema deve ser capaz de realizar atualizações de forma simples e sem causar impacto nos usuários ativos. |
 | RNF005 | O sistema deve ser compatível com os sistemas operacionais Android e iOS nas versões mais recentes. |
-| RNF006 | O sistema deve implementar autenticação e autorização robustas, garantindo a proteção dos dados dos pacientes. |
+| RNF006 | O sistema deve implementar autenticação e autorização robustas, garantindo a proteção dos dados dos pacientes, com padrão de autenticação OAuth2.|
 | RNF007 | O código-fonte do sistema deve ser legível, bem estruturado e seguir boas práticas de codificação, facilitando a manutenção e futuras modificações. |
 | RNF008 | O sistema deve estar disponível 99,9% do tempo, com exceção de manutenções programadas. |
 
