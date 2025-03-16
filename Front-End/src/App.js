@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
-import MainBanner from './MainBanner';
+import MainBanner from '../../../../plf-es-2024-2-ti4-1254100-filigrana/Codigo/frontend/src/MainBanner';
 import HowItWorks from './HowItWorks';
 import About from './About';
 import PopularChefs from './PopularChefs';
