@@ -1,19 +1,27 @@
-# TITULO DO PROJETO
+# GASTROMATCH
 
 
-**Nome completo do Aluno 1, email do aluno 1**
+**Guilherme Augusto Jardim de Souza, email do aluno 1**
 
-**Nome completo do Aluno 2, email do aluno 2**
+**Isabelle Cristine Lucas Costa, email do aluno 2**
 
-**Nome completo do Aluno 3, email do aluno 3**
+**Julia Gabriela de Resende, juliarsende@hotmail.com**
+
+**Marcelo Aguilar Araújo D'Almeida, email do aluno 4**
+
+**Pedro Talma Toledo, email do aluno 5**
+
+**Philippe Roberto Dutra Chaves Vieira, email do aluno 6**
 
 ---
 
 Professores:
 
-**Prof. Nome do Prof 1**
+**Cleiton Silva Tavares**
 
-**Prof. Nome do Prof 2**
+**Cristiano de Macêdo Neto**
+
+**Hugo Bastos de Paula**
 
 
 ---
@@ -24,8 +32,9 @@ _Instituto de Informática e Ciências Exatas – Pontifícia Universidade de Mi
 
 ---
 
-_**Resumo**. Escrever aqui o resumo. O resumo deve contextualizar rapidamente o trabalho, descrever seu objetivo e, ao final, 
-mostrar algum resultado relevante do trabalho (até 10 linhas)._
+**Resumo**
+
+O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facilitando a busca e a contratação de profissionais qualificados na área gastronômica. A crescente demanda por experiências culinárias personalizadas evidencia a necessidade de uma plataforma intuitiva e eficiente. Este trabalho apresenta a arquitetura da aplicação, destacando sua estrutura, funcionalidades e diferenciais em relação às soluções existentes. O Gastro Match oferece um catálogo detalhado de chefs especializados, permitindo filtragem por especialidade e agendamento simplificado. Como resultado, a plataforma se propõe a otimizar o processo de contratação, tornando-o mais ágil, acessível e personalizado.
 
 ---
 
@@ -33,9 +42,16 @@ mostrar algum resultado relevante do trabalho (até 10 linhas)._
 
 | **Data** | **Autor** | **Descrição** | **Versão** |
 | --- | --- | --- | --- |
-| **[dd/mm/aaaa]** | [Nome do autor] | [Descrever as principais alterações realizadas no documento, evidenciando as seções ou capítulos alterados] | [X] |
-| | | | |
-| | | | |
+| **[25/02/2025]** | Julia Gabriela de Resende | Criação dos tópicos: resumo, apresentação, problema, objetivos. Adicionei as partes (que ja haviam sido feitas em sala) do "Nosso Produto". | [1] |
+| **[25/02/2025]** | Julia Gabriela de Resende | Adicionei o diagrama de visão geral feito pelo Marcelo, transformei o mesmo em uma versão textual e criei as restrições do sistema  | [2] |
+| **[25/02/2025]** | Julia Gabriela de Resende | Adicionei os mecanismos estruturais | [3] |
+| **[27/02/2025]** | Julia Gabriela de Resende | Correção do objetivo e problema. Criação da personal Gabriel Almeida e Mariana Torres | [4] |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção do diagrama de arquiteutra | [5] |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Adicionando requisitos funcionais e não funcionais | [6] |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo visão de produto | [7] |
+| **[11/03/2025]** | Julia Gabriela de Resende | Histórias de usuário | [8] |
+| **[11/03/2025]** | Julia Gabriela de Resende | Visão de negócio | [9] |
+| **[12/03/2025]** | Pedro Talma Toledo | Correção: problema, objetivos e visão do produto | [10] |
 
 ## SUMÁRIO
 
@@ -43,7 +59,7 @@ mostrar algum resultado relevante do trabalho (até 10 linhas)._
 	1.1. Problema <br />
 	1.2. Objetivos do trabalho <br />
 	1.3. Definições e Abreviaturas <br />
- 
+
 2. [Nosso Produto](#produto "Nosso Produto") <br />
 	2.1. Visão do Produto <br />
    	2.2. Nosso Produto <br />
@@ -77,16 +93,16 @@ mostrar algum resultado relevante do trabalho (até 10 linhas)._
 <a name="apresentacao"></a>
 # 1. Apresentação
 
-_Faça uma introdução ao projeto, apresentando o contexto onde o projeto se situa. É importante deixar claro para o leitor os aspectos que configuram o problema que será apresentado na sequência. Apresente, se possível, números reais que demonstram a relevância do problema apresentado._
+No mundo gastronômico, a busca por chefs particulares tem crescido exponencialmente, seja para eventos privados ou experiências exclusivas. No entanto, a dificuldade em encontrar profissionais qualificados e alinhados com as necessidades específicas do cliente é um problema recorrente. Segundo dados do setor de alimentação, a demanda por serviços personalizados tem aumentado em torno de 20% ao ano, impulsionada pelo desejo de experiências únicas e pelo crescimento do mercado de gastronomia sob demanda. Apesar disso, a maioria das soluções existentes no mercado não oferecem personalização adequada, nem conectam de forma eficiente clientes a profissionais especializados.
 
 
 ## 1.1. Problema
 
-_Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a hora de comentar sobre a aplicação._
+A dificuldade de encontrar e agendar chefs particulares qualificados para cozinhar em casa ou em eventos de forma prática e confiável.
 
 ## 1.2. Objetivos do trabalho
 
-_Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é apresentar a descrição do projeto arquitetural da aplicação escolhida. Apresente também os objetivos específicos do projeto, descrevendo onde você vai concentrar sua atenção na descrição arquitetural, ou seja, os pontos onde você vai aprofundar no seu trabalho._
+Desenvolver uma aplicação Full Stack mobile que irá conectar clientes e chefs.
 
 ## 1.3. Definições e Abreviaturas
 
@@ -95,13 +111,26 @@ Coloque aqui as definições, siglas e abreviaturas utilizadas no trabalho._
 <a name="produto"></a>
 # 2. Nosso Produto
 
-_Estão seçaõ explora um pouco mais o produto a ser desenvolvido_
-
 ## 2.1 Visão do Produto
-![Exemplo de Visão do Produto](imagens/VisaoProduto.png)
+### Visão do produto
+
+**Para**:  Profissionais e entusiastas da gastronomia
+
+**Cujo**: Dificuldade do cliente é encontrar bons chefs particulares
+
+**O**: Gastro Match
+
+**É um**: Catálogo de profissionais da culinária
+
+**Que**:  Facilita a busca por chefs particulares para os clientes
+
+**Diferentemente do**: “A Chef em casa”
+
+**O nosso produto**:  Oferece um catálogo de chefs especializados, personalizados de acordo com a necessidade do cliente.
+
 
 ## 2.2 Nosso Produto
-![Exemplo de Nosso Produto](imagens/NossoProduto.png)
+![Captura de tela 2025-02-25 132754](https://github.com/user-attachments/assets/a7168ca1-93f1-48a6-a537-ec15f643af09))
 
 ## 2.3 Personas
 <h2>Persona 1</h2>
@@ -111,13 +140,31 @@ _Estão seçaõ explora um pouco mais o produto a ser desenvolvido_
       <img src="imagens/persona.jpg" alt="Imagem da Persona"  style="width: 100px; height: auto; border-radius: 10px;">
     </td>
     <td style="vertical-align: top; padding-left: 10px;">
-      <strong>Nome:</strong> Ana Souza <br>
-      <strong>Idade:</strong> 32 anos <br>
-      <strong>Hobby:</strong> Ler livros de ficção científica <br>
-      <strong>Trabalho:</strong> Desenvolvedora de software <br>
-      <strong>Personalidade:</strong> Analítica, criativa e determinada <br>
-      <strong>Sonho:</strong> Criar uma startup de tecnologia <br>
-      <strong>Dores:</strong> Falta de tempo para equilibrar trabalho e vida pessoal <br>
+      <strong>Nome:</strong> Gabriel Almeida <br>
+      <strong>Idade:</strong> 40 anos <br>
+      <strong>Hobby:</strong> Experimentar novas técnicas culinárias e viajar para conhecer diferentes gastronomias <br>
+      <strong>Trabalho:</strong> Chef particular especializado em culinária mediterrânea <br>
+      <strong>Personalidade:</strong> Perfeccionista, inovador e comunicativo <br>
+      <strong>Sonho:</strong> Abrir seu próprio restaurante com um conceito exclusivo de experiências gastronômicas personalizadas <br>
+      <strong>Dores:</strong> Dificuldade em encontrar clientes alinhados ao seu estilo culinário e instabilidade financeira devido à falta de uma plataforma confiável para captar novos contratos <br>
+    </td>
+  </tr>
+</table>
+
+<h2>Persona 2</h2>
+<table>
+  <tr>
+    <td style="vertical-align: top; width: 150px;">
+      <img src="imagens/persona.jpg" alt="Imagem da Persona"  style="width: 100px; height: auto; border-radius: 10px;">
+    </td>
+    <td style="vertical-align: top; padding-left: 10px;">
+      <strong>Nome:</strong>  Mariana Torres <br>
+      <strong>Idade:</strong> 35 anos <br>
+      <strong>Hobby:</strong> Organizar jantares temáticos para amigos e familiares <br>
+      <strong>Trabalho:</strong>  Executiva de marketing em uma empresa de tecnologia <br>
+      <strong>Personalidade:</strong>  Exigente, sociável e apreciadora de experiências exclusivas <br>
+      <strong>Sonho:</strong> Viajar pelo mundo experimentando diferentes gastronomias <br>
+      <strong>Dores:</strong> Falta de tempo para cozinhar e dificuldade em encontrar chefs particulares que atendam às suas preferências e restrições alimentares <br>
     </td>
   </tr>
 </table>
@@ -133,12 +180,43 @@ _Esta seção descreve os requisitos comtemplados nesta descrição arquitetural
 _Enumere os requisitos funcionais previstos para a sua aplicação. Concentre-se nos requisitos funcionais que sejam críticos para a definição arquitetural. Lembre-se de listar todos os requisitos que são necessários para garantir cobertura arquitetural. Esta seção deve conter uma lista de requisitos ainda sem modelagem. Na coluna Prioridade utilize uma escala (do mais prioritário para o menos): Essencial, Desejável, Opcional._
 
 | **ID** | **Descrição** | **Prioridade** | **Plataforma** | **Sprint** | **Status** |
-| --- | --- | --- | --- | --- | --- |
-| RF001 | | | _web_ | Sprint 1 | ✅ |
-| RF002 | | | _mobile_ | Sprint 1 | ❌ |
-| RF003 | | | _web e mobile_ | Sprint 1 |  |
-| | | | | | |
-| | | | | | |
+| ---     | ---                                        | ---            | ---                | ---        | ---        |
+| RF001   | Login/Cadastro (Cliente) (Frontend)        | Alta           | _web_              | Sprint 2   | ❌         |
+| RF002   | Login/Cadastro (Chef) (Frontend)           | Alta           | _web_              | Sprint 2   | ❌         |
+| RF003   | Login/Cadastro (Cliente) (Mobile)          | Alta           | _mobile_           | Sprint 2   | ❌         |
+| RF004   | Login/Cadastro (Chef) (Mobile)             | Alta           | _mobile_           | Sprint 2   | ❌         |
+| RF005   | Login/Cadastro (Chef) (Backend)            | Alta           | _web_              | Sprint 2   | ❌         |
+| RF006   | Login/Cadastro (Cliente) (Backend)         | Alta           | _web_              | Sprint 2   | ❌         |
+| RF007   | Homepage (Mobile)                          | Alta           | _mobile_           | Sprint 2   | ❌         |
+| RF008   | Homepage (Backend)                         | Alta           | _web_              | Sprint 2   | ❌         |
+| RF009   | Homepage (Frontend)                        | Alta           | _web_              | Sprint 2   | ❌         |
+| RF010   | Configuração/Deploy Banco de Dados         | Alta           | _web_              | Sprint 2   | ❌         |
+| RF011   | Cadastro de avaliação                      | Média          | _web_              | Sprint 3   | ❌         |
+| RF012   | Cadastro de avaliação                      | Média          | _mobile_           | Sprint 3   | ❌         |
+| RF013   | Criar interface de chat em tempo real      | Alta           | _web_              | Sprint 3   | ❌         |
+| RF014   | Criar interface de chat em tempo real      | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF015   | Interface de pagamento                     | Alta           | _web_              | Sprint 3   | ❌         |
+| RF016   | Interface de pagamento                     | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF017   | Criar perfil do usuário                    | Alta           | _web_              | Sprint 3   | ❌         |
+| RF018   | Criar perfil do usuário                    | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF019   | Solicitação de agendamento                 | Alta           | _web_              | Sprint 3   | ❌         |
+| RF020   | Solicitação de agendamento                 | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF021   | Listagem de Chefs                          | Alta           | _web_              | Sprint 3   | ❌         |
+| RF022   | Listagem de Chefs                          | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF023   | Autenticação de Usuário                    | Alta           | _web_              | Sprint 3   | ❌         |
+| RF024   | Autenticação de Usuário                    | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF025   | Integração com API para envio de mensagens | Média          | _web_              | Sprint 3   | ❌         |
+| RF026   | Integração com API para envio de mensagens | Média          | _mobile_           | Sprint 3   | ❌         |
+| RF027   | Criar fila para gerenciamento de mensagens | Alta           | _web_              | Sprint 3   | ❌         |
+| RF028   | Criar fila para gerenciamento de mensagens | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF029   | Configurar RabbitMQ                        | Alta           | _web_              | Sprint 3   | ❌         |
+| RF030   | Configurar RabbitMQ                        | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF031   | Pesquisa de chefs                          | Alta           | _web_              | Sprint 4   | ❌         |
+| RF032   | Pesquisa de chefs                          | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF033   | Endpoint para busca de chefs e pratos      | Alta           | _web_              | Sprint 4   | ❌         |
+| RF034   | Endpoint para busca de chefs e pratos      | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF035   | Integrar pagamento com PagBank             | Alta           | _web_              | Sprint 4   | ❌         |
+| RF036   | Integrar pagamento com PagBank             | Alta           | _mobile_           | Sprint 4   | ❌         |
 
 Obs: acrescente mais linhas, se necessário.
 
@@ -148,22 +226,27 @@ _Enumere os requisitos não-funcionais previstos para a sua aplicação. Entre o
 
 | **ID** | **Descrição** |
 | --- | --- |
-| RNF001 | |
-| RNF002 | |
-| | |
-| | |
-| | |
+| RNF001 | O sistema deve ter tempo de resposta de até 3 segundos em qualquer operação realizada. |
+| RNF002 | O sistema deve ser acessível através dos navegadores Chrome, Firefox, Safari e Edge. |
+| RNF003 | O sistema deve ser responsivo, oferecendo boa experiência tanto em dispositivos móveis quanto desktops. |
+| RNF004 | O sistema deve ser capaz de realizar atualizações de forma simples e sem causar impacto nos usuários ativos. |
+| RNF005 | O sistema deve ser compatível com os sistemas operacionais Android e iOS nas versões mais recentes. |
+| RNF006 | O sistema deve implementar autenticação e autorização robustas, garantindo a proteção dos dados dos pacientes. |
+| RNF007 | O código-fonte do sistema deve ser legível, bem estruturado e seguir boas práticas de codificação, facilitando a manutenção e futuras modificações. |
+| RNF008 | O sistema deve estar disponível 99,9% do tempo, com exceção de manutenções programadas. |
 
 Obs: acrescente mais linhas, se necessário.
 
 ## 3.3. Restrições Arquiteturais
 
-_Enumere as restrições arquiteturais. Lembre-se de que as restrições arquiteturais geralmente não são consideradas requisitos uma vez que limitam a solução candidata. Os requisitos não impõem restrição, mas precisam ser satisfeitos._
+As restrições impostas ao projeto que afetam sua arquitetura são :
 
-As restrições impostas ao projeto que afetam sua arquitetura são (por exemplo):
-
-- O software deverá ser desenvolvido em Python/Django;
-- A comunicação da API deve seguir o padrão RESTful.
+- O sistema deverá adotar uma arquitetura baseada em microsserviços.
+- O tráfego de requisições deverá passar por um API Gateway, centralizando a comunicação com os serviços internos.
+- A comunicação entre os serviços deverá ser feita de forma assíncrona, utilizando RabbitMQ para mensageria.
+- O sistema deverá utilizar Supabase como camada adicional para gerenciamento de dados e autenticação.
+- A integração com serviços de pagamento deverá ser feita através de um gateway de pagamento externo.
+- A arquitetura deverá permitir escalabilidade e modularidade para facilitar manutenção e expansão do sistema.
 
 ## 3.4. Mecanismos Arquiteturais
 
@@ -172,32 +255,40 @@ _Visão geral dos mecanismos que compõem a arquitetura do sosftware baseando-se
 
 | **Análise** | **Design** | **Implementação** |
 | --- | --- | --- |
-| Persistência | | |
-| Front end | | |
-| Back end | | |
-| Integração | | |
-| Log do sistema | | |
+| Persistência | ORM para abstração do banco de dados | PostgreSQL e SupaBase |
+| Front end | SPA (Single Page Application) para melhor experiência do usuário | React.js |
+| Back end | Arquitetura de microsserviços  | Node.js |
+| Integração |  Comunicação assíncrona entre serviços | RabbitMQ para mensageria |
+| Log do sistema | Logging centralizado para monitoramento e auditoria  | GitHub |
 | Teste de Software | | |
-| Deploy | | |
+| Deploy | Contêineres e orquestração para escalabilidade (implantação)| Docker |
 
 <a name="modelagem"></a>
 # 4. Modelagem e Projeto Arquitetural
 
-_Apresente uma visão geral da solução proposta para o projeto e explique brevemente esse diagrama de visão geral, de forma textual. Esse diagrama não precisa seguir os padrões da UML, e deve ser completo e tão simples quanto possível, apresentando a macroarquitetura da solução._
+O diagrama representa a visão geral de um sistema baseado em microsserviços, onde um **API Gateway** atua como ponto central de entrada, direcionando as requisições para os serviços apropriados. Dentro do sistema, há três serviços principais: um responsável pelo gerenciamento de usuários, outro dedicado ao agendamento de eventos ou serviços, e um terceiro que funciona como gateway de pagamento, processando as transações relacionadas. O serviço de agendamento interage diretamente com o gateway de pagamento para realizar as operações financeiras. Além disso, o sistema conta com uma infraestrutura de mensageria utilizando **RabbitMQ**, permitindo comunicação assíncrona entre os microsserviços, otimizando o processamento de eventos. Na camada de armazenamento de dados, o banco **PostgreSQL** é utilizado para persistência das informações, enquanto o **Supabase** complementa essa estrutura, oferecendo funcionalidades adicionais, como autenticação e acesso em tempo real. A arquitetura proposta garante escalabilidade, eficiência na comunicação entre serviços e um fluxo bem estruturado para processamento de pagamentos e agendamentos.
 
-![Visão Geral da Solução](imagens/visao.png "Visão Geral da Solução")
 
-**Figura 1 - Visão Geral da Solução (fonte: https://medium.com)**
-
-Obs: substitua esta imagem por outra, adequada ao seu projeto (cada arquitetura é única).
+![DiagramaDeArquitetura](https://github.com/user-attachments/assets/0379b592-844d-4420-81a9-2cd8dcb7e615)
 
 ## 4.1. Visão de Negócio (Funcionalidades)
 
 _Apresente uma lista simples com as funcionalidades previstas no projeto (escopo do produto)._
 
-1. O sistema deve...
-2. O sistema deve...
-3. ...
+O sistema deve:
+1. Permitir login e cadastro de clientes e chefs tanto no frontend quanto no backend (web e mobile).
+2. Exibir uma homepage para acesso rápido às principais funcionalidades (web e mobile).
+3. Configurar e realizar o deploy do banco de dados.
+4. Permitir que clientes cadastrem e visualizem avaliações de chefs (web e mobile).
+5. Oferecer uma interface de pagamento integrada à plataforma (web e mobile).
+6. Criar perfis de usuários (clientes e chefs) para exibição de informações relevantes (web e mobile).
+7. Permitir que clientes realizem solicitações de agendamento de serviços (web e mobile).
+8. Exibir uma listagem de chefs disponíveis na plataforma (web e mobile).
+9. Garantir a autenticação de usuários para acesso seguro ao sistema (web e mobile).
+10. Integrar uma API para envio de mensagens e gerenciar filas de mensagens via RabbitMQ (web e mobile).
+11. Implementar um sistema de pesquisa de chefs e pratos para facilitar a busca (web e mobile).
+12. Criar endpoints para busca de chefs e pratos, garantindo comunicação eficiente com o backend (web e mobile).
+13. Integrar pagamentos com o PagBank para transações seguras e confiáveis (web e mobile).
 
 Obs: a quantidade e o escopo das funcionalidades deve ser negociado com os professores/orientadores do trabalho.
 
@@ -205,18 +296,16 @@ Obs: a quantidade e o escopo das funcionalidades deve ser negociado com os profe
 
 _Nesta seção, você deve descrever estórias de usuários seguindo os métodos ágeis. Lembre-se das características de qualidade das estórias de usuários, ou seja, o que é preciso para descrever boas histórias de usuários._
 
-Exemplos de Histórias de Usuário:
-
-- Como Fulano eu quero poder convidar meus amigos para que a gente possa se reunir...
-
-- Como Cicrano eu quero poder organizar minhas tarefas diárias, para que...
-
-- Como gerente eu quero conseguir entender o progresso do trabalho do meu time, para que eu possa ter relatórios periódicos dos nossos acertos e falhas.
-
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|chef particular  | cadastrar meu perfil, incluindo minhas especialidades e disponibilidade           | que os clientes possam me encontrar e contratar meus serviços.               |
+|chef particular  | acessar relatórios sobre minhas contratações e avaliações           | acompanhar meu desempenho e melhorar meu serviço.               |
+|cliente       | pesquisar chefs por especialidade e localização                 | encontrar um profissional adequado às minhas preferências gastronômicas. |
+|cliente       | agendar um serviço diretamente pela plataforma                 |  garantir que um chef esteja disponível na data desejada. |
+|cliente       | avaliar um chef após a experiência                |  ajudar outros clientes na escolha e garantir a qualidade do serviço. |
+|cliente       | conversar com um chef antes de contratar o serviço                 |  esclarecer dúvidas e alinhar expectativas. |
+|cliente       | realizar pagamentos dentro da plataforma                 |  ter segurança na transação e garantir a confirmação do serviço. |
+|cliente       | agendar um serviço diretamente pela plataforma                 |  garantir que um chef esteja disponível na data desejada. |
 
 ## 4.2. Visão Lógica
 
@@ -224,12 +313,14 @@ _Apresente os artefatos que serão utilizados descrevendo em linhas gerais as mo
 
 ### Diagrama de Classes
 
-![Diagrama de classes](imagens/classes.gif "Diagrama de classes")
+![Captura de tela 2025-03-12 112348](https://github.com/user-attachments/assets/ae1927f5-ae23-411a-9d19-09f5e8262911)
 
 
 **Figura 2 – Diagrama de classes (exemplo). Fonte: o próprio autor.**
 
-Obs: Acrescente uma breve descrição sobre o diagrama apresentado na Figura 3.
+O diagrama de classes do Gastro Match representa a estrutura do sistema e seus principais componentes, incluindo usuários (clientes e chefs), autenticação, agendamentos, pagamentos, chat, avaliação, perfil e  banco de dados.
+A plataforma permite que clientes encontrem e contratem chefs particulares, facilitando agendamentos, pagamentos e interações via chat. O banco de dados é responsável pela persistência das informações, garantindo a integridade dos dados.
+As relações entre as classes foram estruturadas para proporcionar uma experiência fluida, desde o registro de usuários até a finalização do serviço.
 
 ### Diagrama de componentes
 
@@ -255,6 +346,7 @@ _Caso julgue necessário para explicar a arquitetura, apresente o diagrama de cl
 **Figura 4 – Diagrama de Entidade Relacionamento (ER) - exemplo. Fonte: o próprio autor.**
 
 Obs: Acrescente uma breve descrição sobre o diagrama apresentado na Figura 3.
+
 
 <a name="wireframes"></a>
 # 5. Wireframes
@@ -341,7 +433,7 @@ _Inclua o URL do repositório (Github, Bitbucket, etc) onde você armazenou o c�
 
 | Ambiente  | Plataforma              |Link de Acesso |
 |-----------|-------------------------|---------------|
-|Repositório de código | GitHub | https://github.com/XXXXXXX | 
-|Hospedagem do site | Heroku |  https://XXXXXXX.herokuapp.com | 
+|Repositório de código | GitHub | https://github.com/XXXXXXX |
+|Hospedagem do site | Heroku |  https://XXXXXXX.herokuapp.com |
 |Protótipo Interativo | MavelApp ou Figma | https://figma.com/XXXXXXX |
 |Documentação de teste | Github | https://githun.com/xxxx |
