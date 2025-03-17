@@ -42,16 +42,18 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 | **Data** | **Autor** | **Descrição** | **Versão** |
 | --- | --- | --- | --- |
-| **[25/02/2025]** | Julia Gabriela de Resende | Criação dos tópicos: resumo, apresentação, problema, objetivos. Adicionei as partes (que ja haviam sido feitas em sala) do "Nosso Produto". | [1] |
-| **[25/02/2025]** | Julia Gabriela de Resende | Adicionei o diagrama de visão geral feito pelo Marcelo, transformei o mesmo em uma versão textual e criei as restrições do sistema  | [2] |
-| **[25/02/2025]** | Julia Gabriela de Resende | Adicionei os mecanismos estruturais | [3] |
-| **[27/02/2025]** | Julia Gabriela de Resende | Correção do objetivo e problema. Criação da personal Gabriel Almeida e Mariana Torres | [4] |
-| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção do diagrama de arquiteutra | [5] |
-| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Adicionando requisitos funcionais e não funcionais | [6] |
-| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo visão de produto | [7] |
-| **[11/03/2025]** | Julia Gabriela de Resende | Histórias de usuário | [8] |
-| **[11/03/2025]** | Julia Gabriela de Resende | Visão de negócio | [9] |
+| **[17/03/2025]** | Julia Gabriela de Resende | Correção: Objetivo e diagrama de classes | [11] |
 | **[12/03/2025]** | Pedro Talma Toledo | Correção: problema, objetivos e visão do produto | [10] |
+| **[11/03/2025]** | Julia Gabriela de Resende | Visão de negócio | [9] |
+| **[11/03/2025]** | Julia Gabriela de Resende | Histórias de usuário | [8] |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo visão de produto | [7] |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Adicionando requisitos funcionais e não funcionais | [6] |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção do diagrama de arquiteutra | [5] |
+| **[27/02/2025]** | Julia Gabriela de Resende | Correção do objetivo e problema. Criação da personal Gabriel Almeida e Mariana Torres | [4] |
+| **[25/02/2025]** | Julia Gabriela de Resende | Adicionei os mecanismos estruturais | [3] |
+| **[25/02/2025]** | Julia Gabriela de Resende | Adicionei o diagrama de visão geral feito pelo Marcelo, transformei o mesmo em uma versão textual e criei as restrições do sistema  | [2] |
+| **[25/02/2025]** | Julia Gabriela de Resende | Criação dos tópicos: resumo, apresentação, problema, objetivos. Adicionei as partes (que ja haviam sido feitas em sala) do "Nosso Produto". | [1] |
+
 
 ## SUMÁRIO
 
@@ -102,7 +104,7 @@ A dificuldade de encontrar e agendar chefs particulares qualificados para cozinh
 
 ## 1.2. Objetivos do trabalho
 
-Desenvolver uma aplicação Full Stack mobile que irá conectar clientes e chefs.
+Criação de uma plataforma digital que irá conectar clientes e chefs especializados.
 
 ## 1.3. Definições e Abreviaturas
 
@@ -311,7 +313,7 @@ _Apresente os artefatos que serão utilizados descrevendo em linhas gerais as mo
 
 ### Diagrama de Classes
 
-![Captura de tela 2025-03-12 112348](https://github.com/user-attachments/assets/ae1927f5-ae23-411a-9d19-09f5e8262911)
+![Captura de tela 2025-03-17 094649](https://github.com/user-attachments/assets/d1dfb8a9-1b9d-404d-bad4-fbe002c7b810)
 
 
 **Figura 2 – Diagrama de classes (exemplo). Fonte: o próprio autor.**
