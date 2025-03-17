@@ -38,9 +38,9 @@ Referências:
 - http://karma-runner.github.io/1.0/dev/git-commit-msg.html
 - https://dev.to/jhonywalkeer/hacks-do-github-commits-que-fecham-issues-2aj8
 
-# Nutrismart
+# Gastromach
 
-> Aplicação realiza controle de ficha de pacientes, referências nutricionais da tabela taco, cálculos alimentares e organização de planos alimentares.
+> Aplicação realiza conexão entre chefees de cozinha e potenciais clientes, enaltecer chefs pelos seus trabalhos e proporcionar experiências gastronômicas sem dificuldades.
 
 ### Ajustes e melhorias
 
