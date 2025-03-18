@@ -95,7 +95,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 <a name="apresentacao"></a>
 # 1. Apresentação
 
-No mundo gastronômico, a busca por chefs particulares tem crescido exponencialmente, seja para eventos privados ou experiências exclusivas. No entanto, a dificuldade em encontrar profissionais qualificados e alinhados com as necessidades específicas do cliente é um problema recorrente. De acordo com a 13ª edição da Pesquisa Anual Setorial de Food Service 2024, realizada pela Associação Brasileira de Franchising (ABF) em parceria com a Galunion Consultoria, a demanda por serviços personalizados tem aumentado em torno de 20% ao ano, impulsionada pelo desejo de experiências únicas e pelo crescimento do mercado de gastronomia sob demanda. Apesar disso, a maioria das soluções existentes no mercado não oferecem personalização adequada, nem conectam de forma eficiente clientes a profissionais especializados.
+No mundo gastronômico, a busca por chefs particulares tem crescido exponencialmente, seja para eventos privados ou experiências exclusivas. No entanto, a dificuldade em encontrar profissionais qualificados e alinhados com as necessidades específicas do cliente é um problema recorrente. De acordo com a 13ª edição da Pesquisa Anual Setorial de Food Service 2024, realizada pela Associação Brasileira de Franchising (ABF) em parceria com a Galunion Consultoria, o ano de 2023 fechou com crescimento de 19% por serviços personalizados, impulsionada pelo desejo de experiências únicas e pelo crescimento do mercado de gastronomia sob demanda. Apesar disso, a maioria das soluções existentes no mercado não oferecem personalização adequada, nem conectam de forma eficiente clientes a profissionais especializados.
 
 
 ## 1.1. Problema
