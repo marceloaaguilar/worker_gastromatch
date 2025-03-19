@@ -42,7 +42,8 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 | **Data** | **Autor** | **Descrição** | **Versão** |
 | --- | --- | --- | --- |
-| **[18/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção: Diagrama de arquitetura | [11] |
+| **[19/03/2025]** | Pedro Talma Toledo | Correção: Diagrama de arquitetura | [13] |
+| **[18/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção: Diagrama de arquitetura | [12] |
 | **[17/03/2025]** | Julia Gabriela de Resende | Correção: Objetivo e diagrama de classes | [11] |
 | **[12/03/2025]** | Pedro Talma Toledo | Correção: problema, objetivos e visão do produto | [10] |
 | **[11/03/2025]** | Julia Gabriela de Resende | Visão de negócio | [9] |
@@ -193,31 +194,29 @@ _Enumere os requisitos funcionais previstos para a sua aplicação. Concentre-se
 | RF007   | Homepage (Mobile)                          | Alta           | _mobile_           | Sprint 2   | ❌         |
 | RF008   | Homepage (Backend)                         | Alta           | _web_              | Sprint 2   | ❌         |
 | RF009   | Homepage (Frontend)                        | Alta           | _web_              | Sprint 2   | ❌         |
-| RF010   | Banco de Dados (Configuração de Banco de Dados, sem deploy específico)      | Alta           | _web_              | Sprint 2   | ❌         |
-| RF011   | Cadastro de avaliação                      | Média          | _web_              | Sprint 3   | ❌         |
-| RF012   | Cadastro de avaliação                      | Média          | _mobile_           | Sprint 3   | ❌         |
-| RF013   | Criar interface de chat em tempo real      | Alta           | _web_              | Sprint 3   | ❌         |
-| RF014   | Criar interface de chat em tempo real      | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF015   | Interface de pagamento                     | Alta           | _web_              | Sprint 3   | ❌         |
-| RF016   | Interface de pagamento                     | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF017   | Solicitação de agendamento                 | Alta           | _web_              | Sprint 3   | ❌         |
-| RF018   | Solicitação de agendamento                 | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF019   | Listagem de Chefs                          | Alta           | _web_              | Sprint 3   | ❌         |
-| RF020   | Listagem de Chefs                          | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF021   | Autenticação de Usuário                    | Alta           | _web_              | Sprint 3   | ❌         |
-| RF022   | Autenticação de Usuário                    | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF023   | Integração com API para envio de mensagens | Média          | _web_              | Sprint 3   | ❌         |
-| RF024   | Integração com API para envio de mensagens | Média          | _mobile_           | Sprint 3   | ❌         |
-| RF025   | Criar fila para gerenciamento de mensagens | Alta           | _web_              | Sprint 3   | ❌         |
-| RF026   | Criar fila para gerenciamento de mensagens | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF027   | Configurar RabbitMQ                        | Alta           | _web_              | Sprint 3   | ❌         |
-| RF028   | Configurar RabbitMQ                        | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF029   | Pesquisa de chefs                          | Alta           | _web_              | Sprint 4   | ❌         |
-| RF030   | Pesquisa de chefs                          | Alta           | _mobile_           | Sprint 4   | ❌         |
-| RF031   | Endpoint para busca de chefs e pratos      | Alta           | _web_              | Sprint 4   | ❌         |
-| RF032   | Endpoint para busca de chefs e pratos      | Alta           | _mobile_           | Sprint 4   | ❌         |
-| RF033   | Integrar pagamento com PagBank             | Alta           | _web_              | Sprint 4   | ❌         |
-| RF034   | Integrar pagamento com PagBank             | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF010   | Cadastro de avaliação                      | Média          | _web_              | Sprint 3   | ❌         |
+| RF011   | Cadastro de avaliação                      | Média          | _mobile_           | Sprint 3   | ❌         |
+| RF012   | Criar interface de chat em tempo real      | Alta           | _web_              | Sprint 3   | ❌         |
+| RF013   | Criar interface de chat em tempo real      | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF014   | Interface de pagamento                     | Alta           | _web_              | Sprint 3   | ❌         |
+| RF015   | Interface de pagamento                     | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF016   | Solicitação de agendamento                 | Alta           | _web_              | Sprint 3   | ❌         |
+| RF017   | Solicitação de agendamento                 | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF018   | Listagem de Chefs                          | Alta           | _web_              | Sprint 3   | ❌         |
+| RF019   | Listagem de Chefs                          | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF020   | Integração com API para envio de mensagens | Média          | _web_              | Sprint 3   | ❌         |
+| RF021   | Integração com API para envio de mensagens | Média          | _mobile_           | Sprint 3   | ❌         |
+| RF022   | Criar fila para gerenciamento de mensagens | Alta           | _web_              | Sprint 3   | ❌         |
+| RF023   | Criar fila para gerenciamento de mensagens | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF024   | Pesquisa de chefs                          | Alta           | _web_              | Sprint 4   | ❌         |
+| RF025   | Pesquisa de chefs                          | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF026   | Endpoint para busca de chefs e pratos      | Alta           | _web_              | Sprint 4   | ❌         |
+| RF027   | Endpoint para busca de chefs e pratos      | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF028   | Integrar pagamento com PagBank             | Alta           | _web_              | Sprint 4   | ❌         |
+| RF029   | Integrar pagamento com PagBank             | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF030   | Recuperar senha de usuário por e-mail             | Alta           | _web_           | Sprint 4   | ❌         |
+| RF031   | Recuperar senha de usuário por e-mail            | Alta           | _mobile_           | Sprint 4   | ❌         |
+
 
 Obs: acrescente mais linhas, se necessário.
 
@@ -233,8 +232,10 @@ _Enumere os requisitos não-funcionais previstos para a sua aplicação. Entre o
 | RNF004 | O sistema deve ser capaz de realizar atualizações de forma simples e sem causar impacto nos usuários ativos. |
 | RNF005 | O sistema deve ser compatível com os sistemas operacionais Android e iOS nas versões mais recentes. |
 | RNF006 | O sistema deve implementar autenticação e autorização robustas, garantindo a proteção dos dados dos pacientes, com padrão de autenticação OAuth2.|
-| RNF007 | O código-fonte do sistema deve ser legível, bem estruturado e seguir boas práticas de codificação, facilitando a manutenção e futuras modificações. |
+| RNF007 | O código-fonte do sistema deve ser legível e seguir boas práticas de codificação, facilitando a manutenção e futuras modificações. |
 | RNF008 | O sistema deve estar disponível 99,9% do tempo, com exceção de manutenções programadas. |
+| RNF009 | O chat deve utilizar um mecanismo de mensageria assíncrona para garantir a entrega confiável das mensagens, mesmo em casos de falha temporária na conexão. |
+| RNF010 | Os dados do usuário devem ser armazenados em um banco de dados relacional |
 
 Obs: acrescente mais linhas, se necessário.
 
@@ -259,9 +260,10 @@ _Visão geral dos mecanismos que compõem a arquitetura do sosftware baseando-se
 | Persistência | ORM para abstração do banco de dados | PostgreSQL e SupaBase |
 | Front end | SPA (Single Page Application) para melhor experiência do usuário | React.js |
 | Back end | Arquitetura de microsserviços  | Node.js |
+| Mobile | Aplicativo híbrido para múltiplas plataformas  | Flutter |
 | Integração |  Comunicação assíncrona entre serviços | RabbitMQ para mensageria |
 | Log do sistema | Logging centralizado para monitoramento e auditoria  | GitHub |
-| Teste de Software | | |
+| Teste de Software | Testes automatizados para garantir a qualidade | Jest (Back-end) e Flutter Test (Mobile) |
 | Deploy | Contêineres e orquestração para escalabilidade (implantação)| Docker |
 
 <a name="modelagem"></a>
