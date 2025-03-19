@@ -3,15 +3,15 @@
 
 **Guilherme Augusto Jardim de Souza, email do aluno 1**
 
-**Isabelle Cristine Lucas Costa, email do aluno 2**
+**Isabelle Cristine Lucas Costa, iclcosta@sga.pucminas.br**
 
 **Julia Gabriela de Resende, juliarsende@hotmail.com**
 
-**Marcelo Aguilar Araújo D'Almeida, email do aluno 4**
+**Marcelo Aguilar Araújo D'Almeida, marceloalmeida42@gmail.com**
 
-**Pedro Talma Toledo, email do aluno 5**
+**Pedro Talma Toledo, pedrotoledo1717@gmail.com**
 
-**Philippe Roberto Dutra Chaves Vieira, email do aluno 6**
+**Philippe Roberto Dutra Chaves Vieira, philipperobertod.97@gmail.com**
 
 ---
 
@@ -42,16 +42,20 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 | **Data** | **Autor** | **Descrição** | **Versão** |
 | --- | --- | --- | --- |
-| **[25/02/2025]** | Julia Gabriela de Resende | Criação dos tópicos: resumo, apresentação, problema, objetivos. Adicionei as partes (que ja haviam sido feitas em sala) do "Nosso Produto". | [1] |
-| **[25/02/2025]** | Julia Gabriela de Resende | Adicionei o diagrama de visão geral feito pelo Marcelo, transformei o mesmo em uma versão textual e criei as restrições do sistema  | [2] |
-| **[25/02/2025]** | Julia Gabriela de Resende | Adicionei os mecanismos estruturais | [3] |
-| **[27/02/2025]** | Julia Gabriela de Resende | Correção do objetivo e problema. Criação da personal Gabriel Almeida e Mariana Torres | [4] |
-| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção do diagrama de arquiteutra | [5] |
-| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Adicionando requisitos funcionais e não funcionais | [6] |
-| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo visão de produto | [7] |
-| **[11/03/2025]** | Julia Gabriela de Resende | Histórias de usuário | [8] |
-| **[11/03/2025]** | Julia Gabriela de Resende | Visão de negócio | [9] |
+| **[19/03/2025]** | Pedro Talma Toledo | Correção: Diagrama de arquitetura | [13] |
+| **[18/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção: Diagrama de arquitetura | [12] |
+| **[17/03/2025]** | Julia Gabriela de Resende | Correção: Objetivo e diagrama de classes | [11] |
 | **[12/03/2025]** | Pedro Talma Toledo | Correção: problema, objetivos e visão do produto | [10] |
+| **[11/03/2025]** | Julia Gabriela de Resende | Visão de negócio | [9] |
+| **[11/03/2025]** | Julia Gabriela de Resende | Histórias de usuário | [8] |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo visão de produto | [7] |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Adicionando requisitos funcionais e não funcionais | [6] |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção do diagrama de arquiteutra | [5] |
+| **[27/02/2025]** | Julia Gabriela de Resende | Correção do objetivo e problema. Criação da personal Gabriel Almeida e Mariana Torres | [4] |
+| **[25/02/2025]** | Julia Gabriela de Resende | Adicionei os mecanismos estruturais | [3] |
+| **[25/02/2025]** | Julia Gabriela de Resende | Adicionei o diagrama de visão geral feito pelo Marcelo, transformei o mesmo em uma versão textual e criei as restrições do sistema  | [2] |
+| **[25/02/2025]** | Julia Gabriela de Resende | Criação dos tópicos: resumo, apresentação, problema, objetivos. Adicionei as partes (que ja haviam sido feitas em sala) do "Nosso Produto". | [1] |
+
 
 ## SUMÁRIO
 
@@ -93,7 +97,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 <a name="apresentacao"></a>
 # 1. Apresentação
 
-No mundo gastronômico, a busca por chefs particulares tem crescido exponencialmente, seja para eventos privados ou experiências exclusivas. No entanto, a dificuldade em encontrar profissionais qualificados e alinhados com as necessidades específicas do cliente é um problema recorrente. Segundo dados do setor de alimentação, a demanda por serviços personalizados tem aumentado em torno de 20% ao ano, impulsionada pelo desejo de experiências únicas e pelo crescimento do mercado de gastronomia sob demanda. Apesar disso, a maioria das soluções existentes no mercado não oferecem personalização adequada, nem conectam de forma eficiente clientes a profissionais especializados.
+No mundo gastronômico, a busca por chefs particulares tem crescido exponencialmente, seja para eventos privados ou experiências exclusivas. No entanto, a dificuldade em encontrar profissionais qualificados e alinhados com as necessidades específicas do cliente é um problema recorrente. De acordo com a 13ª edição da Pesquisa Anual Setorial de Food Service 2024, realizada pela Associação Brasileira de Franchising (ABF) em parceria com a Galunion Consultoria, o ano de 2023 fechou com crescimento de 19% por serviços personalizados, impulsionada pelo desejo de experiências únicas e pelo crescimento do mercado de gastronomia sob demanda. Apesar disso, a maioria das soluções existentes no mercado não oferecem personalização adequada, nem conectam de forma eficiente clientes a profissionais especializados.
 
 
 ## 1.1. Problema
@@ -102,7 +106,7 @@ A dificuldade de encontrar e agendar chefs particulares qualificados para cozinh
 
 ## 1.2. Objetivos do trabalho
 
-Desenvolver uma aplicação Full Stack mobile que irá conectar clientes e chefs.
+Criação de uma plataforma digital que irá conectar clientes e chefs especializados.
 
 ## 1.3. Definições e Abreviaturas
 
@@ -190,33 +194,29 @@ _Enumere os requisitos funcionais previstos para a sua aplicação. Concentre-se
 | RF007   | Homepage (Mobile)                          | Alta           | _mobile_           | Sprint 2   | ❌         |
 | RF008   | Homepage (Backend)                         | Alta           | _web_              | Sprint 2   | ❌         |
 | RF009   | Homepage (Frontend)                        | Alta           | _web_              | Sprint 2   | ❌         |
-| RF010   | Configuração/Deploy Banco de Dados         | Alta           | _web_              | Sprint 2   | ❌         |
-| RF011   | Cadastro de avaliação                      | Média          | _web_              | Sprint 3   | ❌         |
-| RF012   | Cadastro de avaliação                      | Média          | _mobile_           | Sprint 3   | ❌         |
-| RF013   | Criar interface de chat em tempo real      | Alta           | _web_              | Sprint 3   | ❌         |
-| RF014   | Criar interface de chat em tempo real      | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF015   | Interface de pagamento                     | Alta           | _web_              | Sprint 3   | ❌         |
-| RF016   | Interface de pagamento                     | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF017   | Criar perfil do usuário                    | Alta           | _web_              | Sprint 3   | ❌         |
-| RF018   | Criar perfil do usuário                    | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF019   | Solicitação de agendamento                 | Alta           | _web_              | Sprint 3   | ❌         |
-| RF020   | Solicitação de agendamento                 | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF021   | Listagem de Chefs                          | Alta           | _web_              | Sprint 3   | ❌         |
-| RF022   | Listagem de Chefs                          | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF023   | Autenticação de Usuário                    | Alta           | _web_              | Sprint 3   | ❌         |
-| RF024   | Autenticação de Usuário                    | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF025   | Integração com API para envio de mensagens | Média          | _web_              | Sprint 3   | ❌         |
-| RF026   | Integração com API para envio de mensagens | Média          | _mobile_           | Sprint 3   | ❌         |
-| RF027   | Criar fila para gerenciamento de mensagens | Alta           | _web_              | Sprint 3   | ❌         |
-| RF028   | Criar fila para gerenciamento de mensagens | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF029   | Configurar RabbitMQ                        | Alta           | _web_              | Sprint 3   | ❌         |
-| RF030   | Configurar RabbitMQ                        | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF031   | Pesquisa de chefs                          | Alta           | _web_              | Sprint 4   | ❌         |
-| RF032   | Pesquisa de chefs                          | Alta           | _mobile_           | Sprint 4   | ❌         |
-| RF033   | Endpoint para busca de chefs e pratos      | Alta           | _web_              | Sprint 4   | ❌         |
-| RF034   | Endpoint para busca de chefs e pratos      | Alta           | _mobile_           | Sprint 4   | ❌         |
-| RF035   | Integrar pagamento com PagBank             | Alta           | _web_              | Sprint 4   | ❌         |
-| RF036   | Integrar pagamento com PagBank             | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF010   | Cadastro de avaliação                      | Média          | _web_              | Sprint 3   | ❌         |
+| RF011   | Cadastro de avaliação                      | Média          | _mobile_           | Sprint 3   | ❌         |
+| RF012   | Criar interface de chat em tempo real      | Alta           | _web_              | Sprint 3   | ❌         |
+| RF013   | Criar interface de chat em tempo real      | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF014   | Interface de pagamento                     | Alta           | _web_              | Sprint 3   | ❌         |
+| RF015   | Interface de pagamento                     | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF016   | Solicitação de agendamento                 | Alta           | _web_              | Sprint 3   | ❌         |
+| RF017   | Solicitação de agendamento                 | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF018   | Listagem de Chefs                          | Alta           | _web_              | Sprint 3   | ❌         |
+| RF019   | Listagem de Chefs                          | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF020   | Integração com API para envio de mensagens | Média          | _web_              | Sprint 3   | ❌         |
+| RF021   | Integração com API para envio de mensagens | Média          | _mobile_           | Sprint 3   | ❌         |
+| RF022   | Criar fila para gerenciamento de mensagens | Alta           | _web_              | Sprint 3   | ❌         |
+| RF023   | Criar fila para gerenciamento de mensagens | Alta           | _mobile_           | Sprint 3   | ❌         |
+| RF024   | Pesquisa de chefs                          | Alta           | _web_              | Sprint 4   | ❌         |
+| RF025   | Pesquisa de chefs                          | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF026   | Endpoint para busca de chefs e pratos      | Alta           | _web_              | Sprint 4   | ❌         |
+| RF027   | Endpoint para busca de chefs e pratos      | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF028   | Integrar pagamento com PagBank             | Alta           | _web_              | Sprint 4   | ❌         |
+| RF029   | Integrar pagamento com PagBank             | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF030   | Recuperar senha de usuário por e-mail             | Alta           | _web_           | Sprint 4   | ❌         |
+| RF031   | Recuperar senha de usuário por e-mail            | Alta           | _mobile_           | Sprint 4   | ❌         |
+
 
 Obs: acrescente mais linhas, se necessário.
 
@@ -231,9 +231,11 @@ _Enumere os requisitos não-funcionais previstos para a sua aplicação. Entre o
 | RNF003 | O sistema deve ser responsivo, oferecendo boa experiência tanto em dispositivos móveis quanto desktops. |
 | RNF004 | O sistema deve ser capaz de realizar atualizações de forma simples e sem causar impacto nos usuários ativos. |
 | RNF005 | O sistema deve ser compatível com os sistemas operacionais Android e iOS nas versões mais recentes. |
-| RNF006 | O sistema deve implementar autenticação e autorização robustas, garantindo a proteção dos dados dos pacientes. |
-| RNF007 | O código-fonte do sistema deve ser legível, bem estruturado e seguir boas práticas de codificação, facilitando a manutenção e futuras modificações. |
+| RNF006 | O sistema deve implementar autenticação e autorização robustas, garantindo a proteção dos dados dos pacientes, com padrão de autenticação OAuth2.|
+| RNF007 | O código-fonte do sistema deve ser legível e seguir boas práticas de codificação, facilitando a manutenção e futuras modificações. |
 | RNF008 | O sistema deve estar disponível 99,9% do tempo, com exceção de manutenções programadas. |
+| RNF009 | O chat deve utilizar um mecanismo de mensageria assíncrona para garantir a entrega confiável das mensagens, mesmo em casos de falha temporária na conexão. |
+| RNF010 | Os dados do usuário devem ser armazenados em um banco de dados relacional |
 
 Obs: acrescente mais linhas, se necessário.
 
@@ -258,9 +260,10 @@ _Visão geral dos mecanismos que compõem a arquitetura do sosftware baseando-se
 | Persistência | ORM para abstração do banco de dados | PostgreSQL e SupaBase |
 | Front end | SPA (Single Page Application) para melhor experiência do usuário | React.js |
 | Back end | Arquitetura de microsserviços  | Node.js |
+| Mobile | Aplicativo híbrido para múltiplas plataformas  | Flutter |
 | Integração |  Comunicação assíncrona entre serviços | RabbitMQ para mensageria |
 | Log do sistema | Logging centralizado para monitoramento e auditoria  | GitHub |
-| Teste de Software | | |
+| Teste de Software | Testes automatizados para garantir a qualidade | Jest (Back-end) e Flutter Test (Mobile) |
 | Deploy | Contêineres e orquestração para escalabilidade (implantação)| Docker |
 
 <a name="modelagem"></a>
@@ -269,7 +272,8 @@ _Visão geral dos mecanismos que compõem a arquitetura do sosftware baseando-se
 O diagrama representa a visão geral de um sistema baseado em microsserviços, onde um **API Gateway** atua como ponto central de entrada, direcionando as requisições para os serviços apropriados. Dentro do sistema, há três serviços principais: um responsável pelo gerenciamento de usuários, outro dedicado ao agendamento de eventos ou serviços, e um terceiro que funciona como gateway de pagamento, processando as transações relacionadas. O serviço de agendamento interage diretamente com o gateway de pagamento para realizar as operações financeiras. Além disso, o sistema conta com uma infraestrutura de mensageria utilizando **RabbitMQ**, permitindo comunicação assíncrona entre os microsserviços, otimizando o processamento de eventos. Na camada de armazenamento de dados, o banco **PostgreSQL** é utilizado para persistência das informações, enquanto o **Supabase** complementa essa estrutura, oferecendo funcionalidades adicionais, como autenticação e acesso em tempo real. A arquitetura proposta garante escalabilidade, eficiência na comunicação entre serviços e um fluxo bem estruturado para processamento de pagamentos e agendamentos.
 
 
-![DiagramaDeArquitetura](https://github.com/user-attachments/assets/0379b592-844d-4420-81a9-2cd8dcb7e615)
+![Diagrama de Arquitetura-Corrigido](https://github.com/user-attachments/assets/bf62563b-3262-4573-badb-125075f15188)
+
 
 ## 4.1. Visão de Negócio (Funcionalidades)
 
@@ -313,7 +317,7 @@ _Apresente os artefatos que serão utilizados descrevendo em linhas gerais as mo
 
 ### Diagrama de Classes
 
-![Captura de tela 2025-03-12 112348](https://github.com/user-attachments/assets/ae1927f5-ae23-411a-9d19-09f5e8262911)
+![Captura de tela 2025-03-17 094649](https://github.com/user-attachments/assets/d1dfb8a9-1b9d-404d-bad4-fbe002c7b810)
 
 
 **Figura 2 – Diagrama de classes (exemplo). Fonte: o próprio autor.**
@@ -413,15 +417,7 @@ Verifique no link abaixo como devem ser as referências no padrão ABNT:
 http://www.pucminas.br/imagedb/documento/DOC\_DSC\_NOME\_ARQUI20160217102425.pdf
 
 
-**[1]** - _ELMASRI, Ramez; NAVATHE, Sham. **Sistemas de banco de dados**. 7. ed. São Paulo: Pearson, c2019. E-book. ISBN 9788543025001._
-
-**[2]** - _COPPIN, Ben. **Inteligência artificial**. Rio de Janeiro, RJ: LTC, c2010. E-book. ISBN 978-85-216-2936-8._
-
-**[3]** - _CORMEN, Thomas H. et al. **Algoritmos: teoria e prática**. Rio de Janeiro, RJ: Elsevier, Campus, c2012. xvi, 926 p. ISBN 9788535236996._
-
-**[4]** - _SUTHERLAND, Jeffrey Victor. **Scrum: a arte de fazer o dobro do trabalho na metade do tempo**. 2. ed. rev. São Paulo, SP: Leya, 2016. 236, [4] p. ISBN 9788544104514._
-
-**[5]** - _RUSSELL, Stuart J.; NORVIG, Peter. **Inteligência artificial**. Rio de Janeiro: Elsevier, c2013. xxi, 988 p. ISBN 9788535237016._
+**[1]** - _Associação Brasileira de Franchising (ABF). Pesquisa de Food Service 2024: crescimento do setor e tendências para o futuro. Disponível em: https://www.abf.com.br/pesquisa-de-food-service-2024. Acesso em: 18 mar. 2025._
 
 
 <a name="apendices"></a>
