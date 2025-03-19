@@ -1,7 +1,7 @@
 # GASTROMATCH
 
 
-**Guilherme Augusto Jardim de Souza, email do aluno 1**
+**Guilherme Augusto Jardim de Souza, gajsouza@sga.pucminas.br**
 
 **Isabelle Cristine Lucas Costa, iclcosta@sga.pucminas.br**
 
