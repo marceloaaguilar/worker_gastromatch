@@ -1,0 +1,36 @@
+@startuml
+
+title Diagrama de Componentes - GastroMatch
+
+' Definição dos componentes principais
+node "Aplicação Web" {
+    component "Frontend Web" as FW
+}
+
+node "Aplicação Mobile" {
+    component "Frontend Mobile" as FM
+}
+
+node "Backend" {
+    component "Backend API" as BAPI
+}
+
+node "Serviços" {
+    component "Banco de Dados" as DB
+    component "Sistema de Mensageria (RabbitMQ)" as MQ
+}
+
+node "Autenticação e Pagamentos" {
+    component "Serviço de Autenticação (OAuth2)" as Auth
+    component "API de Pagamentos (PagBank)" as Pagamento
+}
+
+' Definição das conexões
+FW --> BAPI : "Requisições HTTP (REST API)"
+FM --> BAPI : "Requisições HTTP (REST API)"
+BAPI --> DB : "Persistência de Dados"
+BAPI --> MQ : "Publica/Consome Mensagens"
+BAPI --> Auth : "Autenticação OAuth2"
+BAPI --> Pagamento : "Integração Pagamentos"
+
+@enduml
