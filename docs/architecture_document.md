@@ -42,6 +42,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 | **Data** | **Autor** | **Descrição** | **Versão** |
 | --- | --- | --- | --- |
+| **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo RF022 e RF023 | [17] |
 | **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Removendo requisitos funcionais | [16] |
 | **[25/03/2025]** | Julia Gabriela de Resende | Adicionado diagrama de componentes | [15] |
 | **[25/03/2025]** | Julia Gabriela de Resende | Correção: objetivo, visão do produto e exclusão de textos padrão | [14] |
@@ -209,8 +210,8 @@ _Esta seção descreve os requisitos comtemplados nesta descrição arquitetural
 | RF019   | Listagem de Chefs                          | Alta           | _mobile_           | Sprint 3   | ❌         |
 | RF020   | Pesquisa de chefs                          | Alta           | _web_              | Sprint 4   | ❌         |
 | RF021   | Pesquisa de chefs                          | Alta           | _mobile_           | Sprint 4   | ❌         |
-| RF022   | Endpoint para busca de chefs e pratos      | Alta           | _web_              | Sprint 4   | ❌         |
-| RF023   | Endpoint para busca de chefs e pratos      | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF022   | Permitir a busca de chefs e pratos         | Alta           | _web_              | Sprint 4   | ❌         |
+| RF023   | Permitir a busca de chefs e pratos         | Alta           | _mobile_           | Sprint 4   | ❌         |
 | RF024   | Integrar pagamento com PagBank             | Alta           | _web_              | Sprint 4   | ❌         |
 | RF025   | Integrar pagamento com PagBank             | Alta           | _mobile_           | Sprint 4   | ❌         |
 | RF026   | Recuperar senha de usuário por e-mail             | Alta           | _web_           | Sprint 4   | ❌         |
