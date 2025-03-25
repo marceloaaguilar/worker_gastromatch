@@ -42,6 +42,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 | **Data** | **Autor** | **Descrição** | **Versão** |
 | --- | --- | --- | --- |
+| **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Removendo requisitos funcionais | [16] |
 | **[25/03/2025]** | Julia Gabriela de Resende | Adicionado diagrama de componentes | [15] |
 | **[25/03/2025]** | Julia Gabriela de Resende | Correção: objetivo, visão do produto e exclusão de textos padrão | [14] |
 | **[19/03/2025]** | Pedro Talma Toledo | Correção: Diagrama de arquitetura | [13] |
@@ -206,18 +207,14 @@ _Esta seção descreve os requisitos comtemplados nesta descrição arquitetural
 | RF017   | Solicitação de agendamento                 | Alta           | _mobile_           | Sprint 3   | ❌         |
 | RF018   | Listagem de Chefs                          | Alta           | _web_              | Sprint 3   | ❌         |
 | RF019   | Listagem de Chefs                          | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF020   | Integração com API para envio de mensagens | Média          | _web_              | Sprint 3   | ❌         |
-| RF021   | Integração com API para envio de mensagens | Média          | _mobile_           | Sprint 3   | ❌         |
-| RF022   | Criar fila para gerenciamento de mensagens | Alta           | _web_              | Sprint 3   | ❌         |
-| RF023   | Criar fila para gerenciamento de mensagens | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF024   | Pesquisa de chefs                          | Alta           | _web_              | Sprint 4   | ❌         |
-| RF025   | Pesquisa de chefs                          | Alta           | _mobile_           | Sprint 4   | ❌         |
-| RF026   | Endpoint para busca de chefs e pratos      | Alta           | _web_              | Sprint 4   | ❌         |
-| RF027   | Endpoint para busca de chefs e pratos      | Alta           | _mobile_           | Sprint 4   | ❌         |
-| RF028   | Integrar pagamento com PagBank             | Alta           | _web_              | Sprint 4   | ❌         |
-| RF029   | Integrar pagamento com PagBank             | Alta           | _mobile_           | Sprint 4   | ❌         |
-| RF030   | Recuperar senha de usuário por e-mail             | Alta           | _web_           | Sprint 4   | ❌         |
-| RF031   | Recuperar senha de usuário por e-mail            | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF020   | Pesquisa de chefs                          | Alta           | _web_              | Sprint 4   | ❌         |
+| RF021   | Pesquisa de chefs                          | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF022   | Endpoint para busca de chefs e pratos      | Alta           | _web_              | Sprint 4   | ❌         |
+| RF023   | Endpoint para busca de chefs e pratos      | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF024   | Integrar pagamento com PagBank             | Alta           | _web_              | Sprint 4   | ❌         |
+| RF025   | Integrar pagamento com PagBank             | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF026   | Recuperar senha de usuário por e-mail             | Alta           | _web_           | Sprint 4   | ❌         |
+| RF027   | Recuperar senha de usuário por e-mail            | Alta           | _mobile_           | Sprint 4   | ❌         |
 
 
 Obs: acrescente mais linhas, se necessário.
