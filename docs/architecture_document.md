@@ -231,6 +231,7 @@ _Esta seção descreve os requisitos comtemplados nesta descrição arquitetural
 | RNF006 | O sistema deve implementar autenticação e autorização robustas, garantindo a proteção dos dados dos pacientes, com padrão de autenticação OAuth2.|
 | RNF007 | O sistema deve estar disponível 99,9% do tempo, com exceção de manutenções programadas. |
 | RNF008 | O sistema deve proporcionar uma experiência de usuário intuitiva e fácil de navegar, garantindo que as principais funcionalidades sejam acessíveis em até 3 cliques. |
+| RNF009 | O sistema deve ser capaz de suportar até 500 usuários simultâneos sem degradação na performance. |
 
 
 ## 3.3. Restrições Arquiteturais
