@@ -42,6 +42,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 | **Data** | **Autor** | **Descrição** | **Versão** |
 | --- | --- | --- | --- |
+| **[25/03/2025]** | Julia Gabriela de Resende | Adicionado diagrama de componentes | [15] |
 | **[25/03/2025]** | Julia Gabriela de Resende | Correção: objetivo, visão do produto e exclusão de textos padrão | [14] |
 | **[19/03/2025]** | Pedro Talma Toledo | Correção: Diagrama de arquitetura | [13] |
 | **[18/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção: Diagrama de arquitetura | [12] |
@@ -136,6 +137,8 @@ Coloque aqui as definições, siglas e abreviaturas utilizadas no trabalho._
 
 ## 2.2 Nosso Produto
 ![Captura de tela 2025-02-25 132754](https://github.com/user-attachments/assets/a7168ca1-93f1-48a6-a537-ec15f643af09))
+
+**Figura 1 – Nosso produto. Fonte: o próprio autor.**
 
 ## 2.3 Personas
 <h2>Persona 1</h2>
@@ -268,6 +271,7 @@ O diagrama representa a visão geral de um sistema baseado em microsserviços, o
 
 ![Diagrama de Arquitetura-Corrigido](https://github.com/user-attachments/assets/bf62563b-3262-4573-badb-125075f15188)
 
+**Figura 2 – Diagrama de Arquitetura. Fonte: o próprio autor.**
 
 ## 4.1. Visão de Negócio (Funcionalidades)
 
@@ -315,17 +319,22 @@ As relações entre as classes foram estruturadas para proporcionar uma experiê
 
 ### Diagrama de componentes
 
-![Diagrama de componentes](imagens/componentes.png "Diagrama de componentes")
+[Diagrama de componentes.pdf](https://github.com/user-attachments/files/19448945/Diagrama.de.componentes.pdf)
 
-**Figura 3 – Diagrama de Componentes (exemplo). Fonte: o próprio autor.**
+**Figura 3 – Diagrama de componentes. Fonte: o próprio autor.**
 
-_Apresente uma descrição detalhada dos artefatos que constituem o diagrama de implantação._
+Conforme diagrama apresentado na Figura 3, as entidades participantes da solução GastroMatch são:
 
-Ex: conforme diagrama apresentado na Figura X, as entidades participantes da solução são:
-
-- **Componente 1** - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc magna, accumsan eget porta a, tincidunt sed mauris. Suspendisse orci nulla, sagittis a lorem laoreet, tincidunt imperdiet ipsum. Morbi malesuada pretium suscipit.
-- **Componente 2** - Praesent nec nisi hendrerit, ullamcorper tortor non, rutrum sem. In non lectus tortor. Nulla vel tincidunt eros.
-
+- **Aplicação Web** – Responsável pela interface web do sistema, permitindo que clientes e chefs interajam com a plataforma por meio de um navegador. Se comunica com o backend através de requisições HTTP utilizando REST API.
+- **Aplicação Mobile** – Versão da plataforma acessível via dispositivos móveis. Funciona de forma semelhante à aplicação web, utilizando requisições HTTP para interagir com o backend.
+- **Backend** – Núcleo central da solução, responsável por processar requisições das aplicações web e mobile, gerenciar regras de negócio e intermediar a comunicação com serviços externos. Ele expõe uma Backend API baseada em REST para atender às funcionalidades da plataforma.
+- **Serviços** – Conjunto de componentes auxiliares para o funcionamento do sistema:
+  Banco de Dados – Armazena informações essenciais, como perfis de usuários, agendamentos, pagamentos e avaliações.
+  Sistema de Mensageria (RabbitMQ) – Facilita a comunicação assíncrona entre os componentes, permitindo o envio de notificações, processamento de tarefas em segundo plano e otimização do desempenho.
+- **Autenticação e Pagamentos** – Responsável pela segurança e gestão financeira:
+  Serviço de Autenticação (OAuth2) – Garante a segurança no acesso, permitindo autenticação de usuários por meio do protocolo OAuth2.
+  API de Pagamentos (PagBank) – Integração com serviço de pagamentos para processar transações financeiras de forma segura e eficiente.
+  
 ## 4.3. Modelo de dados (opcional)
 
 _Caso julgue necessário para explicar a arquitetura, apresente o diagrama de classes ou diagrama de Entidade/Relacionamentos ou tabelas do banco de dados. Este modelo pode ser essencial caso a arquitetura utilize uma solução de banco de dados distribuídos ou um banco NoSQL._
