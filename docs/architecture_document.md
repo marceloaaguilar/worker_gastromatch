@@ -42,6 +42,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 | **Data** | **Autor** | **Descrição** | **Versão** |
 | --- | --- | --- | --- |
+| **[25/03/2025]** | Julia Gabriela de Resende | Correção: objetivo, visão do produto e exclusão de textos padrão | [14] |
 | **[19/03/2025]** | Pedro Talma Toledo | Correção: Diagrama de arquitetura | [13] |
 | **[18/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção: Diagrama de arquitetura | [12] |
 | **[17/03/2025]** | Julia Gabriela de Resende | Correção: Objetivo e diagrama de classes | [11] |
@@ -106,7 +107,7 @@ A dificuldade de encontrar e agendar chefs particulares qualificados para cozinh
 
 ## 1.2. Objetivos do trabalho
 
-Criação de uma plataforma digital que irá conectar clientes e chefs especializados.
+Criação de uma plataforma digital que irá conectar clientes e chefs especializados, oferecendo uma experiência personalizada de contratação de serviços gastronômicos, na região de Belo Horizonte.
 
 ## 1.3. Definições e Abreviaturas
 
@@ -118,19 +119,19 @@ Coloque aqui as definições, siglas e abreviaturas utilizadas no trabalho._
 ## 2.1 Visão do Produto
 ### Visão do produto
 
-**Para**:  Profissionais e entusiastas da gastronomia
+**Para**:  Profissionais e entusiastas da gastronomia.
 
-**Cujo**: Dificuldade do cliente é encontrar bons chefs particulares
+**Cujo**: Dificuldade do cliente é encontrar bons chefs particulares.
 
-**O**: Gastro Match
+**O**: Gastro Match.
 
-**É um**: Catálogo de profissionais da culinária
+**É um**: Plataforma para profissionais e entusiastas da gastronomia.
 
-**Que**:  Facilita a busca por chefs particulares para os clientes
+**Que**:  Facilita a busca por chefs particulares para os clientes.
 
-**Diferentemente do**: “A Chef em casa”
+**Diferentemente do**: “A Chef em casa”.
 
-**O nosso produto**:  Oferece um catálogo de chefs especializados, personalizados de acordo com a necessidade do cliente.
+**O nosso produto**:  Oferece uma plataforma de chefs especializados e personalizados de acordo com a necessidade do cliente.
 
 
 ## 2.2 Nosso Produto
@@ -181,8 +182,6 @@ _Esta seção descreve os requisitos comtemplados nesta descrição arquitetural
 
 ## 3.1. Requisitos Funcionais
 
-_Enumere os requisitos funcionais previstos para a sua aplicação. Concentre-se nos requisitos funcionais que sejam críticos para a definição arquitetural. Lembre-se de listar todos os requisitos que são necessários para garantir cobertura arquitetural. Esta seção deve conter uma lista de requisitos ainda sem modelagem. Na coluna Prioridade utilize uma escala (do mais prioritário para o menos): Essencial, Desejável, Opcional._
-
 | **ID** | **Descrição** | **Prioridade** | **Plataforma** | **Sprint** | **Status** |
 | ---     | ---                                        | ---            | ---                | ---        | ---        |
 | RF001   | Login/Cadastro (Cliente) (Frontend)        | Alta           | _web_              | Sprint 2   | ❌         |
@@ -222,8 +221,6 @@ Obs: acrescente mais linhas, se necessário.
 
 ## 3.2. Requisitos Não-Funcionais
 
-_Enumere os requisitos não-funcionais previstos para a sua aplicação. Entre os requisitos não funcionais, inclua todos os requisitos que julgar importante do ponto de vista arquitetural ou seja os requisitos que terão impacto na definição da arquitetura. Os requisitos devem ser descritos de forma completa e preferencialmente quantitativa._
-
 | **ID** | **Descrição** |
 | --- | --- |
 | RNF001 | O sistema deve ter tempo de resposta de até 3 segundos em qualquer operação realizada. |
@@ -251,9 +248,6 @@ As restrições impostas ao projeto que afetam sua arquitetura são :
 - A arquitetura deverá permitir escalabilidade e modularidade para facilitar manutenção e expansão do sistema.
 
 ## 3.4. Mecanismos Arquiteturais
-
-_Visão geral dos mecanismos que compõem a arquitetura do sosftware baseando-se em três estados: (1) análise, (2) design e (3) implementação. Em termos de Análise devem ser listados os aspectos gerais que compõem a arquitetura do software como: persistência, integração com sistemas legados, geração de logs do sistema, ambiente de front end, tratamento de exceções, formato dos testes, formato de distribuição/implantação (deploy), entre outros. Em Design deve-se identificar o padrão tecnológico a seguir para cada mecanismo identificado na análise. Em Implementação, deve-se identificar o produto a ser utilizado na solução.
- Ex: Análise (Persistência), Design (ORM), Implementação (Hibernate)._
 
 | **Análise** | **Design** | **Implementação** |
 | --- | --- | --- |
@@ -298,8 +292,6 @@ Obs: a quantidade e o escopo das funcionalidades deve ser negociado com os profe
 
 ### Histórias de Usuário
 
-_Nesta seção, você deve descrever estórias de usuários seguindo os métodos ágeis. Lembre-se das características de qualidade das estórias de usuários, ou seja, o que é preciso para descrever boas histórias de usuários._
-
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
 |chef particular  | cadastrar meu perfil, incluindo minhas especialidades e disponibilidade           | que os clientes possam me encontrar e contratar meus serviços.               |
@@ -313,22 +305,15 @@ _Nesta seção, você deve descrever estórias de usuários seguindo os métodos
 
 ## 4.2. Visão Lógica
 
-_Apresente os artefatos que serão utilizados descrevendo em linhas gerais as motivações que levaram a equipe a utilizar estes diagramas._
-
 ### Diagrama de Classes
 
 ![Captura de tela 2025-03-17 094649](https://github.com/user-attachments/assets/d1dfb8a9-1b9d-404d-bad4-fbe002c7b810)
-
-
-**Figura 2 – Diagrama de classes (exemplo). Fonte: o próprio autor.**
 
 O diagrama de classes do Gastro Match representa a estrutura do sistema e seus principais componentes, incluindo usuários (clientes e chefs), autenticação, agendamentos, pagamentos, chat, avaliação, perfil e  banco de dados.
 A plataforma permite que clientes encontrem e contratem chefs particulares, facilitando agendamentos, pagamentos e interações via chat. O banco de dados é responsável pela persistência das informações, garantindo a integridade dos dados.
 As relações entre as classes foram estruturadas para proporcionar uma experiência fluida, desde o registro de usuários até a finalização do serviço.
 
 ### Diagrama de componentes
-
-_Apresente o diagrama de componentes da aplicação, indicando, os elementos da arquitetura e as interfaces entre eles. Liste os estilos/padrões arquiteturais utilizados e faça uma descrição sucinta dos componentes indicando o papel de cada um deles dentro da arquitetura/estilo/padrão arquitetural. Indique também quais componentes serão reutilizados (navegadores, SGBDs, middlewares, etc), quais componentes serão adquiridos por serem proprietários e quais componentes precisam ser desenvolvidos._
 
 ![Diagrama de componentes](imagens/componentes.png "Diagrama de componentes")
 
