@@ -42,6 +42,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 | **Data** | **Autor** | **Descrição** | **Versão** |
 | --- | --- | --- | --- |
+| **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo RNFs e incluindo versões de navegadores e S.O  | [18] |
 | **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo RF022 e RF023 | [17] |
 | **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Removendo requisitos funcionais | [16] |
 | **[25/03/2025]** | Julia Gabriela de Resende | Adicionado diagrama de componentes | [15] |
@@ -214,8 +215,8 @@ _Esta seção descreve os requisitos comtemplados nesta descrição arquitetural
 | RF023   | Permitir a busca de chefs e pratos         | Alta           | _mobile_           | Sprint 4   | ❌         |
 | RF024   | Integrar pagamento com PagBank             | Alta           | _web_              | Sprint 4   | ❌         |
 | RF025   | Integrar pagamento com PagBank             | Alta           | _mobile_           | Sprint 4   | ❌         |
-| RF026   | Recuperar senha de usuário por e-mail             | Alta           | _web_           | Sprint 4   | ❌         |
-| RF027   | Recuperar senha de usuário por e-mail            | Alta           | _mobile_           | Sprint 4   | ❌         |
+| RF026   | Recuperar senha de usuário por e-mail      | Alta           | _web_              | Sprint 4   | ❌         |
+| RF027   | Recuperar senha de usuário por e-mail      | Alta           | _mobile_           | Sprint 4   | ❌         |
 
 
 Obs: acrescente mais linhas, se necessário.
@@ -225,15 +226,13 @@ Obs: acrescente mais linhas, se necessário.
 | **ID** | **Descrição** |
 | --- | --- |
 | RNF001 | O sistema deve ter tempo de resposta de até 3 segundos em qualquer operação realizada. |
-| RNF002 | O sistema deve ser acessível através dos navegadores Chrome, Firefox, Safari e Edge. |
+| RNF002 | O sistema deve ser acessível através dos navegadores Chrome (versão 134.0.6998.118 ou superior), Firefox (versão 136.0 ou superior), Safari (versão 18.3 ou superior) e Edge  (versão 134.0.3124.83 ou superior). |
 | RNF003 | O sistema deve ser responsivo, oferecendo boa experiência tanto em dispositivos móveis quanto desktops. |
 | RNF004 | O sistema deve ser capaz de realizar atualizações de forma simples e sem causar impacto nos usuários ativos. |
-| RNF005 | O sistema deve ser compatível com os sistemas operacionais Android e iOS nas versões mais recentes. |
+| RNF005 | O sistema deve ser compatível com os sistemas operacionais Android (versão 14 ou superior) e iOS (versão 18.3.2 ou superior). |
 | RNF006 | O sistema deve implementar autenticação e autorização robustas, garantindo a proteção dos dados dos pacientes, com padrão de autenticação OAuth2.|
-| RNF007 | O código-fonte do sistema deve ser legível e seguir boas práticas de codificação, facilitando a manutenção e futuras modificações. |
-| RNF008 | O sistema deve estar disponível 99,9% do tempo, com exceção de manutenções programadas. |
-| RNF009 | O chat deve utilizar um mecanismo de mensageria assíncrona para garantir a entrega confiável das mensagens, mesmo em casos de falha temporária na conexão. |
-| RNF010 | Os dados do usuário devem ser armazenados em um banco de dados relacional |
+| RNF007 | O sistema deve estar disponível 99,9% do tempo, com exceção de manutenções programadas. |
+| RNF008 | O sistema deve proporcionar uma experiência de usuário intuitiva e fácil de navegar, garantindo que as principais funcionalidades sejam acessíveis em até 3 cliques. |
 
 Obs: acrescente mais linhas, se necessário.
 
@@ -247,6 +246,9 @@ As restrições impostas ao projeto que afetam sua arquitetura são :
 - O sistema deverá utilizar Supabase como camada adicional para gerenciamento de dados e autenticação.
 - A integração com serviços de pagamento deverá ser feita através de um gateway de pagamento externo.
 - A arquitetura deverá permitir escalabilidade e modularidade para facilitar manutenção e expansão do sistema.
+- O código-fonte do sistema deve ser legível e seguir boas práticas de codificação, facilitando a manutenção e futuras modificações.
+- O chat deve utilizar um mecanismo de mensageria assíncrona para garantir a entrega confiável das mensagens, mesmo em casos de falha temporária na conexão.
+- Os dados do usuário devem ser armazenados em um banco de dados relacional
 
 ## 3.4. Mecanismos Arquiteturais
 
