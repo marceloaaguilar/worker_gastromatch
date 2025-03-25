@@ -115,7 +115,6 @@ Criação de uma plataforma digital que irá conectar clientes e chefs especiali
 
 ## 1.3. Definições e Abreviaturas
 
-Coloque aqui as definições, siglas e abreviaturas utilizadas no trabalho._
 
 <a name="produto"></a>
 # 2. Nosso Produto
@@ -219,7 +218,6 @@ _Esta seção descreve os requisitos comtemplados nesta descrição arquitetural
 | RF027   | Recuperar senha de usuário por e-mail      | Alta           | _mobile_           | Sprint 4   | ❌         |
 
 
-Obs: acrescente mais linhas, se necessário.
 
 ## 3.2. Requisitos Não-Funcionais
 
@@ -234,7 +232,6 @@ Obs: acrescente mais linhas, se necessário.
 | RNF007 | O sistema deve estar disponível 99,9% do tempo, com exceção de manutenções programadas. |
 | RNF008 | O sistema deve proporcionar uma experiência de usuário intuitiva e fácil de navegar, garantindo que as principais funcionalidades sejam acessíveis em até 3 cliques. |
 
-Obs: acrescente mais linhas, se necessário.
 
 ## 3.3. Restrições Arquiteturais
 
@@ -292,7 +289,6 @@ O sistema deve:
 12. Criar endpoints para busca de chefs e pratos, garantindo comunicação eficiente com o backend (web e mobile).
 13. Integrar pagamentos com o PagBank para transações seguras e confiáveis (web e mobile).
 
-Obs: a quantidade e o escopo das funcionalidades deve ser negociado com os professores/orientadores do trabalho.
 
 ### Histórias de Usuário
 
@@ -343,7 +339,6 @@ _Caso julgue necessário para explicar a arquitetura, apresente o diagrama de cl
 
 **Figura 4 – Diagrama de Entidade Relacionamento (ER) - exemplo. Fonte: o próprio autor.**
 
-Obs: Acrescente uma breve descrição sobre o diagrama apresentado na Figura 3.
 
 
 <a name="wireframes"></a>
