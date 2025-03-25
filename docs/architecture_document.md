@@ -319,7 +319,7 @@ As relações entre as classes foram estruturadas para proporcionar uma experiê
 
 ### Diagrama de componentes
 
-[Diagrama de componentes.pdf](https://github.com/user-attachments/files/19448945/Diagrama.de.componentes.pdf)
+![Captura de tela 2025-03-25 104436](https://github.com/user-attachments/assets/ac362988-6036-4a82-8ef0-4768c81a3817)
 
 **Figura 3 – Diagrama de componentes. Fonte: o próprio autor.**
 
