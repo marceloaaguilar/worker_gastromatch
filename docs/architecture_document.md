@@ -344,8 +344,14 @@ _Caso julgue necessário para explicar a arquitetura, apresente o diagrama de cl
 
 <a name="wireframes"></a>
 # 5. Wireframes
-Tela De Home
-![image](https://github.com/user-attachments/assets/552ddabd-70e6-4e35-84d1-7f0dc55a8890)
+![image](https://github.com/user-attachments/assets/41371bae-9b14-4dc5-b6f9-1b8eb5d2259c)
+
+![image](https://github.com/user-attachments/assets/f02f5573-c0f3-4cbd-8efc-f93a11967b19)
+
+![image](https://github.com/user-attachments/assets/2b05b704-4f26-4e73-aec4-286a811e0a43)
+
+![image](https://github.com/user-attachments/assets/83de3a2d-3a90-4b16-af4b-5e3c59f81414)
+
 
 
 <a name="solucao"></a>
