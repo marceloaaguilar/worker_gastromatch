@@ -42,6 +42,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 | **Data** | **Autor** | **Descrição** | **Versão** |
 | --- | --- | --- | --- |
+| **[26/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Incluindo novos requisitos não funcionais  | [19] |
 | **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo RNFs e incluindo versões de navegadores e S.O  | [18] |
 | **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo RF022 e RF023 | [17] |
 | **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Removendo requisitos funcionais | [16] |
@@ -232,7 +233,9 @@ _Esta seção descreve os requisitos comtemplados nesta descrição arquitetural
 | RNF007 | O sistema deve estar disponível 99,9% do tempo, com exceção de manutenções programadas. |
 | RNF008 | O sistema deve proporcionar uma experiência de usuário intuitiva e fácil de navegar, garantindo que as principais funcionalidades sejam acessíveis em até 3 cliques. |
 | RNF009 | O sistema deve ser capaz de suportar até 500 usuários simultâneos sem degradação na performance. |
-
+| RNF010 | O software não pode apresentar a falha de segurança "quebra de controle de acesso" |
+| RNF011 | O software não pode apresentar a falha de segurança "falhas de criptografia" |
+| RNF012 | O software não pode apresentar a falha de segurança "injeção" |
 
 ## 3.3. Restrições Arquiteturais
 
