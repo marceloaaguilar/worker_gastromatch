@@ -352,8 +352,8 @@ _Caso julgue necessário para explicar a arquitetura, apresente o diagrama de cl
 
 ![image](https://github.com/user-attachments/assets/0702c258-56df-4086-8b55-2e2d163d69ed)
 
+![image](https://github.com/user-attachments/assets/13a0797e-41d5-44a4-bc3f-cb7e3cc3da8c)
 
-![image](https://github.com/user-attachments/assets/35b6e130-9d72-4091-974b-e5b152db6410)
 
 ![image](https://github.com/user-attachments/assets/1024c576-433a-4cdf-9bf5-06da0ebd2918)
 
