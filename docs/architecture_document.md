@@ -1,4 +1,4 @@
-# GASTROMATCH
+![image](https://github.com/user-attachments/assets/ab32e525-9eb7-4194-b343-9440da55adb0)# GASTROMATCH
 
 
 **Guilherme Augusto Jardim de Souza, gajsouza@sga.pucminas.br**
@@ -346,11 +346,22 @@ _Caso julgue necessário para explicar a arquitetura, apresente o diagrama de cl
 # 5. Wireframes
 ![image](https://github.com/user-attachments/assets/41371bae-9b14-4dc5-b6f9-1b8eb5d2259c)
 
-![image](https://github.com/user-attachments/assets/39db96b7-1416-4d41-accb-2f2f74a5d42e)
+![image](https://github.com/user-attachments/assets/f2f191ae-4b35-48a1-b460-3108725257ec)
 
-![image](https://github.com/user-attachments/assets/fbcbe783-915c-43b1-99a0-4380a8184fe2)
+![image](https://github.com/user-attachments/assets/fc51371b-3631-458b-8299-30601e967b79)
 
-![image](https://github.com/user-attachments/assets/83de3a2d-3a90-4b16-af4b-5e3c59f81414)
+![image](https://github.com/user-attachments/assets/35b6e130-9d72-4091-974b-e5b152db6410)
+
+![image](https://github.com/user-attachments/assets/1024c576-433a-4cdf-9bf5-06da0ebd2918)
+
+![image](https://github.com/user-attachments/assets/28fd47bd-46cf-410e-bcd3-4820960a5d0b)
+
+![image](https://github.com/user-attachments/assets/c5da55f9-4820-469f-a410-b0991539a990)
+
+
+
+
+
 
 
 
