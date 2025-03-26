@@ -346,7 +346,9 @@ _Caso julgue necessário para explicar a arquitetura, apresente o diagrama de cl
 # 5. Wireframes
 ![image](https://github.com/user-attachments/assets/41371bae-9b14-4dc5-b6f9-1b8eb5d2259c)
 
-![image](https://github.com/user-attachments/assets/f2f191ae-4b35-48a1-b460-3108725257ec)
+
+![image](https://github.com/user-attachments/assets/f5059b83-f9d3-4eec-9267-ceaf47d27287)
+
 
 ![image](https://github.com/user-attachments/assets/fc51371b-3631-458b-8299-30601e967b79)
 
