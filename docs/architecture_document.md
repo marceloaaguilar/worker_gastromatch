@@ -344,11 +344,9 @@ _Caso julgue necessário para explicar a arquitetura, apresente o diagrama de cl
 
 <a name="wireframes"></a>
 # 5. Wireframes
+Tela De Home
+![image](https://github.com/user-attachments/assets/552ddabd-70e6-4e35-84d1-7f0dc55a8890)
 
-> Wireframes são protótipos das telas da aplicação usados em design de interface para sugerir a
-> estrutura de um site web e seu relacionamentos entre suas
-> páginas. Um wireframe web é uma ilustração semelhante ao
-> layout de elementos fundamentais na interface.
 
 <a name="solucao"></a>
 # 6. Projeto da Solução
