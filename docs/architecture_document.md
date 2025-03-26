@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/ab32e525-9eb7-4194-b343-9440da55adb0)# GASTROMATCH
+# GASTROMATCH
 
 
 **Guilherme Augusto Jardim de Souza, gajsouza@sga.pucminas.br**
