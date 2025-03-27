@@ -114,7 +114,7 @@ A dificuldade de encontrar e agendar chefs particulares qualificados para cozinh
 ## 1.2. Objetivos do trabalho
 ### 1.2.1 Objetivo Geral
 Desenvolver uma plataforma eficiente para conectar clientes a chefs particulares qualificados, com foco em personalização, agendamento prático e confiável, visando atender à crescente demanda por serviços gastronômicos personalizados.
-### 1.3.1 Objetivos Específicos.
+### 1.2.2 Objetivos Específicos.
 1. Criar uma interface intuitiva para facilitar na busca e agendamento de chefs, permitindo que clientes filtrem profissionais de acordo com suas preferências e necessidades específicas.
 2. Desenvolver um sistema de review e avaliação do chefs, garantindo que apenas profissionais de qualidade e com boas avaliações sejam disponibilizados aos usuários.
 3. Implementar funcionalidades de recomendação personalizadas, utilizando dados dos clientes e feedbacks anteriores para sugerir chefs que melhor atendam a suas expectativas.
