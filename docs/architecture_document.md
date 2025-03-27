@@ -28,7 +28,7 @@ Professores:
 
 _Curso de Engenharia de Software, Campus Lourdes_
 
-_Instituto de Informática e Ciências Exatas – Pontifícia Universidade de Minas Gerais (PUC MINAS), Belo Horizonte – MG – Brasil_
+_Instituto de Informática e Ciências Exatas – Pontifícia Universidade de Minas Gerais (PUC MINAS), Belo Horizonte–MG – Brasil_
 
 ---
 
@@ -40,27 +40,28 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 ## Histórico de Revisões
 
-| **Data** | **Autor** | **Descrição** | **Versão** |
-| --- | --- | --- | --- |
-| **[26/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Incluindo novos requisitos não funcionais  | [19] |
-| **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo RNFs e incluindo versões de navegadores e S.O  | [18] |
-| **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo RF022 e RF023 | [17] |
-| **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Removendo requisitos funcionais | [16] |
-| **[25/03/2025]** | Julia Gabriela de Resende | Adicionado diagrama de componentes | [15] |
-| **[25/03/2025]** | Julia Gabriela de Resende | Correção: objetivo, visão do produto e exclusão de textos padrão | [14] |
-| **[19/03/2025]** | Pedro Talma Toledo | Correção: Diagrama de arquitetura | [13] |
-| **[18/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção: Diagrama de arquitetura | [12] |
-| **[17/03/2025]** | Julia Gabriela de Resende | Correção: Objetivo e diagrama de classes | [11] |
-| **[12/03/2025]** | Pedro Talma Toledo | Correção: problema, objetivos e visão do produto | [10] |
-| **[11/03/2025]** | Julia Gabriela de Resende | Visão de negócio | [9] |
-| **[11/03/2025]** | Julia Gabriela de Resende | Histórias de usuário | [8] |
-| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo visão de produto | [7] |
-| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Adicionando requisitos funcionais e não funcionais | [6] |
-| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Correção do diagrama de arquiteutra | [5] |
-| **[27/02/2025]** | Julia Gabriela de Resende | Correção do objetivo e problema. Criação da personal Gabriel Almeida e Mariana Torres | [4] |
-| **[25/02/2025]** | Julia Gabriela de Resende | Adicionei os mecanismos estruturais | [3] |
-| **[25/02/2025]** | Julia Gabriela de Resende | Adicionei o diagrama de visão geral feito pelo Marcelo, transformei o mesmo em uma versão textual e criei as restrições do sistema  | [2] |
-| **[25/02/2025]** | Julia Gabriela de Resende | Criação dos tópicos: resumo, apresentação, problema, objetivos. Adicionei as partes (que ja haviam sido feitas em sala) do "Nosso Produto". | [1] |
+| **Data**         | **Autor**                             | **Descrição**                                                                                                                               | **Versão** |
+|------------------|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| **[27/03/2025]** | Philippe Roberto Dutra Chaves Vieira | Correção de documentação e reorganização de arquivos.                                                                                       | [20]       |
+| **[26/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Incluindo novos requisitos não funcionais                                                                                                   | [19]       |
+| **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Corrigindo RNFs e incluindo versões de navegadores e S.O                                                                                    | [18]       |
+| **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Corrigindo RF022 e RF023                                                                                                                    | [17]       |
+| **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Removendo requisitos funcionais                                                                                                             | [16]       |
+| **[25/03/2025]** | Julia Gabriela de Resende            | Adicionado diagrama de componentes                                                                                                          | [15]       |
+| **[25/03/2025]** | Julia Gabriela de Resende            | Correção: objetivo, visão do produto e exclusão de textos padrão                                                                            | [14]       |
+| **[19/03/2025]** | Pedro Talma Toledo                   | Correção: Diagrama de arquitetura                                                                                                           | [13]       |
+| **[18/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Correção: Diagrama de arquitetura                                                                                                           | [12]       |
+| **[17/03/2025]** | Julia Gabriela de Resende            | Correção: Objetivo e diagrama de classes                                                                                                    | [11]       |
+| **[12/03/2025]** | Pedro Talma Toledo                   | Correção: problema, objetivos e visão do produto                                                                                            | [10]       |
+| **[11/03/2025]** | Julia Gabriela de Resende            | Visão de negócio                                                                                                                            | [9]        |
+| **[11/03/2025]** | Julia Gabriela de Resende            | Histórias de usuário                                                                                                                        | [8]        |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Corrigindo visão de produto                                                                                                                 | [7]        |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Adicionando requisitos funcionais e não funcionais                                                                                          | [6]        |
+| **[11/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Correção do diagrama de arquitetura                                                                                                         | [5]        |
+| **[27/02/2025]** | Julia Gabriela de Resende            | Correção do objetivo e problema. Criação da personal Gabriel Almeida e Mariana Torres                                                       | [4]        |
+| **[25/02/2025]** | Julia Gabriela de Resende            | Adicionei os mecanismos estruturais                                                                                                         | [3]        |
+| **[25/02/2025]** | Julia Gabriela de Resende            | Adicionei o diagrama de visão geral feito pelo Marcelo, transformei o mesmo em uma versão textual e criei as restrições do sistema          | [2]        |
+| **[25/02/2025]** | Julia Gabriela de Resende            | Criação dos tópicos: resumo, apresentação, problema, objetivos. Adicionei as partes (que ja haviam sido feitas em sala) do "Nosso Produto". | [1]        |
 
 
 ## SUMÁRIO
@@ -84,7 +85,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 4. [Modelagem](#modelagem "Modelagem e projeto arquitetural") <br />
 	4.1. Visão de Negócio <br />
 	4.2. Visão Lógica <br />
-	4.3. Modelo de dados (opcional) <br />
+	<!-- 4.3. Modelo de dados (opcional) <br /> -->
 
 5. [Wireframes](#wireframes "Wireframes") <br />
 
@@ -103,7 +104,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 <a name="apresentacao"></a>
 # 1. Apresentação
 
-No mundo gastronômico, a busca por chefs particulares tem crescido exponencialmente, seja para eventos privados ou experiências exclusivas. No entanto, a dificuldade em encontrar profissionais qualificados e alinhados com as necessidades específicas do cliente é um problema recorrente. De acordo com a 13ª edição da Pesquisa Anual Setorial de Food Service 2024, realizada pela Associação Brasileira de Franchising (ABF) em parceria com a Galunion Consultoria, o ano de 2023 fechou com crescimento de 19% por serviços personalizados, impulsionada pelo desejo de experiências únicas e pelo crescimento do mercado de gastronomia sob demanda. Apesar disso, a maioria das soluções existentes no mercado não oferecem personalização adequada, nem conectam de forma eficiente clientes a profissionais especializados.
+No mundo gastronômico, a busca por chefs particulares tem crescido exponencialmente, seja para eventos privados ou experiências exclusivas. No entanto, a dificuldade em encontrar profissionais qualificados e alinhados com as necessidades específicas do cliente é um problema recorrente. Segundo a 13ª edição da Pesquisa Anual Setorial de Food Service 2024, realizada pela Associação Brasileira de Franchising (ABF) em parceria com a Galunion Consultoria, o ano de 2023 fechou com crescimento de 19% por serviços personalizados, impulsionada pelo desejo de experiências únicas e pelo crescimento do mercado de gastronomia sob demanda. Apesar disso, a maioria das soluções existentes no mercado não oferecem personalização adequada, nem conectam de forma eficiente clientes a profissionais especializados.
 
 
 ## 1.1. Problema
@@ -111,10 +112,20 @@ No mundo gastronômico, a busca por chefs particulares tem crescido exponencialm
 A dificuldade de encontrar e agendar chefs particulares qualificados para cozinhar em casa ou em eventos de forma prática e confiável.
 
 ## 1.2. Objetivos do trabalho
-
-Criação de uma plataforma digital que irá conectar clientes e chefs especializados, oferecendo uma experiência personalizada de contratação de serviços gastronômicos, na região de Belo Horizonte.
+### 1.2.1 Objetivo Geral
+Desenvolver uma plataforma eficiente para conectar clientes a chefs particulares qualificados, com foco em personalização, agendamento prático e confiável, visando atender à crescente demanda por serviços gastronômicos personalizados.
+### 1.3.1 Objetivos Específicos.
+1. Criar uma interface intuitiva para facilitar na busca e agendamento de chefs, permitindo que clientes filtrem profissionais de acordo com suas preferências e necessidades específicas.
+2. Desenvolver um sistema de review e avaliação do chefs, garantindo que apenas profissionais de qualidade e com boas avaliações sejam disponibilizados aos usuários.
+3. Implementar funcionalidades de recomendação personalizadas, utilizando dados dos clientes e feedbacks anteriores para sugerir chefs que melhor atendam a suas expectativas.
 
 ## 1.3. Definições e Abreviaturas
+| **Índice** | **Sigla** | **Definição**                                       |
+|------------|-----------|-----------------------------------------------------|
+| **1.**     | RF        | Requisito Funcional                                 |
+| **2.**     | RNF       | Requisito Não Funcional                             |
+| **3.**     | S.O       | Sistema Operacional                                 |
+| **4.**     | SPA       | Aplicação de Página Única (Single Page Application) |
 
 
 <a name="produto"></a>
@@ -123,7 +134,7 @@ Criação de uma plataforma digital que irá conectar clientes e chefs especiali
 ## 2.1 Visão do Produto
 ### Visão do produto
 
-**Para**:  Profissionais e entusiastas da gastronomia.
+**Para**: Profissionais e entusiastas da gastronomia.
 
 **Cujo**: Dificuldade do cliente é encontrar bons chefs particulares.
 
@@ -135,11 +146,11 @@ Criação de uma plataforma digital que irá conectar clientes e chefs especiali
 
 **Diferentemente do**: “A Chef em casa”.
 
-**O nosso produto**:  Oferece uma plataforma de chefs especializados e personalizados de acordo com a necessidade do cliente.
+**O nosso produto**: Oferece uma plataforma de chefs especializados e personalizados conforme a necessidade do cliente.
 
 
 ## 2.2 Nosso Produto
-![Captura de tela 2025-02-25 132754](https://github.com/user-attachments/assets/a7168ca1-93f1-48a6-a537-ec15f643af09))
+![Captura de tela 2025-02-25 132754](https://github.com/user-attachments/assets/a7168ca1-93f1-48a6-a537-ec15f643af09)
 
 **Figura 1 – Nosso produto. Fonte: o próprio autor.**
 
@@ -184,68 +195,51 @@ Criação de uma plataforma digital que irá conectar clientes e chefs especiali
 <a name="requisitos"></a>
 # 3. Requisitos
 
-_Esta seção descreve os requisitos comtemplados nesta descrição arquitetural, divididos em dois grupos: funcionais e não funcionais._
+_Esta seção descreve os requisitos contemplados nesta descrição arquitetural, divididos em dois grupos: funcionais e não funcionais._
 
 ## 3.1. Requisitos Funcionais
 
-| **ID** | **Descrição** | **Prioridade** | **Plataforma** | **Sprint** | **Status** |
-| ---     | ---                                        | ---            | ---                | ---        | ---        |
-| RF001   | Login/Cadastro (Cliente) (Frontend)        | Alta           | _web_              | Sprint 2   | ❌         |
-| RF002   | Login/Cadastro (Chef) (Frontend)           | Alta           | _web_              | Sprint 2   | ❌         |
-| RF003   | Login/Cadastro (Cliente) (Mobile)          | Alta           | _mobile_           | Sprint 2   | ❌         |
-| RF004   | Login/Cadastro (Chef) (Mobile)             | Alta           | _mobile_           | Sprint 2   | ❌         |
-| RF005   | Login/Cadastro (Chef) (Backend)            | Alta           | _web_              | Sprint 2   | ❌         |
-| RF006   | Login/Cadastro (Cliente) (Backend)         | Alta           | _web_              | Sprint 2   | ❌         |
-| RF007   | Homepage (Mobile)                          | Alta           | _mobile_           | Sprint 2   | ❌         |
-| RF008   | Homepage (Backend)                         | Alta           | _web_              | Sprint 2   | ❌         |
-| RF009   | Homepage (Frontend)                        | Alta           | _web_              | Sprint 2   | ❌         |
-| RF010   | Cadastro de avaliação                      | Média          | _web_              | Sprint 3   | ❌         |
-| RF011   | Cadastro de avaliação                      | Média          | _mobile_           | Sprint 3   | ❌         |
-| RF012   | Criar interface de chat em tempo real      | Alta           | _web_              | Sprint 3   | ❌         |
-| RF013   | Criar interface de chat em tempo real      | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF014   | Interface de pagamento                     | Alta           | _web_              | Sprint 3   | ❌         |
-| RF015   | Interface de pagamento                     | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF016   | Solicitação de agendamento                 | Alta           | _web_              | Sprint 3   | ❌         |
-| RF017   | Solicitação de agendamento                 | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF018   | Listagem de Chefs                          | Alta           | _web_              | Sprint 3   | ❌         |
-| RF019   | Listagem de Chefs                          | Alta           | _mobile_           | Sprint 3   | ❌         |
-| RF020   | Pesquisa de chefs                          | Alta           | _web_              | Sprint 4   | ❌         |
-| RF021   | Pesquisa de chefs                          | Alta           | _mobile_           | Sprint 4   | ❌         |
-| RF022   | Permitir a busca de chefs e pratos         | Alta           | _web_              | Sprint 4   | ❌         |
-| RF023   | Permitir a busca de chefs e pratos         | Alta           | _mobile_           | Sprint 4   | ❌         |
-| RF024   | Integrar pagamento com PagBank             | Alta           | _web_              | Sprint 4   | ❌         |
-| RF025   | Integrar pagamento com PagBank             | Alta           | _mobile_           | Sprint 4   | ❌         |
-| RF026   | Recuperar senha de usuário por e-mail      | Alta           | _web_              | Sprint 4   | ❌         |
-| RF027   | Recuperar senha de usuário por e-mail      | Alta           | _mobile_           | Sprint 4   | ❌         |
+| **ID** | **Descrição**                                                          | **Prioridade** | **Plataforma** | **Sprint** | **Status** |
+|--------|------------------------------------------------------------------------|----------------|----------------|------------|------------|
+| RF001  | O Usuário deve realizar Login/Cadastro                                 | Alta           | _web & mobile_ | Sprint 2   | ❌         |
+| RF002  | O Cliente deve Cadastrar avaliações para os chefes                     | Média          | _web & mobile_ | Sprint 3   | ❌         |
+| RF003  | O Usuário deve ter acesso à um chat em tempo real                      | Alta           | _web & mobile_ | Sprint 3   | ❌         |
+| RF004  | O Cliente precisa de uma Interface para pagamento                      | Alta           | _web & mobile_ | Sprint 3   | ❌         |
+| RF005  | O Cliente deve poder Agendar de um chef para um serviço                | Alta           | _web & mobile_ | Sprint 3   | ❌         |
+| RF006  | O Cliente precisa ver uma Listagem dos Chefs                           | Alta           | _web & mobile_ | Sprint 3   | ❌         |
+| RF007  | O Cliente deve poder Pesquisa por chefs específicos                    | Alta           | _web & mobile_ | Sprint 4   | ❌         |
+| RF008  | O Cliente deve poder Busca por pratos específicos                      | Alta           | _web & mobile_ | Sprint 4   | ❌         |
+| RF009  | O Sistema deve se Integrar com pagamento via PagBank                   | Alta           | _web & mobile_ | Sprint 4   | ❌         |
+| RF010  | O Usuário precisa de uma opção, por e-mail, para Recuperação de senha  | Alta           | _web & mobile_ | Sprint 4   | ❌         |
+
 
 
 
 ## 3.2. Requisitos Não-Funcionais
 
-| **ID** | **Descrição** |
-| --- | --- |
-| RNF001 | O sistema deve ter tempo de resposta de até 3 segundos em qualquer operação realizada. |
+| **ID** | **Descrição**                                                                                                                                                                                                    |
+|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RNF001 | O sistema deve ter tempo de resposta, para as mensagens do chat instantâneo, de até 3 segundos                                                                                                                   |
 | RNF002 | O sistema deve ser acessível através dos navegadores Chrome (versão 134.0.6998.118 ou superior), Firefox (versão 136.0 ou superior), Safari (versão 18.3 ou superior) e Edge  (versão 134.0.3124.83 ou superior). |
-| RNF003 | O sistema deve ser responsivo, oferecendo boa experiência tanto em dispositivos móveis quanto desktops. |
-| RNF004 | O sistema deve ser capaz de realizar atualizações de forma simples e sem causar impacto nos usuários ativos. |
-| RNF005 | O sistema deve ser compatível com os sistemas operacionais Android (versão 14 ou superior) e iOS (versão 18.3.2 ou superior). |
-| RNF006 | O sistema deve implementar autenticação e autorização robustas, garantindo a proteção dos dados dos pacientes, com padrão de autenticação OAuth2.|
-| RNF007 | O sistema deve estar disponível 99,9% do tempo, com exceção de manutenções programadas. |
-| RNF008 | O sistema deve proporcionar uma experiência de usuário intuitiva e fácil de navegar, garantindo que as principais funcionalidades sejam acessíveis em até 3 cliques. |
-| RNF009 | O sistema deve ser capaz de suportar até 500 usuários simultâneos sem degradação na performance. |
-| RNF010 | O software não pode apresentar a falha de segurança "quebra de controle de acesso" |
-| RNF011 | O software não pode apresentar a falha de segurança "falhas de criptografia" |
-| RNF012 | O software não pode apresentar a falha de segurança "injeção" |
+| RNF003 | O sistema deve oferecer boa experiência de uso para resoluções, tanto em monitores (Desktop) quanto em dispositivos mobile, acima do HD (1280 x 720)                                                             |
+| RNF004 | O sistema deve ser compatível com os sistemas operacionais Android (versão 14 ou superior) e iOS (versão 18.3.2 ou superior).                                                                                    |
+| RNF005 | O sistema deve implementar autenticação e autorização robustas, garantindo a proteção dos dados dos pacientes, com padrão de autenticação OAuth2.                                                                |
+| RNF006 | O sistema deve estar disponível 99,9% do tempo, com exceção de manutenções programadas.                                                                                                                          |
+| RNF007 | O cliente deve poder realizar um agendamento de um chef em até 5 cliques.                                                                                                                                        |
+| RNF008 | O sistema deve ser capaz de suportar até 500 usuários simultâneos sem degradação na performance.                                                                                                                 |
+| RNF009 | O software não pode apresentar a falha de segurança "quebra de controle de acesso"                                                                                                                               |
+| RNF010 | O software não pode apresentar a falha de segurança "falhas de criptografia"                                                                                                                                     |
+| RNF011 | O software não pode apresentar a falha de segurança "injeção"                                                                                                                                                    |
 
 ## 3.3. Restrições Arquiteturais
 
-As restrições impostas ao projeto que afetam sua arquitetura são :
+As restrições impostas ao projeto que afetam sua arquitetura são:
 
 - O sistema deverá adotar uma arquitetura baseada em microsserviços.
 - O tráfego de requisições deverá passar por um API Gateway, centralizando a comunicação com os serviços internos.
 - A comunicação entre os serviços deverá ser feita de forma assíncrona, utilizando RabbitMQ para mensageria.
 - O sistema deverá utilizar Supabase como camada adicional para gerenciamento de dados e autenticação.
-- A integração com serviços de pagamento deverá ser feita através de um gateway de pagamento externo.
+- A integração com serviços de pagamento deverá ser feita por meio de um gateway de pagamento externo.
 - A arquitetura deverá permitir escalabilidade e modularidade para facilitar manutenção e expansão do sistema.
 - O código-fonte do sistema deve ser legível e seguir boas práticas de codificação, facilitando a manutenção e futuras modificações.
 - O chat deve utilizar um mecanismo de mensageria assíncrona para garantir a entrega confiável das mensagens, mesmo em casos de falha temporária na conexão.
@@ -255,8 +249,8 @@ As restrições impostas ao projeto que afetam sua arquitetura são :
 
 | **Análise** | **Design** | **Implementação** |
 | --- | --- | --- |
-| Persistência | ORM para abstração do banco de dados | PostgreSQL e SupaBase |
-| Front end | SPA (Single Page Application) para melhor experiência do usuário | React.js |
+| Persistência | ORM para abstração do banco de dados | PostgresSQL e SupaBase |
+| Front end | SPA para melhor experiência do usuário | React.js |
 | Back end | Arquitetura de microsserviços  | Node.js |
 | Mobile | Aplicativo híbrido para múltiplas plataformas  | Flutter |
 | Integração |  Comunicação assíncrona entre serviços | RabbitMQ para mensageria |
@@ -267,7 +261,7 @@ As restrições impostas ao projeto que afetam sua arquitetura são :
 <a name="modelagem"></a>
 # 4. Modelagem e Projeto Arquitetural
 
-O diagrama representa a visão geral de um sistema baseado em microsserviços, onde um **API Gateway** atua como ponto central de entrada, direcionando as requisições para os serviços apropriados. Dentro do sistema, há três serviços principais: um responsável pelo gerenciamento de usuários, outro dedicado ao agendamento de eventos ou serviços, e um terceiro que funciona como gateway de pagamento, processando as transações relacionadas. O serviço de agendamento interage diretamente com o gateway de pagamento para realizar as operações financeiras. Além disso, o sistema conta com uma infraestrutura de mensageria utilizando **RabbitMQ**, permitindo comunicação assíncrona entre os microsserviços, otimizando o processamento de eventos. Na camada de armazenamento de dados, o banco **PostgreSQL** é utilizado para persistência das informações, enquanto o **Supabase** complementa essa estrutura, oferecendo funcionalidades adicionais, como autenticação e acesso em tempo real. A arquitetura proposta garante escalabilidade, eficiência na comunicação entre serviços e um fluxo bem estruturado para processamento de pagamentos e agendamentos.
+O diagrama representa a visão geral de um sistema baseado em microsserviços, onde um **API Gateway** atua como ponto central de entrada, direcionando as requisições para os serviços apropriados. Dentro do sistema, há três serviços principais: um responsável pelo gerenciamento de usuários, outro dedicado ao agendamento de eventos ou serviços, e um terceiro que funciona como gateway de pagamento, processando as transações relacionadas. O serviço de agendamento interage diretamente com o gateway de pagamento para realizar as operações financeiras. Além disso, o sistema conta com uma infraestrutura de mensageria utilizando **RabbitMQ**, permitindo comunicação assíncrona entre os microsserviços, otimizando o processamento de eventos. Na camada de armazenamento de dados, o banco **PostgresSQL** é utilizado para persistência das informações, enquanto o **Supabase** complementa essa estrutura, oferecendo funcionalidades adicionais, como autenticação e acesso em tempo real. A arquitetura proposta garante escalabilidade, eficiência na comunicação entre serviços e um fluxo bem estruturado para processamento de pagamentos e agendamentos.
 
 
 ![Diagrama de Arquitetura-Corrigido](https://github.com/user-attachments/assets/bf62563b-3262-4573-badb-125075f15188)
@@ -313,7 +307,7 @@ O sistema deve:
 
 ![Captura de tela 2025-03-17 094649](https://github.com/user-attachments/assets/d1dfb8a9-1b9d-404d-bad4-fbe002c7b810)
 
-O diagrama de classes do Gastro Match representa a estrutura do sistema e seus principais componentes, incluindo usuários (clientes e chefs), autenticação, agendamentos, pagamentos, chat, avaliação, perfil e  banco de dados.
+O diagrama de classes do Gastro Match representa a estrutura do sistema e seus principais componentes, incluindo usuários (clientes e chefs), autenticação, agendamentos, pagamentos, chat, avaliação, perfil e banco de dados.
 A plataforma permite que clientes encontrem e contratem chefs particulares, facilitando agendamentos, pagamentos e interações via chat. O banco de dados é responsável pela persistência das informações, garantindo a integridade dos dados.
 As relações entre as classes foram estruturadas para proporcionar uma experiência fluida, desde o registro de usuários até a finalização do serviço.
 
@@ -334,15 +328,16 @@ Conforme diagrama apresentado na Figura 3, as entidades participantes da soluç�
 - **Autenticação e Pagamentos** – Responsável pela segurança e gestão financeira:
   Serviço de Autenticação (OAuth2) – Garante a segurança no acesso, permitindo autenticação de usuários por meio do protocolo OAuth2.
   API de Pagamentos (PagBank) – Integração com serviço de pagamentos para processar transações financeiras de forma segura e eficiente.
-  
+- 
+<!--  
 ## 4.3. Modelo de dados (opcional)
 
-_Caso julgue necessário para explicar a arquitetura, apresente o diagrama de classes ou diagrama de Entidade/Relacionamentos ou tabelas do banco de dados. Este modelo pode ser essencial caso a arquitetura utilize uma solução de banco de dados distribuídos ou um banco NoSQL._
+_Caso julgue necessário para explicar a arquitetura, apresente o diagrama de classes, ou diagrama de Entidade/Relacionamentos, ou tabelas do banco de dados. Este modelo pode ser essencial caso a arquitetura utilize uma solução de banco de dados distribuídos ou um banco NoSQL._
 
 ![Diagrama de Entidade Relacionamento (ER) ](imagens/der.png "Diagrama de Entidade Relacionamento (ER) ")
 
 **Figura 4 – Diagrama de Entidade Relacionamento (ER) - exemplo. Fonte: o próprio autor.**
-
+-->
 
 
 <a name="wireframes"></a>
@@ -374,7 +369,7 @@ _Caso julgue necessário para explicar a arquitetura, apresente o diagrama de cl
 <a name="solucao"></a>
 # 6. Projeto da Solução
 
-_Apresente as telas dos sistema construído com uma descrição sucinta de cada uma das interfaces._
+_Apresente as telas do sistema construído com uma descrição sucinta de cada uma das interfaces._
 
 <a name="avaliacao"></a>
 # 7. Avaliação da Arquitetura
@@ -383,7 +378,7 @@ _Esta seção descreve a avaliação da arquitetura apresentada, baseada no mét
 
 ## 7.1. Cenários
 
-_Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos não funcionais sendo satisfeitos. Os requisitos a seguir são apenas exemplos de possíveis requisitos, devendo ser revistos, adequados a cada projeto e complementados de forma a terem uma especificação completa e auto-explicativa._
+_Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos não funcionais sendo satisfeitos. Os requisitos a seguir são apenas exemplos de possíveis requisitos, devendo ser revistos, adequados a cada projeto e complementados para terem uma especificação completa e autoexplicativa._
 
 **Cenário 1 - Acessibilidade:** Suspendisse consequat consectetur velit. Sed sem risus, dictum dictum facilisis vitae, commodo quis leo. Vivamus nulla sem, cursus a mollis quis, interdum at nulla. Nullam dictum congue mauris. Praesent nec nisi hendrerit, ullamcorper tortor non, rutrum sem. In non lectus tortor. Nulla vel tincidunt eros.
 
@@ -421,7 +416,7 @@ _Apresente imagens, descreva os testes de tal forma que se comprove a realizaç�
 <a name="referencias"></a>
 # 8. REFERÊNCIAS
 
-_Como um projeto da arquitetura de uma aplicação não requer revisão bibliográfica, a inclusão das referências não é obrigatória. No entanto, caso você deseje incluir referências relacionadas às tecnologias, padrões, ou metodologias que serão usadas no seu trabalho, relacione-as de acordo com a ABNT._
+_Como um projeto da arquitetura de uma aplicação não requer revisão bibliográfica, a inclusão das referências não é obrigatória. No entanto, caso você deseje incluir referências relacionadas às tecnologias, padrões, ou metodologias que serão usadas no seu trabalho, relacione-as conforme a ABNT._
 
 Verifique no link abaixo como devem ser as referências no padrão ABNT:
 
