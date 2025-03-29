@@ -42,6 +42,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 | **Data**         | **Autor**                             | **Descrição**                                                                                                                               | **Versão** |
 |------------------|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| **[29/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo diagrama de arquitetura.                                                                                       | [21]       |
 | **[27/03/2025]** | Philippe Roberto Dutra Chaves Vieira | Correção de documentação e reorganização de arquivos.                                                                                       | [20]       |
 | **[26/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Incluindo novos requisitos não funcionais                                                                                                   | [19]       |
 | **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Corrigindo RNFs e incluindo versões de navegadores e S.O                                                                                    | [18]       |
@@ -264,7 +265,9 @@ As restrições impostas ao projeto que afetam sua arquitetura são:
 O diagrama representa a visão geral de um sistema baseado em microsserviços, onde um **API Gateway** atua como ponto central de entrada, direcionando as requisições para os serviços apropriados. Dentro do sistema, há três serviços principais: um responsável pelo gerenciamento de usuários, outro dedicado ao agendamento de eventos ou serviços, e um terceiro que funciona como gateway de pagamento, processando as transações relacionadas. O serviço de agendamento interage diretamente com o gateway de pagamento para realizar as operações financeiras. Além disso, o sistema conta com uma infraestrutura de mensageria utilizando **RabbitMQ**, permitindo comunicação assíncrona entre os microsserviços, otimizando o processamento de eventos. Na camada de armazenamento de dados, o banco **PostgresSQL** é utilizado para persistência das informações, enquanto o **Supabase** complementa essa estrutura, oferecendo funcionalidades adicionais, como autenticação e acesso em tempo real. A arquitetura proposta garante escalabilidade, eficiência na comunicação entre serviços e um fluxo bem estruturado para processamento de pagamentos e agendamentos.
 
 
-![Diagrama de Arquitetura-Corrigido](https://github.com/user-attachments/assets/bf62563b-3262-4573-badb-125075f15188)
+
+![Diagrama de Arquitetura (2)](https://github.com/user-attachments/assets/1c8b09d2-97c8-49e0-b4ad-4b1e1088276c)
+
 
 **Figura 2 – Diagrama de Arquitetura. Fonte: o próprio autor.**
 
