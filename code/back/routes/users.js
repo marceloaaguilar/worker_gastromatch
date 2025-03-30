@@ -1,14 +1,9 @@
-import express from "express";
-import { addUser, deleteUser, getUsers, updateUser } from "../controllers/user.js";
+const express = require('express');
+const authController = require('./../controllers/authController');
 
-const router = express.Router()
+const router = express.Router();
 
-router.get("/", getUsers)
+router.post('/signup', authController.signup);
+router.post('/signin', authController.signin);
 
-router.post("/", addUser)
-
-router.put("/:id", updateUser)
-
-router.delete("/:id", deleteUser)
-
-export default router
+module.exports = router;

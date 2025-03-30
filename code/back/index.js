@@ -1,12 +1,14 @@
-import express from "express"
-import userRoutes from "./routes/users.js"
-import cors from "cors"
+require('dotenv').config();
+const express = require("express");
+const userRoutes = require('./routes/users.js');
+const cors = require('cors');
 
-const app = express()
+const app = express();
 
-app.use(express.json())
-app.use(cors())
 
-app.use("/", userRoutes)
+app.use(express.json());
+app.use(cors());
 
-app.listen(8800)
+app.use("/api/users", userRoutes);
+
+app.listen(process.env.SERVER_PORT || 8080); 
