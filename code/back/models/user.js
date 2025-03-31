@@ -61,6 +61,9 @@ const User = sequelize.define('User', {
 },
   {
     timestamps: true,
+    tableName: 'users',
+    schema: 'public',
+    underscored: true,
   },
 );
 

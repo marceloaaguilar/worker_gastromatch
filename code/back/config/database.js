@@ -7,14 +7,18 @@ const USER_DB = process.env.USER_DB;
 const PASSWORD_DB = process.env.PASSWORD_DB;
 const PORT_DB = process.env.PORT_DB;
 
-const sequelize = new Sequelize({
-  dialect: 'mysql',
-  host: HOST_DB,
-  port: PORT_DB,
-  database: DATABASE_NAME,
-  username: USER_DB,
-  password: PASSWORD_DB
-});
+const sequelize = new Sequelize(
+  `postgresql://${USER_DB}:${PASSWORD_DB}@${HOST_DB}:5432/${DATABASE_NAME}`,
+  {
+    logging: false,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    }
+  }
+);
 
 async function setupDatabase() {
   try {
