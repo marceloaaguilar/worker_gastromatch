@@ -1,4 +1,4 @@
-// File: /home/isabelle/tis/plf-es-2025-1-ti5-0492100-gastromatch/code/Front End /app/page.tsx
+// File: D:\Faculdade\2025-1\TIS 5\code\FrontEnd\app\page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
