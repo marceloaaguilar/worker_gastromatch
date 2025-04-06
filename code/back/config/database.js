@@ -11,12 +11,12 @@ const sequelize = new Sequelize(
   `postgresql://${USER_DB}:${PASSWORD_DB}@${HOST_DB}:5432/${DATABASE_NAME}`,
   {
     logging: false,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false
-      }
-    }
+    // dialectOptions: {
+    //   ssl: {
+    //     require: false,
+    //     rejectUnauthorized: false
+    //   }
+    // }
   }
 );
 
