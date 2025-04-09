@@ -71,7 +71,13 @@ User.beforeCreate((async (user) => {
   if (user.password) {
     user.password = await bcrypt.hash(user.password, 12);
   }
-}))
+}));
+
+User.beforeUpdate((async (user) => {
+  if (user.password) {
+    user.password = await bcrypt.hash(user.password, 12);
+  }
+}));
 
 User.findAll({
   attributes: { exclude: ['password'] }

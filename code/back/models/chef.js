@@ -71,4 +71,5 @@ Chef.findOne({
   attributes: { exclude: ['password'] }
 });
 
+
 module.exports = Chef; 
