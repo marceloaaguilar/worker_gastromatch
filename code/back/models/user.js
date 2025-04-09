@@ -81,4 +81,5 @@ User.findOne({
   attributes: { exclude: ['password'] }
 });
 
+
 module.exports = User
