@@ -41,8 +41,6 @@ const Chef = sequelize.define('Chef', {
 },
   {
     timestamps: true,
-    tableName: 'chefs',
-    schema: 'public',
     underscored: true,
   },
 );
@@ -62,6 +60,8 @@ Chef.beforeCreate(async (chef, options) => {
     throw new Error('Usuário associado não existe');
   }
 });
+
+Chef.sync({ force: false });
 
 Chef.findAll({
   attributes: { exclude: ['password'] }
