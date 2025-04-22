@@ -1,10 +1,11 @@
 const express = require('express');
 const authController = require('./../controllers/authController');
 const userController = require('./../controllers/userController');
+const upload = require('../middlewares/upload');
 
 const router = express.Router();
 
-router.post('/signup', authController.signup);
+router.post('/signup', upload.single('profile_photo'), authController.signup);
 router.post('/signin', authController.signin);
 
 router 

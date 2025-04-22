@@ -22,13 +22,15 @@ async function correctPassword(candidatePassword, userPassword) {
 exports.signup = catchAsync(async (req, res, next) => {
 
   try {
+    const profile_photo = req.file?.path || null;
     const newUser = await User.create({
       name: req.body.name,
       email: req.body.email,
       phone: req.body.phone,
       address: req.body.address,
       password: req.body.password, 
-      role: req.body.role
+      role: req.body.role,
+      profile_photo: profile_photo
     });
 
     const token = signToken(newUser._id);
@@ -40,7 +42,8 @@ exports.signup = catchAsync(async (req, res, next) => {
         id: newUser.id,
         name: newUser.name,
         email: newUser.email,
-        role: newUser.role
+        role: newUser.role,
+        profile_photo: profile_photo
       }
     })
   } catch (error) {
