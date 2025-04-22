@@ -16,8 +16,8 @@ export default function Header() {
         <Link href="/chefs" className="text-gray-700 hover:text-primary-600">
         Chefs
         </Link>
-        <Link href="#" className="text-gray-700 hover:text-primary">
-          Contato
+        <Link href="/avaliacao" className="text-gray-700 hover:text-primary-600">
+          Histórico
         </Link>
       </nav>
       <div className="flex items-center space-x-4">
