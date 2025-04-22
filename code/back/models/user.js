@@ -39,6 +39,30 @@ const User = sequelize.define('User', {
       },
     },
   },
+  phone: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: {
+        msg: 'O telefone do usuário não deve estar vazio'
+      },
+      notNull: {
+        msg: 'O telefone do usuário é obrigatório'
+      },
+    },
+  },
+  address: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: {
+        msg: 'O endereço do usuário não deve estar vazio'
+      },
+      notNull: {
+        msg: 'O endereço do usuário é obrigatório'
+      },
+    },
+  },
   password: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -61,17 +85,22 @@ const User = sequelize.define('User', {
 },
   {
     timestamps: true,
-    tableName: 'users',
-    schema: 'public',
-    underscored: true,
   },
 );
+
+User.sync({ force: false });
 
 User.beforeCreate((async (user) => {
   if (user.password) {
     user.password = await bcrypt.hash(user.password, 12);
   }
-}))
+}));
+
+User.beforeUpdate((async (user) => {
+  if (user.password) {
+    user.password = await bcrypt.hash(user.password, 12);
+  }
+}));
 
 User.findAll({
   attributes: { exclude: ['password'] }
@@ -80,5 +109,6 @@ User.findAll({
 User.findOne({
   attributes: { exclude: ['password'] }
 });
+
 
 module.exports = User

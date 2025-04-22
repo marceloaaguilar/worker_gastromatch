@@ -2,7 +2,7 @@ const Chef = require('../models/chef.js');
 const catchAsync = require('../utils/catchAsync.js');
 
 exports.getAllChefs = catchAsync(async (req, res, next) => {
-  const chefs = await Chef.findAll();
+  const chefs = await Chef.findAll(); 
   res.status(200).json({
     status: 'success',
     results: chefs.length,
@@ -29,13 +29,20 @@ exports.getChef = catchAsync(async (req, res, next) => {
 });
 
 exports.createChef = catchAsync(async (req, res, next) => {
-  const newChef = await Chef.create(req.body);
-  res.status(201).json({
-    status: 'success',
-    data: {
-      chef: newChef
-    }
-  });
+  try {
+    const newChef = await Chef.create(req.body);
+    res.status(201).json({
+      status: 'success',
+      data: {
+        chef: newChef
+      }
+    });
+  } catch (error) {
+      return res.status(400).json({
+        mensagem: "Ocorreu um erro ao realizar o cadastro",
+        erro: error && error.errors? error.errors.map((e) => e.message) : error
+    })
+  }
 });
 
 exports.updateChef = catchAsync(async (req, res, next) => {
@@ -68,4 +75,4 @@ exports.deleteChef = catchAsync(async (req, res, next) => {
     status: 'success',
     data: null
   });
-}); 
+});
