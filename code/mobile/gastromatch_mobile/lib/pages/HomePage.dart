@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 //pages
 import 'ChefDetailPage.dart';
 import 'ChefSearch.dart';
@@ -36,12 +35,15 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /*
     User? user = FirebaseAuth.instance.currentUser;
     if (user == null) {
       return Container(
         child: Text("User not found"),
       );
+
     }
+    */
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -201,9 +203,11 @@ class HomePage extends StatelessWidget {
   }
 
   void _logout(BuildContext context) {
+    /*
     FirebaseAuth.instance.signOut().then((result) {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => LoginPage()));
     });
+    */
   }
 }

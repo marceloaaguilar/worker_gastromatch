@@ -1,7 +1,6 @@
 // ignore_for_file: body_might_complete_normally_nullable
 
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import '../input.dart';
 //pages
 import 'HomePage.dart';
@@ -19,9 +18,9 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController passwordConfirmationController =
       TextEditingController();
   bool agreeWithTermsAndConditions = false;
-  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<void> register() async {
+    /*
     try {
       await _auth.createUserWithEmailAndPassword(
         email: emailController.text,
@@ -33,6 +32,7 @@ class _RegisterPageState extends State<RegisterPage> {
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Registration Failed: ${e.toString()}')));
     }
+    */
   }
 
   @override

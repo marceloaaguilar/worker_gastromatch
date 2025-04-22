@@ -1,8 +1,6 @@
 // ignore_for_file: body_might_complete_normally_nullable
 
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import '../input.dart';
 //pages
 import 'HomePage.dart';
@@ -18,12 +16,11 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final FirebaseAuth _auth = FirebaseAuth.instance;
   bool rememberMeChecked = false;
-
   Future<void> login() async {
+    /*
     try {
-      await _auth.signInWithEmailAndPassword(
+      await signInWithEmailAndPassword(
         email: emailController.text,
         password: passwordController.text,
       );
@@ -32,28 +29,7 @@ class _LoginPageState extends State<LoginPage> {
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Login Failed: ${e.toString()}')));
-    }
-  }
-
-  Future<void> signInWithGoogle() async {
-    try {
-      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-      if (googleUser == null) return;
-
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser.authentication;
-      final AuthCredential credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
-      );
-
-      await _auth.signInWithCredential(credential);
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Google Sign-In Failed: ${e.toString()}')));
-    }
+    }*/
   }
 
   @override
@@ -107,14 +83,6 @@ class _LoginPageState extends State<LoginPage> {
                 foregroundColor: Colors.white,
               ),
               child: Text('Login'),
-            ),
-            ElevatedButton(
-              onPressed: signInWithGoogle,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange,
-                foregroundColor: Colors.white,
-              ),
-              child: Text('Login com Google'),
             ),
             Expanded(
               child: Container(),
