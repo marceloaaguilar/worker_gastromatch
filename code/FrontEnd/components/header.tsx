@@ -13,8 +13,8 @@ export default function Header() {
         <Link href="/agendamentos" className="text-gray-700 hover:text-primary">
           Agendamentos
         </Link>
-        <Link href="#" className="text-gray-700 hover:text-primary">
-          Chefs
+        <Link href="/chefs" className="text-gray-700 hover:text-primary-600">
+        Chefs
         </Link>
         <Link href="#" className="text-gray-700 hover:text-primary">
           Contato
