@@ -1,4 +1,4 @@
-// File: D:\Faculdade\2025-1\TIS 5\code\FrontEnd\app\layout.tsx
+// File: C:\Users\g2002\Desktop\plf-es-2025-1-ti5-0492100-gastromatch\code\FrontEnd\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
