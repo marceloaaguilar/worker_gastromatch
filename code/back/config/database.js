@@ -8,7 +8,7 @@ const PASSWORD_DB = process.env.PASSWORD_DB;
 const PORT_DB = process.env.PORT_DB;
 
 const sequelize = new Sequelize(
-  `postgresql://${USER_DB}:${PASSWORD_DB}@${HOST_DB}:5432/${DATABASE_NAME}`,
+  `postgresql://${USER_DB}:${PASSWORD_DB}@${HOST_DB}:${PORT_DB}/${DATABASE_NAME}`,
   {
     logging: false,
     // dialectOptions: {

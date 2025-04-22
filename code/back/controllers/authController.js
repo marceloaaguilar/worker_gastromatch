@@ -44,6 +44,7 @@ exports.signup = catchAsync(async (req, res, next) => {
       }
     })
   } catch (error) {
+      console.log(error)
       return res.status(400).json({
         mensagem: "Ocorreu um erro ao realizar o cadastro",
         erro: error && error.errors? error.errors.map((e) => e.message) : error

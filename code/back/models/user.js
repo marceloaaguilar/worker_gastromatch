@@ -24,8 +24,8 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING,
     allowNull: false,
     unique: {
-      args: true,
-      msg: 'O e-mail já está em uso'
+      ags: true,
+      msg: 'Já existe um usuário com este e-mail!'
     },
     validate: {
       isEmail: {
@@ -37,6 +37,20 @@ const User = sequelize.define('User', {
       notNull: {
         msg: 'O e-mail do usuário é obrigatório'
       },
+      isUnique: function(value, next){
+        User.findOne({
+          where : {
+            email:value,
+          }
+        }).then(function(result){
+          if(result){
+            return next('Já existe um usuário com este e-mail!')
+          }
+          return next();
+        }).catch(err =>{
+            return next()
+        })
+      }
     },
   },
   phone: {
