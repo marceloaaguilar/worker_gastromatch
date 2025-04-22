@@ -1,8 +1,16 @@
 const Chef = require('../models/chef.js');
+const User = require('../models/user.js');
 const catchAsync = require('../utils/catchAsync.js');
 
 exports.getAllChefs = catchAsync(async (req, res, next) => {
-  const chefs = await Chef.findAll(); 
+  const chefs = await Chef.findAll({
+    include: {
+      model: User,
+      as: 'user',
+      attributes: ['name', 'email']
+    }
+  });
+  
   res.status(200).json({
     status: 'success',
     results: chefs.length,

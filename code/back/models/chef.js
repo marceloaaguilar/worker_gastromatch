@@ -52,6 +52,8 @@ Chef.associate = (models) => {
   });
 };
 
+Chef.sync({ force: false });
+
 Chef.beforeCreate(async (chef, options) => {
   const User = require('../models/user');
   const user = await User.findByPk(chef.user_id);
@@ -61,8 +63,6 @@ Chef.beforeCreate(async (chef, options) => {
   }
 });
 
-Chef.sync({ force: false });
-
 Chef.findAll({
   attributes: { exclude: ['password'] }
 });
@@ -70,6 +70,5 @@ Chef.findAll({
 Chef.findOne({
   attributes: { exclude: ['password'] }
 });
-
 
 module.exports = Chef; 

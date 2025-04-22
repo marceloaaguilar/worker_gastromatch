@@ -4,6 +4,7 @@ const userRoutes = require('./routes/users.js');
 const chefRoutes = require('./routes/chefs.js');
 const reservationRoutes = require('./routes/reservations.js');
 const cors = require('cors');
+const db = require('./models');
 
 const app = express();
 

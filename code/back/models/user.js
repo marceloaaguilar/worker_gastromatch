@@ -102,7 +102,15 @@ const User = sequelize.define('User', {
   },
 );
 
+User.associate = (models) => {
+  User.hasOne(models.Chef, {
+    foreignKey: 'user_id',
+    as: 'chef'
+  });
+};
+
 User.sync({ force: false });
+
 
 User.beforeCreate((async (user) => {
   if (user.password) {
@@ -123,6 +131,7 @@ User.findAll({
 User.findOne({
   attributes: { exclude: ['password'] }
 });
+
 
 
 module.exports = User
