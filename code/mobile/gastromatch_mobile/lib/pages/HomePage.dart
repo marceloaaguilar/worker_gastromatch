@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:shimmer/shimmer.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // pages
 import 'ChefDetailPage.dart';
@@ -15,6 +17,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<Map<String, String>> chefs = [];
   bool isLoading = true;
+  bool hasError = false;
 
   @override
   void initState() {
@@ -23,31 +26,86 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> fetchChefs() async {
-    final url = Uri.parse(
-      'http://10.0.2.2:8080/api/chefs',
-    ); // ajustar com a rota correta, não consegui rodar o back ainda
+    final prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString('auth_token');
+
+    if (token == null) {
+      setState(() {
+        isLoading = false;
+        hasError = true;
+      });
+      print('Token não encontrado');
+      return;
+    }
+
+    final url = Uri.parse('http://10.0.2.2:8080/api/chefs/');
     try {
-      final response = await http.get(url);
+      final response = await http.get(
+        url,
+        headers: {
+          'Authorization': 'Bearer $token',
+          'Content-Type': 'application/json',
+        },
+      );
+
       if (response.statusCode == 200) {
-        List<dynamic> data = json.decode(response.body);
+        final jsonResponse = json.decode(response.body);
+        final List<dynamic> data = jsonResponse['data']['chefs'];
+
         setState(() {
           chefs =
               data.map((chef) {
-                // Aqui você converte para Map<String, String>
                 return {
-                  'name': chef['name'].toString(),
+                  'name':
+                      'Chef ${chef['id']}', // Ajuste para usar o nome real se disponível futuramente
                   'specialty': chef['specialization'].toString(),
-                  'image': 'assets/images/default_chef.png', // imagem genérica
+                  'image': 'assets/images/MarinaSouzaChef.png',
                 };
-              }).toList(); // Agora chefs é do tipo List<Map<String, String>>
+              }).toList();
           isLoading = false;
+          hasError = false;
         });
       } else {
-        print('Erro ao carregar chefs: ${response.statusCode}');
+        throw Exception('Erro de status ${response.statusCode}');
       }
     } catch (e) {
-      print('Erro na requisição: $e');
+      setState(() {
+        isLoading = false;
+        hasError = true;
+      });
+      print('Erro ao buscar chefs: $e');
     }
+  }
+
+  Widget buildShimmerCard() {
+    return ListView.builder(
+      itemCount: 3,
+      itemBuilder:
+          (context, index) => Card(
+            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+            child: ListTile(
+              leading: Shimmer.fromColors(
+                baseColor: Colors.grey.shade300,
+                highlightColor: Colors.grey.shade100,
+                child: CircleAvatar(radius: 30),
+              ),
+              title: Shimmer.fromColors(
+                baseColor: Colors.grey.shade300,
+                highlightColor: Colors.grey.shade100,
+                child: Container(
+                  height: 14,
+                  color: Colors.grey,
+                  margin: EdgeInsets.only(bottom: 5),
+                ),
+              ),
+              subtitle: Shimmer.fromColors(
+                baseColor: Colors.grey.shade300,
+                highlightColor: Colors.grey.shade100,
+                child: Container(height: 10, width: 100, color: Colors.grey),
+              ),
+            ),
+          ),
+    );
   }
 
   @override
@@ -72,13 +130,69 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      drawer: Drawer(child: ListView(padding: EdgeInsets.zero, children: [
-
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(color: Colors.orange),
+              child: Text(
+                'GastroMatch',
+                style: TextStyle(color: Colors.white, fontSize: 24),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('Perfil'),
+              onTap: () {
+                // Lógica para abrir perfil (se tiver)
+                Navigator.pop(context); // Fecha o Drawer
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Sair'),
+              onTap: () => _logout(context), // Chama a função de logout
+            ),
           ],
-        )),
+        ),
+      ),
       body:
           isLoading
-              ? Center(child: CircularProgressIndicator())
+              ? buildShimmerCard()
+              : hasError
+              ? Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.error_outline, color: Colors.red, size: 40),
+                    SizedBox(height: 10),
+                    Text(
+                      'Erro ao carregar os chefs.\nTente novamente mais tarde.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          isLoading = true;
+                          hasError = false;
+                        });
+                        fetchChefs();
+                      },
+                      child: Text("Tentar novamente"),
+                    ),
+                  ],
+                ),
+              )
+              : chefs.isEmpty
+              ? Center(
+                child: Text(
+                  "Nenhum chef disponível no momento.",
+                  style: TextStyle(fontSize: 16),
+                ),
+              )
               : Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -158,17 +272,8 @@ class _HomePageState extends State<HomePage> {
                                 context,
                                 MaterialPageRoute(
                                   builder:
-                                      (context) => ChefDetailPage(
-                                        chef: {
-                                          'name':
-                                              chefs[index]['name'].toString(),
-                                          'specialty':
-                                              chefs[index]['specialty']
-                                                  .toString(),
-                                          'image':
-                                              chefs[index]['image'].toString(),
-                                        },
-                                      ),
+                                      (context) =>
+                                          ChefDetailPage(chef: chefs[index]),
                                 ),
                               );
                             },
@@ -182,7 +287,15 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void _logout(BuildContext context) {
-    // logout logic aqui se estiver usando Firebase
+  void _logout(BuildContext context) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove('auth_token'); // Remove o token de autenticação
+
+    // Navega para a página de Login após o logout
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => LoginPage()),
+      (route) => false, // Isso remove todas as rotas anteriores da pilha
+    );
   }
 }

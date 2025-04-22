@@ -21,7 +21,7 @@ export default function Home() {
             Conectamos você aos melhores chefs para criar momentos inesquecíveis
           </p>
           <Link
-            href="/agendamentos"
+            href="/chefs"
             className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-md text-lg font-medium transition-colors"
           >
             Encontrar um Chef
