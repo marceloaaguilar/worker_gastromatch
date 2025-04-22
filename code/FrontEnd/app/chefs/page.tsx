@@ -91,7 +91,7 @@ export default function ChefsPage() {
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="w-4 h-4 fill-primary-600 text-primary-600" />
                         ))}
-                        <span className="ml-1">5 estrelas</span>
+                      
                       </div>
                     </label>
                     <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
@@ -100,7 +100,7 @@ export default function ChefsPage() {
                         {[...Array(4)].map((_, i) => (
                           <Star key={i} className="w-4 h-4 fill-primary-600 text-primary-600" />
                         ))}
-                        <span className="ml-1">4+ estrelas</span>
+                       
                       </div>
                     </label>
                     <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
@@ -109,7 +109,7 @@ export default function ChefsPage() {
                         {[...Array(3)].map((_, i) => (
                           <Star key={i} className="w-4 h-4 fill-primary-600 text-primary-600" />
                         ))}
-                        <span className="ml-1">3+ estrelas</span>
+                        
                       </div>
                     </label>
                   </div>
@@ -187,7 +187,7 @@ export default function ChefsPage() {
             {/* Chef Card 1 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-64 relative">
-                <Image src="/images/ricardo chef.jpg" alt="Chef Ricardo Silva" fill className="object-cover" />
+                <Image src="/images/chef ricardo.jpg" alt="Chef Ricardo Silva" fill className="object-cover" />
                 <div className="absolute top-4 right-4 bg-primary-600 text-white px-2 py-1 rounded text-sm font-medium">
                   Destaque
                 </div>
@@ -233,7 +233,7 @@ export default function ChefsPage() {
             {/* Chef Card 2 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-64 relative">
-                <Image src="/images/chef 1.jpg" alt="Chef Maria Santos" fill className="object-cover" />
+                <Image src="/images/chef maria.jpg" alt="Chef Maria Santos" fill className="object-cover" />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-4">
@@ -276,7 +276,7 @@ export default function ChefsPage() {
             {/* Chef Card 3 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-64 relative">
-                <Image src="/images/andre chef.jpg" alt="Chef André Costa" fill className="object-cover" />
+                <Image src="/images/chefe andre.jpg" alt="Chef André Costa" fill className="object-cover" />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-4">
@@ -319,7 +319,7 @@ export default function ChefsPage() {
             {/* Chef Card 4 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-64 relative">
-                <Image src="/images/juliana.jpg" alt="Chef Juliana Mendes" fill className="object-cover" />
+                <Image src="/images/chef juliana.jpg" alt="Chef Juliana Mendes" fill className="object-cover" />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-4">
@@ -362,7 +362,7 @@ export default function ChefsPage() {
             {/* Chef Card 5 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-64 relative">
-                <Image src="/images/juliano.jpg" alt="Chef Paulo Oliveira" fill className="object-cover" />
+                <Image src="/images/chef paulo.jpg" alt="Chef Paulo Oliveira" fill className="object-cover" />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-4">
@@ -405,7 +405,7 @@ export default function ChefsPage() {
             {/* Chef Card 6 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-64 relative">
-                <Image src="/images/chefe 2.jpg" alt="Chef Camila Rocha" fill className="object-cover" />
+                <Image src="/images/chef camila.jpg" alt="Chef Camila Rocha" fill className="object-cover" />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-4">

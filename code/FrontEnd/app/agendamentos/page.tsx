@@ -410,9 +410,8 @@ export default function AgendamentoPage() {
               </div>
             </div>
           )}
-
-          {/* Step 3: Pagamento */}
-          {step === 3 && (
+{/* Step 3: Pagamento */}
+{step === 3 && (
             <div className="space-y-8">
               <div>
                 <h2 className="text-xl font-semibold mb-4">Preço e Pagamento</h2>
@@ -584,7 +583,7 @@ export default function AgendamentoPage() {
               </div>
             </div>
           )}
-
+          
           {/* Navigation Buttons */}
           <div className="flex justify-between mt-10">
             <button
