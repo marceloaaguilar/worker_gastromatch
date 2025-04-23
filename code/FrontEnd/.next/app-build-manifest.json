@@ -6,25 +6,30 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/page": [
+    "/chat/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/chat/page.js"
     ],
-    "/login/page": [
+    "/chefs/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/login/page.js"
+      "static/chunks/app/chefs/loading.js"
     ],
-    "/cadastro/page": [
+    "/chefs/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/cadastro/page.js"
+      "static/chunks/app/chefs/page.js"
     ],
-    "/_not-found/page": [
+    "/agendamentos/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/app/agendamentos/loading.js"
+    ],
+    "/agendamentos/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/agendamentos/page.js"
     ]
   }
 }
