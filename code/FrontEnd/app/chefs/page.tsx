@@ -79,7 +79,6 @@ const chefsData = [
 export default function ChefsPage() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Filtrar chefs com base no termo de busca
   const filteredChefs = chefsData.filter((chef) => {
     const term = searchTerm.toLowerCase();
     return (
@@ -127,7 +126,7 @@ export default function ChefsPage() {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              {/* Especialidade Dropdown */}
+              {/* Dropdown Especiality */}
               <div className="relative group">
                 <button className="px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50">
                   <Filter className="h-4 w-4" />
@@ -184,7 +183,7 @@ export default function ChefsPage() {
                 </div>
               </div>
 
-              {/* Avaliação Dropdown */}
+              {/* Dropdown Rate */}
               <div className="relative group">
                 <button className="px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50">
                   <span>Avaliação</span>
@@ -241,7 +240,7 @@ export default function ChefsPage() {
                 </div>
               </div>
 
-              {/* Preço Dropdown */}
+              {/* Dropdown Price */}
               <div className="relative group">
                 <button className="px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50">
                   <span>Preço</span>
@@ -285,7 +284,7 @@ export default function ChefsPage() {
                 </div>
               </div>
 
-              {/* Disponibilidade Dropdown */}
+              {/* Dropdown Disponibility */}
               <div className="relative group">
                 <button className="px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50">
                   <span>Disponibilidade</span>
