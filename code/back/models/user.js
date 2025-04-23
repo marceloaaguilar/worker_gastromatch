@@ -91,6 +91,9 @@ const User = sequelize.define('User', {
       },
     }
   },
+  profile_photo: {
+    type: DataTypes.STRING
+  },
   role: {
     type: DataTypes.ENUM('CUSTOMER', 'PROFESSIONAL'),
     allowNull: false,
@@ -102,15 +105,14 @@ const User = sequelize.define('User', {
   },
 );
 
+User.sync({ force: false });
+
 User.associate = (models) => {
   User.hasOne(models.Chef, {
     foreignKey: 'user_id',
     as: 'chef'
   });
 };
-
-User.sync({ force: false });
-
 
 User.beforeCreate((async (user) => {
   if (user.password) {
