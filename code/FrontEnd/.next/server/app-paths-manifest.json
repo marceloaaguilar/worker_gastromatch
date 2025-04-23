@@ -1,5 +1,5 @@
 {
-  "/agendamentos/page": "app/agendamentos/page.js",
+  "/chat/page": "app/chat/page.js",
   "/chefs/page": "app/chefs/page.js",
-  "/chat/page": "app/chat/page.js"
+  "/agendamentos/page": "app/agendamentos/page.js"
 }
