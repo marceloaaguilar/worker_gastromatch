@@ -54,7 +54,6 @@ export default function ChatPage() {
     setMessages((prev) => [...prev, newMsg]);
     setNewMessage("");
 
-    // Resposta automática APENAS na primeira mensagem
     if (!hasSentFirstMessage) {
       setHasSentFirstMessage(true);
       
@@ -83,7 +82,7 @@ export default function ChatPage() {
       <Header />
 
       <div className="max-w-4xl mx-auto px-4 py-8">
-        {/* Cabeçalho do Chat */}
+        {/* Chat Header */}
         <div className="flex items-center justify-between mb-6 border-b pb-4">
           <Link
             href="/chefs"
@@ -110,7 +109,7 @@ export default function ChatPage() {
           <div className="w-8"></div>
         </div>
 
-        {/* Área de Mensagens */}
+        {/* Message Area */}
         <div className="space-y-4 mb-6 h-[calc(100vh-260px)] overflow-y-auto pb-4">
           {messages.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-gray-400">
@@ -158,7 +157,7 @@ export default function ChatPage() {
           )}
         </div>
 
-        {/* Input de Mensagem */}
+        {/* Input Message */}
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t py-3">
           <div className="max-w-4xl mx-auto px-4 flex">
             <input
