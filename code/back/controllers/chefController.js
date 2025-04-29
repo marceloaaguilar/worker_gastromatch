@@ -84,3 +84,33 @@ exports.deleteChef = catchAsync(async (req, res, next) => {
     data: null
   });
 });
+
+exports.searchBySpecialization = catchAsync(async (req, res, next) => {
+  const { specialization } = req.query;
+
+  if (!specialization) {
+    return res.status(400).json({
+      status: 'fail',
+      message: 'Especialização não fornecida na query'
+    });
+  }
+
+  const chefs = await Chef.findAll({
+    where: {
+      specialization: specialization
+    },
+    include: {
+      model: User,
+      as: 'user',
+      attributes: ['name', 'email']
+    }
+  });
+
+  res.status(200).json({
+    status: 'success',
+    results: chefs.length,
+    data: {
+      chefs
+    }
+  });
+});
