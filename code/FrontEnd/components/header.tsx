@@ -26,9 +26,13 @@ export default function Header() {
         </Link>
         <Link href="/cadastro" className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-700">
           Cadastrar
+          </Link>
+        <Link href="/perfil" className="text-gray-700 hover:text-primary-600">
+          <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+            <span className="text-primary-700 font-bold">M</span>
+          </div>
         </Link>
       </div>
     </header>
   )
 }
-
