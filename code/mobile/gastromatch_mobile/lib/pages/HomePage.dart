@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'ChefDetailPage.dart';
 import 'ChefSearch.dart';
 import 'LoginPage.dart';
+import 'UserProfileEditPage.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -142,11 +143,15 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Perfil'),
+              leading: Icon(Icons.settings),
+              title: Text('Editar Perfil'),
               onTap: () {
-                // Lógica para abrir perfil (se tiver)
-                Navigator.pop(context); // Fecha o Drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => UserProfileEditPage(),
+                  ),
+                );
               },
             ),
             ListTile(
