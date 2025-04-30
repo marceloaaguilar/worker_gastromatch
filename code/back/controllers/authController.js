@@ -76,7 +76,8 @@ exports.signin = async (req, res, next) => {
   const token = signToken(user.id);
   res.status(200).json({
     message: "Usuário autenticado com sucesso!",
-    token
+    token,
+    userId: user.id
   })
 }
 
