@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'pages/LoginPage.dart';
+//import 'pages/LoginPage(não utilizado).dart';
 import 'pages/HomePage.dart';
 
 void main() {
