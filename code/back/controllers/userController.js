@@ -33,7 +33,7 @@ exports.updateUser = catchAsync(async (req, res, next) => {
 
   const [updateCount] = await User.update(
     { name, email, password, role },
-    { where: { id } }
+    { where: { id: id } }
   );
 
   if (updateCount === 0) {
