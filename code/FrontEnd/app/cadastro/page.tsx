@@ -3,7 +3,6 @@ import Link from "next/link"
 import { useState } from "react"
 import { Camera, Plus } from "lucide-react"
 
-// Verificar se o export default está correto
 export default function CadastroPage() {
   const [userType, setUserType] = useState<"usuario" | "chef" | null>(null)
   const [especialidades, setEspecialidades] = useState<string[]>(["Italiana", "Japonesa", "Vegana"])

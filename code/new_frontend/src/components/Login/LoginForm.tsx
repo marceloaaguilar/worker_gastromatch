@@ -4,6 +4,8 @@ import { useNavigate } from "react-router";
 import ModalAlert from "../ui/alerts/ModalAlert";
 import TextErrorAlert from "../ui/alerts/TextErrorAlert";
 import { TextErrorAlertProps } from "../ui/alerts/TextErrorAlert";
+import SubmitBtn from "../ui/SubmitBtn";
+import TextSuccessAlert from "../ui/alerts/TextSuccessAlert";
 
 export function LoginForm() {
 
@@ -12,16 +14,21 @@ export function LoginForm() {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [textErrorAlertProps, setTextErrorAlert] = useState<TextErrorAlertProps>({text: "show", show: false});
+    const [isLoadingBtn, setIsLoadingBtn] = useState<boolean>(false);
+    const [showSuccessAlert, setShowSuccessAlert] = useState<boolean>(false);
 
     const navigate = useNavigate();
 
     const handleLogin = async (e:any) => {
 
         e.preventDefault();
+        setShowSuccessAlert(false);
         setTextErrorAlert({text: "" , show: false});
-        
+        setIsLoadingBtn(true);
+
         if (!email || !password) {
             setTextErrorAlert({text: "Digite todos os campos obrigatórios", show: true});
+            setIsLoadingBtn(false);
             return;
         };
         
@@ -36,11 +43,17 @@ export function LoginForm() {
         
         if (result && result.status !== 200) {
             setTextErrorAlert({text: response && response.message, show: true});
+            setIsLoadingBtn(false);
             return;
         }
 
         response ? setCookie("token", response.token) : "";
-        navigate("/");
+        setShowSuccessAlert(true);
+
+        setTimeout(()=> {
+            setIsLoadingBtn(false);
+            navigate("/");
+        }, 2000)
     }
 
     return (
@@ -74,6 +87,7 @@ export function LoginForm() {
                 </div>
 
                 <TextErrorAlert show={textErrorAlertProps.show} text={textErrorAlertProps.text}/>
+                <TextSuccessAlert show={showSuccessAlert} text="Login realizado com sucesso! Você será redirecionado..."/>
 
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
@@ -94,13 +108,7 @@ export function LoginForm() {
                     </div>
                 </div>
 
-                <button
-                    type="button"
-                    className="w-full cursor-pointer bg-[#ea580c] text-white py-2 px-4 rounded-md hover:bg-[#d45209] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ea580c]"
-                    onClick={handleLogin}
-                >
-                    Entrar
-                </button>
+                 <SubmitBtn title="Entrar" callback={(e:any) => handleLogin(e)} isLoading={isLoadingBtn}/>
 
                 <div className="relative flex items-center justify-center mt-6">
                     <div className="border-t border-gray-300 absolute w-full"></div>

@@ -16,6 +16,12 @@ export interface User {
   type: 'CUSTOMER' | 'PROFESSIONAL' ,
   photo?: string
 }
+export interface UserLogin {
+  nome: string,
+  email: string,
+  telefone: string, 
+  type: 'CUSTOMER' | 'PROFESSIONAL' 
+}
 
 export interface BtnProps {
   title: string,

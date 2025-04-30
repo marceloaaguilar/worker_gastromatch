@@ -1,5 +1,6 @@
 {
-  "/chat/page": "app/chat/page.js",
-  "/chefs/page": "app/chefs/page.js",
-  "/agendamentos/page": "app/agendamentos/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/login/page": "app/login/page.js",
+  "/perfil/page": "app/perfil/page.js"
 }

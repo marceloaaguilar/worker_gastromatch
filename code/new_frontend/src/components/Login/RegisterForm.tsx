@@ -101,8 +101,6 @@ export default function RegisterForm() {
             return false;
         }
 
-        console.log(especialidades, descricaoProfissional, precoPorHora, disponibilidade)
-        
         if (userType === "chef" &&  (!especialidades.length || !descricaoProfissional || !precoPorHora || !disponibilidade)) {
             setTextErrorAlert({text: "Preencha todos os campos obrigatórios!", show: true});
             return false;

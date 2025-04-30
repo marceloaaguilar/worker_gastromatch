@@ -3,7 +3,6 @@
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 
-// Verificar se o export default está correto
 export default function LoginPage() {
   const router = useRouter()
 

@@ -5,17 +5,26 @@ const upload = require('../middlewares/upload');
 
 const router = express.Router();
 
-router.post('/signup', upload.single('profile_photo'), authController.signup);
-router.post('/signin', authController.signin);
+router
+  .post('/signup', upload.single('profile_photo'), authController.signup);
 
+router
+  .post('/signin', authController.signin);
+
+  
 router 
   .route('/')
   .get(userController.getAllUsers)
+
+router
+  .route('/verify-token')
+  .get(userController.verifyToken)
 
 router
   .route("/:id")
   .get(userController.getUser)
   .patch(userController.updateUser)
   .delete(userController.deleteUser)
+
 
 module.exports = router;

@@ -28,11 +28,44 @@ const Chef = sequelize.define('Chef', {
       },
     }
   },
+  professional_description: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: {
+        msg: 'A descrição profissional não deve estar vazia'
+      },
+      notNull: {
+        msg: 'A descrição profissional é obrigatória'
+      },
+    }
+  },
+  price_per_hour: {
+    type: DataTypes.DECIMAL,
+    allowNull: false,
+    validate: {
+      notNull: {
+        msg: 'O preço por hora é obrigatório'
+      },
+    }
+  },
+  availability: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      notNull: {
+        msg: 'A disponibilidade é obrigatória'
+      },
+    }
+  },
+  portfolio: {
+    type: DataTypes.STRING
+  },
   user_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-      model: 'users',
+      model: 'Users',
       key: 'id'
     },
     onUpdate: 'CASCADE',
@@ -45,14 +78,14 @@ const Chef = sequelize.define('Chef', {
   },
 );
 
+Chef.sync({ force: false });
+
 Chef.associate = (models) => {
   Chef.belongsTo(models.User, {
     foreignKey: 'user_id',
     as: 'user'
   });
 };
-
-Chef.sync({ force: false });
 
 Chef.beforeCreate(async (chef, options) => {
   const User = require('../models/user');

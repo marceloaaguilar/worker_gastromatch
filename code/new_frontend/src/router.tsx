@@ -1,21 +1,34 @@
-import { Routes, Route, BrowserRouter } from "react-router";
-import { lazy, Suspense } from "react";
+import React, { Suspense } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import Home from './routes/Home';
+import Login from './routes/Login';
+import Register from './routes/Register';
+import PrivateRoute from './components/PrivateRoute';
 
-const Home = lazy(() => import('./routes/Home'));
-const Login = lazy(() => import('./routes/Login'));
-const Register = lazy(() => import('./routes/Register'));
-
-
-export default function AppRouter() {
+const App: React.FC = () => {
   return (
     <BrowserRouter>
-       <Suspense fallback={<div className="text-center">Carregando...</div>}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/cadastro" element={<Register />} />
-        </Routes>
-      </Suspense>
+      <AuthProvider>
+        <Suspense fallback={<div className="text-center">Carregando...</div>}>
+          <Routes>
+
+            <Route path="/login" element={<Login />} />
+            <Route path="/cadastro" element={<Register />} />
+
+            <Route
+              path="/"
+              element={
+                <PrivateRoute>
+                  <Home />
+                </PrivateRoute>
+              }
+            />
+          </Routes>
+        </Suspense>
+      </AuthProvider>
     </BrowserRouter>
   );
-}
+};
+
+export default App;

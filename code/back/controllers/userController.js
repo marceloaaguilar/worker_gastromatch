@@ -1,5 +1,6 @@
 const User = require ('../models/user.js');
 const catchAsync = require('../utils/catchAsync.js');
+const jwt = require('jsonwebtoken');
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
   const users = await User.findAll();
@@ -66,3 +67,30 @@ exports.deleteUser = catchAsync(async (req, res, next) => {
     data: null,
   });
 });
+
+exports.verifyToken = catchAsync(async (req, res, next) => {
+
+  const token = req.cookies.token;
+  
+  if (!token) {
+    return res.status(401).json({ message: 'Token ausente' });
+  }
+
+  try {
+
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findOne({where: {id: decoded.id}});
+
+    return res.status(200).json({
+      user: {
+        name: user.name,
+        email: user.email,
+        telefone: user.phone,
+        type: user.role
+      },
+    });
+  } catch (err) {
+    return res.status(401).json({ message: 'Token inválido ou expirado' });
+  }
+
+})
