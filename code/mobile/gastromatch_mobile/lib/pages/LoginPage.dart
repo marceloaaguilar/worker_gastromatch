@@ -3,7 +3,9 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../input.dart';
 import 'HomePage.dart';
+import 'RegisterPage.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -16,85 +18,117 @@ class _LoginPageState extends State<LoginPage> {
   bool _isLoading = false;
   String? _error;
 
-Future<void> login() async {
-  setState(() {
-    _isLoading = true;
-    _error = null;
-  });
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
-  try {
-    final url = Uri.parse('http://10.0.2.2:8080/api/users/signin');
-    final response = await http.post(
-      url,
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({
-        'email': _emailController.text,
-        'password': _passwordController.text,
-      }),
-    );
+  Future<void> login() async {
+    FocusScope.of(context).unfocus();
+    setState(() {
+      _isLoading = true;
+      _error = null;
+    });
 
-    print("Status: ${response.statusCode}");
-    print("Body: ${response.body}");
-
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      final token = data['token'];
-
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.setString('auth_token', token);
-
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+    try {
+      final url = Uri.parse('http://10.0.2.2:8080/api/users/signin');
+      final response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({
+          'email': _emailController.text,
+          'password': _passwordController.text,
+        }),
       );
-    } else {
+
+      print("Status: ${response.statusCode}");
+      print("Body: ${response.body}");
+
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        final token = data['token'];
+
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('auth_token', token);
+
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => HomePage()),
+        );
+      } else {
+        setState(() {
+          _error = 'Email ou senha inválidos';
+        });
+      }
+    } catch (e) {
+      print("Erro ao fazer login: $e");
       setState(() {
-        _error = 'Email ou senha inválidos';
+        _error = 'Erro ao conectar com o servidor';
+      });
+    } finally {
+      setState(() {
+        _isLoading = false;
       });
     }
-  } catch (e) {
-    print("Erro ao fazer login: $e");
-    setState(() {
-      _error = 'Erro ao conectar com o servidor';
-    });
-  } finally {
-    setState(() {
-      _isLoading = false;
-    });
   }
-}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Login")),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (_error != null)
               Text(
                 _error!,
                 style: TextStyle(color: Colors.red),
               ),
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(labelText: "Email"),
+            CustomInputField(
               keyboardType: TextInputType.emailAddress,
+              hintText: "Email",
+              controller: _emailController,
+              validator: (_) => null,
             ),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: "Senha"),
+            SizedBox(height: 15),
+            CustomInputField(
+              keyboardType: TextInputType.visiblePassword,
+              hintText: "Senha",
               obscureText: true,
+              controller: _passwordController,
+              validator: (_) => null,
             ),
             SizedBox(height: 20),
             _isLoading
-                ? CircularProgressIndicator()
+                ? CircularProgressIndicator(color: Colors.orange)
                 : ElevatedButton(
                     onPressed: login,
                     child: Text("Entrar"),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      foregroundColor: Colors.white,
+                    ),
                   ),
+            Expanded(child: Container()),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Não tem uma conta?", style: TextStyle(color: Colors.grey)),
+                TextButton(
+                  child: Text("Cadastre-se"),
+                  style: TextButton.styleFrom(foregroundColor: Colors.orange),
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => RegisterPage()),
+                    );
+                  },
+                ),
+              ],
+            ),
           ],
         ),
       ),

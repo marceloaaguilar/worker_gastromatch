@@ -62,7 +62,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
                     child: InkWell(
                       borderRadius: BorderRadius.circular(64),
                       child: Icon(
-                        _obscure ? Icons.visibility : Icons.visibility_off,
+                        _obscure ? Icons.visibility_off : Icons.visibility,
                       ),
                       onTap: () {
                         setState(() {
@@ -99,6 +99,8 @@ class CustomCheckbox extends StatelessWidget {
         Checkbox(
           value: value,
           onChanged: onChanged,
+          checkColor: Colors.white,
+          activeColor: Colors.orange,
         ),
         if (labelText != null)
           GestureDetector(

@@ -8,23 +8,28 @@ class TermsPage extends StatelessWidget {
         title: Text("Termos e Condições"),
         backgroundColor: Colors.orange,
       ),
-      body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(" Trabalho em progresso"),
-        Stack(
-          children: [
-            Container(
-              height: 200,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/WIP.png'),
-                  fit: BoxFit.cover,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(" Trabalho em progresso",style: TextStyle(fontSize: 30),),
+          Stack(
+            children: [
+              Center(
+                child: Container(
+                  height: 400,
+                  width: 400,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/WIP.png'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               ),
-            )
-          ],
-        ),
-      ]),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
