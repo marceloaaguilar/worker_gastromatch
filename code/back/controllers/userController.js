@@ -14,7 +14,7 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
 });
 
 exports.getUser = catchAsync(async (req, res, next) => {
-  const user = await User.findOne({id: req.params.id});
+  const user = await User.findOne({where: {id: req.params.id}});
   if (!user) {
     return res.status(404).json({ status: 'fail', message: 'Usuário não encontrado' });
   }
@@ -33,7 +33,7 @@ exports.updateUser = catchAsync(async (req, res, next) => {
 
   const [updateCount] = await User.update(
     { name, email, password, role },
-    { where: { id } }
+    { where: { id: id } }
   );
 
   if (updateCount === 0) {

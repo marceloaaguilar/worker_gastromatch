@@ -66,7 +66,7 @@ exports.signin = async (req, res, next) => {
     })
   }
 
-  const user = await User.findOne({email});
+  const user = await User.findOne({where: {email: email}});
   if(!user || !await correctPassword(password, user.password)) {
     return res.status(401).json({
       error: true,
@@ -76,7 +76,8 @@ exports.signin = async (req, res, next) => {
   const token = signToken(user.id);
   res.status(200).json({
     message: "Usuário autenticado com sucesso!",
-    token
+    token,
+    userId: user.id
   })
 }
 

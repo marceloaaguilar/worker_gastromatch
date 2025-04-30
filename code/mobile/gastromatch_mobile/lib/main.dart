@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'pages/LoginPage.dart';
+import 'pages/RegisterPage.dart';
 //import 'pages/LoginPage(não utilizado).dart';
 import 'pages/HomePage.dart';
 
@@ -52,6 +52,6 @@ class _AuthCheckState extends State<AuthCheck> {
       return Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
-    return _authenticated ? HomePage() : LoginPage();
+    return _authenticated ? HomePage() : RegisterPage();
   }
 }
