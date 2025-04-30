@@ -14,7 +14,7 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
 });
 
 exports.getUser = catchAsync(async (req, res, next) => {
-  const user = await User.findOne({id: req.params.id});
+  const user = await User.findOne({where: {id: req.params.id}});
   if (!user) {
     return res.status(404).json({ status: 'fail', message: 'Usuário não encontrado' });
   }
