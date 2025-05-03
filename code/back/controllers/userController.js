@@ -15,6 +15,7 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
 
 exports.getUser = catchAsync(async (req, res, next) => {
   const user = await User.findOne({where: {id: req.params.id}});
+
   if (!user) {
     return res.status(404).json({ status: 'fail', message: 'Usuário não encontrado' });
   }
@@ -28,11 +29,13 @@ exports.getUser = catchAsync(async (req, res, next) => {
 });
 
 exports.updateUser = catchAsync(async (req, res, next) => {
-  const { name, email, password, role } = req.body;
+
+  const profile_photo = req.file?.path || null;
+  const { name, phone, password, address } = req.body;
   const { id } = req.params;
 
   const [updateCount] = await User.update(
-    { name, email, password, role },
+    { name, phone, password, address, profile_photo },
     { where: { id: id } }
   );
 
@@ -40,7 +43,7 @@ exports.updateUser = catchAsync(async (req, res, next) => {
     return res.status(404).json({ status: 'fail', message: 'Usuário não encontrado ou nenhuma alteração realizada' });
   }
 
-  const updatedUser = await User.findOne({id: id});
+  const updatedUser = await User.findOne({where: {id: id}});
 
   res.status(200).json({
     status: 'success',
@@ -79,15 +82,10 @@ exports.verifyToken = catchAsync(async (req, res, next) => {
   try {
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const user = await User.findOne({where: {id: decoded.id}});
+    const user = await User.findOne({where: {id: decoded.id},attributes: { exclude: ['password'] }});
 
     return res.status(200).json({
-      user: {
-        name: user.name,
-        email: user.email,
-        telefone: user.phone,
-        type: user.role
-      },
+      user: user
     });
   } catch (err) {
     return res.status(401).json({ message: 'Token inválido ou expirado' });

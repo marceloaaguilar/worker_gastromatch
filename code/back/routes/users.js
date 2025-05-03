@@ -23,7 +23,7 @@ router
 router
   .route("/:id")
   .get(userController.getUser)
-  .patch(userController.updateUser)
+  .patch(upload.single('profile_photo'), userController.updateUser)
   .delete(userController.deleteUser)
 
 

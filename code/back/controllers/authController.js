@@ -74,6 +74,14 @@ exports.signin = async (req, res, next) => {
     })
   } 
   const token = signToken(user.id);
+
+  res.cookie('token', token, {
+    maxAge: 3600000,
+    httpOnly: true,
+    sameSite: 'Lax',
+    secure: false,
+  });
+
   res.status(200).json({
     message: "Usuário autenticado com sucesso!",
     token,
