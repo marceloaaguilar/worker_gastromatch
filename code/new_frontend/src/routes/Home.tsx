@@ -1,4 +1,4 @@
-import Header from "../components/Home/Header";
+import Header from "../components/Header/Header";
 import { Link } from "react-router";
 import { Star } from "lucide-react"
 

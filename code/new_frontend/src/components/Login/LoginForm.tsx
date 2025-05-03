@@ -1,15 +1,13 @@
-import { useState } from "react";
-import { useCookies } from "react-cookie";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import ModalAlert from "../ui/alerts/ModalAlert";
 import TextErrorAlert from "../ui/alerts/TextErrorAlert";
 import { TextErrorAlertProps } from "../ui/alerts/TextErrorAlert";
 import SubmitBtn from "../ui/SubmitBtn";
 import TextSuccessAlert from "../ui/alerts/TextSuccessAlert";
+import { useAuth } from "../../hooks/useAuth";
 
 export function LoginForm() {
-
-    const [,setCookie] = useCookies(['token']);
 
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
@@ -17,6 +15,7 @@ export function LoginForm() {
     const [isLoadingBtn, setIsLoadingBtn] = useState<boolean>(false);
     const [showSuccessAlert, setShowSuccessAlert] = useState<boolean>(false);
 
+    const { setAuth } = useAuth();
     const navigate = useNavigate();
 
     const handleLogin = async (e:any) => {
@@ -32,33 +31,36 @@ export function LoginForm() {
             return;
         };
         
-        const requestOptions = {
+        const requestOptions:RequestInit = {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({email: email, password: password}),
+            credentials: "include",
         };
 
         const result = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/users/signin`, requestOptions);
         const response = await result.json();
         
-        if (result && result.status !== 200) {
+        if (result.status === 200){
+            setShowSuccessAlert(true);
+
+            const acessToken = response?.token;
+            const userId = response?.userId;
+            setAuth({userId, acessToken});
+            navigate("/")
+
+
+        } else {
             setTextErrorAlert({text: response && response.message, show: true});
             setIsLoadingBtn(false);
-            return;
-        }
+        } 
 
-        response ? setCookie("token", response.token) : "";
-        setShowSuccessAlert(true);
-
-        setTimeout(()=> {
-            setIsLoadingBtn(false);
-            navigate("/");
-        }, 2000)
     }
 
     return (
         <>
             <form className="space-y-6 h-full">
+                
                 <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                     E-mail

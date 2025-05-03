@@ -1,9 +1,9 @@
 import { Link } from "react-router";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function Header() {
 
-    const { isAuthenticated, loading } = useAuth(); 
+    const { user, logout } = useAuth(); 
 
   return (
     <header className="flex items-center justify-between px-4 py-4 bg-white md:px-12">
@@ -25,7 +25,7 @@ export default function Header() {
         </Link>
         </nav>
         
-        {!isAuthenticated ? 
+        {!user ? 
             <div className="flex items-center space-x-4">
                 <Link to="/login" className="text-gray-700 hover:text-primary">
                     Entrar
@@ -34,7 +34,7 @@ export default function Header() {
                 <Link to="/cadastro" className="bg-[#ea580c] text-white px-4 py-2 rounded-md hover:bg-primary-700">
                     Cadastrar
                 </Link> 
-            </div> : ""
+            </div> : <p className="cursor-pointer"  onClick={logout}>Sair</p>
         }
     </header>
   )

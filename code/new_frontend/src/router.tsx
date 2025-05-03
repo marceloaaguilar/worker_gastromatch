@@ -1,10 +1,11 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider } from './context/AuthProvider';
 import Home from './routes/Home';
 import Login from './routes/Login';
 import Register from './routes/Register';
-import PrivateRoute from './components/PrivateRoute';
+import RequireAuth from './components/PrivateRoute';
+import Profile from './routes/Profile';
 
 const App: React.FC = () => {
   return (
@@ -15,15 +16,12 @@ const App: React.FC = () => {
 
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Register />} />
+            <Route path="/" element={ <Home />} />
+            <Route path="/perfil" element={ <Profile />} />
+            
+            <Route element={<RequireAuth/>}>
+            </Route>
 
-            <Route
-              path="/"
-              element={
-                <PrivateRoute>
-                  <Home />
-                </PrivateRoute>
-              }
-            />
           </Routes>
         </Suspense>
       </AuthProvider>

@@ -1,6 +1,6 @@
 import { Camera, Plus } from "lucide-react"
 import { useState } from "react"
-import { User } from "@/src/lib/interfaces";
+import { UserProps } from "@/src/lib/interfaces";
 import TextErrorAlert, { TextErrorAlertProps } from "../ui/alerts/TextErrorAlert";
 import SuccessAlert from "../ui/alerts/SuccessAlert";
 import SubmitBtn from "../ui/SubmitBtn";
@@ -24,7 +24,6 @@ export default function RegisterForm() {
     const [textErrorAlertProps, setTextErrorAlert] = useState<TextErrorAlertProps>({text: "show", show: false});
     const [showSuccessModal, setShowSuccessModal] = useState<boolean>(false);
     const [isLoadingBtn, setIsLoadingBtn] = useState<boolean>(false);
-
 
     const handleRegister = async (e:any) => {
         e.preventDefault();
@@ -137,7 +136,6 @@ export default function RegisterForm() {
         setExperiencia("");
         setNomeArquivo("");
     };
-      
 
     return (
         <>

@@ -3,7 +3,7 @@ import { AlertProps } from "@/src/lib/interfaces";
 export default function SuccessAlert({show, title , onClose}: AlertProps) {
 
   return (
-    <div className={`${show ? "relative z-10" : "hidden"}`} aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div className={`${show ? "relative z-60" : "hidden"}`} aria-labelledby="modal-title" role="dialog" aria-modal="true">
       <div className="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
 
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
