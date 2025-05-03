@@ -1,6 +1,7 @@
 const User = require ('../models/user.js');
 const catchAsync = require('../utils/catchAsync.js');
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
   const users = await User.findAll();
@@ -31,8 +32,13 @@ exports.getUser = catchAsync(async (req, res, next) => {
 exports.updateUser = catchAsync(async (req, res, next) => {
 
   const profile_photo = req.file?.path || null;
-  const { name, phone, password, address } = req.body;
+  const { name, phone, address } = req.body;
   const { id } = req.params;
+  let password = req.body.password;
+
+  if (password) {
+    password = await bcrypt.hash(password, 12);
+  }
 
   const [updateCount] = await User.update(
     { name, phone, password, address, profile_photo },
