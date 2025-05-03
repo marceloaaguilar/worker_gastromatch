@@ -29,20 +29,38 @@ class _UserProfileEditPageState extends State<UserProfileEditPage> {
   @override
   void initState() {
     super.initState();
-    loadUserData();
+    fetchUserData();
   }
 
-  Future<void> loadUserData() async {
+  Future<void> fetchUserData() async {
     final prefs = await SharedPreferences.getInstance();
     _userId = prefs.getInt('user_id');
+    final token = prefs.getString('auth_token');
 
-    _nameController.text = prefs.getString('user_name') ?? '';
-    _emailController.text = prefs.getString('user_email') ?? '';
-    _phoneController.text = prefs.getString('user_phone') ?? '';
-    _addressController.text = prefs.getString('user_address') ?? '';
-    _currentPhotoUrl = prefs.getString('profile_photo');
+    if (_userId == null || token == null) {
+      setState(() => _error = 'Usuário não autenticado.');
+      return;
+    }
 
-    setState(() {});
+    final uri = Uri.parse('http://10.0.2.2:8080/api/users/$_userId');
+    final response = await http.get(uri, headers: {
+      'Authorization': 'Bearer $token',
+      'Content-Type': 'application/json',
+    });
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      final user = data['data']['user'];
+      setState(() {
+        _nameController.text = user['name'] ?? '';
+        _emailController.text = user['email'] ?? '';
+        _phoneController.text = user['phone'] ?? '';
+        _addressController.text = user['address'] ?? '';
+        _currentPhotoUrl = user['profile_photo'];
+      });
+    } else {
+      setState(() => _error = 'Erro ao carregar dados do usuário.');
+    }
   }
 
   Future<void> _pickPhoto() async {
@@ -93,9 +111,6 @@ class _UserProfileEditPageState extends State<UserProfileEditPage> {
       final response = await request.send();
       final responseBody = await http.Response.fromStream(response);
       final data = jsonDecode(responseBody.body);
-
-      print('Status: ${response.statusCode}');
-      print('Body: ${responseBody.body}');
 
       if (response.statusCode == 200 && data['status'] == 'success') {
         final user = data['data']['updatedUser'];

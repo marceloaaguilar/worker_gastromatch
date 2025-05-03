@@ -25,7 +25,7 @@ const chefsData = [
     specialty: "Gastronomia Contemporânea",
     description:
       "Especializada em gastronomia contemporânea e fusion food, com foco em ingredientes orgânicos e sazonais. Oferece menus criativos que surpreendem pelo sabor e apresentação.",
-    rating: 4.7,
+    rating: 4.4,
     price: 130,
     tags: ["Contemporânea", "Fusion", "Vegetariana"],
     image: "/images/chef maria.jpg",
@@ -36,7 +36,7 @@ const chefsData = [
     specialty: "Culinária Francesa e Patisserie",
     description:
       "Chef especializado em culinária francesa e patisserie, formado na França. Cria pratos sofisticados e sobremesas artísticas que encantam pelo sabor e apresentação impecável.",
-    rating: 4.9,
+    rating: 3.9,
     price: 180,
     tags: ["Francesa", "Patisserie", "Gourmet"],
     image: "/images/chefe andre.jpg",
@@ -78,15 +78,81 @@ const chefsData = [
 
 export default function ChefsPage() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedSpecialties, setSelectedSpecialties] = useState<string[]>([]);
+  const [selectedRating, setSelectedRating] = useState<number | null>(null);
+  const [selectedPrice, setSelectedPrice] = useState<string | null>(null);
+  const [isSpecialtyOpen, setIsSpecialtyOpen] = useState(false);
+  const [isRatingOpen, setIsRatingOpen] = useState(false);
+  const [isPriceOpen, setIsPriceOpen] = useState(false);
+  const [isAvailabilityOpen, setIsAvailabilityOpen] = useState(false);
+  const [selectedAvailability, setSelectedAvailability] = useState<string[]>([]);
+
+  const specialties = [
+    "Italiana",
+    "Francesa",
+    "Japonesa",
+    "Brasileira",
+    "Mediterrânea",
+    "Vegana"
+  ];
+
+  const priceRanges = [
+    { label: "Até R$ 100", value: "0-100" },
+    { label: "R$ 100 - R$ 150", value: "100-150" },
+    { label: "R$ 150 - R$ 200", value: "150-200" },
+    { label: "Acima de R$ 200", value: "200+" }
+  ];
+
+  const availabilityOptions = [
+    "Manhã",
+    "Tarde",
+    "Noite"
+  ];
 
   const filteredChefs = chefsData.filter((chef) => {
     const term = searchTerm.toLowerCase();
-    return (
+    const matchesSearch = 
       chef.name.toLowerCase().includes(term) ||
       chef.specialty.toLowerCase().includes(term) ||
-      chef.tags.some((tag) => tag.toLowerCase().includes(term))
-    );
+      chef.tags.some((tag) => tag.toLowerCase().includes(term));
+
+    const matchesSpecialty = selectedSpecialties.length === 0 || 
+      selectedSpecialties.some(specialty => 
+        chef.specialty.toLowerCase().includes(specialty.toLowerCase()) ||
+        chef.tags.some(tag => tag.toLowerCase().includes(specialty.toLowerCase()))
+      );
+
+    const matchesRating = !selectedRating || (() => {
+      switch (selectedRating) {
+        case 5:
+          return chef.rating >= 4.5;
+        case 4:
+          return chef.rating >= 4.0 && chef.rating < 4.5;
+        case 3:
+          return chef.rating < 4.0;
+        default:
+          return true;
+      }
+    })();
+
+    const matchesPrice = !selectedPrice || (() => {
+      const [min, max] = selectedPrice.split('-').map(Number);
+      if (selectedPrice.endsWith('+')) {
+        return chef.price >= Number(selectedPrice.replace('+', ''));
+      }
+      return chef.price >= min && chef.price <= max;
+    })();
+
+    return matchesSearch && matchesSpecialty && matchesRating && matchesPrice;
   });
+
+  const toggleSpecialty = (specialty: string) => {
+    setSelectedSpecialties(prev => 
+      prev.includes(specialty)
+        ? prev.filter(s => s !== specialty)
+        : [...prev, specialty]
+    );
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -127,353 +193,247 @@ export default function ChefsPage() {
 
             <div className="flex flex-wrap gap-2">
               {/* Dropdown Especiality */}
-              <div className="relative group">
-                <button className="px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50">
+              <div className="relative">
+                <button 
+                  className={`px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50 ${
+                    selectedSpecialties.length > 0 ? 'border-primary-600 bg-primary-50 text-primary-600' : ''
+                  }`}
+                  onClick={() => setIsSpecialtyOpen(!isSpecialtyOpen)}
+                >
                   <Filter className="h-4 w-4" />
                   <span>Especialidade</span>
                   <ChevronDown className="h-4 w-4" />
                 </button>
-                <div className="absolute z-10 mt-1 w-56 hidden group-hover:block bg-white border border-gray-200 rounded-md shadow-lg">
-                  <div className="p-2">
-                    <div className="space-y-1">
-                      <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                        <input
-                          type="checkbox"
-                          className="rounded text-primary-600 focus:ring-primary-600"
-                        />
-                        <span>Italiana</span>
-                      </label>
-                      <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                        <input
-                          type="checkbox"
-                          className="rounded text-primary-600 focus:ring-primary-600"
-                        />
-                        <span>Francesa</span>
-                      </label>
-                      <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                        <input
-                          type="checkbox"
-                          className="rounded text-primary-600 focus:ring-primary-600"
-                        />
-                        <span>Japonesa</span>
-                      </label>
-                      <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                        <input
-                          type="checkbox"
-                          className="rounded text-primary-600 focus:ring-primary-600"
-                        />
-                        <span>Brasileira</span>
-                      </label>
-                      <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                        <input
-                          type="checkbox"
-                          className="rounded text-primary-600 focus:ring-primary-600"
-                        />
-                        <span>Mediterrânea</span>
-                      </label>
-                      <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                        <input
-                          type="checkbox"
-                          className="rounded text-primary-600 focus:ring-primary-600"
-                        />
-                        <span>Vegana</span>
-                      </label>
+                {isSpecialtyOpen && (
+                  <div 
+                    className="absolute z-10 mt-1 w-56 bg-white border border-gray-200 rounded-md shadow-lg"
+                    onMouseLeave={() => setIsSpecialtyOpen(false)}
+                  >
+                    <div className="p-2">
+                      <div className="space-y-1">
+                        {specialties.map((specialty) => (
+                          <label 
+                            key={specialty}
+                            className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded"
+                          >
+                            <input
+                              type="checkbox"
+                              checked={selectedSpecialties.includes(specialty)}
+                              onChange={() => toggleSpecialty(specialty)}
+                              className="rounded text-primary-600 focus:ring-primary-600"
+                            />
+                            <span>{specialty}</span>
+                          </label>
+                        ))}
+                      </div>
+                      <button
+                        className="w-full text-left px-2 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded mt-2"
+                        onClick={() => setSelectedSpecialties([])}
+                      >
+                        Limpar filtro
+                      </button>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
 
               {/* Dropdown Rate */}
-              <div className="relative group">
-                <button className="px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50">
+              <div className="relative">
+                <button 
+                  className={`px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50 ${
+                    selectedRating !== null ? 'border-primary-600 bg-primary-50 text-primary-600' : ''
+                  }`}
+                  onClick={() => setIsRatingOpen(!isRatingOpen)}
+                >
                   <span>Avaliação</span>
                   <ChevronDown className="h-4 w-4" />
                 </button>
-                <div className="absolute z-10 mt-1 w-48 hidden group-hover:block bg-white border border-gray-200 rounded-md shadow-lg">
-                  <div className="p-2 space-y-1">
-                    <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                      <input
-                        type="radio"
-                        name="rating"
-                        className="text-primary-600 focus:ring-primary-600"
-                      />
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className="w-4 h-4 fill-primary-600 text-primary-600"
+                {isRatingOpen && (
+                  <div 
+                    className="absolute z-10 mt-1 w-48 bg-white border border-gray-200 rounded-md shadow-lg"
+                    onMouseLeave={() => setIsRatingOpen(false)}
+                  >
+                    <div className="p-2 space-y-1">
+                      {[5, 4, 3].map((rating) => (
+                        <label 
+                          key={rating}
+                          className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded"
+                        >
+                          <input
+                            type="radio"
+                            name="rating"
+                            checked={selectedRating === rating}
+                            onChange={() => setSelectedRating(rating)}
+                            className="text-primary-600 focus:ring-primary-600"
                           />
-                        ))}
-                      </div>
-                    </label>
-                    <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                      <input
-                        type="radio"
-                        name="rating"
-                        className="text-primary-600 focus:ring-primary-600"
-                      />
-                      <div className="flex">
-                        {[...Array(4)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className="w-4 h-4 fill-primary-600 text-primary-600"
-                          />
-                        ))}
-                      </div>
-                    </label>
-                    <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                      <input
-                        type="radio"
-                        name="rating"
-                        className="text-primary-600 focus:ring-primary-600"
-                      />
-                      <div className="flex">
-                        {[...Array(3)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className="w-4 h-4 fill-primary-600 text-primary-600"
-                          />
-                        ))}
-                      </div>
-                    </label>
+                          <div className="flex">
+                            {[...Array(rating)].map((_, i) => (
+                              <Star
+                                key={i}
+                                className="w-4 h-4 fill-primary-600 text-primary-600"
+                              />
+                            ))}
+                          </div>
+                        </label>
+                      ))}
+                      <button
+                        className="w-full text-left px-2 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded"
+                        onClick={() => setSelectedRating(null)}
+                      >
+                        Limpar filtro
+                      </button>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
               {/* Dropdown Price */}
-              <div className="relative group">
-                <button className="px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50">
+              <div className="relative">
+                <button 
+                  className={`px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50 ${
+                    selectedPrice !== null ? 'border-primary-600 bg-primary-50 text-primary-600' : ''
+                  }`}
+                  onClick={() => setIsPriceOpen(!isPriceOpen)}
+                >
                   <span>Preço</span>
                   <ChevronDown className="h-4 w-4" />
                 </button>
-                <div className="absolute z-10 mt-1 w-48 hidden group-hover:block bg-white border border-gray-200 rounded-md shadow-lg">
-                  <div className="p-2 space-y-1">
-                    <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                      <input
-                        type="radio"
-                        name="price"
-                        className="text-primary-600 focus:ring-primary-600"
-                      />
-                      <span>Até R$ 100</span>
-                    </label>
-                    <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                      <input
-                        type="radio"
-                        name="price"
-                        className="text-primary-600 focus:ring-primary-600"
-                      />
-                      <span>R$ 100 - R$ 150</span>
-                    </label>
-                    <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                      <input
-                        type="radio"
-                        name="price"
-                        className="text-primary-600 focus:ring-primary-600"
-                      />
-                      <span>R$ 150 - R$ 200</span>
-                    </label>
-                    <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                      <input
-                        type="radio"
-                        name="price"
-                        className="text-primary-600 focus:ring-primary-600"
-                      />
-                      <span>Acima de R$ 200</span>
-                    </label>
+                {isPriceOpen && (
+                  <div 
+                    className="absolute z-10 mt-1 w-48 bg-white border border-gray-200 rounded-md shadow-lg"
+                    onMouseLeave={() => setIsPriceOpen(false)}
+                  >
+                    <div className="p-2 space-y-1">
+                      {priceRanges.map((range) => (
+                        <label 
+                          key={range.value}
+                          className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded"
+                        >
+                          <input
+                            type="radio"
+                            name="price"
+                            checked={selectedPrice === range.value}
+                            onChange={() => setSelectedPrice(range.value)}
+                            className="text-primary-600 focus:ring-primary-600"
+                          />
+                          <span>{range.label}</span>
+                        </label>
+                      ))}
+                      <button
+                        className="w-full text-left px-2 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded"
+                        onClick={() => setSelectedPrice(null)}
+                      >
+                        Limpar filtro
+                      </button>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
-              {/* Dropdown Disponibility */}
-              <div className="relative group">
-                <button className="px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50">
+              {/* Dropdown Disponibilidade */}
+              <div className="relative">
+                <button 
+                  className={`px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50 ${
+                    selectedAvailability.length > 0 ? 'border-primary-600 bg-primary-50 text-primary-600' : ''
+                  }`}
+                  onClick={() => setIsAvailabilityOpen(!isAvailabilityOpen)}
+                >
                   <span>Disponibilidade</span>
                   <ChevronDown className="h-4 w-4" />
                 </button>
-                <div className="absolute z-10 mt-1 w-48 hidden group-hover:block bg-white border border-gray-200 rounded-md shadow-lg">
-                  <div className="p-2 space-y-1">
-                    <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                      <input
-                        type="checkbox"
-                        className="rounded text-primary-600 focus:ring-primary-600"
-                      />
-                      <span>Dias de semana</span>
-                    </label>
-                    <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                      <input
-                        type="checkbox"
-                        className="rounded text-primary-600 focus:ring-primary-600"
-                      />
-                      <span>Finais de semana</span>
-                    </label>
-                    <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                      <input
-                        type="checkbox"
-                        className="rounded text-primary-600 focus:ring-primary-600"
-                      />
-                      <span>Manhã</span>
-                    </label>
-                    <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                      <input
-                        type="checkbox"
-                        className="rounded text-primary-600 focus:ring-primary-600"
-                      />
-                      <span>Tarde</span>
-                    </label>
-                    <label className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
-                      <input
-                        type="checkbox"
-                        className="rounded text-primary-600 focus:ring-primary-600"
-                      />
-                      <span>Noite</span>
-                    </label>
+                {isAvailabilityOpen && (
+                  <div 
+                    className="absolute z-10 mt-1 w-48 bg-white border border-gray-200 rounded-md shadow-lg"
+                    onMouseLeave={() => setIsAvailabilityOpen(false)}
+                  >
+                    <div className="p-2 space-y-1">
+                      {availabilityOptions.map((option) => (
+                        <label 
+                          key={option}
+                          className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={selectedAvailability.includes(option)}
+                            onChange={() => {
+                              setSelectedAvailability(prev => 
+                                prev.includes(option)
+                                  ? prev.filter(item => item !== option)
+                                  : [...prev, option]
+                              );
+                            }}
+                            className="rounded text-primary-600 focus:ring-primary-600"
+                          />
+                          <span>{option}</span>
+                        </label>
+                      ))}
+                      <button
+                        className="w-full text-left px-2 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded"
+                        onClick={() => setSelectedAvailability([])}
+                      >
+                        Limpar filtro
+                      </button>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
         </div>
       </section>
+
       {/* Chefs Grid */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 md:px-12">
-          {filteredChefs.length === 0 ? (
-            <div className="text-center py-12">
-              <h3 className="text-xl font-medium text-gray-700">
-                Nenhum chef encontrado
-              </h3>
-              <p className="text-gray-500 mt-2">
-                Tente ajustar sua busca ou filtros
-              </p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredChefs.map((chef) => (
-                <div
-                  key={chef.id}
-                  className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-                >
-                  <div className="h-64 relative">
-                    <Image
-                      src={chef.image}
-                      alt={chef.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                    {chef.featured && (
-                      <div className="absolute top-4 right-4 bg-primary-600 text-white px-2 py-1 rounded text-sm font-medium">
-                        Destaque
-                      </div>
-                    )}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredChefs.map((chef) => (
+              <div
+                key={chef.id}
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative h-48">
+                  <Image
+                    src={chef.image}
+                    alt={chef.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-xl font-semibold">{chef.name}</h3>
+                    <div className="flex items-center">
+                      <Star className="w-5 h-5 fill-primary-600 text-primary-600" />
+                      <span className="ml-1">{chef.rating}</span>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
-                        <h3 className="font-bold text-xl">{chef.name}</h3>
-                        <p className="text-gray-600">{chef.specialty}</p>
-                      </div>
-                      <div className="flex items-center bg-primary-50 px-2 py-1 rounded">
-                        <Star className="w-4 h-4 fill-primary-600 text-primary-600 mr-1" />
-                        <span className="font-medium">{chef.rating}</span>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {chef.tags.map((tag, index) => (
-                        <span
-                          key={index}
-                          className="px-2 py-1 bg-primary-100 text-primary-700 rounded-full text-xs"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <p className="text-sm text-gray-600 mb-4">
-                      {chef.description}
-                    </p>
-
-                    <div className="flex justify-between items-center gap-2">
-                      <div>
-                        <p className="text-sm text-gray-500">
-                          Preço médio por pessoa
-                        </p>
-                        <p className="text-lg font-bold text-primary-600">
-                          R$ {chef.price.toFixed(2).replace(".", ",")}
-                        </p>
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <Link
-                          href={`/agendamentos?chef=${chef.id}`}
-                          className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-md transition-colors text-center"
-                        >
-                          Agendar
-                        </Link>
-                        <Link
-                          href={`/chat?chefId=${chef.id}`}
-                          className="border border-primary-600 text-primary-600 hover:bg-primary-50 px-4 py-2 rounded-md transition-colors text-center"
-                        >
-                          Chat
-                        </Link>
-                      </div>
-                    </div>
+                  <p className="text-gray-600 mb-2">{chef.specialty}</p>
+                  <p className="text-gray-700 mb-4">{chef.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {chef.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 bg-primary-50 text-primary-700 rounded-full text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-lg font-semibold">
+                      R$ {chef.price}/hora
+                    </span>
+                    <Link
+                      href={`/chefs/${chef.id}`}
+                      className="px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors duration-300"
+                    >
+                      Ver Perfil
+                    </Link>
                   </div>
                 </div>
-              ))}
-            </div>
-          )}
-
-          {/* Pagination */}
-          {filteredChefs.length > 0 && (
-            <div className="flex justify-center mt-12">
-              <nav className="flex items-center gap-1">
-                <button className="w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 bg-white hover:bg-gray-50">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
-                <button className="w-10 h-10 flex items-center justify-center rounded-md border border-primary-600 bg-primary-600 text-white">
-                  1
-                </button>
-                <button className="w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 bg-white hover:bg-gray-50">
-                  2
-                </button>
-                <button className="w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 bg-white hover:bg-gray-50">
-                  3
-                </button>
-                <span className="w-10 h-10 flex items-center justify-center">
-                  ...
-                </span>
-                <button className="w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 bg-white hover:bg-gray-50">
-                  8
-                </button>
-                <button className="w-10 h-10 flex items-center justify-center rounded-md border border-gray-300 bg-white hover:bg-gray-50">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
-              </nav>
-            </div>
-          )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

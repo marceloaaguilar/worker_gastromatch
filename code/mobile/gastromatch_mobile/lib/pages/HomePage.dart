@@ -19,11 +19,34 @@ class _HomePageState extends State<HomePage> {
   List<Map<String, String>> chefs = [];
   bool isLoading = true;
   bool hasError = false;
+  String? userName;
 
   @override
   void initState() {
     super.initState();
     fetchChefs();
+    fetchUserName();
+  }
+
+  Future<void> fetchUserName() async {
+    final prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString('auth_token');
+    final userId = prefs.getInt('user_id');
+
+    if (token == null || userId == null) return;
+
+    final url = Uri.parse('http://10.0.2.2:8080/api/users/$userId');
+    final response = await http.get(
+      url,
+      headers: {'Authorization': 'Bearer $token'},
+    );
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      setState(() {
+        userName = data['data']['user']['name'];
+      });
+    }
   }
 
   Future<void> fetchChefs() async {
@@ -54,15 +77,13 @@ class _HomePageState extends State<HomePage> {
         final List<dynamic> data = jsonResponse['data']['chefs'];
 
         setState(() {
-          chefs =
-              data.map((chef) {
-                return {
-                  'name':
-                      'Chef ${chef['id']}', // Ajuste para usar o nome real se disponível futuramente
-                  'specialty': chef['specialization'].toString(),
-                  'image': 'assets/images/MarinaSouzaChef.png',
-                };
-              }).toList();
+          chefs = data.map((chef) {
+            return {
+              'name': 'Chef ${chef['id']}',
+              'specialty': chef['specialization'].toString(),
+              'image': 'assets/images/MarinaSouzaChef.png',
+            };
+          }).toList();
           isLoading = false;
           hasError = false;
         });
@@ -81,31 +102,30 @@ class _HomePageState extends State<HomePage> {
   Widget buildShimmerCard() {
     return ListView.builder(
       itemCount: 3,
-      itemBuilder:
-          (context, index) => Card(
-            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-            child: ListTile(
-              leading: Shimmer.fromColors(
-                baseColor: Colors.grey.shade300,
-                highlightColor: Colors.grey.shade100,
-                child: CircleAvatar(radius: 30),
-              ),
-              title: Shimmer.fromColors(
-                baseColor: Colors.grey.shade300,
-                highlightColor: Colors.grey.shade100,
-                child: Container(
-                  height: 14,
-                  color: Colors.grey,
-                  margin: EdgeInsets.only(bottom: 5),
-                ),
-              ),
-              subtitle: Shimmer.fromColors(
-                baseColor: Colors.grey.shade300,
-                highlightColor: Colors.grey.shade100,
-                child: Container(height: 10, width: 100, color: Colors.grey),
-              ),
+      itemBuilder: (context, index) => Card(
+        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+        child: ListTile(
+          leading: Shimmer.fromColors(
+            baseColor: Colors.grey.shade300,
+            highlightColor: Colors.grey.shade100,
+            child: CircleAvatar(radius: 30),
+          ),
+          title: Shimmer.fromColors(
+            baseColor: Colors.grey.shade300,
+            highlightColor: Colors.grey.shade100,
+            child: Container(
+              height: 14,
+              color: Colors.grey,
+              margin: EdgeInsets.only(bottom: 5),
             ),
           ),
+          subtitle: Shimmer.fromColors(
+            baseColor: Colors.grey.shade300,
+            highlightColor: Colors.grey.shade100,
+            child: Container(height: 10, width: 100, color: Colors.grey),
+          ),
+        ),
+      ),
     );
   }
 
@@ -137,9 +157,23 @@ class _HomePageState extends State<HomePage> {
           children: [
             DrawerHeader(
               decoration: BoxDecoration(color: Colors.orange),
-              child: Text(
-                'GastroMatch',
-                style: TextStyle(color: Colors.white, fontSize: 24),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Bem-vindo,',
+                    style: TextStyle(color: Colors.white70, fontSize: 16),
+                  ),
+                  Text(
+                    userName ?? 'Usuário',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
             ),
             ListTile(
@@ -157,150 +191,146 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               leading: Icon(Icons.logout),
               title: Text('Sair'),
-              onTap: () => _logout(context), // Chama a função de logout
+              onTap: () => _logout(context),
             ),
           ],
         ),
       ),
-      body:
-          isLoading
-              ? buildShimmerCard()
-              : hasError
+      body: isLoading
+          ? buildShimmerCard()
+          : hasError
               ? Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.error_outline, color: Colors.red, size: 40),
-                    SizedBox(height: 10),
-                    Text(
-                      'Erro ao carregar os chefs.\nTente novamente mais tarde.',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 16),
-                    ),
-                    SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          isLoading = true;
-                          hasError = false;
-                        });
-                        fetchChefs();
-                      },
-                      child: Text("Tentar novamente"),
-                    ),
-                  ],
-                ),
-              )
-              : chefs.isEmpty
-              ? Center(
-                child: Text(
-                  "Nenhum chef disponível no momento.",
-                  style: TextStyle(fontSize: 16),
-                ),
-              )
-              : Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Stack(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        height: 200,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(
-                              'assets/images/CozItalianaBanner.png',
-                            ),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+                      Icon(Icons.error_outline, color: Colors.red, size: 40),
+                      SizedBox(height: 10),
+                      Text(
+                        'Erro ao carregar os chefs.\nTente novamente mais tarde.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 16),
                       ),
-                      Container(
-                        height: 200,
-                        color: Colors.black.withOpacity(0.3),
-                        alignment: Alignment.center,
-                        child: Text(
-                          "Encontre o Chef Ideal para seu Evento!",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
+                      SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            isLoading = true;
+                            hasError = false;
+                          });
+                          fetchChefs();
+                        },
+                        child: Text("Tentar novamente"),
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    child: Text(
-                      "Chefs Disponíveis",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                )
+              : chefs.isEmpty
+                  ? Center(
+                      child: Text(
+                        "Nenhum chef disponível no momento.",
+                        style: TextStyle(fontSize: 16),
                       ),
-                    ),
-                  ),
-                  SizedBox(height: 5),
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: chefs.length,
-                      itemBuilder: (context, index) {
-                        return Card(
-                          margin: EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 8,
-                          ),
-                          elevation: 4,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: ListTile(
-                            leading: CircleAvatar(
-                              backgroundImage: AssetImage(
-                                chefs[index]['image']!,
+                    )
+                  : Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Stack(
+                          children: [
+                            Container(
+                              height: 200,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    'assets/images/CozItalianaBanner.png',
+                                  ),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
-                              radius: 30,
                             ),
-                            title: Text(
-                              chefs[index]['name']!,
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                            Container(
+                              height: 200,
+                              color: Colors.black.withOpacity(0.3),
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Encontre o Chef Ideal para seu Evento!",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
                             ),
-                            subtitle: Text(chefs[index]['specialty']!),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.grey,
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 16),
+                          child: Text(
+                            "Chefs Disponíveis",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
                             ),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder:
-                                      (context) =>
-                                          ChefDetailPage(chef: chefs[index]),
+                          ),
+                        ),
+                        SizedBox(height: 5),
+                        Expanded(
+                          child: ListView.builder(
+                            itemCount: chefs.length,
+                            itemBuilder: (context, index) {
+                              return Card(
+                                margin: EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 8,
+                                ),
+                                elevation: 4,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: ListTile(
+                                  leading: CircleAvatar(
+                                    backgroundImage: AssetImage(
+                                      chefs[index]['image']!,
+                                    ),
+                                    radius: 30,
+                                  ),
+                                  title: Text(
+                                    chefs[index]['name']!,
+                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  subtitle: Text(chefs[index]['specialty']!),
+                                  trailing: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.grey,
+                                  ),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => ChefDetailPage(chef: chefs[index]),
+                                      ),
+                                    );
+                                  },
                                 ),
                               );
                             },
                           ),
-                        );
-                      },
+                        ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
     );
   }
 
   void _logout(BuildContext context) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.remove('auth_token'); // Remove o token de autenticação
-
-    // Navega para a página de Login após o logout
+    await prefs.remove('auth_token');
+    await prefs.remove('user_id');
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(builder: (context) => LoginPage()),
-      (route) => false, // Isso remove todas as rotas anteriores da pilha
+      (route) => false,
     );
   }
 }

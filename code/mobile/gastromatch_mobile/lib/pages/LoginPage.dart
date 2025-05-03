@@ -49,9 +49,11 @@ class _LoginPageState extends State<LoginPage> {
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         final token = data['token'];
+        final userId = data['userId'];
 
         final prefs = await SharedPreferences.getInstance();
         await prefs.setString('auth_token', token);
+        await prefs.setInt('user_id', userId);
 
         Navigator.pushReplacement(
           context,
@@ -83,10 +85,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
             if (_error != null)
-              Text(
-                _error!,
-                style: TextStyle(color: Colors.red),
-              ),
+              Text(_error!, style: TextStyle(color: Colors.red)),
             CustomInputField(
               keyboardType: TextInputType.emailAddress,
               hintText: "Email",
@@ -105,18 +104,21 @@ class _LoginPageState extends State<LoginPage> {
             _isLoading
                 ? CircularProgressIndicator(color: Colors.orange)
                 : ElevatedButton(
-                    onPressed: login,
-                    child: Text("Entrar"),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.orange,
-                      foregroundColor: Colors.white,
-                    ),
+                  onPressed: login,
+                  child: Text("Entrar"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                    foregroundColor: Colors.white,
                   ),
+                ),
             Expanded(child: Container()),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Não tem uma conta?", style: TextStyle(color: Colors.grey)),
+                Text(
+                  "Não tem uma conta?",
+                  style: TextStyle(color: Colors.grey),
+                ),
                 TextButton(
                   child: Text("Cadastre-se"),
                   style: TextButton.styleFrom(foregroundColor: Colors.orange),
