@@ -43,10 +43,13 @@ class _UserProfileEditPageState extends State<UserProfileEditPage> {
     }
 
     final uri = Uri.parse('http://10.0.2.2:8080/api/users/$_userId');
-    final response = await http.get(uri, headers: {
-      'Authorization': 'Bearer $token',
-      'Content-Type': 'application/json',
-    });
+    final response = await http.get(
+      uri,
+      headers: {
+        'Authorization': 'Bearer $token',
+        'Content-Type': 'application/json',
+      },
+    );
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
@@ -164,36 +167,57 @@ class _UserProfileEditPageState extends State<UserProfileEditPage> {
               onTap: _pickPhoto,
               child: CircleAvatar(
                 radius: 45,
-                backgroundImage: _profilePhoto != null
-                    ? FileImage(_profilePhoto!)
-                    : (_currentPhotoUrl != null && _currentPhotoUrl!.isNotEmpty
-                        ? NetworkImage(_currentPhotoUrl!) as ImageProvider
-                        : null),
-                child: (_profilePhoto == null && (_currentPhotoUrl == null || _currentPhotoUrl!.isEmpty))
-                    ? Icon(Icons.person, size: 40, color: Colors.white)
-                    : null,
+                backgroundImage:
+                    _profilePhoto != null
+                        ? FileImage(_profilePhoto!)
+                        : (_currentPhotoUrl != null &&
+                                _currentPhotoUrl!.isNotEmpty
+                            ? NetworkImage(_currentPhotoUrl!) as ImageProvider
+                            : null),
+                child:
+                    (_profilePhoto == null &&
+                            (_currentPhotoUrl == null ||
+                                _currentPhotoUrl!.isEmpty))
+                        ? Icon(Icons.person, size: 40, color: Colors.white)
+                        : null,
                 backgroundColor: Colors.orange.shade200,
               ),
             ),
             SizedBox(height: 20),
-            CustomInputField(hintText: 'Nome', controller: _nameController, validator: (_) => null),
+            CustomInputField(
+              hintText: 'Nome',
+              controller: _nameController,
+              validator: (_) => null,
+            ),
             SizedBox(height: 15),
-            CustomInputField(hintText: 'Email', controller: _emailController, validator: (_) => null),
+            CustomInputField(
+              hintText: 'Email',
+              controller: _emailController,
+              validator: (_) => null,
+            ),
             SizedBox(height: 15),
-            CustomInputField(hintText: 'Telefone', controller: _phoneController, validator: (_) => null),
+            CustomInputField(
+              hintText: 'Telefone',
+              controller: _phoneController,
+              validator: (_) => null,
+            ),
             SizedBox(height: 15),
-            CustomInputField(hintText: 'Endereço', controller: _addressController, validator: (_) => null),
+            CustomInputField(
+              hintText: 'Endereço',
+              controller: _addressController,
+              validator: (_) => null,
+            ),
             SizedBox(height: 30),
             _isLoading
                 ? CircularProgressIndicator(color: Colors.orange)
                 : ElevatedButton(
-                    onPressed: updateProfile,
-                    child: Text('Salvar Alterações'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.orange,
-                      foregroundColor: Colors.white,
-                    ),
+                  onPressed: updateProfile,
+                  child: Text('Salvar Alterações'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                    foregroundColor: Colors.white,
                   ),
+                ),
           ],
         ),
       ),
