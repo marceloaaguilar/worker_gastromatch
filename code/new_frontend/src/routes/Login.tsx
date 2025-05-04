@@ -6,8 +6,8 @@ import { Link } from "react-router";
 export default function Login() {
 
     return (
-        <div className="bg-[#fff5f2] flex items-center justify-center p-8 h-full">
-            <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row h-full">
+        <div className="bg-[#fff5f2] flex items-center justify-center h-screen">
+            <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row h-max">
                 <div className="bg-[#ea580c] text-white p-8 md:w-1/2 flex flex-col h-full">
                     <div className="mb-8">
                         <h1 className="text-3xl font-bold mb-2">Bem-vindo de volta!</h1>
