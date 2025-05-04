@@ -5,7 +5,7 @@ import TextErrorAlert from "../ui/alerts/TextErrorAlert";
 import { TextErrorAlertProps } from "../ui/alerts/TextErrorAlert";
 import SubmitBtn from "../ui/SubmitBtn";
 import TextSuccessAlert from "../ui/alerts/TextSuccessAlert";
-import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "../../context/AuthProvider";
 
 export function LoginForm() {
 
@@ -15,7 +15,7 @@ export function LoginForm() {
     const [isLoadingBtn, setIsLoadingBtn] = useState<boolean>(false);
     const [showSuccessAlert, setShowSuccessAlert] = useState<boolean>(false);
 
-    const { setAuth } = useAuth();
+    const { login } = useAuth();
     const navigate = useNavigate();
 
     const handleLogin = async (e:any) => {
@@ -31,29 +31,13 @@ export function LoginForm() {
             return;
         };
         
-        const requestOptions:RequestInit = {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({email: email, password: password}),
-            credentials: "include",
-        };
-
-        const result = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/users/signin`, requestOptions);
-        const response = await result.json();
-        
-        if (result.status === 200){
-            setShowSuccessAlert(true);
-
-            const acessToken = response?.token;
-            const userId = response?.userId;
-            setAuth({userId, acessToken});
-            navigate("/")
-
-
-        } else {
-            setTextErrorAlert({text: response && response.message, show: true});
+        try {
+            await login({email: email, password: password});
+        } catch (err:any) {
+            setTextErrorAlert({text: err.message , show: true});
             setIsLoadingBtn(false);
-        } 
+        }
+
 
     }
 

@@ -72,8 +72,10 @@ exports.signin = async (req, res, next) => {
       error: true,
       message: "Credenciais inválidas!",
     })
-  } 
+  }
+  
   const token = signToken(user.id);
+  const { password: _, ...userWithoutPassword } = user.get();
 
   res.cookie('token', token, {
     maxAge: 3600000,
@@ -85,12 +87,11 @@ exports.signin = async (req, res, next) => {
   res.status(200).json({
     message: "Usuário autenticado com sucesso!",
     token,
-    userId: user.id
+    user: userWithoutPassword
   })
 }
 
-exports.protect = catchAsync(async (req, res, next) => { 
-
+exports.protect = catchAsync(async (req, res, next) => {
   let authToken;
   let decoded;
 
@@ -98,22 +99,25 @@ exports.protect = catchAsync(async (req, res, next) => {
     authToken = req.headers.authorization.split(' ')[1];
   }
 
+  if (!authToken && req.cookies && req.cookies.token) {
+    authToken = req.cookies.token;
+  }
+
   if (!authToken) {
     return res.status(401).json({
       error: true,
-      message: "Você precisa se autenticar primeiro!'",
-    })
+      message: "Você precisa se autenticar primeiro!",
+    });
   }
 
   try {
     decoded = await promisify(jwt.verify)(authToken, process.env.JWT_SECRET);
-  } catch(error) {
-      return res.status(401).json({
-        error: true,
-        message: "Você precisa se autenticar primeiro!'",
-      })
+  } catch (error) {
+    return res.status(401).json({
+      error: true,
+      message: "Você precisa se autenticar primeiro!",
+    });
   }
 
   next();
-
 });

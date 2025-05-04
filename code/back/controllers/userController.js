@@ -97,4 +97,16 @@ exports.verifyToken = catchAsync(async (req, res, next) => {
     return res.status(401).json({ message: 'Token inválido ou expirado' });
   }
 
+});
+
+exports.logoutUser = catchAsync(async (req, res, next) => {
+
+  res.clearCookie('token', {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'Strict'
+  });
+
+  res.status(200).json({ message: 'Logout realizado com sucesso' });
+  
 })

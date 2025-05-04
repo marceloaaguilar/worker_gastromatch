@@ -1,14 +1,17 @@
-import React from 'react';
-import { Navigate, Outlet, useLocation } from 'react-router-dom';
-import { useAuth } from '../hooks/useAuth';
+import { Navigate } from "react-router-dom";
+import { useAuth } from "../context/AuthProvider";
+import { JSX } from "react";
 
-const RequireAuth = () => {
-  const {auth} = useAuth();
-  const location = useLocation();
-
-  return (
-    auth?.userId && auth.acessToken ? <Outlet/> : <Navigate to="/login" state={{from: location}} replace />
-  )
+interface Props {
+  children: JSX.Element;
 }
 
-export default RequireAuth;
+const PrivateRoute = ({ children }: Props) => {
+  const { user, loading } = useAuth();
+
+  if (loading) return <p>Carregando...</p>;
+
+  return user ? children : <Navigate to="/login" replace />;
+};
+
+export default PrivateRoute;

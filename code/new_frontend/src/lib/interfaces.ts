@@ -18,7 +18,6 @@ export interface UserProps {
   photo?: string
 }
 
-
 export interface UserLogin {
   nome: string,
   email: string,
@@ -32,9 +31,21 @@ export interface BtnProps {
   isLoading?: boolean
 }
 
-
 export interface ModalUserEditProps{
   open: boolean
   onClose: () => void;
   userData?: UserProps
+}
+
+export interface Chef {
+  id: number,
+  specialization: string,
+  experience: number,
+  professional_description: string,
+  price_per_hour: number,
+  user: {
+    name: string,
+    email: string,
+    profile_photo: string
+  }
 }

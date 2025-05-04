@@ -26,5 +26,9 @@ router
   .patch(upload.single('profile_photo'), userController.updateUser)
   .delete(userController.deleteUser)
 
+router
+  .route("/logout")
+  .post(userController.logoutUser)
+
 
 module.exports = router;

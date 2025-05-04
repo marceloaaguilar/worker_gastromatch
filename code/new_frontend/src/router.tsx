@@ -4,8 +4,9 @@ import { AuthProvider } from './context/AuthProvider';
 import Home from './routes/Home';
 import Login from './routes/Login';
 import Register from './routes/Register';
-import RequireAuth from './components/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute';
 import Profile from './routes/Profile';
+import About from "./routes/About"
 
 const App: React.FC = () => {
   return (
@@ -16,11 +17,19 @@ const App: React.FC = () => {
 
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Register />} />
-            <Route path="/" element={ <Home />} />
-            <Route path="/perfil" element={ <Profile />} />
-            
-            <Route element={<RequireAuth/>}>
-            </Route>
+            <Route path="/sobre" element={ <About />} />
+
+            <Route path="/perfil" element={ 
+                <PrivateRoute>
+                  <Profile />
+                </PrivateRoute>
+              } />
+
+            <Route path="/" element={ 
+                <PrivateRoute>
+                    <Home />
+                </PrivateRoute>
+            } />
 
           </Routes>
         </Suspense>
