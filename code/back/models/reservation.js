@@ -1,12 +1,49 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const Chef = require("./chef");
+const User = require("./user");
 
 const Reservation = sequelize.define('reservation', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true
+  },
+  customer_name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: {
+        msg: 'É obrigatório informar o nome completo'
+      },
+      notNull: {
+        msg: 'É obrigatório informar o nome completo'
+      },
+    }
+  },
+  customer_cpf: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: {
+        msg: 'É obrigatório informar o CPF do cliente!'
+      },
+      notNull: {
+        msg: 'É obrigatório informar o CPF do cliente!'
+      },
+    }
+  },
+  customer_email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: {
+        msg: 'É obrigatório informar o e-mail do cliente!'
+      },
+      notNull: {
+        msg: 'É obrigatório informar o e-mail do cliente!'
+      },
+    }
   },
   description: {
     type: DataTypes.STRING,
@@ -30,6 +67,17 @@ const Reservation = sequelize.define('reservation', {
       notNull: {
         msg: 'O telefone de contato é obrigatória'
       },
+    }
+  },
+  user: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: User,
+      key: 'id'
+    },
+    validate: {
+      notNull: { msg: 'É necessário selecionar um usuário para o agendamento' }
     }
   },
   chef: {
@@ -86,10 +134,14 @@ const Reservation = sequelize.define('reservation', {
   mealType: {
     type: DataTypes.STRING,
     allowNull: false
+  },
+  dietary_restrictions: {
+    type: DataTypes.STRING,
+    allowNull: true,
   }
 });
 
-Chef.hasMany(Reservation, { foreignKey: 'chefId' });
-Reservation.belongsTo(Chef, { foreignKey: 'chefId' });
+Chef.hasMany(Reservation, { foreignKey: 'chef' });
+Reservation.belongsTo(Chef, { foreignKey: 'chef' });
 
 module.exports = Reservation;
