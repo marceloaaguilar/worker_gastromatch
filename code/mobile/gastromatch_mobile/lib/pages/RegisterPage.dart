@@ -6,7 +6,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../input.dart';
-import 'HomePage.dart';
 import 'LoginPage.dart';
 import 'TermsPage.dart';
 
