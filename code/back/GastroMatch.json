@@ -18,7 +18,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"specialization\": \"Italiano\",\r\n    \"experience\": 1,\r\n    \"user_id\": 3\r\n}",
+							"raw": "{\r\n    \"specialization\": \"Italiano\",\r\n    \"professional_description\": \"Profissional especializado em comida italiana\",\r\n    \"price_per_hour\": \"300\",\r\n    \"availability\": \"Todos os dias\",\r\n    \"experience\": 1,\r\n    \"user_id\": 8\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -48,7 +48,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDUzMzg5NDYsImV4cCI6MTc0NTQyNTM0Nn0.ju85sAxLtNOuYy-VryLZswnDCAXN7OfXxiuKdwX-Fqg",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsImlhdCI6MTc0NjM2NjYzNywiZXhwIjoxNzQ2NDUzMDM3fQ.61V6tTp9XRnWRh39TNS2Oj606QShOpRQlnqeG7iVtLE",
 								"type": "text"
 							}
 						],
@@ -137,6 +137,32 @@
 					"response": []
 				},
 				{
+					"name": "Get Reservation by User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsImlhdCI6MTc0NjQ4MTY3NywiZXhwIjoxNzQ2NTY4MDc3fQ.xwoBu1FaiMdw2ihOus_iq3Pr3tsHjQNrKba7WiE4LVY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/reservations/user/41",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reservations",
+								"user",
+								"41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "List Reservations",
 					"request": {
 						"method": "GET",
@@ -167,13 +193,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQxNjg4ODQsImV4cCI6MTc0NDI1NTI4NH0.Y4y_y2COCzKF5q4Yl_QQZOH_ht_KgvxHgnb1wdthV9g",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDEsImlhdCI6MTc0NjM2NjYzNywiZXhwIjoxNzQ2NDUzMDM3fQ.61V6tTp9XRnWRh39TNS2Oj606QShOpRQlnqeG7iVtLE",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"Caviar e Champagne\",\r\n    \"phone\": \"31988774433\",\r\n    \"chef\": 1,\r\n    \"date\": \"2025-04-09\",\r\n    \"location\": \"Savassi\",\r\n    \"guests\": 11,\r\n    \"notes\": \"Público francês\",\r\n    \"mealType\": \"Francesa\"\r\n\r\n}",
+							"raw": "{\r\n    \"customer_name\": \"Marcelo Aguilar\",\r\n    \"customer_cpf\": \"146688018833\",\r\n    \"customer_email\": \"marcelodalmeida42@gmail.com\",\r\n    \"description\": \"Caviar e Champagne\",\r\n    \"phone\": \"31988774433\",\r\n    \"user\": 41,\r\n    \"chef\": 6,\r\n    \"date\": \"2025-04-09\",\r\n    \"location\": \"Savassi\",\r\n    \"guests\": 11,\r\n    \"notes\": \"Público francês\",\r\n    \"mealType\": \"Francesa\",\r\n    \"dietary_restrictions\": \"\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -278,7 +304,7 @@
 								},
 								{
 									"key": "email",
-									"value": "teste4@teste.com",
+									"value": "marcelooo@teste.com",
 									"type": "text"
 								},
 								{
@@ -299,7 +325,7 @@
 								{
 									"key": "profile_photo",
 									"type": "file",
-									"src": "/C:/Users/marce/Downloads/avatar.png"
+									"src": "/C:/Users/marce/Downloads/cinemark-logo-png_seeklogo-388497.png"
 								},
 								{
 									"key": "role",
@@ -329,7 +355,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"marcelo@teste.com\",\r\n    \"password\": \"12345678\"\r\n\r\n}",
+							"raw": "{\r\n    \"email\": \"marcelo2@teste.com\",\r\n    \"password\": \"123456\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -391,7 +417,18 @@
 					"name": "Get User",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/35",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"35"
+							]
+						}
 					},
 					"response": []
 				},
@@ -401,13 +438,34 @@
 						"method": "PATCH",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Novo\",\r\n    \"email\": \"marceloteste@teste.com\",\r\n    \"password\": \"12345678\",\r\n    \"role\": \"CUSTOMER\"\r\n\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Marcelo Aguilar",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "31998226095",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Rua dos Testes",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234567",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "CUSTOMER",
+									"type": "text"
 								}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{baseUrl}}/api/users/8",
@@ -422,8 +480,59 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Verify Token",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDU5NzkwNzYsImV4cCI6MTc0NjA2NTQ3Nn0.hk0hYXEmsBo0wF_bwXdKyEH7UMvMUE2dswZBeFH6eu0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/verify-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"verify-token"
+							]
+						}
+					},
+					"response": []
 				}
 			]
+		},
+		{
+			"name": "http://localhost:3000/api/verify-token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=SEU_TOKEN_AQUI"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/verify-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"verify-token"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://localhost:3000/api/verify-token \\\r\n  -H \"Cookie: token=SEU_TOKEN_AQUI\"\r\n"
+			},
+			"response": []
 		}
 	],
 	"event": [
