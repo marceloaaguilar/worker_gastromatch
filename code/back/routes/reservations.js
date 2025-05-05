@@ -15,4 +15,8 @@ router
   .patch(authController.protect, reservationController.updateReservation) 
   .delete(authController.protect, reservationController.deleteReservation);
 
+router
+  .route('/user/:id')
+  .get(authController.protect, reservationController.getReservationByUser)
+
 module.exports = router; 

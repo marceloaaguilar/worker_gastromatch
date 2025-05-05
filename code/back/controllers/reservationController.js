@@ -79,3 +79,19 @@ exports.deleteReservation = catchAsync(async (req, res, next) => {
     data: null
   });
 });
+
+exports.getReservationByUser = catchAsync(async (req, res, next) => {
+  const reservations = await Reservation.findAll({where: {user: req.params.id}});
+  if (!reservations) {
+    return res.status(404).json({
+      status: 'fail',
+      message: 'Reserva não encontrada'
+    });
+  }
+  res.status(200).json({
+    status: 'success',
+    data: {
+      reservations
+    }
+  });
+});
