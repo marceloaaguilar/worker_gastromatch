@@ -3,12 +3,18 @@ const User = require('../models/user.js');
 const catchAsync = require('../utils/catchAsync.js');
 
 exports.getAllChefs = catchAsync(async (req, res, next) => {
+
+  const skip = parseInt(req.query.skip) || 0;
+  const limit = parseInt(req.query.limit) || 10;
+
   const chefs = await Chef.findAll({
     include: {
       model: User,
       as: 'user',
       attributes: ['name', 'email', 'profile_photo']
-    }
+    },
+    limit: limit,
+    offset: skip
   });
   
   res.status(200).json({
