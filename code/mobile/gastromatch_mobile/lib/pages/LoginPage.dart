@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         final token = data['token'];
-        final userId = data['userId'];
+        final userId = data['user']['id'];
 
         final prefs = await SharedPreferences.getInstance();
         await prefs.setString('auth_token', token);
