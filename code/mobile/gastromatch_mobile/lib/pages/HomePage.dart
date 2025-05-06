@@ -10,6 +10,7 @@ import 'ChefSearch.dart';
 import 'LoginPage.dart';
 import 'UserProfileEditPage.dart';
 import 'ChatRecords.dart';
+import 'UserReservationsPage.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -199,8 +200,18 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 Navigator.push(
                   context,
+                  MaterialPageRoute(builder: (context) => ChatRecords()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.calendar_today),
+              title: Text('Minhas Reservas'),
+              onTap: () {
+                Navigator.push(
+                  context,
                   MaterialPageRoute(
-                    builder: (context) => ChatRecords(),
+                    builder: (context) => UserReservationsPage(),
                   ),
                 );
               },
