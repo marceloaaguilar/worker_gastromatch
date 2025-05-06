@@ -12,16 +12,17 @@ import 'UserProfileEditPage.dart';
 import 'ChatRecords.dart';
 import 'UserReservationsPage.dart';
 
-class HomePage extends StatefulWidget {
+class HomeClient extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeClientState createState() => _HomeClientState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeClientState extends State<HomeClient> {
   List<Map<String, String>> chefs = [];
   bool isLoading = true;
   bool hasError = false;
   String? userName;
+  String? userRole;
 
   @override
   void initState() {
@@ -34,6 +35,7 @@ class _HomePageState extends State<HomePage> {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('auth_token');
     final userId = prefs.getInt('user_id');
+    userRole = prefs.getString('user_role'); // <-- adiciona isso
 
     if (token == null || userId == null) return;
 
@@ -64,7 +66,10 @@ class _HomePageState extends State<HomePage> {
       return;
     }
 
-    final url = Uri.parse('http://10.0.2.2:8080/api/chefs/');
+    final url = Uri.parse(
+      'http://10.0.2.2:8080/api/chefs?skip=0&limit=50',
+    );
+
     try {
       final response = await http.get(
         url,
@@ -82,13 +87,13 @@ class _HomePageState extends State<HomePage> {
           chefs =
               data.map<Map<String, String>>((chef) {
                 return {
-                  'id': chef['id'].toString(), // 👈 ID agora incluso
-                  'name': chef['user']['name'],
+                  'id': chef['id'].toString(),
+                  'name': chef['user']['name'] ?? 'Sem nome',
                   'specialty': chef['specialization'] ?? '',
-                  'image':
-                      chef['user']['profile_photo'] ?? '', // pode ser uma URL
+                  'image': chef['user']['profile_photo'] ?? '',
                 };
               }).toList();
+
           isLoading = false;
           hasError = false;
         });

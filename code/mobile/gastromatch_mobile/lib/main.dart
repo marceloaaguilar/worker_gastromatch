@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 import 'pages/RegisterPage.dart';
-import 'pages/HomePage.dart';
+import 'pages/HomeRouter.dart'; // ✅ usar o roteador que decide entre client e chef
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -54,6 +54,6 @@ class _AuthCheckState extends State<AuthCheck> {
       return Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
-    return _authenticated ? HomePage() : RegisterPage();
+    return _authenticated ? HomeRouter() : RegisterPage(); // ✅ HomeRouter aqui
   }
 }
