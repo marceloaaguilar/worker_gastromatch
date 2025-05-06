@@ -9,6 +9,7 @@ import 'ChefDetailPage.dart';
 import 'ChefSearch.dart';
 import 'LoginPage.dart';
 import 'UserProfileEditPage.dart';
+import 'ChatRecords.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -193,6 +194,18 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             ListTile(
+              leading: Icon(Icons.wechat),
+              title: Text('Conversas'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatRecords(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
               leading: Icon(Icons.logout),
               title: Text('Sair'),
               onTap: () => _logout(context),
@@ -327,6 +340,7 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
                   ),
+                  SizedBox(height: 10),
                 ],
               ),
     );

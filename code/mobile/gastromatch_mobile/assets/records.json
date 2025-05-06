@@ -1,0 +1,161 @@
+{
+  "records": [
+    {
+      "carla_mendez": {
+        "messages": [
+          { "user": "client", "date": "2025-04-28", "time": "14:03", "message": "Hi there! I'm hosting a birthday dinner next Friday and need a private chef." },
+          { "user": "client", "date": "2025-04-28", "time": "14:05", "message": "There will be six of us. Something seasonal and colorful would be great." },
+          { "user": "chef", "date": "2025-04-28", "time": "15:22", "message": "Hi Carla! I'd be happy to help. Do you have a preferred cuisine or dietary restrictions I should know about?" },
+          { "user": "client", "date": "2025-04-28", "time": "15:47", "message": "No allergies, but two guests are vegetarian. Mediterranean or Middle Eastern would be lovely." },
+          { "user": "chef", "date": "2025-04-28", "time": "16:10", "message": "Perfect. I’m thinking of a mezze-style starter, a spiced vegetable tagine, and perhaps grilled halloumi with pomegranate." },
+          { "user": "client", "date": "2025-04-28", "time": "16:14", "message": "That sounds amazing. Could we also add a small dessert?" },
+          { "user": "chef", "date": "2025-04-28", "time": "16:17", "message": "Absolutely. How about rosewater panna cotta or a pistachio baklava?" },
+          { "user": "client", "date": "2025-04-28", "time": "16:30", "message": "Pistachio baklava, please!" },
+          { "user": "chef", "date": "2025-04-29", "time": "10:00", "message": "Great choice. I’ll send over a full menu and timing proposal later today." },
+          { "user": "chef", "date": "2025-04-29", "time": "14:23", "message": "Here’s the menu draft:\n- Mezze platter\n- Grilled halloumi & pomegranate\n- Vegetable tagine w/ couscous\n- Pistachio baklava\nLet me know what you think!" },
+          { "user": "client", "date": "2025-04-29", "time": "15:01", "message": "Looks perfect! What time would you arrive on Friday?" },
+          { "user": "chef", "date": "2025-04-29", "time": "15:15", "message": "I’d plan to arrive around 4:30 PM to start prep. Dinner at 7:00 PM?" },
+          { "user": "client", "date": "2025-04-29", "time": "15:18", "message": "Yes, 7 PM is ideal. We’ll have some wine and apps ready too." },
+          { "user": "chef", "date": "2025-04-30", "time": "09:45", "message": "Do you have a preferred kitchen setup? Just checking about oven space and available cookware." },
+          { "user": "client", "date": "2025-04-30", "time": "10:01", "message": "Standard kitchen with a good oven, gas stove, and plenty of counter space. Let me know if you need anything specific." },
+          { "user": "chef", "date": "2025-05-01", "time": "11:00", "message": "Sounds good. I’ll bring a few of my own pans and serving pieces, just in case." },
+          { "user": "client", "date": "2025-05-01", "time": "11:12", "message": "Noted. We also have plenty of plates and glasses." },
+          { "user": "chef", "date": "2025-05-02", "time": "08:50", "message": "Quick question: would you like me to plate individually or serve family-style?" },
+          { "user": "client", "date": "2025-05-02", "time": "09:03", "message": "Family-style would be lovely — more relaxed." },
+          { "user": "chef", "date": "2025-05-02", "time": "09:15", "message": "Perfect. I'll adjust my setup accordingly. Looking forward to it!" },
+          { "user": "client", "date": "2025-05-02", "time": "09:17", "message": "Us too! Thanks again." },
+          { "user": "chef", "date": "2025-05-02", "time": "17:20", "message": "All ingredients prepped. See you tomorrow at 4:30!" },
+          { "user": "client", "date": "2025-05-02", "time": "17:25", "message": "Great, see you then!" }
+        ]
+      }
+    },
+    {
+      "marco_bernini": {
+        "messages": [
+          { "user": "client", "date": "2025-05-03", "time": "08:15", "message": "Hi Marco, are you free next Wednesday for a private anniversary dinner?" },
+          { "user": "chef", "date": "2025-05-03", "time": "08:45", "message": "Good morning! I believe I am. How many guests will you have?" },
+          { "user": "client", "date": "2025-05-03", "time": "09:00", "message": "It’ll be six people. Italian cuisine preferred." },
+          { "user": "chef", "date": "2025-05-03", "time": "09:25", "message": "Lovely. How about antipasti with burrata, handmade pasta, and tiramisù?" },
+          { "user": "client", "date": "2025-05-03", "time": "10:30", "message": "Yes to burrata and tiramisù! What pasta dish were you thinking?" },
+          { "user": "chef", "date": "2025-05-03", "time": "10:47", "message": "Tagliatelle al tartufo with parmesan crisps." },
+          { "user": "client", "date": "2025-05-03", "time": "10:55", "message": "Sold. What’s your setup time like?" },
+          { "user": "chef", "date": "2025-05-03", "time": "11:00", "message": "I'd arrive at 3 PM, serve dinner at 6:30. That work?" },
+          { "user": "client", "date": "2025-05-03", "time": "11:15", "message": "Yes. Should I provide any kitchen tools?" },
+          { "user": "chef", "date": "2025-05-04", "time": "08:50", "message": "I’ll bring key utensils. Just need oven access and a few pots." },
+          { "user": "client", "date": "2025-05-04", "time": "09:05", "message": "We’ve got that covered. Do you offer wine pairings too?" },
+          { "user": "chef", "date": "2025-05-04", "time": "09:20", "message": "I can! Want a pairing for each course?" },
+          { "user": "client", "date": "2025-05-04", "time": "09:30", "message": "Yes please. Medium budget." },
+          { "user": "chef", "date": "2025-05-05", "time": "12:00", "message": "I'll include a Barbera d'Asti, a Soave Classico, and a dessert Moscato." },
+          { "user": "client", "date": "2025-05-05", "time": "12:05", "message": "That sounds perfect. Can’t wait!" },
+          { "user": "chef", "date": "2025-05-05", "time": "14:10", "message": "Sending full finalized menu later today." },
+          { "user": "chef", "date": "2025-05-05", "time": "17:45", "message": "Menu sent to your email. Let me know if you want changes." },
+          { "user": "client", "date": "2025-05-05", "time": "18:00", "message": "Everything looks amazing. No edits needed!" },
+          { "user": "chef", "date": "2025-05-06", "time": "09:00", "message": "Wonderful. I’ll see you Wednesday at 3!" }
+        ]
+      }
+    },
+    {
+      "tanya_rivera": {
+        "messages": [
+          { "user": "client", "date": "2025-05-04", "time": "12:01", "message": "Hey Tanya! Would you be free to cater a beach picnic this Friday?" },
+          { "user": "chef", "date": "2025-05-04", "time": "12:10", "message": "That sounds fun! I’m free — how many people?" },
+          { "user": "client", "date": "2025-05-04", "time": "12:12", "message": "Five total. Something tropical, simple, and tasty." },
+          { "user": "chef", "date": "2025-05-04", "time": "12:20", "message": "Jerk shrimp skewers, pineapple slaw, and coconut rice?" },
+          { "user": "client", "date": "2025-05-04", "time": "12:22", "message": "That’s exactly what I was imagining!" },
+          { "user": "chef", "date": "2025-05-04", "time": "12:25", "message": "Dessert: grilled plantains with lime syrup. Trust me." },
+          { "user": "client", "date": "2025-05-04", "time": "12:27", "message": "Say no more. What’s the delivery timing?" },
+          { "user": "chef", "date": "2025-05-04", "time": "12:30", "message": "I'll deliver by 5:30 PM sharp. Food will be ready to serve." },
+          { "user": "chef", "date": "2025-05-05", "time": "08:30", "message": "Do you want biodegradable containers or a reusable tray setup?" },
+          { "user": "client", "date": "2025-05-05", "time": "08:45", "message": "Go with biodegradable, easier cleanup." },
+          { "user": "chef", "date": "2025-05-06", "time": "10:00", "message": "Weather looks good Friday! I’ll prep everything for breezy eating." },
+          { "user": "client", "date": "2025-05-06", "time": "10:15", "message": "Awesome. We’re so excited!" },
+          { "user": "chef", "date": "2025-05-07", "time": "09:40", "message": "Reminder: delivery is still 5:30. I’ll include napkins & utensils." },
+          { "user": "client", "date": "2025-05-07", "time": "09:55", "message": "Perfect. Thanks again Tanya!" },
+          { "user": "chef", "date": "2025-05-08", "time": "07:45", "message": "Final prep happening today. You’ll love the mango marinade!" },
+          { "user": "client", "date": "2025-05-08", "time": "08:10", "message": "Drooling already. See you soon!" },
+          { "user": "chef", "date": "2025-05-08", "time": "17:30", "message": "Delivery complete! Enjoy the sunset" }
+        ]
+      }
+    },
+    {
+      "noah_levy": {
+        "messages": [
+          { "user": "client", "date": "2025-05-01", "time": "11:40", "message": "Hi Noah! Are you available for a vegetarian tasting dinner next Sunday?" },
+          { "user": "chef", "date": "2025-05-01", "time": "12:00", "message": "Hey! I’d love that. How many guests?" },
+          { "user": "client", "date": "2025-05-01", "time": "12:04", "message": "Four total. We’re all into bold flavors and Middle Eastern vibes." },
+          { "user": "chef", "date": "2025-05-01", "time": "12:10", "message": "Perfect. How about cauliflower shawarma, sabich bites, and date-tahini mousse?" },
+          { "user": "client", "date": "2025-05-01", "time": "12:30", "message": "Amazing lineup. Do you serve courses or family-style?" },
+          { "user": "chef", "date": "2025-05-01", "time": "13:00", "message": "Tasting menu = plated courses. I’ll keep it relaxed though." },
+          { "user": "client", "date": "2025-05-01", "time": "13:05", "message": "That works. Start time?" },
+          { "user": "chef", "date": "2025-05-01", "time": "13:10", "message": "I’ll arrive 2 PM, dinner at 5:30. Good?" },
+          { "user": "client", "date": "2025-05-01", "time": "13:20", "message": "Perfect." },
+          { "user": "chef", "date": "2025-05-02", "time": "09:45", "message": "Do you have a working food processor? Or should I bring mine?" },
+          { "user": "client", "date": "2025-05-02", "time": "10:05", "message": "We do, but bring yours just in case." },
+          { "user": "chef", "date": "2025-05-02", "time": "10:30", "message": "Smart. Will do!" },
+          { "user": "chef", "date": "2025-05-03", "time": "14:15", "message": "Sending draft menu soon, along with optional wine pairings." },
+          { "user": "client", "date": "2025-05-03", "time": "15:00", "message": "Looking forward to it." },
+          { "user": "chef", "date": "2025-05-04", "time": "09:00", "message": "Final menu sent via email. Let me know if it’s all good!" },
+          { "user": "client", "date": "2025-05-04", "time": "09:22", "message": "Menu is spot-on. No changes needed." },
+          { "user": "chef", "date": "2025-05-05", "time": "10:15", "message": "Excited to cook for you all tomorrow!" },
+          { "user": "client", "date": "2025-05-05", "time": "10:20", "message": "We can’t wait!" },
+          { "user": "chef", "date": "2025-05-06", "time": "13:50", "message": "All ingredients ready. See you at 2 PM!" },
+          { "user": "client", "date": "2025-05-06", "time": "14:00", "message": "Doors open. Come in when ready!" },
+          { "user": "chef", "date": "2025-05-06", "time": "17:30", "message": "Dinner is served" },
+          { "user": "client", "date": "2025-05-06", "time": "21:15", "message": "Everything was incredible. Thank you Noah!" }
+        ]
+      }
+    },
+    {
+      "lila_chen": {
+        "messages": [
+          { "user": "client", "date": "2025-05-02", "time": "13:00", "message": "Hi Lila! I’m hosting a small gathering for friends this Friday. Are you available?" },
+          { "user": "chef", "date": "2025-05-02", "time": "13:15", "message": "Hi there! I’m free this Friday. How many people are you expecting?" },
+          { "user": "client", "date": "2025-05-02", "time": "13:30", "message": "It’s just six of us. We’re into Asian fusion, particularly Japanese and Thai." },
+          { "user": "chef", "date": "2025-05-02", "time": "13:45", "message": "That sounds delicious! How about a five-course meal with sushi rolls, Thai green curry, and a mango sticky rice dessert?" },
+          { "user": "client", "date": "2025-05-02", "time": "14:00", "message": "Mango sticky rice for sure! I love Thai desserts." },
+          { "user": "chef", "date": "2025-05-02", "time": "14:10", "message": "Great choice. I’ll also add miso soup and a light tempura appetizer." },
+          { "user": "client", "date": "2025-05-02", "time": "14:30", "message": "Sounds perfect! What time do you usually arrive to set up?" },
+          { "user": "chef", "date": "2025-05-02", "time": "14:50", "message": "I usually like to arrive about 3 PM to prep. Dinner at 6?" },
+          { "user": "client", "date": "2025-05-02", "time": "15:00", "message": "6 PM works! Do you need any specific ingredients or tools?" },
+          { "user": "chef", "date": "2025-05-03", "time": "08:20", "message": "I’ll bring all ingredients, just need a stovetop and some counter space." },
+          { "user": "client", "date": "2025-05-03", "time": "08:35", "message": "Got it. I’ll prepare space in the kitchen. What about drinks?" },
+          { "user": "chef", "date": "2025-05-03", "time": "08:45", "message": "A light white wine pairs well with the sushi. I can recommend a bottle if you like." },
+          { "user": "client", "date": "2025-05-03", "time": "09:00", "message": "Sure, send me your recommendation." },
+          { "user": "chef", "date": "2025-05-03", "time": "09:15", "message": "I’d suggest a nice bottle of Sauvignon Blanc. It’s fresh and crisp." },
+          { "user": "client", "date": "2025-05-03", "time": "09:30", "message": "Perfect, I’ll grab that. Do you have a final menu draft?" },
+          { "user": "chef", "date": "2025-05-04", "time": "11:00", "message": "Sending you the menu soon. I’ll also confirm any final tweaks later today." },
+          { "user": "client", "date": "2025-05-04", "time": "12:00", "message": "Looking forward to it!" },
+          { "user": "chef", "date": "2025-05-04", "time": "14:45", "message": "Final menu sent over. Let me know if anything needs changing." },
+          { "user": "client", "date": "2025-05-04", "time": "15:00", "message": "It looks great! No changes needed." },
+          { "user": "chef", "date": "2025-05-05", "time": "13:00", "message": "I’ll be there by 3 PM on Friday, with everything ready to serve by 6." },
+          { "user": "client", "date": "2025-05-05", "time": "13:10", "message": "Sounds amazing, I’m excited! See you soon." }
+        ]
+      }
+    },
+    {
+      "daniel_foster": {
+        "messages": [
+          { "user": "client", "date": "2025-05-02", "time": "16:00", "message": "Hi Daniel! I’m hosting a casual dinner for eight this Saturday. Are you available?" },
+          { "user": "chef", "date": "2025-05-02", "time": "16:10", "message": "I am! What type of cuisine are you thinking for the evening?" },
+          { "user": "client", "date": "2025-05-02", "time": "16:30", "message": "Something comforting but with a twist. Maybe American or Southern-inspired?" },
+          { "user": "chef", "date": "2025-05-02", "time": "16:45", "message": "I’ve got a great menu in mind: fried chicken sliders, mac 'n' cheese, and collard greens." },
+          { "user": "client", "date": "2025-05-02", "time": "16:50", "message": "That sounds incredible! Any fun additions you’d suggest?" },
+          { "user": "chef", "date": "2025-05-02", "time": "17:00", "message": "How about bourbon-glazed carrots and peach cobbler for dessert?" },
+          { "user": "client", "date": "2025-05-02", "time": "17:10", "message": "Peach cobbler is a perfect touch. What time do you need for prep?" },
+          { "user": "chef", "date": "2025-05-02", "time": "17:20", "message": "I like to get started around 2:30 PM. Dinner around 6?" },
+          { "user": "client", "date": "2025-05-02", "time": "17:30", "message": "6 PM is perfect." },
+          { "user": "chef", "date": "2025-05-02", "time": "17:40", "message": "Any dietary restrictions I should know about?" },
+          { "user": "client", "date": "2025-05-02", "time": "17:45", "message": "No restrictions, everyone is pretty flexible!" },
+          { "user": "chef", "date": "2025-05-03", "time": "10:00", "message": "I’ll bring everything I need. Just a stove and counter space." },
+          { "user": "client", "date": "2025-05-03", "time": "10:10", "message": "Got it. Do you also recommend wine or cocktails for the meal?" },
+          { "user": "chef", "date": "2025-05-03", "time": "10:20", "message": "A chilled Riesling would pair beautifully with the fried chicken and peach cobbler." },
+          { "user": "client", "date": "2025-05-03", "time": "10:30", "message": "Perfect, I’ll grab a bottle." },
+          { "user": "chef", "date": "2025-05-03", "time": "11:00", "message": "Menu finalized. I’ll be there at 2:30 on Saturday to begin prep." },
+          { "user": "client", "date": "2025-05-03", "time": "11:15", "message": "Looking forward to it!" },
+          { "user": "chef", "date": "2025-05-04", "time": "10:00", "message": "Just confirming, I’ll bring the ingredients and kitchen tools tomorrow." },
+          { "user": "client", "date": "2025-05-04", "time": "10:15", "message": "Sounds great. Can’t wait for the feast!" }
+        ]
+      }
+    }
+  ]
+}
