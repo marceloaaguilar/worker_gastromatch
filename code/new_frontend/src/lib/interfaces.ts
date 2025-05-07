@@ -49,3 +49,19 @@ export interface Chef {
     profile_photo: string
   }
 }
+
+export interface ReservationProps{
+  customer_name: string,
+  customer_cpf: string,
+  customer_email: string,
+  description: string,
+  phone: string,
+  user: number,
+  chef: number,
+  date: Date,
+  location: string,
+  guests: number,
+  notes?: string,
+  mealType: string,
+  dietary_restrictions: string
+}
