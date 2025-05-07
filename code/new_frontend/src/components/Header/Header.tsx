@@ -19,7 +19,7 @@ export default function Header() {
         <Link to="/agendamentos" className="text-gray-700 hover:text-primary font-medium">
             Agendamentos
         </Link>
-        <Link to="#" className="text-gray-700 hover:text-primary font-medium">
+        <Link to="chefs" className="text-gray-700 hover:text-primary font-medium">
             Chefs
         </Link>
         <Link to="/avaliacoes" className="text-gray-700 hover:text-primary font-medium">

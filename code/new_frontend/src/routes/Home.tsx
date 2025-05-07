@@ -42,49 +42,33 @@ const Home = () => {
 
             <Header/>
             
-            <div className="max-w-7xl mx-auto px-6 py-8 space-y-12">
-                {/* {reservas.length > 0 && (
-                    <section className="bg-white rounded-xl shadow-lg p-6">
-                    <h2 className="text-2xl font-bold mb-4 text-gray-800">Minhas Reservas</h2>
-                    <div className="overflow-x-auto">
-                        <table className="min-w-full table-auto text-sm text-left">
-                        <thead className="bg-gray-100 text-gray-600 uppercase">
-                            <tr>
-                            <th className="px-4 py-3">Data</th>
-                            <th className="px-4 py-3">Garçom</th>
-                            <th className="px-4 py-3">Local</th>
-                            <th className="px-4 py-3">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {reservas.map((reserva) => (
-                            <tr key={reserva.id} className="border-b">
-                                <td className="px-4 py-3">{reserva.data}</td>
-                                <td className="px-4 py-3">{reserva.garcom}</td>
-                                <td className="px-4 py-3">{reserva.local}</td>
-                                <td className="px-4 py-3">
-                                <span className="text-blue-600 font-medium">{reserva.status}</span>
-                                </td>
-                            </tr>
-                            ))}
-                        </tbody>
-                        </table>
-                    </div>
-                    </section>
-                )} */}
-
-                {/* <h1 className="text-2xl font-bold mb-6 text-gray-800">Bem vindo ao GastroMatch, {user?.nome}!</h1> */}
-
-                <section>
-                    <input
-                    type="text"
-                    placeholder="Buscar Chefs, pratos..."
-                    className="w-full p-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-                    value={busca}
-                    onChange={(e) => setBusca(e.target.value)}
-                    />
+            <div className="max-w-7xl mx-auto px-6 py-16 space-y-12">
+                
+                <section className="text-center space-y-4">
+                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+                    Encontre os melhores <span className="text-primary">Chefs</span> e <span className="text-primary">pratos</span> exclusivos
+                    </h1>
+                    <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
+                    Descubra experiências gastronômicas únicas com chefs selecionados perto de você.
+                    </p>
                 </section>
 
+                <section className="max-w-2xl mx-auto">
+                    <div className="relative">
+                    <input
+                        type="text"
+                        placeholder="Buscar Chefs, pratos..."
+                        className="w-full pl-5 pr-12 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary shadow-md text-gray-800 placeholder-gray-400"
+                        value={busca}
+                        onChange={(e) => setBusca(e.target.value)}
+                    />
+                    <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                        🔍
+                    </span>
+                    </div>
+                </section>
+
+  
                 <section className="flex flex-wrap justify-center gap-8 p-2">
                     
                     <div className="flex flex-col items-center cursor-pointer">
