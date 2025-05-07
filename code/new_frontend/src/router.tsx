@@ -7,6 +7,7 @@ import Register from './routes/Register';
 import PrivateRoute from './components/PrivateRoute';
 import Profile from './routes/Profile';
 import About from "./routes/About"
+import ChefsPage from './routes/Chefs';
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Register />} />
             <Route path="/sobre" element={ <About />} />
+            <Route path="/chefs" element={<ChefsPage />} />
 
             <Route path="/perfil" element={ 
                 <PrivateRoute>

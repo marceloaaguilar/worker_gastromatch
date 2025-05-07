@@ -5,27 +5,30 @@ export default function Header() {
 
   return (
     <header className="flex items-center justify-between px-4 py-4 bg-white md:px-12">
-        <Link to="/" className="text-xl font-bold text-primary">
+        <Link to="/" className="text-xl font-bold text-[#ea580c]">
         GastroMatch
         </Link>
         <nav className="hidden md:flex items-center space-x-8">
-        <Link to="/" className="text-gray-700 hover:text-primary">
+        <Link to="/" className="text-gray-700 hover:text-[#ea580c]">
             Início
         </Link>
-        <Link to="/agendamentos" className="text-gray-700 hover:text-primary">
+        <Link to="/agendamentos" className="text-gray-700 hover:text-[#ea580c]">
             Agendamentos
         </Link>
-        <Link to="#" className="text-gray-700 hover:text-primary">
+        <Link to="/chefs" className="text-gray-700 hover:text-[#ea580c]">
             Chefs
         </Link>
-        <Link to="#" className="text-gray-700 hover:text-primary">
+        <Link to="#" className="text-gray-700 hover:text-[#ea580c]">
             Contato
+        </Link>
+        <Link to="/sobre" className="text-gray-700 hover:text-[#ea580c]">
+            Sobre
         </Link>
         </nav>
         
         { true ?
             <div className="flex items-center space-x-4">
-                <Link to="/login" className="text-gray-700 hover:text-primary">
+                <Link to="/login" className="text-gray-700 hover:text-[#ea580c]">
                     Entrar
                 </Link>
 
