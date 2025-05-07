@@ -4,8 +4,9 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../input.dart';
-import 'HomePage.dart';
+import 'HomeClient.dart';
 import 'RegisterPage.dart';
+import 'HomeRouter.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -49,15 +50,18 @@ class _LoginPageState extends State<LoginPage> {
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         final token = data['token'];
-        final userId = data['user']['id'];
+        final user = data['user'];
+        final userId = user['id'];
+        final userRole = user['role'];
 
         final prefs = await SharedPreferences.getInstance();
         await prefs.setString('auth_token', token);
         await prefs.setInt('user_id', userId);
+        await prefs.setString('user_role', userRole);
 
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => HomeRouter()),
         );
       } else {
         setState(() {

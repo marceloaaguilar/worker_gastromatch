@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../input.dart';
-import 'HomePage.dart';
+import 'HomeClient.dart';
 
 class UserProfileEditPage extends StatefulWidget {
   @override
@@ -136,7 +136,7 @@ class _UserProfileEditPageState extends State<UserProfileEditPage> {
 
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => HomeClient()),
         );
       } else {
         setState(() {

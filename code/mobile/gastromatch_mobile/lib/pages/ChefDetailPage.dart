@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'reservation_form_page.dart';
+import 'ReservationFormPage.dart';
 
 class ChefDetailPage extends StatelessWidget {
   final Map<String, String> chef;
