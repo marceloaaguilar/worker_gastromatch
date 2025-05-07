@@ -8,6 +8,9 @@ import PrivateRoute from './components/PrivateRoute';
 import Profile from './routes/Profile';
 import About from "./routes/About"
 import ChefsPage from './routes/Chefs';
+import AvaliacoesPage from "./pages/Avaliacoes"
+
+
 
 const App: React.FC = () => {
   return (

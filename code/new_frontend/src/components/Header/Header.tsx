@@ -18,6 +18,9 @@ export default function Header() {
         <Link to="/chefs" className="text-gray-700 hover:text-[#ea580c]">
             Chefs
         </Link>
+        <Link to="/avaliacoes" className="text-gray-700 hover:text-[#ea580c]">
+          Avaliações
+        </Link>
         <Link to="#" className="text-gray-700 hover:text-[#ea580c]">
             Contato
         </Link>
