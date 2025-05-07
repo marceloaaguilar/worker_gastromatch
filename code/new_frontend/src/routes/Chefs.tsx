@@ -148,10 +148,10 @@ export default function ChefsPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-primary-50 py-12">
+      <section className="bg-[#fff8f0] py-12">
         <div className="max-w-7xl mx-auto px-4 md:px-12">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[#ea580c]">
               Nossos Chefs Profissionais
             </h1>
             <p className="text-lg text-gray-700 mb-0">
@@ -173,7 +173,7 @@ export default function ChefsPage() {
               <input
                 type="text"
                 placeholder="Buscar por nome ou especialidade..."
-                className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-primary-600 focus:border-primary-600"
+                className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ea580c] focus:border-[#ea580c]"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -183,8 +183,8 @@ export default function ChefsPage() {
               {/* Dropdown Especiality */}
               <div className="relative">
                 <button 
-                  className={`px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50 ${
-                    selectedSpecialties.length > 0 ? 'border-primary-600 bg-primary-50 text-primary-600' : ''
+                  className={`px-4 py-2 border rounded-md bg-white flex items-center gap-2 hover:bg-gray-50 transition-colors duration-200 ${
+                    selectedSpecialties.length > 0 ? 'border-[#ea580c] bg-[#fff8f0] text-[#7c2d12]' : 'border-gray-300'
                   }`}
                   onClick={() => setIsSpecialtyOpen(!isSpecialtyOpen)}
                 >
@@ -194,7 +194,7 @@ export default function ChefsPage() {
                 </button>
                 {isSpecialtyOpen && (
                   <div 
-                    className="absolute z-10 mt-1 w-56 bg-white border border-gray-200 rounded-md shadow-lg"
+                    className="absolute z-10 mt-1 w-56 bg-white border border-[#ea580c] rounded-md shadow-lg"
                     onMouseLeave={() => setIsSpecialtyOpen(false)}
                   >
                     <div className="p-2">
@@ -202,20 +202,20 @@ export default function ChefsPage() {
                         {specialties.map((specialty) => (
                           <label 
                             key={specialty}
-                            className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded"
+                            className="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded transition-colors duration-200"
                           >
                             <input
                               type="checkbox"
                               checked={selectedSpecialties.includes(specialty)}
                               onChange={() => toggleSpecialty(specialty)}
-                              className="rounded text-primary-600 focus:ring-primary-600"
+                              className="rounded text-[#ea580c] focus:ring-[#ea580c]"
                             />
                             <span>{specialty}</span>
                           </label>
                         ))}
                       </div>
                       <button
-                        className="w-full text-left px-2 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded mt-2"
+                        className="w-full text-left px-2 py-1 text-sm text-gray-600 hover:bg-gray-50 rounded mt-2 transition-colors duration-200"
                         onClick={() => setSelectedSpecialties([])}
                       >
                         Limpar filtro
@@ -228,8 +228,8 @@ export default function ChefsPage() {
               {/* Dropdown Rate */}
               <div className="relative">
                 <button 
-                  className={`px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50 ${
-                    selectedRating !== null ? 'border-primary-600 bg-primary-50 text-primary-600' : ''
+                  className={`px-4 py-2 border rounded-md bg-white flex items-center gap-2 hover:bg-gray-50 transition-colors duration-200 ${
+                    selectedRating !== null ? 'border-[#ea580c] bg-[#fff8f0] text-[#7c2d12]' : 'border-gray-300'
                   }`}
                   onClick={() => setIsRatingOpen(!isRatingOpen)}
                 >
@@ -238,7 +238,7 @@ export default function ChefsPage() {
                 </button>
                 {isRatingOpen && (
                   <div 
-                    className="absolute z-10 mt-1 w-48 bg-white border border-gray-200 rounded-md shadow-lg"
+                    className="absolute z-10 mt-1 w-48 bg-white border border-[#ea580c] rounded-md shadow-lg"
                     onMouseLeave={() => setIsRatingOpen(false)}
                   >
                     <div className="p-2">
@@ -246,8 +246,8 @@ export default function ChefsPage() {
                         {[5, 4, 3].map((rating) => (
                           <button
                             key={rating}
-                            className={`w-full text-left px-2 py-1 text-sm rounded hover:bg-gray-50 ${
-                              selectedRating === rating ? 'bg-primary-50 text-primary-600' : ''
+                            className={`w-full text-left px-2 py-1 text-sm rounded hover:bg-gray-50 transition-colors duration-200 ${
+                              selectedRating === rating ? 'bg-[#fff8f0] text-[#7c2d12]' : ''
                             }`}
                             onClick={() => {
                               setSelectedRating(selectedRating === rating ? null : rating);
@@ -266,8 +266,8 @@ export default function ChefsPage() {
               {/* Dropdown Price */}
               <div className="relative">
                 <button 
-                  className={`px-4 py-2 border border-gray-300 rounded-md bg-white flex items-center gap-2 hover:bg-gray-50 ${
-                    selectedPrice !== null ? 'border-primary-600 bg-primary-50 text-primary-600' : ''
+                  className={`px-4 py-2 border rounded-md bg-white flex items-center gap-2 hover:bg-gray-50 transition-colors duration-200 ${
+                    selectedPrice !== null ? 'border-[#ea580c] bg-[#fff8f0] text-[#7c2d12]' : 'border-gray-300'
                   }`}
                   onClick={() => setIsPriceOpen(!isPriceOpen)}
                 >
@@ -276,7 +276,7 @@ export default function ChefsPage() {
                 </button>
                 {isPriceOpen && (
                   <div 
-                    className="absolute z-10 mt-1 w-48 bg-white border border-gray-200 rounded-md shadow-lg"
+                    className="absolute z-10 mt-1 w-48 bg-white border border-[#ea580c] rounded-md shadow-lg"
                     onMouseLeave={() => setIsPriceOpen(false)}
                   >
                     <div className="p-2">
@@ -284,8 +284,8 @@ export default function ChefsPage() {
                         {priceRanges.map((range) => (
                           <button
                             key={range.value}
-                            className={`w-full text-left px-2 py-1 text-sm rounded hover:bg-gray-50 ${
-                              selectedPrice === range.value ? 'bg-primary-50 text-primary-600' : ''
+                            className={`w-full text-left px-2 py-1 text-sm rounded hover:bg-gray-50 transition-colors duration-200 ${
+                              selectedPrice === range.value ? 'bg-[#fff8f0] text-[#7c2d12]' : ''
                             }`}
                             onClick={() => {
                               setSelectedPrice(selectedPrice === range.value ? null : range.value);
@@ -312,7 +312,7 @@ export default function ChefsPage() {
             {filteredChefs.map((chef) => (
               <div
                 key={chef.id}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
               >
                 <div className="relative h-48">
                   <img
@@ -321,16 +321,16 @@ export default function ChefsPage() {
                     className="w-full h-full object-cover"
                   />
                   {chef.featured && (
-                    <div className="absolute top-2 right-2 bg-primary-600 text-white px-2 py-1 rounded text-sm">
+                    <div className="absolute top-2 right-2 bg-[#ea580c] text-white px-2 py-1 rounded text-sm">
                       Destaque
                     </div>
                   )}
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-xl font-semibold">{chef.name}</h3>
+                    <h3 className="text-xl font-bold text-gray-900">{chef.name}</h3>
                     <div className="flex items-center">
-                      <Star className="h-5 w-5 text-yellow-400 fill-current" />
+                      <Star className="h-5 w-5 text-orange-600 fill-current" />
                       <span className="ml-1 text-gray-600">{chef.rating}</span>
                     </div>
                   </div>
@@ -340,19 +340,19 @@ export default function ChefsPage() {
                     {chef.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-sm"
+                        className="bg-[#fff8f0] text-[#ea580c] px-2 py-1 rounded-full text-sm"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-primary-600 font-semibold">
+                    <span className="text-[#ea580c] font-bold text-lg">
                       R$ {chef.price}/hora
                     </span>
                     <Link
                       to={`/chef/${chef.id}`}
-                      className="bg-primary-600 text-white px-4 py-2 rounded hover:bg-primary-700 transition-colors duration-300"
+                      className="bg-[#ea580c] text-white px-4 py-2 rounded-md hover:bg-[#c2410c] transition-colors duration-200"
                     >
                       Ver perfil
                     </Link>
