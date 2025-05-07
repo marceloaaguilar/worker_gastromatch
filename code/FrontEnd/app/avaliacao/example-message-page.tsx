@@ -5,13 +5,12 @@ import Header from "../components/Header/Header"
 import MessageSender from "../components/message-sender"
 import MessageHistory from "../components/message-history"
 
-// Exemplo de dados de usuário (normalmente viria de um contexto de autenticação)
+
 const currentUser = {
   id: "user-123",
   name: "João Silva",
 }
 
-// Exemplo de dados de chef
 const chefs = [
   { id: "chef-1", name: "Chef Ricardo Silva" },
   { id: "chef-2", name: "Chef Maria Santos" },
