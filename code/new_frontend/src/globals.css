@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #ea580c
+  --color-primary: #ea580c;
+  --ring-primary: 0 0% 3.9%;
 }
 
 @layer base {

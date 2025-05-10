@@ -3,7 +3,8 @@ import { SetStateAction } from "react"
 export interface AlertProps {
   show: boolean,
   title: string,
-  onClose: () => void
+  onClose: () => void,
+  mainMenssage?: string
 }
 
 export interface UserProps {
@@ -51,17 +52,26 @@ export interface Chef {
 }
 
 export interface ReservationProps{
+  id?: number,
   customer_name: string,
   customer_cpf: string,
   customer_email: string,
   description: string,
   phone: string,
   user: number,
-  chef: number,
+  chefData: Chef,
   date: Date,
   location: string,
   guests: number,
   notes?: string,
   mealType: string,
   dietary_restrictions: string
+  rating?: number
+}
+
+
+export interface PaginationType {
+  currentPage: number 
+  totalPages: number
+  onPageChange: (currentPage:number) => void
 }

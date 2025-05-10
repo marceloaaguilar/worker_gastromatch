@@ -1,6 +1,6 @@
 import { AlertProps } from "@/src/lib/interfaces";
 
-export default function SuccessAlert({show, title , onClose}: AlertProps) {
+export default function SuccessAlert({show, title , mainMenssage, onClose}: AlertProps) {
 
   return (
     <div className={`${show ? "relative z-60" : "hidden"}`} aria-labelledby="modal-title" role="dialog" aria-modal="true">
@@ -18,7 +18,7 @@ export default function SuccessAlert({show, title , onClose}: AlertProps) {
                   </svg>
                 </div>
                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                  <h3 className="text-base font-semibold text-gray-900" id="modal-title">Cadastro realizado!</h3>
+                  <h3 className="text-base font-semibold text-gray-900" id="modal-title">{mainMenssage || "Cadastro realizado!"} </h3>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">{title}</p>
                   </div>

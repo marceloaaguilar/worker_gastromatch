@@ -6,6 +6,7 @@ import { useAuth } from "../context/AuthProvider";
 import ModalReservation from "../components/ModalReservation";
 import Header from "../components/Header/Header";
 import SuccessAlert from "../components/ui/alerts/SuccessAlert";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     
@@ -16,7 +17,7 @@ const Home = () => {
     const {user} = useAuth();
     const [openModalReservation, setOpenModalReservation] = useState<boolean>(false);
     const [selectedChef, setSelectedChef] = useState<Chef>();
-        const [showSuccessModal, setShowSuccessModal] = useState<boolean>(false);
+    const [showSuccessModal, setShowSuccessModal] = useState<boolean>(false);
 
     if (!user) return null;
 
@@ -96,8 +97,7 @@ const Home = () => {
                 <section>
                     <h2 className="text-2xl font-bold mb-6 text-gray-800">Chefs Disponíveis</h2>
                     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                        {chefs
-                            .map((chef) => (
+                        {chefs.map((chef) => (
                             <div
                                 key={chef.id}
                                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition"
@@ -118,8 +118,14 @@ const Home = () => {
                                 </button>
                                 </div>
                             </div>
-                            ))}
+                        ))}
+
                     </div>
+
+                    <div className="w-full text-center mt-6">
+                        <Link to="/chefs" className="text-gray-700 hover:text-primary font-medium text-center hover:underline"> Ver todos</Link>
+                    </div>
+                
                 </section>
             </div>
                             

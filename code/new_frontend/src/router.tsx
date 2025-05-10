@@ -8,6 +8,7 @@ import PrivateRoute from './components/PrivateRoute';
 import Profile from './routes/Profile';
 import About from "./routes/About"
 import ChefsPage from './routes/Chefs';
+import Reservations from './routes/Reservations';
 
 
 const App: React.FC = () => {
@@ -33,6 +34,13 @@ const App: React.FC = () => {
                     <Home />
                 </PrivateRoute>
             } />
+
+            <Route path="/agendamentos" element={ 
+                <PrivateRoute>
+                    <Reservations />
+                </PrivateRoute>
+            } />
+
 
           </Routes>
         </Suspense>
