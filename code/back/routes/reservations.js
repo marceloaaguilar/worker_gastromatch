@@ -15,8 +15,16 @@ router
   .patch(authController.protect, reservationController.updateReservation) 
   .delete(authController.protect, reservationController.deleteReservation);
 
+router.get('/user/past/:id', reservationController.getPastReservationsByUser);
+router.get('/user/upcoming/:id', reservationController.getUpcomingReservationsByUser);
+
 router
   .route('/user/:id')
   .get(authController.protect, reservationController.getReservationByUser)
+
+
+router
+  .route('/rating/:id')
+  .patch(authController.protect, reservationController.setReservationRating)
 
 module.exports = router; 

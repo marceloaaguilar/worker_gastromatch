@@ -138,10 +138,20 @@ const Reservation = sequelize.define('reservation', {
   dietary_restrictions: {
     type: DataTypes.STRING,
     allowNull: true,
+  },
+  rating: {
+    type: DataTypes.INTEGER,
+    allowNull: true
+  },
+  rating_comment: {
+    type: DataTypes.STRING,
+    allowNull: true
   }
 });
 
+Reservation.sync({ alter: true });
+
 Chef.hasMany(Reservation, { foreignKey: 'chef' });
-Reservation.belongsTo(Chef, { foreignKey: 'chef' });
+Reservation.belongsTo(Chef, { foreignKey: 'chef', as: 'chefData' });
 
 module.exports = Reservation;

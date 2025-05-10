@@ -1,5 +1,6 @@
 const {DataTypes} = require('sequelize');
 const sequelize = require('../config/database');
+const User = require("../models/user");
 
 const Chef = sequelize.define('Chef', {
   id: {
@@ -80,13 +81,6 @@ const Chef = sequelize.define('Chef', {
 
 Chef.sync({ force: false });
 
-Chef.associate = (models) => {
-  Chef.belongsTo(models.User, {
-    foreignKey: 'user_id',
-    as: 'user'
-  });
-};
-
 Chef.beforeCreate(async (chef, options) => {
   const User = require('../models/user');
   const user = await User.findByPk(chef.user_id);
@@ -102,6 +96,11 @@ Chef.findAll({
 
 Chef.findOne({
   attributes: { exclude: ['password'] }
+});
+
+Chef.belongsTo(User, {
+  foreignKey: 'user_id', 
+  as: 'user'
 });
 
 module.exports = Chef; 
