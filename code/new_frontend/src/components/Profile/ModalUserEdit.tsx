@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import SubmitBtn from "../ui/SubmitBtn";
 import TextErrorAlert, { TextErrorAlertProps } from "../ui/alerts/TextErrorAlert";
 import SuccessAlert from "../ui/alerts/SuccessAlert";
+import { SERVER_URL } from "../../lib/env";
 
 
 export default function ModalUserEdit({open, onClose, userData}: ModalUserEditProps) {
@@ -48,7 +49,7 @@ export default function ModalUserEdit({open, onClose, userData}: ModalUserEditPr
         }
 
         try {
-            const result = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/users/${idUsuario}`, { method: "PATCH", body: formData });
+            const result = await fetch(`${SERVER_URL}/api/users/${idUsuario}`, { method: "PATCH", body: formData });
             setIsLoadingBtn(false);
 
             if (result.status === 200) {
