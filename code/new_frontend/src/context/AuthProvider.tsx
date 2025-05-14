@@ -1,6 +1,8 @@
+import React from 'react';
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserProps } from "../lib/interfaces";
+import { SERVER_URL } from "../lib/env";
 
 interface AuthContextType {
   user: UserProps | null;
@@ -17,7 +19,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_SERVER_URL}/api/users/verify-token`, {
+    fetch(`${SERVER_URL}/api/users/verify-token`, {
       method: "GET",
       credentials: "include",
     })
@@ -48,7 +50,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
 
   const logout = async () => {
-    await fetch(`${import.meta.env.VITE_SERVER_URL}/api/users/logout`, {
+    await fetch(`${SERVER_URL}/api/users/logout`, {
       method: "POST",
       credentials: "include",
     });
@@ -60,7 +62,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     
     try {
         
-        const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/users/signin`, {
+        const res = await fetch(`${SERVER_URL}/api/users/signin`, {
             method: "POST",
             headers: {
             "Content-Type": "application/json",

@@ -52,3 +52,27 @@ export default tseslint.config({
   },
 })
 ```
+
+## Testes
+
+O projeto utiliza Jest e React Testing Library para testes. Para executar os testes, use os seguintes comandos:
+
+```bash
+# Executar testes
+npm test
+
+# Executar testes em modo watch
+npm run test:watch
+
+# Executar testes com cobertura
+npm run test:coverage
+```
+
+### Relatório de Cobertura de Testes
+
+Após executar `npm run test:coverage`, o relatório de cobertura será gerado em:
+```
+coverage/lcov-report/index.html
+```
+
+Você pode abrir este arquivo HTML em seu navegador para ver um relatório detalhado e interativo da cobertura de testes.

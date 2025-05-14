@@ -5,6 +5,7 @@ import { UserProps } from "../lib/interfaces";
 import TextErrorAlert, { TextErrorAlertProps } from "./ui/alerts/TextErrorAlert";
 import SubmitBtn from "./ui/SubmitBtn";
 import SuccessAlert from "./ui/alerts/SuccessAlert";
+import { SERVER_URL } from "../lib/env";
 
 interface ModalReservationProps {
   open: boolean;
@@ -124,7 +125,7 @@ export default function ModalReservation({
             credentials: 'include' as RequestCredentials
         }
 
-        const result = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/reservations`, requestOptions)
+        const result = await fetch(`${SERVER_URL}/api/reservations`, requestOptions)
         const response = await result.json();
         setIsLoadingBtn(false);  
 
