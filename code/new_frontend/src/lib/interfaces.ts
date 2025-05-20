@@ -45,6 +45,7 @@ export interface Chef {
   professional_description: string,
   price_per_hour: number,
   user: {
+    id?: number
     name: string,
     email: string,
     profile_photo: string
@@ -69,9 +70,19 @@ export interface ReservationProps{
   rating?: number
 }
 
-
 export interface PaginationType {
   currentPage: number 
   totalPages: number
   onPageChange: (currentPage:number) => void
+}
+
+export interface UserChat {
+  id: number,
+  name: string
+}
+
+export interface MessageChat {
+  from: number,
+  to: number,
+  text: string
 }
