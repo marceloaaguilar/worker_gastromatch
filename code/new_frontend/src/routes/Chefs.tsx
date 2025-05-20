@@ -1,7 +1,8 @@
 import Header from "../components/Header/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Star, ChevronDown, Filter, Search } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Chef } from "../lib/interfaces";
 
 const chefsData = [
   {
@@ -74,80 +75,97 @@ const chefsData = [
 ];
 
 export default function ChefsPage() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedSpecialties, setSelectedSpecialties] = useState<string[]>([]);
-  const [selectedRating, setSelectedRating] = useState<number | null>(null);
-  const [selectedPrice, setSelectedPrice] = useState<string | null>(null);
-  const [isSpecialtyOpen, setIsSpecialtyOpen] = useState(false);
-  const [isRatingOpen, setIsRatingOpen] = useState(false);
-  const [isPriceOpen, setIsPriceOpen] = useState(false);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [selectedSpecialties, setSelectedSpecialties] = useState<string[]>([]);
+    const [selectedRating, setSelectedRating] = useState<number | null>(null);
+    const [selectedPrice, setSelectedPrice] = useState<string | null>(null);
+    const [isSpecialtyOpen, setIsSpecialtyOpen] = useState(false);
+    const [isRatingOpen, setIsRatingOpen] = useState(false);
+    const [isPriceOpen, setIsPriceOpen] = useState(false);
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [chefs, setChefs] = useState<Chef[]>([]);
 
-  const specialties = [
-    "Italiana",
-    "Francesa",
-    "Japonesa",
-    "Brasileira",
-    "Mediterrânea",
-    "Vegana"
-  ];
+    const specialties = [
+        "Italiana",
+        "Francesa",
+        "Japonesa",
+        "Brasileira",
+        "Mediterrânea",
+        "Vegana"
+    ];
 
-  const priceRanges = [
-    { label: "Até R$ 100", value: "0-100" },
-    { label: "R$ 100 - R$ 150", value: "100-150" },
-    { label: "R$ 150 - R$ 200", value: "150-200" },
-    { label: "Acima de R$ 200", value: "200+" }
-  ];
+    const priceRanges = [
+        { label: "Até R$ 100", value: "0-100" },
+        { label: "R$ 100 - R$ 150", value: "100-150" },
+        { label: "R$ 150 - R$ 200", value: "150-200" },
+        { label: "Acima de R$ 200", value: "200+" }
+    ];
 
-  const filteredChefs = chefsData.filter((chef) => {
-    const term = searchTerm.toLowerCase();
-    const matchesSearch = 
-      chef.name.toLowerCase().includes(term) ||
-      chef.specialty.toLowerCase().includes(term) ||
-      chef.tags.some((tag) => tag.toLowerCase().includes(term));
+    const filteredChefs = chefsData.filter((chef) => {
+        const term = searchTerm.toLowerCase();
+        const matchesSearch = 
+        chef.name.toLowerCase().includes(term) ||
+        chef.specialty.toLowerCase().includes(term) ||
+        chef.tags.some((tag) => tag.toLowerCase().includes(term));
 
-    const matchesSpecialty = selectedSpecialties.length === 0 || 
-      selectedSpecialties.some(specialty => 
-        chef.specialty.toLowerCase().includes(specialty.toLowerCase()) ||
-        chef.tags.some(tag => tag.toLowerCase().includes(specialty.toLowerCase()))
-      );
+        const matchesSpecialty = selectedSpecialties.length === 0 || 
+        selectedSpecialties.some(specialty => 
+            chef.specialty.toLowerCase().includes(specialty.toLowerCase()) ||
+            chef.tags.some(tag => tag.toLowerCase().includes(specialty.toLowerCase()))
+        );
 
-    const matchesRating = !selectedRating || (() => {
-      switch (selectedRating) {
-        case 5:
-          return chef.rating >= 4.5;
-        case 4:
-          return chef.rating >= 4.0 && chef.rating < 4.5;
-        case 3:
-          return chef.rating < 4.0;
-        default:
-          return true;
-      }
-    })();
+        const matchesRating = !selectedRating || (() => {
+        switch (selectedRating) {
+            case 5:
+            return chef.rating >= 4.5;
+            case 4:
+            return chef.rating >= 4.0 && chef.rating < 4.5;
+            case 3:
+            return chef.rating < 4.0;
+            default:
+            return true;
+        }
+        })();
 
-    const matchesPrice = !selectedPrice || (() => {
-      const [min, max] = selectedPrice.split('-').map(Number);
-      if (selectedPrice.endsWith('+')) {
-        return chef.price >= Number(selectedPrice.replace('+', ''));
-      }
-      return chef.price >= min && chef.price <= max;
-    })();
+        const matchesPrice = !selectedPrice || (() => {
+        const [min, max] = selectedPrice.split('-').map(Number);
+        if (selectedPrice.endsWith('+')) {
+            return chef.price >= Number(selectedPrice.replace('+', ''));
+        }
+        return chef.price >= min && chef.price <= max;
+        })();
 
-    return matchesSearch && matchesSpecialty && matchesRating && matchesPrice;
-  });
+        return matchesSearch && matchesSpecialty && matchesRating && matchesPrice;
+    });
 
-  const toggleSpecialty = (specialty: string) => {
-    setSelectedSpecialties(prev => 
-      prev.includes(specialty)
-        ? prev.filter(s => s !== specialty)
-        : [...prev, specialty]
-    );
-  };
+    const toggleSpecialty = (specialty: string) => {
+        setSelectedSpecialties(prev => 
+        prev.includes(specialty)
+            ? prev.filter(s => s !== specialty)
+            : [...prev, specialty]
+        );
+    };
+
+    useEffect(() => {
+        getChefList();
+    }, [])
+
+  async function getChefList() {
+    const skip = (currentPage ? currentPage - 1 : 0);
+
+    const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/chefs?limit=10?skip=${skip * 5}&limit=5`, {credentials: 'include'});
+    const resultChefs = await response.json();
+      
+    if (resultChefs && resultChefs.data && resultChefs.data.chefs) {
+        setChefs(resultChefs.data.chefs);
+    }
+              
+  }
 
   return (
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section */}
       <section className="bg-[#fff8f0] py-12">
         <div className="max-w-7xl mx-auto px-4 md:px-12">
           <div className="text-center max-w-3xl mx-auto">
@@ -162,7 +180,7 @@ export default function ChefsPage() {
         </div>
       </section>
 
-      {/* Filters Section */}
+
       <section className="py-8 border-b">
         <div className="max-w-7xl mx-auto px-4 md:px-12">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">

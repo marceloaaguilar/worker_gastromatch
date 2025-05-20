@@ -1,53 +1,33 @@
 import { Link } from "react-router";
 import { useAuth } from "../../context/AuthProvider";
+import { MessageCircle } from "lucide-react";
 
 export default function Header() {
 
     const {user, logout} = useAuth()
 
-
   return (
-    <header className="flex items-center justify-between px-6 py-4 bg-white shadow-md md:px-12">
+    <header className="flex items-center justify-between z-50 px-6 py-4 bg-white shadow-md md:px-12">
+        
         <Link to="/" className="text-2xl font-extrabold tracking-tight text-primary">
-        GastroMatch
+            GastroMatch
         </Link>
-  
+
         <nav className="hidden md:flex items-center space-x-8">
-        <Link to="/" className="text-gray-700 hover:text-primary font-medium">
-            Início
-        </Link>
-        <Link to="/agendamentos" className="text-gray-700 hover:text-primary font-medium">
-            Agendamentos
-        </Link>
-        <Link to="chefs" className="text-gray-700 hover:text-primary font-medium">
-            Chefs
-        </Link>
-        <Link to="/avaliacoes" className="text-gray-700 hover:text-primary font-medium">
-          Avaliações
-        </Link>
-        <Link to="#" className="text-gray-700 hover:text-primary font-medium">
-            Contato
-        </Link>
-        <Link to="/sobre" className="text-gray-700 hover:text-primary font-medium">
-            Sobre
-        </Link>
+            <Link to="/" className="text-gray-700 hover:text-primary font-medium">Início</Link>
+            <Link to="/agendamentos" className="text-gray-700 hover:text-primary font-medium">Agendamentos</Link>
+            <Link to="/chefs" className="text-gray-700 hover:text-primary font-medium">Chefs</Link>
+            <Link to="#" className="text-gray-700 hover:text-primary font-medium">Contato</Link>
+            <Link to="/sobre" className="text-gray-700 hover:text-primary font-medium">Sobre</Link>
         </nav>
-  
+
         {!user ? (
             <div className="flex items-center space-x-4">
-                <Link to="/login" className="text-gray-700 hover:text-primary font-medium">
-                Entrar
-                </Link>
-                <Link
-                to="/cadastro"
-                className="bg-[#ea580c] text-white px-4 py-2 rounded-md hover:bg-orange-700 transition"
-                >
-                Cadastrar
-                </Link>
+                <Link to="/login" className="text-gray-700 hover:text-primary font-medium">Entrar</Link>
+                <Link to="/cadastro" className="bg-[#ea580c] text-white px-4 py-2 rounded-md hover:bg-orange-700 transition">Cadastrar</Link>
             </div>
         ) : (
             <div className="flex items-center space-x-4">
-
                 <Link to="/perfil" className="flex items-center space-x-2 hover:text-primary">
                     <img
                         src={user?.photo || "/default-user.png"}
@@ -57,16 +37,25 @@ export default function Header() {
                     <span className="text-gray-700 font-medium">{user?.nome}</span>
                 </Link>
 
-                <button
-                onClick={logout}
-                className="cursor-pointer bg-red-100 text-red-600 px-3 py-1 rounded-md hover:bg-red-200 transition text-sm font-medium"
+                {/* Botão de chat */}
+                <Link
+                    to="/chat"
+                    className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition"
+                    title="Ir para o chat"
                 >
-                Sair
+                    <MessageCircle className="w-5 h-5" />
+                </Link>
+
+                <button
+                    onClick={logout}
+                    className="cursor-pointer bg-red-100 text-red-600 px-3 py-1 rounded-md hover:bg-red-200 transition text-sm font-medium"
+                >
+                    Sair
                 </button>
             </div>
         )}
-  </header>
-  
+
+    </header>
   
   )
   
