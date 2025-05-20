@@ -11,7 +11,7 @@ exports.getAllChefs = catchAsync(async (req, res, next) => {
     include: {
       model: User,
       as: 'user',
-      attributes: ['name', 'email', 'profile_photo']
+      attributes: ['id','name', 'email', 'profile_photo']
     },
     limit: limit,
     offset: skip
