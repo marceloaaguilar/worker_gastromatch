@@ -1,45 +1,49 @@
-var express = require("express");
-var router = express.Router();
-var mongoose = require("mongoose");
+const express = require("express");
+const router = express.Router();
 
-const Day = require("../models/day").model;
+const { Day, Chef } = require("../models/day");
+const allChef = require("../data/allChef");
 
-
-router.post("/", function(req, res, next) {
-  console.log("request attempted");
-
+router.post("/", async function (req, res) {
+  console.log("Request attempted");
   console.log(req.body);
-  const dateTime = new Date(req.body.date);
 
-  Day.find({ date: dateTime }, (err, docs) => {
-    if (!err) {
-      if (docs.length > 0) {
+  try {
+    const dateTime = new Date(req.body.date);
 
-        console.log("Record exists. Sent docs.");
-        res.status(200).send(docs[0]);
-      } else {
+    let day = await Day.findOne({
+      where: { date: dateTime },
+      include: [Chef]
+    });
 
-        const allChef = require("../data/allChef");
-        const day = new Day({
-          date: dateTime,
-          chef: allChef
-        });
-        day.save(err => {
-          if (err) {
-            res.status(400).send("Error saving new date");
-          } else {
-
-            console.log("Created new datetime. Here are the default docs");
-            Day.find({ date: dateTime }, (err, docs) => {
-              err ? res.sendStatus(400) : res.status(200).send(docs[0]);
-            });
-          }
-        });
-      }
-    } else {
-      res.status(400).send("Could not search for date");
+    if (day) {
+      console.log("Record exists. Sent docs.");
+      return res.status(200).send(day);
     }
-  });
+
+    day = await Day.create(
+      {
+        date: dateTime,
+        Chefs: allChef
+      },
+      {
+        include: [Chef] 
+      }
+    );
+
+    console.log("Created new datetime. Here are the default docs");
+
+    const newDay = await Day.findOne({
+      where: { date: dateTime },
+      include: [Chef]
+    });
+
+    return res.status(200).send(newDay);
+
+  } catch (err) {
+    console.error("Erro ao processar requisição:", err);
+    return res.status(400).send("Erro ao processar a data");
+  }
 });
 
 module.exports = router;

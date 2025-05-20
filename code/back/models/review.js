@@ -1,24 +1,29 @@
-// const mongoose = require('mongoose');
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
 
-// const reviewSchema = new mongoose.Schema(
-//   {
-//     review: {
-//       type: String,
-//     },
-//     reviewer: {
-//       type: mongoose.Schema.Types.ObjectId,
-//       ref: 'User',
-//     },
-//     recipient: {
-//       type: mongoose.Schema.Types.ObjectId,
-//       ref: 'User',
-//     },
-//   },
-//   {
-//     timestamps: true,
-//   }
-// );
+const User = require('./user');
 
-// const Review = mongoose.model('Review', reviewSchema);
+const Review = sequelize.define('Review', {
+  review: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  reviewerId: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  recipientId: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  }
+}, {
+  tableName: 'reviews',
+  timestamps: true 
+});
 
-// module.exports = Review;
+Review.associate = (models) => {
+  Review.belongsTo(models.User, { as: 'Reviewer', foreignKey: 'reviewerId' });
+  Review.belongsTo(models.User, { as: 'Recipient', foreignKey: 'recipientId' });
+};
+
+module.exports = Review;
