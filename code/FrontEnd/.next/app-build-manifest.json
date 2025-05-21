@@ -11,6 +11,16 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
+    "/chefs/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/chefs/loading.js"
+    ],
+    "/chefs/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/chefs/page.js"
+    ],
     "/perfil/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -26,10 +36,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/perfil/page.js"
     ],
-    "/login/page": [
+    "/avaliacao/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/login/page.js"
+      "static/chunks/app/avaliacao/layout.js"
+    ],
+    "/avaliacao/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/avaliacao/loading.js"
+    ],
+    "/avaliacao/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/avaliacao/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",

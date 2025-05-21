@@ -1,4 +1,4 @@
-// File: C:\Users\g2002\Desktop\plf-es-2025-1-ti5-0492100-gastromatch\code\FrontEnd\app\chefs\page.tsx
+// File: D:\Faculdade\2025-1\TIS 5\code\FrontEnd\app\chefs\page.tsx
 import * as entry from '../../../../app/chefs/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
