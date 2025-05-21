@@ -10,6 +10,7 @@ import About from "./routes/About"
 import ChefsPage from './routes/Chefs';
 import Reservations from './routes/Reservations';
 import Chat from './routes/Chat';
+import ChefAgendamentos from './routes/ChefAgendamentos';
 
 
 const App: React.FC = () => {
@@ -23,6 +24,7 @@ const App: React.FC = () => {
             <Route path="/cadastro" element={<Register />} />
             <Route path="/sobre" element={ <About />} />
             <Route path="/chefs" element={<ChefsPage />} />
+            <Route path="/chefagendamentos" element={<ChefAgendamentos />} />
 
             <Route path="/perfil" element={ 
                 <PrivateRoute>
@@ -47,6 +49,12 @@ const App: React.FC = () => {
                     <Chat />
                 </PrivateRoute>
             } />
+            <Route path="/chef-agendamentos" element={
+               <PrivateRoute>
+               <ChefAgendamentos />
+               </PrivateRoute>
+            } />
+
 
 
           </Routes>
