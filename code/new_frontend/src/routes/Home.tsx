@@ -24,7 +24,7 @@ const Home = () => {
 
     useEffect(() => {
 
-        async function fetchGarcons() {
+        async function fetChefs() {
             const response = await fetch(`${SERVER_URL}/api/chefs?limit=4`, {credentials: 'include'});
             const resultChefs = await response.json();
             
@@ -34,7 +34,7 @@ const Home = () => {
             
         }
 
-        fetchGarcons();
+        fetChefs();
 
     }, []);
 

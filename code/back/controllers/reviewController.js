@@ -5,66 +5,65 @@ module.exports.assignReview = async (req, res) => {
   const { recipient_email } = req.body;
   try {
     if (req.isAuthenticated()) {
-      const reviewer = await User.findById(req.params.id);
-      const recipient = await User.findOne({ email: recipient_email });
+      const reviewer = await User.findByPk(req.params.id);
+      const recipient = await User.findOne({ where: { email: recipient_email } });
 
-      const alreadyAssigned = reviewer.assignedReviews.filter(
-        (userId) => userId == recipient.id
-      );
-
-      if (alreadyAssigned.length > 0) {
-        req.flash('error', `Review already assigned!`);
+      if (!reviewer || !recipient) {
+        req.flash('error', 'Usuário não encontrado!');
         return res.redirect('back');
       }
 
-      await reviewer.updateOne({
-        $push: { assignedReviews: recipient },
-      });
+      const alreadyAssigned = await reviewer.hasAssignedReview(recipient);
 
-      req.flash('success', `review assigned successfully!`);
+      if (alreadyAssigned) {
+        req.flash('error', 'Review já atribuída!');
+        return res.redirect('back');
+      }
+
+      await reviewer.addAssignedReview(recipient); 
+      req.flash('success', 'Review atribuída com sucesso!');
       return res.redirect('back');
     } else {
-      req.flash('error', `couldn't assign the review`);
+      req.flash('error', 'Não autenticado.');
     }
   } catch (err) {
-    console.log('error: ', err);
+    console.log('Erro ao atribuir review:', err);
+    req.flash('error', 'Erro interno ao atribuir review.');
+    return res.redirect('back');
   }
 };
-
 
 module.exports.submitReview = async (req, res) => {
   const { recipient_email, feedback } = req.body;
   try {
-    const recipient = await User.findOne({ email: recipient_email });
-    const reviewer = await User.findById(req.params.id);
+    const recipient = await User.findOne({ where: { email: recipient_email } });
+    const reviewer = await User.findByPk(req.params.id);
 
-    const review = await Review.create({
-      review: feedback,
-      reviewer,
-      recipient,
-    });
-
-    const reviewString = review.review.trim();
-
-    if (reviewString === '') {
-      req.flash('error', `Feedback não pode ficar vazio!`);
+    if (!recipient || !reviewer) {
+      req.flash('error', 'Usuário não encontrado!');
       return res.redirect('back');
     }
 
+    const reviewString = feedback.trim();
+    if (reviewString === '') {
+      req.flash('error', 'Feedback não pode ficar vazio!');
+      return res.redirect('back');
+    }
 
-    await recipient.updateOne({
-      $push: { reviewsFromOthers: review },
+    const review = await Review.create({
+      review: reviewString,
+      reviewerId: reviewer.id,
+      recipientId: recipient.id
     });
 
+    await reviewer.removeAssignedReview(recipient);
 
-    await reviewer.updateOne({
-      $pull: { assignedReviews: recipient.id },
-    });
-
-    req.flash('success', `review enviada com sucesso!`);
+    req.flash('success', 'Review enviada com sucesso!');
     return res.redirect('back');
   } catch (err) {
-    console.log('error', err);
+    console.log('Erro ao enviar review:', err);
+    req.flash('error', 'Erro interno ao enviar review.');
+    return res.redirect('back');
   }
 };
 
@@ -72,18 +71,19 @@ module.exports.submitReview = async (req, res) => {
 module.exports.updateReview = async (req, res) => {
   try {
     const { feedback } = req.body;
-    const reviewToBeUpdated = await Review.findById(req.params.id);
+    const review = await Review.findByPk(req.params.id);
 
-
-    if (!reviewToBeUpdated) {
+    if (!review) {
       req.flash('error', 'Review não existe!');
+      return res.redirect('back');
     }
 
-    reviewToBeUpdated.review = feedback; 
-    reviewToBeUpdated.save();
+    await review.update({ review: feedback });
     req.flash('success', 'Review atualizada!');
     return res.redirect('back');
   } catch (err) {
-    console.log(err);
+    console.log('Erro ao atualizar review:', err);
+    req.flash('error', 'Erro interno ao atualizar review.');
+    return res.redirect('back');
   }
 };

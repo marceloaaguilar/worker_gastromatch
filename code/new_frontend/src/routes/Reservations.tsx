@@ -105,76 +105,77 @@ export default function Reservations(){
 
                 <div className="max-w-4xl mx-auto py-10 px-4">
                     
-                    {upcomingBookings && upcomingBookings.length || (pastBookings && pastBookings.length) ? (
+                    {upcomingBookings || (pastBookings) ? (
                     <>
-                        {upcomingBookings.length > 0 && (
-                        <>
-                            <h1 className="text-2xl font-bold mb-8">Meus Próximos Agendamentos</h1>
-                            <div className="space-y-6 mb-12">
+                        <h1 className="text-2xl font-bold mb-8">Meus Próximos Agendamentos</h1>
+                        <div className="space-y-6 mb-12">
 
-                                {upcomingBookings.map((booking) => (
-                                    <div key={booking.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                                        <div className="p-6">
-                                            <div className="flex flex-col md:flex-row md:items-center gap-6">
+                            {upcomingBookings.length > 0 ? (
+                                <>
 
-                                                <div className="flex items-center flex-1">
-                                                    <div className="w-16 h-16 relative mr-4">
-                                                        <img
-                                                            src={booking.chefData.user.profile_photo}
-                                                            alt={booking.chefData.user.name}
-                                                            className="rounded-full object-cover"
-                                                        />
+                                        {upcomingBookings.map((booking) => (
+                                            <div key={booking.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                                                <div className="p-6">
+                                                    <div className="flex flex-col md:flex-row md:items-center gap-6">
+
+                                                        <div className="flex items-center flex-1">
+                                                            <div className="w-16 h-16 relative mr-4">
+                                                                <img
+                                                                    src={booking.chefData.user.profile_photo}
+                                                                    alt={booking.chefData.user.name}
+                                                                    className="rounded-full object-cover"
+                                                                />
+                                                            </div>
+
+                                                            <div>
+                                                                <h3 className="font-bold text-lg">{booking.chefData.user.name}</h3>
+                                                                <p className="text-gray-600 text-sm">{booking.chefData.specialization}</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="flex flex-col md:items-end gap-1">
+
+                                                            <div className="flex items-center text-gray-600">
+                                                                <Calendar className="w-4 h-4 mr-1" />
+                                                                <span className="text-sm">{getDate(booking.date)}</span>
+                                                            </div>
+
+                                                            <div className="flex items-center text-gray-600">
+                                                                <Clock className="w-4 h-4 mr-1" />
+                                                                <span className="text-sm">{getTime(booking.date)}</span>
+                                                            </div>
+
+                                                            <div className="flex items-center text-gray-600">
+                                                                <MapPin className="w-4 h-4 mr-1" />
+                                                                <span className="text-sm">{booking.location}</span>
+                                                            </div>
+                                                        </div>
+
                                                     </div>
 
-                                                    <div>
-                                                        <h3 className="font-bold text-lg">{booking.chefData.user.name}</h3>
-                                                        <p className="text-gray-600 text-sm">{booking.chefData.specialization}</p>
+                                                    <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
+                                                        <div>
+                                                            <p className="text-sm text-gray-600">
+                                                            Menu: <span className="font-medium">{booking.mealType}</span>
+                                                            </p>
+                                                        </div>
+
+                                                        <button
+                                                            onClick={() => iniciarChatComChef()}
+                                                            className="mt-2 inline-flex items-center gap-2 font-bold border border-primary px-3 py-2 rounded-full text-primary hover:underline transition"
+                                                            >
+                                                            <MessageCircle className="w-4 h-4" />
+                                                            Conversar com o Chef
+                                                        </button>
+
                                                     </div>
+
                                                 </div>
-
-                                                <div className="flex flex-col md:items-end gap-1">
-
-                                                    <div className="flex items-center text-gray-600">
-                                                        <Calendar className="w-4 h-4 mr-1" />
-                                                        <span className="text-sm">{getDate(booking.date)}</span>
-                                                    </div>
-
-                                                    <div className="flex items-center text-gray-600">
-                                                        <Clock className="w-4 h-4 mr-1" />
-                                                        <span className="text-sm">{getTime(booking.date)}</span>
-                                                    </div>
-
-                                                    <div className="flex items-center text-gray-600">
-                                                        <MapPin className="w-4 h-4 mr-1" />
-                                                        <span className="text-sm">{booking.location}</span>
-                                                    </div>
-                                                </div>
-
                                             </div>
-
-                                            <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
-                                                <div>
-                                                    <p className="text-sm text-gray-600">
-                                                    Menu: <span className="font-medium">{booking.mealType}</span>
-                                                    </p>
-                                                </div>
-
-                                                <button
-                                                    onClick={() => iniciarChatComChef()}
-                                                    className="mt-2 inline-flex items-center gap-2 font-bold border border-primary px-3 py-2 rounded-full text-primary hover:underline transition"
-                                                    >
-                                                    <MessageCircle className="w-4 h-4" />
-                                                    Conversar com o Chef
-                                                </button>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </>
-                        )}
+                                        ))}
+                                </>
+                            ): <p> Você não possui futuros agendamentos</p> } 
+                        </div>
 
                         {pastBookings.length > 0 ? (
                         <>

@@ -26,10 +26,10 @@ const Reservation = sequelize.define('reservation', {
     allowNull: false,
     validate: {
       notEmpty: {
-        msg: 'É obrigatório informar o CPF do cliente!'
+        msg: 'É obrigatório informar o CPF do cliente'
       },
       notNull: {
-        msg: 'É obrigatório informar o CPF do cliente!'
+        msg: 'É obrigatório informar o CPF do cliente'
       },
     }
   },
@@ -38,10 +38,10 @@ const Reservation = sequelize.define('reservation', {
     allowNull: false,
     validate: {
       notEmpty: {
-        msg: 'É obrigatório informar o e-mail do cliente!'
+        msg: 'É obrigatório informar o e-mail do cliente'
       },
       notNull: {
-        msg: 'É obrigatório informar o e-mail do cliente!'
+        msg: 'É obrigatório informar o e-mail do cliente'
       },
     }
   },

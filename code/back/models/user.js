@@ -108,6 +108,11 @@ const User = sequelize.define('User', {
 User.sync({ force: false });
 
 User.associate = (models) => {
+  User.hasMany(models.Message, {
+    foreignKey: 'from_user',
+    as: 'u'
+  });
+
   User.hasOne(models.Chef, {
     foreignKey: 'user_id',
     as: 'chef'

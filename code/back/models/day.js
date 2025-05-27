@@ -1,19 +1,41 @@
-// const mongoose = require("mongoose");
-// const reservationSchema = require("./reservation").schema;
+// const { DataTypes } = require('sequelize');
+// const sequelize = require('../config/database');
 
-// const chefSchema = new mongoose.Schema({
-//   name: String,
-//   image: String,
-//   isAvailable: Boolean,
-//   reservation: reservationSchema,
+// const Reservation = require('./reservation').model;
+
+// const Day = sequelize.define('Day', {
+//   date: {
+//     type: DataTypes.DATE,
+//     allowNull: false
+//   }
+// }, {
+//   tableName: 'days'
 // });
 
-// const daySchema = new mongoose.Schema({
-//   date: Date,
-//   chef: [chefSchema],
+// const Chef = sequelize.define('Chef', {
+//   name: {
+//     type: DataTypes.STRING,
+//     allowNull: false
+//   },
+//   image: {
+//     type: DataTypes.STRING,
+//   },
+//   isAvailable: {
+//     type: DataTypes.BOOLEAN,
+//     defaultValue: true
+//   }
+// }, {
+//   tableName: 'chefs'
 // });
 
-// const Day = mongoose.model("Day", daySchema);
+// Day.hasMany(Chef, { foreignKey: 'dayId' });
+// Chef.belongsTo(Day, { foreignKey: 'dayId' });
 
-// module.exports.model = Day;
-// module.exports.schema = daySchema;
+// Chef.hasOne(Reservation, { foreignKey: 'chefId' });
+// Reservation.belongsTo(Chef, { foreignKey: 'chefId' });
+
+// module.exports = {
+//   Day,
+//   Chef
+// };
+
