@@ -29,5 +29,8 @@
     "postgres": "^3.4.5",
     "sequelize": "^6.37.7",
     "ws": "^8.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
