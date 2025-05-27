@@ -19,7 +19,7 @@ async function main() {
 
         const { error } = await supabase
           .from('messages')
-          .insert([
+          .insert([ 
             {
               from_user: messageData.from,
               to_user: messageData.to,
