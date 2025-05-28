@@ -1,5 +1,6 @@
+import { useState } from "react";
 import Header from "../components/Header/Header";
-import { CalendarDays, MapPin, Clock } from "lucide-react";
+import { CalendarDays, MapPin, Clock, ChevronDown, ChevronUp } from "lucide-react";
 
 const agendamentos = [
   {
@@ -10,6 +11,11 @@ const agendamentos = [
     local: "Rua das Flores, 123 - São Paulo, SP",
     pessoas: 6,
     especialidade: "Italiana",
+    detalhes: {
+      pratoPrincipal: "Lasanha de Berinjela",
+      observacoes: "Cliente alérgica a frutos do mar",
+      valor: "R$ 1.200,00",
+    },
   },
   {
     id: 2,
@@ -19,6 +25,11 @@ const agendamentos = [
     local: "Av. Paulista, 900 - São Paulo, SP",
     pessoas: 10,
     especialidade: "Contemporânea",
+    detalhes: {
+      pratoPrincipal: "Filé ao molho de vinho",
+      observacoes: "Mesa ao ar livre",
+      valor: "R$ 2.000,00",
+    },
   },
   {
     id: 3,
@@ -28,10 +39,24 @@ const agendamentos = [
     local: "Rua Verde, 321 - Campinas, SP",
     pessoas: 4,
     especialidade: "Francesa",
+    detalhes: {
+      pratoPrincipal: "Ratatouille com risoto",
+      observacoes: "Levar talheres especiais",
+      valor: "R$ 800,00",
+    },
   },
 ];
 
 export default function ChefAgendamentosPage() {
+  const [detalhesVisiveis, setDetalhesVisiveis] = useState<{ [id: number]: boolean }>({});
+
+  const toggleDetalhes = (id: number) => {
+    setDetalhesVisiveis((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -54,7 +79,7 @@ export default function ChefAgendamentosPage() {
           {agendamentos.map((evento) => (
             <div
               key={evento.id}
-              className="border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-md transition duration-300"
+              className="border border-gray-200 rounded-2xl shadow-sm p-6 hover:shadow-md transition duration-300"
             >
               <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
                 <div>
@@ -66,7 +91,7 @@ export default function ChefAgendamentosPage() {
                   </p>
                   <p className="text-gray-600">Pessoas: {evento.pessoas}</p>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 text-sm">
                   <p className="flex items-center gap-2 text-gray-700">
                     <CalendarDays className="w-5 h-5 text-[#ea580c]" />
                     {evento.data}
@@ -81,6 +106,39 @@ export default function ChefAgendamentosPage() {
                   </p>
                 </div>
               </div>
+
+              {/* Botão ver mais */}
+              <div className="mt-4">
+                <button
+                  onClick={() => toggleDetalhes(evento.id)}
+                  className="flex items-center gap-2 text-[#ea580c] hover:underline font-medium"
+                >
+                  {detalhesVisiveis[evento.id] ? (
+                    <>
+                      Ocultar detalhes <ChevronUp className="w-4 h-4" />
+                    </>
+                  ) : (
+                    <>
+                      Ver mais detalhes <ChevronDown className="w-4 h-4" />
+                    </>
+                  )}
+                </button>
+              </div>
+
+              {/* Detalhes extras */}
+              {detalhesVisiveis[evento.id] && (
+                <div className="mt-4 bg-[#fff4ec] p-4 rounded-lg border border-[#f9dcc6] text-sm">
+                  <p>
+                    <span className="font-semibold">Prato principal:</span> {evento.detalhes.pratoPrincipal}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Observações:</span> {evento.detalhes.observacoes}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Valor:</span> {evento.detalhes.valor}
+                  </p>
+                </div>
+              )}
             </div>
           ))}
         </div>
