@@ -15,6 +15,7 @@ export default function ChefsPage() {
     const [isPriceOpen, setIsPriceOpen] = useState(false);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [chefs, setChefs] = useState<Chef[]>([]);
+    const [allChefs, setAllChefs] = useState<Chef[]>([]);
 
     const specialties = [
         "Italiana",
@@ -48,36 +49,73 @@ export default function ChefsPage() {
         selectedSpecialties.length > 0  ? getChefBySpeciality() : getChefList();
     }, [selectedSpecialties])
 
-  async function getChefList() {
-    const skip = (currentPage ? currentPage - 1 : 0);
+    async function getChefList() {
+        const skip = (currentPage ? currentPage - 1 : 0);
 
-    const response = await fetch(`${getServerUrl()}/api/chefs?limit=10?skip=${skip * 5}&limit=5`, {credentials: 'include'});
-    const resultChefs = await response.json();
-      
-    if (resultChefs && resultChefs.data && resultChefs.data.chefs) {
-        setChefs(resultChefs.data.chefs);
+        const response = await fetch(`${getServerUrl()}/api/chefs?limit=10?skip=${skip * 5}&limit=5`, {credentials: 'include'});
+        const resultChefs = await response.json();
+          
+        if (resultChefs && resultChefs.data && resultChefs.data.chefs) {
+            setChefs(resultChefs.data.chefs);
+            setAllChefs(resultChefs.data.chefs);
+        }
     }
-              
-  }
 
-  async function getChefBySpeciality() {
+    async function getChefBySpeciality() {
+        const skip = currentPage ? currentPage - 1 : 0;
+        const response = await fetch(`${getServerUrl()}/api/chefs/search?limit=10&skip=${skip * 5}`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ specializations: selectedSpecialties })
+        });
 
-    const skip = currentPage ? currentPage - 1 : 0;
-    const response = await fetch(`${getServerUrl()}/api/chefs/search?limit=10&skip=${skip * 5}`, {
-    method: 'POST',
-    credentials: 'include',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ specializations: selectedSpecialties })
+        const resultChefs = await response.json();
+        setChefs(resultChefs.data.chefs);
+        setAllChefs(resultChefs.data.chefs);
+    }
+
+    // Filter chefs based on all criteria
+    const filteredChefs = allChefs.filter(chef => {
+        // Search term filter
+        const matchesSearch = searchTerm === "" || 
+            chef.user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            chef.specialization.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            chef.professional_description?.toLowerCase().includes(searchTerm.toLowerCase());
+
+        // Specialties filter
+        const matchesSpecialties = selectedSpecialties.length === 0 || 
+            selectedSpecialties.some(specialty => 
+                chef.specialization.toLowerCase().includes(specialty.toLowerCase())
+            );
+
+        // Rating filter
+        const matchesRating = selectedRating === null || 
+            (chef.rating && chef.rating >= selectedRating);
+
+        // Price filter
+        const matchesPrice = selectedPrice === null || 
+            (() => {
+                const chefPrice = chef.price_per_hour || 0;
+                
+                if (selectedPrice === "200+") {
+                    return chefPrice >= 200;
+                }
+                
+                const [min, max] = selectedPrice.split('-').map(Number);
+                if (isNaN(min) || isNaN(max)) {
+                    return false;
+                }
+                
+                return chefPrice >= min && chefPrice <= max;
+            })();
+
+        return matchesSearch && matchesSpecialties && matchesRating && matchesPrice;
     });
 
-    const resultChefs = await response.json();
-    setChefs(resultChefs.data.chefs);
-
-}
-
-  return (
+    return (
     <div className="min-h-screen bg-white">
       <Header />
       
@@ -243,7 +281,7 @@ export default function ChefsPage() {
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {chefs.map((chef) => (
+            {filteredChefs.map((chef) => (
               <div
                 key={chef.id}
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"

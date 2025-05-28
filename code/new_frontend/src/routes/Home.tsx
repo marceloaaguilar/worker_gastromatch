@@ -23,7 +23,6 @@ const Home = () => {
     if (!user) return null;
 
     useEffect(() => {
-
         async function fetChefs() {
             const response = await fetch(`${getServerUrl()}/api/chefs?limit=4`, {credentials: 'include'});
             const resultChefs = await response.json();
@@ -31,12 +30,23 @@ const Home = () => {
             if (resultChefs && resultChefs.data && resultChefs.data.chefs) {
                 setChefs(resultChefs.data.chefs);
             }
-            
         }
 
         fetChefs();
-
     }, []);
+
+    // Filter chefs based on search term and selected specialty
+    const filteredChefs = chefs.filter(chef => {
+        const matchesSearch = busca === "" || 
+            chef.user.name.toLowerCase().includes(busca.toLowerCase()) ||
+            chef.specialization.toLowerCase().includes(busca.toLowerCase()) ||
+            chef.professional_description?.toLowerCase().includes(busca.toLowerCase());
+
+        const matchesSpecialty = especialidadeSelecionada === "" || 
+            chef.specialization.toLowerCase().includes(especialidadeSelecionada.toLowerCase());
+
+        return matchesSearch && matchesSpecialty;
+    });
 
     return (
         <>  
@@ -73,22 +83,34 @@ const Home = () => {
   
                 <section className="flex flex-wrap justify-center gap-8 p-2">
                     
-                    <div className="flex flex-col items-center cursor-pointer">
+                    <div 
+                        className={`flex flex-col items-center cursor-pointer transition-transform hover:scale-105 ${especialidadeSelecionada === "Japonesa" ? "ring-2 ring-primary rounded-md" : ""}`}
+                        onClick={() => setEspecialidadeSelecionada(especialidadeSelecionada === "Japonesa" ? "" : "Japonesa")}
+                    >
                         <img src="/images/sushi.png" alt="Culinária Japonesa" className="w-[150px] h-[150px] object-cover rounded-md" />
                         <p className="mt-2 text-center text-sm font-medium">Japonesa</p>
                     </div>
 
-                    <div className="flex flex-col items-center cursor-pointer">
+                    <div 
+                        className={`flex flex-col items-center cursor-pointer transition-transform hover:scale-105 ${especialidadeSelecionada === "Italiana" ? "ring-2 ring-primary rounded-md" : ""}`}
+                        onClick={() => setEspecialidadeSelecionada(especialidadeSelecionada === "Italiana" ? "" : "Italiana")}
+                    >
                         <img src="/images/macarrao.png" alt="Culinária Italiana" className="w-[150px] h-[150px] object-cover rounded-md" />
                         <p className="mt-2 text-center text-sm font-medium">Italiana</p>
                     </div>
 
-                    <div className="flex flex-col items-center cursor-pointer">
+                    <div 
+                        className={`flex flex-col items-center cursor-pointer transition-transform hover:scale-105 ${especialidadeSelecionada === "Argentina" ? "ring-2 ring-primary rounded-md" : ""}`}
+                        onClick={() => setEspecialidadeSelecionada(especialidadeSelecionada === "Argentina" ? "" : "Argentina")}
+                    >
                         <img src="/images/costela.png" alt="Culinária Argentina" className="w-[150px] h-[150px] object-cover rounded-md" />
                         <p className="mt-2 text-center text-sm font-medium">Argentina</p>
                     </div>
 
-                    <div className="flex flex-col items-center cursor-pointer">
+                    <div 
+                        className={`flex flex-col items-center cursor-pointer transition-transform hover:scale-105 ${especialidadeSelecionada === "Brasileira" ? "ring-2 ring-primary rounded-md" : ""}`}
+                        onClick={() => setEspecialidadeSelecionada(especialidadeSelecionada === "Brasileira" ? "" : "Brasileira")}
+                    >
                         <img src="/images/feijoada.png" alt="Culinária Brasileira" className="w-[150px] h-[150px] object-cover rounded-md" />
                         <p className="mt-2 text-center text-sm font-medium">Brasileira</p>
                     </div>
@@ -98,7 +120,7 @@ const Home = () => {
                 <section>
                     <h2 className="text-2xl font-bold mb-6 text-gray-800">Chefs Disponíveis</h2>
                     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                        {chefs.map((chef) => (
+                        {filteredChefs.map((chef) => (
                             <div
                                 key={chef.id}
                                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition"

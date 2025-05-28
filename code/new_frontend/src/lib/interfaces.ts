@@ -44,6 +44,7 @@ export interface Chef {
   experience: number,
   professional_description: string,
   price_per_hour: number,
+  rating?: number,
   user: {
     id?: number
     name: string,
