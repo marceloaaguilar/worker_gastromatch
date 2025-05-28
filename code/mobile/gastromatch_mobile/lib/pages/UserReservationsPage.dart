@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
-import 'package:intl/intl.dart'; // ✅ import para formatação da data
+import 'package:intl/intl.dart';
 import 'dart:convert';
 
 import 'EditReservationPage.dart';
@@ -37,7 +37,7 @@ class _UserReservationsPageState extends State<UserReservationsPage> {
 
     try {
       final response = await http.get(
-        Uri.parse('http://10.0.2.2:8080/api/reservations/user/$userId'),
+        Uri.parse('http://10.0.2.2:8080/api/reservations/user/upcoming/$userId'),
         headers: {
           'Authorization': 'Bearer $token',
           'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ class _UserReservationsPageState extends State<UserReservationsPage> {
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         setState(() {
-          reservations = data['data']['reservations'];
+          reservations = data['reservations']['rows'];
           isLoading = false;
         });
       } else {
@@ -97,7 +97,7 @@ class _UserReservationsPageState extends State<UserReservationsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Minhas Reservas"),
+        title: Text("Reservas Futuras"),
         backgroundColor: Colors.orange,
         foregroundColor: Colors.white,
       ),
@@ -124,7 +124,7 @@ class _UserReservationsPageState extends State<UserReservationsPage> {
                 : reservations.isEmpty
                 ? Center(
                   child: Text(
-                    "Você ainda não fez nenhuma reserva.",
+                    "Você ainda não tem reservas futuras.",
                     style: TextStyle(fontSize: 16, color: Colors.grey),
                   ),
                 )

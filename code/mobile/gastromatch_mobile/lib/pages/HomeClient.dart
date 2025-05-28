@@ -11,6 +11,7 @@ import 'LoginPage.dart';
 import 'UserProfileEditPage.dart';
 import 'ChatRecords.dart';
 import 'UserReservationsPage.dart';
+import 'UserPastReservationsPage.dart';
 
 class HomeClient extends StatefulWidget {
   @override
@@ -211,12 +212,24 @@ class _HomeClientState extends State<HomeClient> {
             ),
             ListTile(
               leading: Icon(Icons.calendar_today),
-              title: Text('Minhas Reservas'),
+              title: Text('Reservas Futuras'),
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => UserReservationsPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.archive),
+              title: Text('Reservas Passadas'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => UserPastReservationsPage(),
                   ),
                 );
               },
