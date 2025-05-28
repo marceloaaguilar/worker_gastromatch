@@ -1,3 +1,5 @@
+const {Op} = require('sequelize');
+
 const Chef = require('../models/chef.js');
 const User = require('../models/user.js');
 const catchAsync = require('../utils/catchAsync.js');
@@ -92,23 +94,26 @@ exports.deleteChef = catchAsync(async (req, res, next) => {
 });
 
 exports.searchBySpecialization = catchAsync(async (req, res, next) => {
-  const { specialization } = req.query;
+  const { specializations } = req.body;
 
-  if (!specialization) {
+  if (!specializations) {
     return res.status(400).json({
       status: 'fail',
       message: 'Especialização não fornecida na query'
     });
-  }
+  };
+
 
   const chefs = await Chef.findAll({
     where: {
-      specialization: specialization
+      specialization:  {
+          [Op.in]: specializations
+      }
     },
     include: {
       model: User,
       as: 'user',
-      attributes: ['name', 'email']
+      attributes: ['id','name', 'email', 'profile_photo']
     }
   });
 

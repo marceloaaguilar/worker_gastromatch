@@ -11,14 +11,15 @@ router
   .post(chefController.createChef); 
 
 router
+  .route('/search')
+  .get(chefController.searchBySpecialization);
+  
+router
   .route('/:id')
   .get(chefController.getChef)
   .patch(chefController.updateChef) 
   .delete(chefController.deleteChef);
 
 
-router
-  .route('/search')
-  .get(chefController.searchBySpecialization);
 
 module.exports = router; 
