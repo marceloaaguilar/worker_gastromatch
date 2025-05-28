@@ -94,7 +94,11 @@ exports.deleteChef = catchAsync(async (req, res, next) => {
 });
 
 exports.searchBySpecialization = catchAsync(async (req, res, next) => {
+
   const { specializations } = req.body;
+
+  const skip = parseInt(req.query.skip) || 0;
+  const limit = parseInt(req.query.limit) || 10;
 
   if (!specializations) {
     return res.status(400).json({
@@ -114,7 +118,9 @@ exports.searchBySpecialization = catchAsync(async (req, res, next) => {
       model: User,
       as: 'user',
       attributes: ['id','name', 'email', 'profile_photo']
-    }
+    },
+    limit: limit,
+    offset: skip
   });
 
   res.status(200).json({
