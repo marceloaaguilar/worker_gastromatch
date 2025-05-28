@@ -50,8 +50,6 @@ async function publishToQueue(queue, message) {
     persistent: true
   });
 
-  console.log(`[RabbitMQ] Mensagem enviada para fila ${queue}`);
-
 }
 
 module.exports = handleMessage;
