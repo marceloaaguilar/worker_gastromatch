@@ -12,7 +12,7 @@ router
 
 router
   .route('/search')
-  .get(chefController.searchBySpecialization);
+  .post(chefController.searchBySpecialization);
   
 router
   .route('/:id')
