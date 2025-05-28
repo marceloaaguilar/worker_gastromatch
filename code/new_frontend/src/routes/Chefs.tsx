@@ -4,76 +4,6 @@ import { Star, ChevronDown, Filter, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Chef } from "../lib/interfaces";
 
-const chefsData = [
-  {
-    id: 1,
-    name: "Chef Ricardo Silva",
-    specialty: "Culinária Italiana e Mediterrânea",
-    description:
-      "Especialista em culinária italiana e mediterrânea com 15 anos de experiência em restaurantes premiados. Cria experiências gastronômicas memoráveis com ingredientes frescos e técnicas refinadas.",
-    rating: 4.9,
-    price: 150,
-    tags: ["Italiana", "Mediterrânea", "Gourmet"],
-    image: "/images/chef-ricardo.jpg",
-    featured: true,
-  },
-  {
-    id: 2,
-    name: "Chef Maria Santos",
-    specialty: "Gastronomia Contemporânea",
-    description:
-      "Especializada em gastronomia contemporânea e fusion food, com foco em ingredientes orgânicos e sazonais. Oferece menus criativos que surpreendem pelo sabor e apresentação.",
-    rating: 4.4,
-    price: 130,
-    tags: ["Contemporânea", "Fusion", "Vegetariana"],
-    image: "/images/chef-maria.jpg",
-  },
-  {
-    id: 3,
-    name: "Chef André Costa",
-    specialty: "Culinária Francesa e Patisserie",
-    description:
-      "Chef especializado em culinária francesa e patisserie, formado na França. Cria pratos sofisticados e sobremesas artísticas que encantam pelo sabor e apresentação impecável.",
-    rating: 3.9,
-    price: 180,
-    tags: ["Francesa", "Patisserie", "Gourmet"],
-    image: "/images/chef-andre.jpg",
-  },
-  {
-    id: 4,
-    name: "Chef Juliana Mendes",
-    specialty: "Culinária Brasileira Contemporânea",
-    description:
-      "Especialista em culinária brasileira contemporânea, valorizando ingredientes nacionais e técnicas modernas. Cria pratos que celebram a diversidade da gastronomia brasileira.",
-    rating: 4.8,
-    price: 140,
-    tags: ["Brasileira", "Contemporânea", "Regional"],
-    image: "/images/chef-juliana.jpg",
-  },
-  {
-    id: 5,
-    name: "Chef Paulo Oliveira",
-    specialty: "Culinária Japonesa",
-    description:
-      "Chef especializado em culinária japonesa tradicional e contemporânea. Oferece experiências de sushi omakase e pratos quentes da gastronomia japonesa com técnica impecável.",
-    rating: 4.6,
-    price: 160,
-    tags: ["Japonesa", "Sushi", "Asiática"],
-    image: "/images/chef-paulo.jpg",
-  },
-  {
-    id: 6,
-    name: "Chef Camila Rocha",
-    specialty: "Gastronomia Vegana",
-    description:
-      "Especialista em gastronomia vegana criativa e nutritiva. Transforma ingredientes vegetais em pratos sofisticados e saborosos que agradam a todos os paladares.",
-    rating: 4.8,
-    price: 120,
-    tags: ["Vegana", "Plant-based", "Saudável"],
-    image: "/images/chef-camila.jpg",
-  },
-];
-
 export default function ChefsPage() {
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedSpecialties, setSelectedSpecialties] = useState<string[]>([]);
@@ -101,43 +31,6 @@ export default function ChefsPage() {
         { label: "Acima de R$ 200", value: "200+" }
     ];
 
-    const filteredChefs = chefsData.filter((chef) => {
-        const term = searchTerm.toLowerCase();
-        const matchesSearch = 
-        chef.name.toLowerCase().includes(term) ||
-        chef.specialty.toLowerCase().includes(term) ||
-        chef.tags.some((tag) => tag.toLowerCase().includes(term));
-
-        const matchesSpecialty = selectedSpecialties.length === 0 || 
-        selectedSpecialties.some(specialty => 
-            chef.specialty.toLowerCase().includes(specialty.toLowerCase()) ||
-            chef.tags.some(tag => tag.toLowerCase().includes(specialty.toLowerCase()))
-        );
-
-        const matchesRating = !selectedRating || (() => {
-        switch (selectedRating) {
-            case 5:
-            return chef.rating >= 4.5;
-            case 4:
-            return chef.rating >= 4.0 && chef.rating < 4.5;
-            case 3:
-            return chef.rating < 4.0;
-            default:
-            return true;
-        }
-        })();
-
-        const matchesPrice = !selectedPrice || (() => {
-        const [min, max] = selectedPrice.split('-').map(Number);
-        if (selectedPrice.endsWith('+')) {
-            return chef.price >= Number(selectedPrice.replace('+', ''));
-        }
-        return chef.price >= min && chef.price <= max;
-        })();
-
-        return matchesSearch && matchesSpecialty && matchesRating && matchesPrice;
-    });
-
     const toggleSpecialty = (specialty: string) => {
         setSelectedSpecialties(prev => 
         prev.includes(specialty)
@@ -148,7 +41,11 @@ export default function ChefsPage() {
 
     useEffect(() => {
         getChefList();
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        selectedSpecialties.length > 0  ? getChefBySpeciality() : getChefList();
+    }, [selectedSpecialties])
 
   async function getChefList() {
     const skip = (currentPage ? currentPage - 1 : 0);
@@ -161,6 +58,23 @@ export default function ChefsPage() {
     }
               
   }
+
+  async function getChefBySpeciality() {
+
+    const skip = currentPage ? currentPage - 1 : 0;
+    const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/chefs/search?limit=10&skip=${skip * 5}`, {
+    method: 'POST',
+    credentials: 'include',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ specializations: selectedSpecialties })
+    });
+
+    const resultChefs = await response.json();
+    setChefs(resultChefs.data.chefs);
+
+}
 
   return (
     <div className="min-h-screen bg-white">
@@ -198,7 +112,6 @@ export default function ChefsPage() {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              {/* Dropdown Especiality */}
               <div className="relative">
                 <button 
                   className={`px-4 py-2 border rounded-md bg-white flex items-center gap-2 hover:bg-gray-50 transition-colors duration-200 ${
@@ -210,6 +123,7 @@ export default function ChefsPage() {
                   <span>Especialidade</span>
                   <ChevronDown className="h-4 w-4" />
                 </button>
+
                 {isSpecialtyOpen && (
                   <div 
                     className="absolute z-10 mt-1 w-56 bg-white border border-[#ea580c] rounded-md shadow-lg"
@@ -241,6 +155,7 @@ export default function ChefsPage() {
                     </div>
                   </div>
                 )}
+
               </div>
 
               {/* Dropdown Rate */}
@@ -327,46 +242,44 @@ export default function ChefsPage() {
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredChefs.map((chef) => (
+            {chefs.map((chef) => (
               <div
                 key={chef.id}
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
               >
                 <div className="relative h-48">
                   <img
-                    src={chef.image}
-                    alt={chef.name}
+                    src={chef.user.profile_photo}
+                    alt={chef.user.name}
                     className="w-full h-full object-cover"
                   />
-                  {chef.featured && (
-                    <div className="absolute top-2 right-2 bg-[#ea580c] text-white px-2 py-1 rounded text-sm">
-                      Destaque
-                    </div>
-                  )}
+
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-xl font-bold text-gray-900">{chef.name}</h3>
+                    <h3 className="text-xl font-bold text-gray-900">{chef.user.name}</h3>
                     <div className="flex items-center">
                       <Star className="h-5 w-5 text-orange-600 fill-current" />
-                      <span className="ml-1 text-gray-600">{chef.rating}</span>
+                      {/* <span className="ml-1 text-gray-600">{chef}</span> */}
                     </div>
                   </div>
-                  <p className="text-gray-600 mb-2">{chef.specialty}</p>
-                  <p className="text-gray-700 mb-4 line-clamp-3">{chef.description}</p>
+                  <p className="text-gray-600 mb-2">{chef.specialization}</p>
+                  <p className="text-gray-700 mb-4 line-clamp-3">{chef.professional_description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {chef.tags.map((tag) => (
+
+                    {/* {chef.tags.map((tag) => (
                       <span
                         key={tag}
                         className="bg-[#fff8f0] text-[#ea580c] px-2 py-1 rounded-full text-sm"
                       >
                         {tag}
                       </span>
-                    ))}
+                    ))} */}
+
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-[#ea580c] font-bold text-lg">
-                      R$ {chef.price}/hora
+                      R$ {chef.price_per_hour}/hora
                     </span>
                     <Link
                       to={`/chef/${chef.id}`}
