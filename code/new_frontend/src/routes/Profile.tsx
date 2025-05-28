@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header/Header";
-import { SERVER_URL } from "../lib/env";
 import {
     Mail,
     Phone,
@@ -29,7 +28,7 @@ export default function Profile() {
 
   useEffect(()=> {
     async function getUserData(){
-        const response = await fetch(`${SERVER_URL}/api/users/verify-token`, {credentials: "include"});
+        const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/users/verify-token`, {credentials: "include"});
         const result = await response.json();
 
         if (response.ok && result.user) {

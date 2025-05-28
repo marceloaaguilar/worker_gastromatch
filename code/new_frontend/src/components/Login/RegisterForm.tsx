@@ -5,7 +5,6 @@ import TextErrorAlert, { TextErrorAlertProps } from "../ui/alerts/TextErrorAlert
 import SuccessAlert from "../ui/alerts/SuccessAlert";
 import SubmitBtn from "../ui/SubmitBtn";
 import EspecialidadesSelect from "../ui/EspecialidadesSelect";
-import { SERVER_URL } from "../../lib/env";
 
 export default function RegisterForm() {
     const [userType, setUserType] = useState("");
@@ -51,7 +50,7 @@ export default function RegisterForm() {
             formData.append("profile_photo", fotoUsuario);
         }
 
-        const result = await fetch(`${SERVER_URL}/api/users/signup`, { method: "POST", body: formData });
+        const result = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/users/signup`, { method: "POST", body: formData });
 
         const response = await result.json();
 
@@ -78,7 +77,7 @@ export default function RegisterForm() {
                 })
             }
     
-            const resultChef = await fetch(`${SERVER_URL}/api/chefs`, requestOptions);
+            const resultChef = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/chefs`, requestOptions);
             const responseChef = await resultChef.json();
 
             if (resultChef && resultChef.status !== 201) {
