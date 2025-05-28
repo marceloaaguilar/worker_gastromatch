@@ -19,6 +19,7 @@ import {
 import { Link, Navigate } from "react-router";
 import { UserProps } from "../lib/interfaces";
 import ModalUserEdit from "../components/Profile/ModalUserEdit";
+import { getServerUrl } from '../utils/env';
 
 export default function Profile() {
 
@@ -28,7 +29,7 @@ export default function Profile() {
 
   useEffect(()=> {
     async function getUserData(){
-        const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/users/verify-token`, {credentials: "include"});
+        const response = await fetch(`${getServerUrl()}/api/users/verify-token`, {credentials: "include"});
         const result = await response.json();
 
         if (response.ok && result.user) {

@@ -6,6 +6,7 @@ import { useAuth } from "../context/AuthProvider";
 import RatingModal from "../components/Reservation/RatingModal";
 import SuccessAlert from "../components/ui/alerts/SuccessAlert";
 import Pagination from "../components/ui/Pagination";
+import { getServerUrl } from '../utils/env';
 
 export default function Reservations(){
 
@@ -38,7 +39,7 @@ export default function Reservations(){
         const skip = (page ? page - 1 : 0) 
 
 
-        const result = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/reservations/user/past/${user?.id}?skip=${skip * 5}&limit=5`, requestOptions)
+        const result = await fetch(`${getServerUrl()}/api/reservations/user/past/${user?.id}?skip=${skip * 5}&limit=5`, requestOptions)
         const response = await result.json();
 
         if (result.ok) {
@@ -57,7 +58,7 @@ export default function Reservations(){
             credentials: 'include' as RequestCredentials
         }
 
-        const result = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/reservations/user/upcoming/${user?.id}`, requestOptions)
+        const result = await fetch(`${getServerUrl()}/api/reservations/user/upcoming/${user?.id}`, requestOptions)
         const response = await result.json();
 
         if (result.ok) {
