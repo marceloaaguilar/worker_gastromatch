@@ -12,12 +12,10 @@ async function main() {
 
   await channel.assertQueue(queueName, { durable: true });
   console.log(`Aguardando mensagens na fila: ${queueName}`);
-
   channel.consume(queueName, async (msg) => {
     if (msg !== null) {
       try {
         const messageData = JSON.parse(msg.content.toString());
-        console.log('Mensagem recebida do RabbitMQ:', messageData);
 
         const { error } = await supabase
           .from('messages')
@@ -31,8 +29,6 @@ async function main() {
           ]);
 
         if (error) {
-            console.error('Erro ao inserir no Supabase:', error);
-            console.error('Dados enviados:', messageData);
             channel.nack(msg, false, false);
             return;
         }
@@ -41,7 +37,6 @@ async function main() {
 
         channel.ack(msg);
       } catch (err) {
-        console.error('Erro processando mensagem:', err);
         channel.nack(msg, false, true);
       }
     }
