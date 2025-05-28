@@ -1,3 +1,7 @@
 /.idea
 /node_modules
 code/mobile/gastromatch_mobile/devtools_options.yaml
+
+# Environment files
+code/back/.env
+code/new_frontend/.env
