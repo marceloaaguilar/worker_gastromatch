@@ -212,7 +212,7 @@ class _HomeClientState extends State<HomeClient> {
             ),
             ListTile(
               leading: Icon(Icons.calendar_today),
-              title: Text('Reservas Futuras'),
+              title: Text('Minhas Reservas'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -224,7 +224,7 @@ class _HomeClientState extends State<HomeClient> {
             ),
             ListTile(
               leading: Icon(Icons.archive),
-              title: Text('Reservas Passadas'),
+              title: Text('Histórico de Reservas'),
               onTap: () {
                 Navigator.push(
                   context,

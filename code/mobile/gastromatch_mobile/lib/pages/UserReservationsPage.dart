@@ -37,7 +37,7 @@ class _UserReservationsPageState extends State<UserReservationsPage> {
 
     try {
       final response = await http.get(
-        Uri.parse('http://10.0.2.2:8080/api/reservations/user/upcoming/$userId'),
+        Uri.parse('http://10.0.2.2:8080/api/reservations/user/$userId'),
         headers: {
           'Authorization': 'Bearer $token',
           'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ class _UserReservationsPageState extends State<UserReservationsPage> {
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         setState(() {
-          reservations = data['reservations']['rows'];
+          reservations = data['reservations']?['rows'] ?? [];
           isLoading = false;
         });
       } else {
