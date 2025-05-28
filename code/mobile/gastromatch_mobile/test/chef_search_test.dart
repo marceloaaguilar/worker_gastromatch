@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gastromatch_mobile/pages/ChefSearch.dart';
-import 'package:gastromatch_mobile/pages/ChefDetailPage.dart';
 
 void main() {
   // Lista fictícia de chefs
