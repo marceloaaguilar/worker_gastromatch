@@ -25,18 +25,22 @@ class _EditReservationPageState extends State<EditReservationPage> {
   @override
   void initState() {
     super.initState();
-    _descriptionController =
-        TextEditingController(text: widget.reservation['description']);
-    _locationController =
-        TextEditingController(text: widget.reservation['location']);
-    _guestsController =
-        TextEditingController(text: widget.reservation['guests'].toString());
+    _descriptionController = TextEditingController(
+      text: widget.reservation['description'],
+    );
+    _locationController = TextEditingController(
+      text: widget.reservation['location'],
+    );
+    _guestsController = TextEditingController(
+      text: widget.reservation['guests'].toString(),
+    );
 
     // Inicializa data e hora da reserva
     selectedDate = DateTime.tryParse(widget.reservation['date']);
-    selectedTime = selectedDate != null
-        ? TimeOfDay.fromDateTime(selectedDate!)
-        : TimeOfDay.now();
+    selectedTime =
+        selectedDate != null
+            ? TimeOfDay.fromDateTime(selectedDate!)
+            : TimeOfDay.now();
   }
 
   Future<void> _selectDate() async {
@@ -58,7 +62,8 @@ class _EditReservationPageState extends State<EditReservationPage> {
   }
 
   String _formattedDateTime() {
-    if (selectedDate == null || selectedTime == null) return 'Selecione data e hora';
+    if (selectedDate == null || selectedTime == null)
+      return 'Selecione data e hora';
     final dt = DateTime(
       selectedDate!.year,
       selectedDate!.month,
@@ -96,7 +101,9 @@ class _EditReservationPageState extends State<EditReservationPage> {
     };
 
     final response = await http.patch(
-      Uri.parse('http://10.0.2.2:8080/api/reservations/${widget.reservation['id']}'),
+      Uri.parse(
+        'http://10.0.2.2:8080/api/reservations/${widget.reservation['id']}',
+      ),
       headers: {
         'Authorization': 'Bearer $token',
         'Content-Type': 'application/json',
@@ -107,16 +114,19 @@ class _EditReservationPageState extends State<EditReservationPage> {
     if (response.statusCode == 200) {
       Navigator.pop(context, true); // retorna true para atualizar a lista
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Erro ao atualizar reserva')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Erro ao atualizar reserva')));
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Editar Reserva"), backgroundColor: Colors.orange),
+      appBar: AppBar(
+        title: Text("Editar Reserva"),
+        backgroundColor: Colors.orange,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: SingleChildScrollView(
@@ -145,23 +155,19 @@ class _EditReservationPageState extends State<EditReservationPage> {
               ),
               SizedBox(height: 8),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(_formattedDateTime()),
-                  Row(
-                    children: [
-                      TextButton(
-                        onPressed: _selectDate,
-                        child: Text('Selecionar data'),
-                      ),
-                      TextButton(
-                        onPressed: _selectTime,
-                        child: Text('Selecionar hora'),
-                      ),
-                    ],
+                  Expanded(child: Text(_formattedDateTime())),
+                  TextButton(
+                    onPressed: _selectDate,
+                    child: Text('Selecionar data'),
+                  ),
+                  TextButton(
+                    onPressed: _selectTime,
+                    child: Text('Selecionar hora'),
                   ),
                 ],
               ),
+
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: updateReservation,
