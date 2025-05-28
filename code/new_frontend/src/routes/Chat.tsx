@@ -4,6 +4,7 @@ import Header from "../components/Header/Header";
 import { useAuth } from "../context/AuthProvider";
 import { Chef, MessageChat, UserChat } from "../lib/interfaces";
 import  useWebSocket, { ReadyState }  from 'react-use-websocket';
+import { getServerUrl } from '../utils/env';
 
 export default function Chat() {
     const [selectedUser, setSelectedUser] = useState<UserChat>();
@@ -81,7 +82,7 @@ export default function Chat() {
     }
 
     async function getUsersWhoSentMessage() {
-        const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/messages/users_messages?userId=${user?.id}`, {credentials: 'include'});
+        const response = await fetch(`${getServerUrl()}/api/messages/users_messages?userId=${user?.id}`, {credentials: 'include'});
         const result = await response.json();
 
         if (result) {
@@ -92,7 +93,7 @@ export default function Chat() {
     async function getHistoricMessages() {
 
         if (!user?.id || !selectedUser?.id) return;
-        const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/messages/history?userA=${user?.id}&userB=${selectedUser?.id}`, {credentials: 'include'});
+        const response = await fetch(`${getServerUrl()}/api/messages/history?userA=${user?.id}&userB=${selectedUser?.id}`, {credentials: 'include'});
         const result = await response.json();
 
         setSelectedMessages(result.map((message:any) => { return {from: message.from_user, to: message.to_user, text: message.message}}));
@@ -187,7 +188,7 @@ export default function Chat() {
 }
 
 async function getChefList() {
-    const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/chefs?limit=4`, {credentials: 'include'});
+    const response = await fetch(`${getServerUrl()}/api/chefs?limit=4`, {credentials: 'include'});
     const resultChefs = await response.json();
     
     if (resultChefs && resultChefs.data && resultChefs.data.chefs) {

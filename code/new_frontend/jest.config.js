@@ -5,6 +5,8 @@ module.exports = {
   moduleNameMapper: {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/__mocks__/fileMock.js',
+    '^@/utils/env$': '<rootDir>/src/utils/env.node.ts',
+    '^../utils/env$': '<rootDir>/src/utils/env.node.ts',
   },
   transform: {
     '^.+\\.(ts|tsx)$': 'babel-jest',
@@ -20,4 +22,6 @@ module.exports = {
     },
   },
   moduleDirectories: ['node_modules', 'src'],
+  injectGlobals: true,
+  setupFiles: ['<rootDir>/src/setupEnv.js'],
 }; 

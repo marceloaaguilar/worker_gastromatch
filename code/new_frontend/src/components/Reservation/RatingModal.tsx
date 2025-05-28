@@ -6,6 +6,7 @@ import { useState } from "react"
 import { X } from "lucide-react"
 
 import StarRating from "./star-rating"
+import { getServerUrl } from '../../utils/env'
 
 interface RatingModalProps {
   isOpen: boolean
@@ -39,7 +40,7 @@ export default function RatingModal({ isOpen, onClose, chefName, chefImage, rese
             body: JSON.stringify({rating: rating, comment: comment})
         }
 
-        const result = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/reservations/rating/${reservationId}`, requestOptions);
+        const result = await fetch(`${getServerUrl()}/api/reservations/rating/${reservationId}`, requestOptions);
         if (result.ok) setShowModalSuccess();
 
       onClose()

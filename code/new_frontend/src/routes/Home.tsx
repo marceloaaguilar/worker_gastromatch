@@ -7,6 +7,7 @@ import ModalReservation from "../components/ModalReservation";
 import Header from "../components/Header/Header";
 import SuccessAlert from "../components/ui/alerts/SuccessAlert";
 import { Link } from "react-router-dom";
+import { getServerUrl } from '../utils/env';
 
 const Home = () => {
     
@@ -24,7 +25,7 @@ const Home = () => {
     useEffect(() => {
 
         async function fetChefs() {
-            const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/chefs?limit=4`, {credentials: 'include'});
+            const response = await fetch(`${getServerUrl()}/api/chefs?limit=4`, {credentials: 'include'});
             const resultChefs = await response.json();
             
             if (resultChefs && resultChefs.data && resultChefs.data.chefs) {

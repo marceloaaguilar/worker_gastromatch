@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Star, ChevronDown, Filter, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Chef } from "../lib/interfaces";
+import { getServerUrl } from '../utils/env';
 
 export default function ChefsPage() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -50,7 +51,7 @@ export default function ChefsPage() {
   async function getChefList() {
     const skip = (currentPage ? currentPage - 1 : 0);
 
-    const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/chefs?limit=10?skip=${skip * 5}&limit=5`, {credentials: 'include'});
+    const response = await fetch(`${getServerUrl()}/api/chefs?limit=10?skip=${skip * 5}&limit=5`, {credentials: 'include'});
     const resultChefs = await response.json();
       
     if (resultChefs && resultChefs.data && resultChefs.data.chefs) {
@@ -62,7 +63,7 @@ export default function ChefsPage() {
   async function getChefBySpeciality() {
 
     const skip = currentPage ? currentPage - 1 : 0;
-    const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/chefs/search?limit=10&skip=${skip * 5}`, {
+    const response = await fetch(`${getServerUrl()}/api/chefs/search?limit=10&skip=${skip * 5}`, {
     method: 'POST',
     credentials: 'include',
     headers: {
