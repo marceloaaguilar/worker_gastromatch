@@ -94,13 +94,13 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 6. [Solução](#solucao "Projeto da Solução") <br />
 
 7. [Avaliação](#avaliacao "Avaliação da Arquitetura") <br />
-	7.1. Cenários <br />
-	7.2. Avaliação <br />
+	8. Cenários <br />
+	9. Avaliação <br />
 
-8. [Referências](#referencias "REFERÊNCIAS")<br />
+10. [Referências](#referencias "REFERÊNCIAS")<br />
 
-9. [Apêndices](#apendices "APÊNDICES")<br />
-	9.1 Ferramentas <br />
+11. [Apêndices](#apendices "APÊNDICES")<br />
+	11.1 Ferramentas <br />
 
 
 <a name="apresentacao"></a>
@@ -432,19 +432,101 @@ A arquitetura proposta para o GastroMatch está bem alinhada com as restrições
 
 No entanto, a complexidade inerente a essa arquitetura exige atenção especial a aspectos de monitoramento, testes e segurança para mitigar riscos de falhas e garantir uma operação estável e eficiente. Com as recomendações propostas, o sistema poderá atender bem aos requisitos funcionais e não funcionais, suportando crescimento e manutenção ao longo do tempo.
 
-## 7.1. Cenários
+# 8. Cenários
 
-_Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos não funcionais sendo satisfeitos. Os requisitos a seguir são apenas exemplos de possíveis requisitos, devendo ser revistos, adequados a cada projeto e complementados para terem uma especificação completa e autoexplicativa._
+## Cenários de Testes para Requisitos Não Funcionais no GastroMatch
+### Cenário 1: Teste de Confiabilidade e Robustez da Autenticação (Requisito de Segurança)
 
-**Cenário 1 - Acessibilidade:** Suspendisse consequat consectetur velit. Sed sem risus, dictum dictum facilisis vitae, commodo quis leo. Vivamus nulla sem, cursus a mollis quis, interdum at nulla. Nullam dictum congue mauris. Praesent nec nisi hendrerit, ullamcorper tortor non, rutrum sem. In non lectus tortor. Nulla vel tincidunt eros.
+**Nível**: Testes End-to-End Automatizados (Login) e Testes de Integração
+**Objetivo**: Garantir que o fluxo de autenticação funcione corretamente, mesmo diante de falhas temporárias na rede ou no serviço de autenticação (Supabase).
+**Descrição**:
 
-**Cenário 2 - Interoperabilidade:** Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce ut accumsan erat. Pellentesque in enim tempus, iaculis sem in, semper arcu.
+- Simular tentativas de login com dados válidos e inválidos.
+- Induzir falha temporária no serviço Supabase durante o processo de login e observar o comportamento do sistema.
+- Verificar se mensagens de erro apropriadas são exibidas e se o sistema mantém a integridade dos dados.
+  
+**Critério de Sucesso**:
 
-**Cenário 3 - Manutenibilidade:** Phasellus magna tellus, consectetur quis scelerisque eget, ultricies eu ligula. Sed rhoncus fermentum nisi, a ullamcorper leo fringilla id. Nulla lacinia sem vel magna ornare, non tincidunt ipsum rhoncus. Nam euismod semper ante id tristique. Mauris vel elit augue.
+- Usuários autenticam-se com sucesso quando credenciais são válidas.
+- Mensagens de erro claras são apresentadas para falhas de autenticação.
+- O sistema recupera-se automaticamente após falha temporária, sem perda de sessão ou dados.
+  
+**Requisito Atendido**: Segurança, confiabilidade e usabilidade.
 
-**Cenário 4 - Segurança:** Suspendisse consectetur porta tortor non convallis. Sed lobortis erat sed dignissim dignissim. Nunc eleifend elit et aliquet imperdiet. Ut eu quam at lacus tincidunt fringilla eget maximus metus. Praesent finibus, sapien eget molestie porta, neque turpis congue risus, vel porttitor sapien tortor ac nulla. Aliquam erat volutpat.
+### Cenário 2: Teste de Escalabilidade e Desempenho sob Carga (Requisito de Escalabilidade)
+**Nível**: Testes Manuais e Testes de Integração (com suporte de ferramentas de carga)
+**Objetivo**: Validar que o sistema mantém desempenho aceitável quando submetido a alta carga de requisições simultâneas, especialmente no API Gateway e microsserviços.
+**Descrição**:
 
-## 7.2. Avaliação
+- Simular 5.000 a 10.000 requisições simultâneas para endpoints críticos (ex: agendamento, consulta de usuários).
+- Monitorar o tempo de resposta, uso de CPU/memória, e taxa de erros.
+- Observar comportamento do RabbitMQ na fila de mensagens.
+  
+**Critério de Sucesso**:
+
+- Tempo médio de resposta inferior a 300 ms.
+- Taxa de erros abaixo de 2%.
+- Nenhuma perda de mensagens na fila de mensageria.
+  
+**Requisito Atendido**: Escalabilidade, desempenho e confiabilidade.
+
+### Cenário 3: Teste de Manutenibilidade e Qualidade do Código (Requisito de Manutenibilidade)
+
+**Nível**: Testes Unitários Automatizados (Caixa Branca e Caixa Preta) e Revisão Manual
+**Objetivo**: Assegurar que o código é legível, bem estruturado, e que a cobertura dos testes automatizados é adequada para facilitar manutenção futura.
+**Descrição**:
+
+- Executar testes unitários automatizados para validar lógica interna e entradas/saídas das funções.
+- Utilizar mocks e stubs para isolar unidades e garantir testes focados.
+- Realizar revisão manual do código para identificar violações de boas práticas.
+- Medir cobertura de testes automatizados.
+  
+**Critério de Sucesso**:
+
+- Cobertura de testes superior a 80%.
+- Nenhuma violação crítica de padrões de codificação.
+- Testes unitários passam sem falhas.
+  
+**Requisito Atendido**: Manutenibilidade, qualidade do código e confiabilidade.
+
+### Cenário 4: Teste de Resiliência da Comunicação Assíncrona (Requisito de Confiabilidade)
+**Nível**: Testes de Integração e Manuais
+**Objetivo**: Validar que a comunicação entre microsserviços via RabbitMQ é confiável, mesmo em situações de falha temporária da rede ou do broker.
+**Descrição**:
+
+- Simular queda temporária do RabbitMQ durante o envio de mensagens entre serviços (ex: agendamento e pagamento)
+- Verificar se as mensagens são armazenadas e entregues após a restauração do serviço.
+- Avaliar o comportamento do chat em situações semelhantes.
+
+**Critério de Sucesso**:
+
+- Nenhuma mensagem é perdida.
+- Mensagens são entregues na ordem correta após recuperação.
+- Sistema permanece funcional para outras operações.
+  
+**Requisito Atendido**: Confiabilidade e tolerância a falhas.
+
+### Cenário 5: Teste de Disponibilidade e Monitoramento (Requisito de Disponibilidade)
+**Nível**: Testes Manuais e Automatizados de Health Check
+**Objetivo**: Garantir que o sistema detecta falhas em microsserviços e atua para manter a disponibilidade geral.
+**Descrição**:
+
+- Monitorar endpoints de health check de todos os microsserviços.
+- Simular falha em um serviço (ex: serviço de agendamento).
+- Verificar se o API Gateway redireciona requisições para instâncias saudáveis ou apresenta mensagens adequadas ao usuário.
+
+**Critério de Sucesso**:
+
+- Falhas são detectadas em até 30 segundos.
+- Tráfego é redirecionado ou degradado graciosamente.
+- Usuário final não percebe interrupção significativa.
+
+**Requisito Atendido**: Alta disponibilidade e experiência do usuário.
+
+### Considerações Finais
+Esses cenários refletem a aplicação prática dos níveis de teste definidos no plano do GastroMatch, combinando testes automatizados e manuais para garantir a qualidade em múltiplos aspectos não funcionais, como segurança, escalabilidade, confiabilidade, manutenibilidade e disponibilidade.
+
+## 9. Avaliação
 
 _Apresente as medidas registradas na coleta de dados. O que não for possível quantificar apresente uma justificativa baseada em evidências qualitativas que suportam o atendimento do requisito não-funcional. Apresente uma avaliação geral da arquitetura indicando os pontos fortes e as limitações da arquitetura proposta._
 
@@ -470,7 +552,7 @@ Evidências dos testes realizados
 _Apresente imagens, descreva os testes de tal forma que se comprove a realização da avaliação._
 
 <a name="referencias"></a>
-# 8. REFERÊNCIAS
+# 10. REFERÊNCIAS
 
 _Como um projeto da arquitetura de uma aplicação não requer revisão bibliográfica, a inclusão das referências não é obrigatória. No entanto, caso você deseje incluir referências relacionadas às tecnologias, padrões, ou metodologias que serão usadas no seu trabalho, relacione-as conforme a ABNT._
 
@@ -483,11 +565,11 @@ http://www.pucminas.br/imagedb/documento/DOC\_DSC\_NOME\_ARQUI20160217102425.pdf
 
 
 <a name="apendices"></a>
-# 9. APÊNDICES
+# 11. APÊNDICES
 
 _Inclua o URL do repositório (Github, Bitbucket, etc) onde você armazenou o código da sua prova de conceito/protótipo arquitetural da aplicação como anexos. A inclusão da URL desse repositório de código servirá como base para garantir a autenticidade dos trabalhos._
 
-## 9.1 Ferramentas
+## 11.1 Ferramentas
 
 | Ambiente  | Plataforma              |Link de Acesso |
 |-----------|-------------------------|---------------|
