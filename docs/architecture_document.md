@@ -40,9 +40,10 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 ## Histórico de Revisões
 
-| **Data**         | **Autor**                             | **Descrição**                                                                                                                               | **Versão** |
-|------------------|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------|
-| **[29/03/2025]** | Marcelo Aguilar Araújo D'Almeida | Corrigindo diagrama de arquitetura.                                                                                       | [21]       |
+| **Data**         | **Autor**                            | **Descrição**                                                                                                                               | **Versão** |
+|------------------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| **[01/06/2025]** | JUlia Gabriela de Resende		  | Versão inicial da avaliação da arquitetura baseado em ATAM.                                                                                 | [22]       |
+| **[29/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Corrigindo diagrama de arquitetura.                                                                                       			| [21]       |
 | **[27/03/2025]** | Philippe Roberto Dutra Chaves Vieira | Correção de documentação e reorganização de arquivos.                                                                                       | [20]       |
 | **[26/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Incluindo novos requisitos não funcionais                                                                                                   | [19]       |
 | **[25/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Corrigindo RNFs e incluindo versões de navegadores e S.O                                                                                    | [18]       |
@@ -377,7 +378,59 @@ _Apresente as telas do sistema construído com uma descrição sucinta de cada u
 <a name="avaliacao"></a>
 # 7. Avaliação da Arquitetura
 
-_Esta seção descreve a avaliação da arquitetura apresentada, baseada no método ATAM._
+## Avaliação da Arquitetura do Projeto GastroMatch pelo Método ATAM
+
+### 7.1. **Objetivos e Restrições da Arquitetura**
+
+- Arquitetura baseada em microsserviços.
+- API Gateway centralizando o tráfego de requisições.
+- Comunicação assíncrona entre serviços via RabbitMQ.
+- Uso do Supabase para gerenciamento de dados e autenticação.
+- Integração com gateway de pagamento externo.
+- Escalabilidade e modularidade para manutenção e expansão.
+- Código-fonte legível e boas práticas de codificação.
+- Chat com mensageria assíncrona para entrega confiável.
+- Dados do usuário armazenados em banco relacional (PostgreSQL).
+- Uso de tecnologias específicas: React.js (front-end SPA), Node.js (back-end microsserviços), Flutter (mobile híbrido), Docker (deploy e orquestração), Jest e Flutter Test (testes automatizados).
+
+### 7.2. **Atributos de Qualidade Avaliados**
+
+| Atributo             | Avaliação                                                                                      | Riscos / Considerações                                                                                      |
+|----------------------|------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| **Escalabilidade**    | Arquitetura de microsserviços com comunicação assíncrona e orquestração via Docker favorece escalabilidade horizontal. | Risco de gargalos no API Gateway e no RabbitMQ se não dimensionados corretamente.                           |
+| **Modularidade**     | Serviços independentes facilitam manutenção e evolução isolada.                                 | Dependência entre serviços (ex: agendamento e pagamento) pode gerar acoplamento indireto.                   |
+| **Desempenho**       | Comunicação assíncrona reduz bloqueios, melhora throughput.                                    | Latência adicional devido à mensageria e orquestração; necessidade de monitoramento para evitar atrasos.    |
+| **Confiabilidade**   | Uso de RabbitMQ para mensageria assíncrona e chat garante entrega confiável, mesmo com falhas temporárias. | Possível perda de mensagens se configuração do RabbitMQ não for adequada; necessidade de mecanismos de retry. |
+| **Segurança**        | Supabase para autenticação e gerenciamento de dados oferece segurança integrada.               | Dependência de serviços externos (Supabase, gateway de pagamento) pode introduzir pontos de falha e vulnerabilidades. |
+| **Manutenibilidade** | Código legível, boas práticas, testes automatizados e modularidade facilitam manutenção.       | Complexidade da arquitetura pode dificultar onboarding se documentação e padrões não forem rigorosos.       |
+| **Disponibilidade**  | Microsserviços independentes e mensageria assíncrona aumentam disponibilidade.                  | Ponto único de falha no API Gateway; necessidade de alta disponibilidade e redundância.                     |
+| **Testabilidade**    | Testes automatizados backend (Jest) e mobile (Flutter Test) suportam qualidade.                 | Testes de integração entre microsserviços e mensageria podem ser complexos.                                 |
+
+### 7.3. **Sensibilidades e Trade-offs**
+
+| Sensibilidade / Trade-off                    | Impacto                                                                                   | Mitigação                                                                                   |
+|----------------------------------------------|-------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| API Gateway como ponto central                | Pode se tornar gargalo ou ponto único de falha.                                          | Implementar balanceamento de carga, failover e monitoramento constante.                     |
+| Comunicação assíncrona (RabbitMQ)             | Melhora escalabilidade, mas aumenta complexidade e latência.                             | Monitorar filas, configurar políticas de retry, e garantir idempotência nos serviços.      |
+| Uso de serviços externos (Supabase, gateway) | Facilita funcionalidades, mas depende da disponibilidade e segurança desses serviços.   | Planejar fallback, monitorar SLAs e implementar autenticação segura e criptografia.         |
+| Microsserviços isolados                       | Facilita manutenção, mas exige boa orquestração e monitoramento para evitar inconsistências. | Utilizar ferramentas de observabilidade, logging centralizado e testes de integração.       |
+| Banco relacional para dados do usuário       | Consistência forte, mas pode impactar escalabilidade em alta demanda.                    | Otimizar consultas, usar cache e particionamento se necessário.                             |
+
+### 7.4. **Recomendações**
+
+- **Monitoramento e Observabilidade:** Implementar ferramentas de monitoramento (ex: Prometheus, Grafana) para API Gateway, RabbitMQ e microsserviços para detectar gargalos e falhas rapidamente.
+- **Alta Disponibilidade:** Garantir redundância no API Gateway e RabbitMQ para evitar pontos únicos de falha.
+- **Testes de Integração:** Desenvolver testes que validem o fluxo completo entre microsserviços e mensageria para garantir robustez.
+- **Documentação e Padrões:** Manter documentação atualizada e padrões de codificação claros para facilitar manutenção e onboarding.
+- **Segurança:** Revisar políticas de autenticação, autorização e criptografia, especialmente na integração com serviços externos.
+- **Escalabilidade Proativa:** Planejar estratégias de escalonamento automático (auto-scaling) para microsserviços e infraestrutura de mensageria.
+
+
+### 7.5. **Conclusão**
+
+A arquitetura proposta para o GastroMatch está bem alinhada com as restrições e objetivos do projeto, especialmente no que se refere à escalabilidade, modularidade e confiabilidade. O uso de microsserviços, comunicação assíncrona via RabbitMQ e API Gateway centralizado são escolhas sólidas para sistemas modernos e distribuídos.
+
+No entanto, a complexidade inerente a essa arquitetura exige atenção especial a aspectos de monitoramento, testes e segurança para mitigar riscos de falhas e garantir uma operação estável e eficiente. Com as recomendações propostas, o sistema poderá atender bem aos requisitos funcionais e não funcionais, suportando crescimento e manutenção ao longo do tempo.
 
 ## 7.1. Cenários
 
