@@ -42,6 +42,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 | **Data**         | **Autor**                            | **Descrição**                                                                                                                               | **Versão** |
 |------------------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| **[01/06/2025]** | JUlia Gabriela de Resende		  | Cenários de testes                                                                                                                          | [23]       |
 | **[01/06/2025]** | JUlia Gabriela de Resende		  | Versão inicial da avaliação da arquitetura baseado em ATAM.                                                                                 | [22]       |
 | **[29/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Corrigindo diagrama de arquitetura.                                                                                       			| [21]       |
 | **[27/03/2025]** | Philippe Roberto Dutra Chaves Vieira | Correção de documentação e reorganização de arquivos.                                                                                       | [20]       |
@@ -438,7 +439,9 @@ No entanto, a complexidade inerente a essa arquitetura exige atenção especial 
 ### Cenário 1: Teste de Confiabilidade e Robustez da Autenticação (Requisito de Segurança)
 
 **Nível**: Testes End-to-End Automatizados (Login) e Testes de Integração
+
 **Objetivo**: Garantir que o fluxo de autenticação funcione corretamente, mesmo diante de falhas temporárias na rede ou no serviço de autenticação (Supabase).
+
 **Descrição**:
 
 - Simular tentativas de login com dados válidos e inválidos.
@@ -455,7 +458,9 @@ No entanto, a complexidade inerente a essa arquitetura exige atenção especial 
 
 ### Cenário 2: Teste de Escalabilidade e Desempenho sob Carga (Requisito de Escalabilidade)
 **Nível**: Testes Manuais e Testes de Integração (com suporte de ferramentas de carga)
+
 **Objetivo**: Validar que o sistema mantém desempenho aceitável quando submetido a alta carga de requisições simultâneas, especialmente no API Gateway e microsserviços.
+
 **Descrição**:
 
 - Simular 5.000 a 10.000 requisições simultâneas para endpoints críticos (ex: agendamento, consulta de usuários).
@@ -471,9 +476,10 @@ No entanto, a complexidade inerente a essa arquitetura exige atenção especial 
 **Requisito Atendido**: Escalabilidade, desempenho e confiabilidade.
 
 ### Cenário 3: Teste de Manutenibilidade e Qualidade do Código (Requisito de Manutenibilidade)
-
 **Nível**: Testes Unitários Automatizados (Caixa Branca e Caixa Preta) e Revisão Manual
+
 **Objetivo**: Assegurar que o código é legível, bem estruturado, e que a cobertura dos testes automatizados é adequada para facilitar manutenção futura.
+
 **Descrição**:
 
 - Executar testes unitários automatizados para validar lógica interna e entradas/saídas das funções.
@@ -491,7 +497,9 @@ No entanto, a complexidade inerente a essa arquitetura exige atenção especial 
 
 ### Cenário 4: Teste de Resiliência da Comunicação Assíncrona (Requisito de Confiabilidade)
 **Nível**: Testes de Integração e Manuais
+
 **Objetivo**: Validar que a comunicação entre microsserviços via RabbitMQ é confiável, mesmo em situações de falha temporária da rede ou do broker.
+
 **Descrição**:
 
 - Simular queda temporária do RabbitMQ durante o envio de mensagens entre serviços (ex: agendamento e pagamento)
@@ -508,7 +516,9 @@ No entanto, a complexidade inerente a essa arquitetura exige atenção especial 
 
 ### Cenário 5: Teste de Disponibilidade e Monitoramento (Requisito de Disponibilidade)
 **Nível**: Testes Manuais e Automatizados de Health Check
+
 **Objetivo**: Garantir que o sistema detecta falhas em microsserviços e atua para manter a disponibilidade geral.
+
 **Descrição**:
 
 - Monitorar endpoints de health check de todos os microsserviços.
