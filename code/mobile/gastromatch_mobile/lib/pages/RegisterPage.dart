@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../input.dart';
 import 'LoginPage.dart';
 import 'TermsPage.dart';
+import 'RegisterChefPage.dart';
 
 enum RoleTipe { cliente, chef }
 
@@ -105,10 +106,19 @@ class _RegisterPageState extends State<RegisterPage> {
 
           Future.delayed(Duration(seconds: 2), () {
             if (mounted) {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
-              );
+              if (roleChef) {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RegisterChefPage(userId: userData['id'].toString())
+                  )
+                );
+              } else {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              }
             }
           });
         } else {
