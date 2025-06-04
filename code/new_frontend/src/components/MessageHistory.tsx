@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { getMessageHistory, MessageResponse } from "./messageApi"
+import { getMessageHistory, MessageResponse } from "../components/MessageApi";
 
 export default function MessageHistory() {
   const [messages, setMessages] = useState<MessageResponse[]>([])

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { sendMessage } from "./messageApi"
+import { getMessageHistory, MessageResponse, sendMessage } from "../components/MessageApi";  
 
 interface Props {
   recipientId: string
