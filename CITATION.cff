@@ -1,31 +1,39 @@
 cff-version: 1.0.1
-message: Please cite this software using these metadata.
-title: 
+message: Plataforma de Reserva de Chefs
+title: Gastro Match 
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Souza
+    given-names: Guilherme Augusto Jardim De Souza
+  - family-names: Costa
+    given-names: Isabelle Cristine Lucas
+  - family-names: De Resende
+    given-names: Júlia Gabriela
+  - family-names: D'Almeida
+    given-names: Marcelo Aguilar Araújo D'Almeida
+  - family-names: Toledo
+    given-names: Pedro Talma
+  - family-names: Vieira
+    given-names: Philippe Roberto Dutra Chaves
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Tavares
+    given-names: Cleiton Silva
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Neto
+    given-names: Cristiano de Macêdo
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: De Paula
+    given-names: Hugo Bastos
 keywords:
-  - 
-  - 
-repository-code: 
+  - GastroMatch
+  - Gastronomia
+  - Chefs
+  - Culinária
+  - Reserva
+  - Chefe de Cozinha
+repository-code: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2025-1-ti5-0492100-gastromatch
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2022-07-14
+date-released: 2025-06-04
