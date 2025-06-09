@@ -35,7 +35,7 @@ export default function ModalReservation({
         description: "",
         phone: "",
         user: userData.id || 0,
-        chefData: selectedChef,
+        chef: selectedChef.id,
         date: new Date(),
         location: "",
         guests: 0,

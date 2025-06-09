@@ -47,7 +47,6 @@ exports.signup = catchAsync(async (req, res, next) => {
       }
     })
   } catch (error) {
-      console.log(error)
       return res.status(400).json({
         mensagem: "Ocorreu um erro ao realizar o cadastro",
         erro: error && error.errors? error.errors.map((e) => e.message) : error
@@ -111,13 +110,13 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
 
   try {
-    decoded = await promisify(jwt.verify)(authToken, process.env.JWT_SECRET);
+    decoded = jwt.verify(authToken, process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
   } catch (error) {
     return res.status(401).json({
       error: true,
       message: "Você precisa se autenticar primeiro!",
     });
   }
-
-  next();
 });
