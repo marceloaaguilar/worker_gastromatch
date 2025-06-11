@@ -16,13 +16,16 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-primary font-medium">Início</Link>
-            <Link to="/agendamentos" className="text-gray-700 hover:text-primary font-medium">Agendamentos</Link>
+            
+            {user?.type === "PROFESSIONAL" ?  
+                <Link to="/chefagendamentos" className="text-gray-700 hover:text-primary font-medium">Meus Agendamentos</Link> :
+                <Link to="/agendamentos" className="text-gray-700 hover:text-primary font-medium">Agendamentos</Link>
+            } 
+
             <Link to="/chefs" className="text-gray-700 hover:text-primary font-medium">Chefs</Link>
             <Link to="#" className="text-gray-700 hover:text-primary font-medium">Contato</Link>
             <Link to="/sobre" className="text-gray-700 hover:text-primary font-medium">Sobre</Link>
             
-            {user?.type === "PROFESSIONAL" && 
-                <Link to="/chefagendamentos" className="text-gray-700 hover:text-primary font-medium">Agendamentos do Chef</Link> }
             
         </nav>
 
