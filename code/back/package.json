@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "dev": "nodemon index.js",
     "test:coverage": "jest --coverage --coverageReporters='text-summary' --coverageReporters='html'"
   },
   "author": "",
@@ -24,7 +25,7 @@
     "multer-storage-cloudinary": "^4.0.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.14.0",
-    "nodemon": "^2.0.20",
+    "nodemon": "^2.0.22",
     "pg": "^8.14.1",
     "postgres": "^3.4.5",
     "sequelize": "^6.37.7",

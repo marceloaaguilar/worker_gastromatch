@@ -2,7 +2,6 @@ const express = require('express');
 const chefController = require('../controllers/chefController');
 const authController = require('./../controllers/authController');
 
-
 const router = express.Router();
 
 router
@@ -19,7 +18,5 @@ router
   .get(chefController.getChef)
   .patch(chefController.updateChef) 
   .delete(chefController.deleteChef);
-
-
 
 module.exports = router; 

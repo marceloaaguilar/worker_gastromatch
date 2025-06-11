@@ -231,3 +231,23 @@ exports.setReservationRating = catchAsync(async (req, res, next) => {
     }
   });
 });
+
+exports.getReservationsByChef = catchAsync(async (req, res, next) => {
+
+  const skip = parseInt(req.query.skip) || 0;
+  const limit = parseInt(req.query.limit) || 10;
+
+  const reservations = await Reservation.findAndCountAll({where: {chef: req.params.id}, limit: limit, offset: skip, order: [['date', 'DESC']],});
+
+  if (!reservations) {
+    return res.status(404).json({
+      status: 'fail',
+      message: 'Reservas não encontradas'
+    });
+  }
+  res.status(200).json({
+    status: 'success',
+    reservations
+  });
+
+});

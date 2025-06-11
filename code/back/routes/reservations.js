@@ -18,6 +18,8 @@ router
 router.get('/user/past/:id', reservationController.getPastReservationsByUser);
 router.get('/user/upcoming/:id', reservationController.getUpcomingReservationsByUser);
 
+router.get('/chef/:id', reservationController.getReservationsByChef)
+
 router
   .route('/user/:id')
   .get(authController.protect, reservationController.getReservationByUser)
