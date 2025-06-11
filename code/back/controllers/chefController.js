@@ -144,12 +144,11 @@ exports.getChefByUserId = catchAsync(async(req,res) => {
       message: 'Chef não encontrado'
     });
   }
-  
+
   res.status(200).json({
     status: 'success',
-    data: {
-      chef
-    }
+    chef
+    
   });
 
 })
