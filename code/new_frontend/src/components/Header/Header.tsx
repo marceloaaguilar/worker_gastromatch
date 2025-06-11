@@ -20,7 +20,10 @@ export default function Header() {
             <Link to="/chefs" className="text-gray-700 hover:text-primary font-medium">Chefs</Link>
             <Link to="#" className="text-gray-700 hover:text-primary font-medium">Contato</Link>
             <Link to="/sobre" className="text-gray-700 hover:text-primary font-medium">Sobre</Link>
-            <Link to="/chefagendamentos" className="text-gray-700 hover:text-primary font-medium">Agendamentos do Chef</Link>
+            
+            {user?.type === "PROFESSIONAL" && 
+                <Link to="/chefagendamentos" className="text-gray-700 hover:text-primary font-medium">Agendamentos do Chef</Link> }
+            
         </nav>
 
         {!user ? (
@@ -39,7 +42,6 @@ export default function Header() {
                     <span className="text-gray-700 font-medium">{user?.nome}</span>
                 </Link>
 
-                {/* Botão de chat */}
                 <Link
                     to="/chat"
                     className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition"

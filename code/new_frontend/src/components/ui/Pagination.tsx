@@ -2,9 +2,10 @@ import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { PaginationType } from "@/src/lib/interfaces";
 
-const Pagination = ({ currentPage, totalPages, onPageChange }:PaginationType) => {
+const Pagination = ({ currentPage, totalPages, limit, onPageChange }:PaginationType) => {
   const pages = [];
-  for (let i = 1; i <= Math.round(totalPages/5); i++) {
+  const limitPages = limit ? limit : 5;
+  for (let i = 1; i <= Math.ceil(totalPages/limitPages); i++) {
     pages.push(i);
   }
 

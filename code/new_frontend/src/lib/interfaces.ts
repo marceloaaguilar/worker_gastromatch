@@ -75,6 +75,7 @@ export interface PaginationType {
   currentPage: number 
   totalPages: number
   onPageChange: (currentPage:number) => void
+  limit?: number
 }
 
 export interface UserChat {

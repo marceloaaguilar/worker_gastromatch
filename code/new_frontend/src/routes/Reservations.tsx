@@ -38,7 +38,6 @@ export default function Reservations(){
 
         const skip = (page ? page - 1 : 0) 
 
-
         const result = await fetch(`${getServerUrl()}/api/reservations/user/past/${user?.id}?skip=${skip * 5}&limit=5`, requestOptions)
         const response = await result.json();
 
