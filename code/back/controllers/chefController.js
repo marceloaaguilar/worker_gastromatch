@@ -29,6 +29,7 @@ exports.getAllChefs = catchAsync(async (req, res, next) => {
 });
 
 exports.getChef = catchAsync(async (req, res, next) => {
+
   const chef = await Chef.findByPk(req.params.id);
   if (!chef) {
     return res.status(404).json({
@@ -42,6 +43,7 @@ exports.getChef = catchAsync(async (req, res, next) => {
       chef
     }
   });
+
 });
 
 exports.createChef = catchAsync(async (req, res, next) => {
@@ -131,3 +133,23 @@ exports.searchBySpecialization = catchAsync(async (req, res, next) => {
     }
   });
 });
+
+exports.getChefByUserId = catchAsync(async(req,res) => {
+
+  const chef = await Chef.findOne({where: {user_id: req.params.id}});
+
+  if (!chef) {
+    return res.status(404).json({
+      status: 'fail',
+      message: 'Chef não encontrado'
+    });
+  }
+  
+  res.status(200).json({
+    status: 'success',
+    data: {
+      chef
+    }
+  });
+
+})

@@ -19,4 +19,8 @@ router
   .patch(chefController.updateChef) 
   .delete(chefController.deleteChef);
 
+router
+  .route('/getChefId/:id')
+  .get(chefController.getChefByUserId)
+
 module.exports = router; 
