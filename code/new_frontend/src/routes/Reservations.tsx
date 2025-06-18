@@ -7,6 +7,7 @@ import RatingModal from "../components/Reservation/RatingModal";
 import SuccessAlert from "../components/ui/alerts/SuccessAlert";
 import Pagination from "../components/ui/Pagination";
 import { getServerUrl } from '../utils/env';
+import { useNavigate } from "react-router-dom";
 
 export default function Reservations(){
 
@@ -19,6 +20,7 @@ export default function Reservations(){
     const [totalCount, setTotalCount] = useState<number>();
 
     const {user} = useAuth();
+    const navigate = useNavigate();
     
     useEffect(()=> {
         getPastReservationsFromUser();
@@ -91,10 +93,6 @@ export default function Reservations(){
         getPastReservationsFromUser(page);
         
     }
-    
-    function iniciarChatComChef(): void {
-        throw new Error("Function not implemented.");
-    }
 
     return (
         <>
@@ -158,11 +156,11 @@ export default function Reservations(){
                                                             Menu: <span className="font-medium">{booking.mealType}</span>
                                                             </p>
                                                         </div>
-
+                                                        
                                                         <button
-                                                            onClick={() => iniciarChatComChef()}
+                                                            onClick={() => navigate('/chat')}
                                                             className="mt-2 inline-flex items-center gap-2 font-bold border border-primary px-3 py-2 rounded-full text-primary hover:underline transition"
-                                                            >
+                                                        >
                                                             <MessageCircle className="w-4 h-4" />
                                                             Conversar com o Chef
                                                         </button>
