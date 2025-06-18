@@ -375,7 +375,36 @@ _Caso julgue necessário para explicar a arquitetura, apresente o diagrama de cl
 <a name="solucao"></a>
 # 6. Projeto da Solução
 
-_Apresente as telas do sistema construído com uma descrição sucinta de cada uma das interfaces._
+A seguir, são apresentadas as principais telas do sistema GastroMatch, acompanhadas de uma breve descrição de suas funcionalidades e objetivos dentro da experiência do usuário:
+
+**1. Tela de Login e Cadastro**
+Permite que usuários (clientes e chefs) realizem login ou criem uma nova conta na plataforma. A interface é simples e objetiva, solicitando informações essenciais como e-mail, senha e tipo de usuário. O fluxo de autenticação é integrado ao Supabase, garantindo segurança e praticidade.
+
+**2. Tela Inicial (Home)**
+Após o login, o usuário é direcionado à tela inicial, que apresenta um resumo das principais funcionalidades: busca de chefs, agendamento de serviços, avaliações recentes e destaques do dia. A navegação é intuitiva, com acesso rápido às áreas mais importantes do sistema.
+
+**3. Tela de Listagem de Chefs**
+Exibe uma lista de chefs disponíveis na plataforma, permitindo ao cliente filtrar por especialidade, localização, preço e avaliações. Cada chef é apresentado com foto, nome, especialidade e nota média, facilitando a comparação e escolha.
+
+**4. Tela de Perfil do Chef**
+Ao selecionar um chef, o usuário visualiza o perfil completo, incluindo biografia, especialidades, disponibilidade, avaliações de outros clientes e fotos de pratos já realizados. Também é possível iniciar um chat direto ou solicitar um agendamento.
+
+**5. Tela de Agendamento de Serviço**
+Permite ao cliente escolher data, horário e detalhes do serviço desejado, enviando uma solicitação diretamente ao chef. O sistema apresenta um calendário com as datas disponíveis e um formulário para especificar preferências ou restrições alimentares.
+
+**6. Tela de Chat**
+Disponibiliza um canal de comunicação em tempo real entre cliente e chef, possibilitando o esclarecimento de dúvidas, alinhamento de expectativas e negociação de detalhes antes da contratação.
+
+**7. Tela de Pagamento**
+Após a confirmação do serviço, o cliente é direcionado para a tela de pagamento, onde pode escolher o método de pagamento (integrado ao PagBank) e visualizar o resumo do pedido. A interface garante segurança e transparência na transação.
+
+**8. Tela de Avaliação**
+Após a realização do serviço, o cliente pode avaliar o chef, atribuindo uma nota e deixando um comentário. Essas avaliações são exibidas no perfil do chef e contribuem para a reputação na plataforma.
+
+**9. Tela de Perfil do Usuário**
+Tanto clientes quanto chefs possuem uma área de perfil, onde podem editar informações pessoais, visualizar histórico de agendamentos, avaliações recebidas e dados de pagamento.
+
+Essas interfaces foram projetadas para proporcionar uma experiência fluida, intuitiva e segura, atendendo às necessidades de ambos os públicos da plataforma (clientes e chefs) e garantindo o cumprimento dos requisitos funcionais e não funcionais definidos no projeto.
 
 <a name="avaliacao"></a>
 # 7. Avaliação da Arquitetura
