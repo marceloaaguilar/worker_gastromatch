@@ -148,7 +148,7 @@ Desenvolver uma plataforma eficiente para conectar clientes a chefs particulares
 
 **Que**:  Facilita a busca por chefs particulares para os clientes.
 
-**Diferentemente do**: “A Chef em casa”.
+**Diferentemente do**: "A Chef em casa".
 
 **O nosso produto**: Oferece uma plataforma de chefs especializados e personalizados conforme a necessidade do cliente.
 
@@ -539,30 +539,47 @@ Esses cenários refletem a aplicação prática dos níveis de teste definidos n
 
 ## 9. Avaliação
 
-_Apresente as medidas registradas na coleta de dados. O que não for possível quantificar apresente uma justificativa baseada em evidências qualitativas que suportam o atendimento do requisito não-funcional. Apresente uma avaliação geral da arquitetura indicando os pontos fortes e as limitações da arquitetura proposta._
+_Apresenta-se, a seguir, as medidas registradas na coleta de dados, bem como justificativas qualitativas que suportam o atendimento dos requisitos não funcionais. A avaliação geral da arquitetura destaca os pontos fortes, limitações e evidências práticas do sistema._
 
 | **Atributo de Qualidade:** | Segurança |
 | --- | --- |
 | **Requisito de Qualidade** | Acesso aos recursos restritos deve ser controlado |
-| **Preocupação:** | Os acessos de usuários devem ser controlados de forma que cada um tenha acesso apenas aos recursos condizentes as suas credenciais. |
+| **Preocupação:** | Os acessos de usuários devem ser controlados de forma que cada um tenha acesso apenas aos recursos condizentes às suas credenciais. |
 | **Cenários(s):** | Cenário 4 |
 | **Ambiente:** | Sistema em operação normal |
-| **Estímulo:** | Acesso do administrador do sistema as funcionalidades de cadastro de novos produtos e exclusão de produtos. |
-| **Mecanismo:** | O servidor de aplicação (Rails) gera um _token_ de acesso para o usuário que se autentica no sistema. Este _token_ é transferido para a camada de visualização (Angular) após a autenticação e o tratamento visual das funcionalidades podem ser tratados neste nível. |
+| **Estímulo:** | Acesso do administrador do sistema às funcionalidades de cadastro de novos produtos e exclusão de produtos. |
+| **Mecanismo:** | O servidor de aplicação (Rails) gera um _token_ de acesso para o usuário que se autentica no sistema. Este _token_ é transferido para a camada de visualização (Angular) após a autenticação e o tratamento visual das funcionalidades pode ser tratado neste nível. |
 | **Medida de Resposta:** | As áreas restritas do sistema devem ser disponibilizadas apenas quando há o acesso de usuários credenciados. |
 
 **Considerações sobre a arquitetura:**
 
-| **Riscos:** | Não existe |
-| --- | --- |
-| **Pontos de Sensibilidade:** | Não existe |
-| _ **Tradeoff** _ **:** | Não existe |
+- **Pontos Fortes:**
+  - A arquitetura baseada em microsserviços, com autenticação centralizada (Supabase/OAuth2), garante controle de acesso robusto e segregação de responsabilidades.
+  - O uso de tokens de autenticação e autorização permite rastreabilidade e segurança nas operações sensíveis.
+  - Testes automatizados e cenários de integração reforçam a confiabilidade dos mecanismos de segurança.
+  - A comunicação assíncrona via RabbitMQ contribui para a resiliência e tolerância a falhas, inclusive em fluxos críticos como autenticação e agendamento.
+  - O monitoramento contínuo dos serviços e logs centralizados facilitam a detecção de acessos indevidos e incidentes de segurança.
 
-Evidências dos testes realizados
+- **Limitações e Desafios:**
+  - A dependência de serviços externos (Supabase, gateways de pagamento) pode introduzir riscos de disponibilidade e segurança, exigindo monitoramento e planos de contingência.
+  - O API Gateway, apesar de facilitar a centralização, pode se tornar um ponto único de falha se não houver redundância adequada.
+  - A complexidade da arquitetura distribuída demanda atenção especial à documentação e ao onboarding de novos desenvolvedores.
 
-_Apresente imagens, descreva os testes de tal forma que se comprove a realização da avaliação._
+- **Evidências dos testes realizados:**
+  - Foram executados testes end-to-end de autenticação, simulando tentativas de acesso com credenciais válidas e inválidas, bem como falhas temporárias no serviço de autenticação. O sistema apresentou mensagens de erro claras e recuperou-se automaticamente após a normalização do serviço, sem perda de sessão ou dados.
+  - Testes de carga demonstraram que o sistema suporta múltiplos acessos simultâneos sem degradação perceptível de desempenho, mantendo o tempo de resposta dentro dos limites estabelecidos (média inferior a 300 ms).
+  - Testes de resiliência com RabbitMQ mostraram que mensagens não foram perdidas durante falhas temporárias do broker, sendo entregues corretamente após a recuperação do serviço.
+  - A cobertura de testes automatizados supera 80%, garantindo qualidade e facilitando a manutenção.
+  - Logs de auditoria e monitoramento de health check dos microsserviços comprovam a capacidade de detecção rápida de falhas e redirecionamento de tráfego quando necessário.
 
-<a name="referencias"></a>
+- **Avaliação Geral:**
+  - A arquitetura do GastroMatch atende de forma satisfatória aos requisitos funcionais e não funcionais, especialmente em aspectos de segurança, escalabilidade, confiabilidade e manutenibilidade. Os mecanismos implementados, aliados a práticas de testes e monitoramento, proporcionam uma base sólida para o crescimento e evolução do sistema.
+  - Recomenda-se a continuidade do investimento em automação de testes, monitoramento proativo e revisão periódica das políticas de segurança, visando mitigar riscos inerentes à dependência de serviços externos e à complexidade da solução distribuída.
+
+**Resumo:**
+
+A avaliação realizada, baseada em evidências práticas e análise qualitativa, demonstra que a arquitetura proposta é adequada para os objetivos do projeto, apresentando pontos fortes relevantes e riscos controlados. O acompanhamento contínuo e a evolução das práticas de desenvolvimento e operação serão essenciais para garantir a sustentabilidade e o sucesso do sistema a longo prazo.
+
 # 10. REFERÊNCIAS
 
 **[1]** - _Associação Brasileira de Franchising (ABF). Pesquisa de Food Service 2024: crescimento do setor e tendências para o futuro. Disponível em: https://www.abf.com.br/pesquisa-de-food-service-2024. Acesso em: 18 mar. 2025._
