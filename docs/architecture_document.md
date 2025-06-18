@@ -42,6 +42,7 @@ O Gastro Match é um aplicativo que conecta clientes a chefs particulares, facil
 
 | **Data**         | **Autor**                            | **Descrição**                                                                                                                               | **Versão** |
 |------------------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| **[18/06/2025]** | JUlia Gabriela de Resende		  | Finalização do documento                                                                                                                    | [24]       |
 | **[01/06/2025]** | JUlia Gabriela de Resende		  | Cenários de testes                                                                                                                          | [23]       |
 | **[01/06/2025]** | JUlia Gabriela de Resende		  | Versão inicial da avaliação da arquitetura baseado em ATAM.                                                                                 | [22]       |
 | **[29/03/2025]** | Marcelo Aguilar Araújo D'Almeida     | Corrigindo diagrama de arquitetura.                                                                                       			| [21]       |
@@ -564,26 +565,19 @@ _Apresente imagens, descreva os testes de tal forma que se comprove a realizaç�
 <a name="referencias"></a>
 # 10. REFERÊNCIAS
 
-_Como um projeto da arquitetura de uma aplicação não requer revisão bibliográfica, a inclusão das referências não é obrigatória. No entanto, caso você deseje incluir referências relacionadas às tecnologias, padrões, ou metodologias que serão usadas no seu trabalho, relacione-as conforme a ABNT._
-
-Verifique no link abaixo como devem ser as referências no padrão ABNT:
-
-http://www.pucminas.br/imagedb/documento/DOC\_DSC\_NOME\_ARQUI20160217102425.pdf
-
-
 **[1]** - _Associação Brasileira de Franchising (ABF). Pesquisa de Food Service 2024: crescimento do setor e tendências para o futuro. Disponível em: https://www.abf.com.br/pesquisa-de-food-service-2024. Acesso em: 18 mar. 2025._
 
 
 <a name="apendices"></a>
 # 11. APÊNDICES
-
-_Inclua o URL do repositório (Github, Bitbucket, etc) onde você armazenou o código da sua prova de conceito/protótipo arquitetural da aplicação como anexos. A inclusão da URL desse repositório de código servirá como base para garantir a autenticidade dos trabalhos._
+## Link repositório GitHub:
+https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2025-1-ti5-0492100-gastromatch/tree/main/code
 
 ## 11.1 Ferramentas
 
 | Ambiente  | Plataforma              |Link de Acesso |
 |-----------|-------------------------|---------------|
-|Repositório de código | GitHub | https://github.com/XXXXXXX |
+|Repositório de código | GitHub | https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2025-1-ti5-0492100-gastromatch/tree/main/code |
 |Hospedagem do site | Heroku |  https://XXXXXXX.herokuapp.com |
 |Protótipo Interativo | MavelApp ou Figma | https://figma.com/XXXXXXX |
-|Documentação de teste | Github | https://githun.com/xxxx |
+|Documentação de teste | Github | https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2025-1-ti5-0492100-gastromatch/blob/main/docs/Plano%20de%20Teste%20-%20vers%C3%A3o%20final.pdf |
