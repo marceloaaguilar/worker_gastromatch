@@ -23,7 +23,7 @@ export default function Header() {
             } 
 
             <Link to="/chefs" className="text-gray-700 hover:text-primary font-medium">Chefs</Link>
-            <Link to="#" className="text-gray-700 hover:text-primary font-medium">Contato</Link>
+            {/* <Link to="#" className="text-gray-700 hover:text-primary font-medium">Contato</Link> */}
             <Link to="/sobre" className="text-gray-700 hover:text-primary font-medium">Sobre</Link>
             
             
