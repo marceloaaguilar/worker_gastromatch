@@ -28,6 +28,7 @@ async function main() {
 
     channel.consume(queueName, async (msg) => {
       if (msg !== null) {
+        console.log(`Mensagem recebida da fila "${queueName}":`, msg.content.toString());
         try {
           const messageData = JSON.parse(msg.content.toString());
 
@@ -44,7 +45,7 @@ async function main() {
 
           if (error) {
             console.error('Erro ao inserir no Supabase:', error);
-            channel.nack(msg, false, false); // não reprocessa
+            channel.nack(msg, false, false); 
             return;
           }
 
@@ -53,7 +54,7 @@ async function main() {
           channel.ack(msg);
         } catch (err) {
           console.error('Erro no processamento da mensagem:', err);
-          channel.nack(msg, false, true); // reprocessa
+          channel.nack(msg, false, false); 
         }
       }
     });
